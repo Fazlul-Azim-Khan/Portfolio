@@ -17,7 +17,7 @@
 // "Availibility" matches Figma source spelling exactly — update when confirmed
 
 export const noticeStrip = {
-  text: 'BERLIN  ·  CHANCENKARTE  ·  No Sponsorship Needed  ·  Full time Work Availibility',
+  text: 'GERMANY  ·  CHANCENKARTE  ·  No Sponsorship Needed  ·  Full time Work Availability',
 } as const
 
 
@@ -66,18 +66,18 @@ export const hero = {
   },
 
   /** Renders in H5 (20px Integral CF) below the headline */
-  subline: 'Enterprise AI · Safety-critical domains · MVP to $25M scale',
+  subline: 'Enterprise AI · Clinical & Industrial · 2 AI Products Shipped',
 
   /** Renders in Lead (12px Inter, uppercase) in top-right grid cell */
-  bio: 'I design AI-powered enterprise products for expert-user domains — clinical decision support, metabolic health intelligence, and manufacturing reliability. Most recently at Center Health, shaping an AI-powered diabetes management platform. Earlier at Axion Ray — an industrial-AI startup backed by Boeing, Raytheon, Denso, and Baxter.',
+  bio: 'I design AI-powered products for expert-user domains — clinical decision support, metabolic health, and industrial reliability. Two shipped AI products. Most recently at Center Health. Earlier at Axion Ray, backed by Boeing, Raytheon, Denso, and Baxter.',
 
   /** Specialty chip tags — order matches Figma layout (left→right, wrapping) */
   chips: [
     'AI prediction & analytics',
-    'AI personalities & avatars',
-    'AI-assisted learning',
+    'Enterprise AI systems',
+    'AI data visualisation',
     'Clinical AI visualisation',
-    'AI content & marketing tools',
+    'Interaction design',
     'Product Strategy',
   ],
 } as const
