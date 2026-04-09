@@ -1,0 +1,126 @@
+/*
+ * CaseStudyProblemSection.module.css
+ * The Problem — Section (001) | Figma node 978:6022
+ *
+ * Section has large top padding (191px) and smaller bottom padding (42px).
+ * Bottom edge has a white border (border-b border-[var(--secondary)]).
+ * The quote and body use the same H3 scale (56px, -0.84px tracking).
+ * Body text is constrained to 600px and right-aligned.
+ */
+
+
+/* ============================================================
+   CONTENT WRAPPER
+   pt-[191px] pb-[42px] — Figma node 978:6022
+   bottom border: border-b border-[var(--secondary,white)]
+   gap-[64px] between heading block and body block
+   ============================================================ */
+
+.content {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-64);
+
+  padding-top:    191px;   /* Figma: pt-[191px] */
+  padding-bottom: 42px;    /* Figma: pb-[42px] */
+
+  border-bottom:  1px solid var(--color-secondary);
+  width:          100%;
+}
+
+
+/* ============================================================
+   HEADING — H3, Integral CF, 56px
+   ============================================================ */
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);        /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);     /* 1 */
+  letter-spacing: var(--tracking-h3);    /* -0.84px */
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   DIVIDER — bg-[#e5e5e5] h-px
+   Confirmed: Figma node 1044:5788
+   ============================================================ */
+
+.divider {
+  width:  100%;
+  height: 1px;
+  background: var(--color-divider);   /* #e5e5e5 */
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   QUOTE — same H3 scale as heading
+   Full width, uppercase display font
+   Confirmed: Figma node 978:6035
+   ============================================================ */
+
+.quote {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);        /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);     /* 1 */
+  letter-spacing: var(--tracking-h3);    /* -0.84px */
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+  width:          100%;
+}
+
+
+/* ============================================================
+   BODY TEXT WRAPPER
+   items-end — body floats to bottom-right
+   Confirmed: Figma node 978:6030 (items-end, gap-[0px])
+   ============================================================ */
+
+.bodyWrap {
+  display:         flex;
+  flex-direction:  column;
+  align-items:     flex-end;   /* Figma: items-end */
+  width:           100%;
+}
+
+.body {
+  font-family:    var(--font-body);
+  font-size:      var(--text-body);      /* 14px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);        /* 20px */
+  letter-spacing: var(--tracking-lead);
+  color:          var(--color-primary);
+  margin:         0;
+  width:          600px;                 /* Figma: w-[600px] */
+  max-width:      100%;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .content {
+    /* 191px desktop top padding is too large for mobile viewports */
+    padding-top: var(--padding-40);
+    gap:         var(--gap-40);
+  }
+
+  /* Right-aligned body reads poorly on narrow mobile — switch to left */
+  .bodyWrap {
+    align-items: flex-start;
+  }
+
+  .body {
+    /* width: 600px is constrained by max-width: 100% but reset explicitly for clarity */
+    width: 100%;
+  }
+}

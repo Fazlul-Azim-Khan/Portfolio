@@ -1,0 +1,531 @@
+/*
+ * CaseStudyPhaseSection.module.css
+ * Phase sections — (005) Phase 01 · (006) Phase 02 · (008) Phase 03
+ * Figma nodes 978:7314 (Phase 01) · 980:7443 (Phase 02) · 966:8035 (Phase 03)
+ */
+
+
+/* ============================================================
+   CONTENT WRAPPER
+   Phase 01: gap-40  (Figma node 978:7318)
+   Phase 02: gap-64  (Figma node 980:7447)
+   Phase 03: gap-64  (Figma node 966:8039)
+   Selector [data-layout="wide"] targets Phase 02 and Phase 03.
+   ============================================================ */
+
+.content {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-40);
+  width:          100%;
+  padding-bottom: 42px;
+  border-bottom:  1px solid var(--color-secondary);
+}
+
+.content[data-layout="wide"] {
+  gap: var(--gap-64);
+}
+
+
+/* ============================================================
+   PHASE CHIP
+   Figma: display flex · gap 10px · padding 12px · justify-center · items-center
+   Confirmed: Figma node 1005:5941
+   align-self: flex-start enforces label hug inside column flex parent.
+   ============================================================ */
+
+.phaseChip {
+  display:    flex;
+  gap:        10px;
+  align-self: flex-start;
+}
+
+
+/* ============================================================
+   HEADING — H3, 56px
+   Confirmed: Figma node 978:7372
+   ============================================================ */
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);        /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);     /* 1 */
+  letter-spacing: var(--tracking-h3);    /* -0.84px */
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   BODY — Inter 16px, w-540px, right-aligned
+   Confirmed: Figma node 978:7374 (items-end) + 978:7375 (w-[540px])
+   ============================================================ */
+
+.bodyWrap {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-end;   /* right-aligned */
+  width:          100%;
+}
+
+.body {
+  font-family:    var(--font-body);
+  font-size:      var(--text-body);   /* 14px — Figma: node 966:8047 */
+  font-weight:    var(--weight-regular);
+  line-height:    27.2px;             /* Figma: leading-[27.2px] */
+  color:          var(--color-primary);
+  margin:         0;
+  width:          540px;              /* Figma: w-[540px] */
+  max-width:      100%;
+}
+
+
+/* ============================================================
+   HEADING ROW — Phase 03 only
+   Heading (w-730px) + body (w-400px) side-by-side
+   Confirmed: Figma node 1005:6244 — flex, justify-between, items-start
+   ============================================================ */
+
+.headingRow {
+  display:         flex;
+  flex-direction:  row;
+  justify-content: space-between;
+  align-items:     flex-start;
+  gap:             var(--gap-40);
+  width:           100%;
+}
+
+/* heading inside headingRow — same style as .heading but no margin */
+.headingRow .heading {
+  flex:  0 0 auto;
+  width: 730px;
+  max-width: 100%;
+}
+
+/* body text right column — Inter 14px, w-400px
+   Confirmed: Figma node 966:8047 — fontSize 14, Inter Regular, leading 20px
+*/
+.headingRowBody {
+  font-family:  var(--font-body);
+  font-size:    var(--text-body);   /* 14px */
+  font-weight:  var(--weight-regular);
+  line-height:  var(--lh-body);     /* 20px */
+  color:        var(--color-primary);
+  margin:       0;
+  flex:         0 0 auto;
+  width:        400px;
+  max-width:    100%;
+}
+
+@media (max-width: 1024px) {
+  .headingRow {
+    flex-direction: column;
+  }
+  .headingRow .heading,
+  .headingRowBody {
+    width: 100%;
+  }
+}
+
+
+/* ============================================================
+   FEATURE CARDS — Phase 02 three-card block
+   Confirmed: Figma node 980:7480 (container), 980:7481/7540/7578 (cards)
+   Container: flex-row, gap 20px
+   Card:      flex-col, gap 12px, bg #000, radius 20px, padding 16px/20px
+   border-radius uses --radius-sm (8px) — project-wide single radius.
+   ============================================================ */
+
+.featureCards {
+  display:        flex;
+  flex-direction: row;
+  gap:            var(--gap-20);         /* Figma: itemSpacing 20px */
+  width:          100%;
+}
+
+.featureCard {
+  flex:           1 0 0;
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-12);         /* Figma: itemSpacing 12px */
+  padding:        var(--padding-16) var(--gap-20); /* Figma: paddingTop/Bottom 16px, Left/Right 20px */
+  background:     #000000;              /* Figma: rgb(0,0,0) — pure black */
+  border-radius:  var(--radius-sm);     /* 8px */
+  min-width:      0;
+}
+
+/* Card title — 32px Integral CF UPPER, white
+   Confirmed: Figma nodes 980:7514, 980:7541, 980:7579 — fontSize 32, Integral CF, textCase UPPER
+*/
+.featureCardTitle {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h4);        /* 32px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);     /* 1 */
+  letter-spacing: var(--tracking-h4);   /* 0 */
+  text-transform: uppercase;
+  color:          var(--color-secondary);
+  margin:         0;
+}
+
+/* Bullet list — reset browser list styles
+   Figma: each row = 3px white circle dot + 12px Inter text, gap 6.4px between rows
+*/
+.featureCardBullets {
+  display:        flex;
+  flex-direction: column;
+  gap:            6px;                   /* Figma: itemSpacing 6.4px — rounded */
+  list-style:     none;
+  margin:         0;
+  padding:        0;
+}
+
+/* Individual bullet item — custom white dot via ::before */
+.featureCardBullet {
+  position:    relative;
+  padding-left: 12px;
+  font-family:  var(--font-body);
+  font-size:    var(--text-lead);        /* 12px */
+  font-weight:  var(--weight-regular);
+  line-height:  var(--lh-body);          /* 20px */
+  color:        var(--color-secondary);
+}
+
+.featureCardBullet::before {
+  content:          '';
+  position:         absolute;
+  left:             0;
+  top:              50%;
+  transform:        translateY(-50%);
+  width:            3px;
+  height:           3px;
+  border-radius:    50%;                 /* Figma: Background circle, cornerRadius ~41M (pill) */
+  background-color: var(--color-secondary);
+}
+
+/* Closing description — 14px Inter, white
+   Confirmed: Figma text nodes — fontSize 14, Inter Regular
+*/
+.featureCardDesc {
+  font-family:  var(--font-body);
+  font-size:    var(--text-body);        /* 14px */
+  font-weight:  var(--weight-regular);
+  line-height:  var(--lh-body);          /* 20px */
+  color:        var(--color-secondary);
+  margin:       0;
+}
+
+
+/* Responsive — stack cards on mobile */
+@media (max-width: 767px) {
+  .featureCards {
+    flex-direction: column;
+  }
+}
+
+
+/* ============================================================
+   KEY WORK BLOCK — H3 heading + dark tile grid
+   Confirmed: Figma node 979:7382
+   ============================================================ */
+
+.keyWorkBlock {
+  display:        flex;
+  flex-direction: column;
+  gap:            10.98px;   /* Figma: gap-[10.98px] */
+}
+
+.keyWorkHeading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);        /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h3);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+/* Wrapping grid of dark tiles */
+.keyWorkGrid {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       0 9.7px;   /* Figma: gap-[0px_9.7px] */
+}
+
+.keyWorkTile {
+  display:        flex;
+  flex:           1 0 0;
+  min-width:      0;
+  flex-direction: column;
+  justify-content: center;
+  align-items:    flex-start;
+  padding:        var(--padding-64) var(--padding-16);   /* py-64 px-16 */
+  background:     var(--color-primary);
+  border-radius:  var(--radius-sm);    /* 8px */
+}
+
+.keyWorkLabel {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);      /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  color:          var(--color-secondary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   KEY WORK COLUMNS — Phase 03 4-col layout (title + desc)
+   Confirmed: Figma node 966:8051  (h-[301px], py-64px, gap-40px)
+   ============================================================ */
+
+.keyWorkColumns {
+  display:    flex;
+  gap:        var(--gap-40);
+  min-height: 301px;
+  padding:    var(--padding-64) 0;
+  width:      100%;
+  align-items: flex-start;
+}
+
+.keyWorkColumn {
+  flex:           1 0 0;
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-24);
+  min-width:      0;
+}
+
+/* Light grey top rule on each column */
+.keyWorkColDivider {
+  width:      100%;
+  height:     1px;
+  background: #e5e5e5;
+  flex-shrink: 0;
+}
+
+.keyWorkColTitle {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);      /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+.keyWorkColDesc {
+  font-family:    var(--font-body);
+  font-size:      14px;
+  font-weight:    var(--weight-regular);
+  line-height:    20px;
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   IMAGES CARD — Phase 03 dark card
+   Confirmed: Figma node 1014:6751
+     bg: #000, radius: 8px, padding: 8px, flex-col, gap: 10px
+   Inner structure:
+     Row 1 (1014:6752): .imagesRow  — 3 images flex-1, gap-24, h-390px each
+     Row 2 (1014:6756): .imagesBottom — 1 full-width geo map image
+   ============================================================ */
+
+.imagesCard {
+  display:        flex;
+  flex-direction: column;
+  gap:            10px;                  /* Figma: itemSpacing 10 */
+  padding:        8px;                   /* Figma: padding 8px all sides */
+  background:     var(--color-primary);
+  border-radius:  var(--radius-sm);      /* 8px */
+  width:          100%;
+}
+
+/* Row 1 — 3 panel images stacked vertically, each full viewport height
+   Design decision: panels stacked at 100vh for focused cognitive pacing —
+   one panel per screen-moment as the user scrolls.
+   (Figma shows side-by-side, but this improves readability for dashboard panels.)
+*/
+.imagesRow {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-24);
+  width:          100%;
+}
+
+.imagesRowItem {
+  position:      relative;
+  width:         100%;
+  height:        100vh;                 /* Full viewport height — one panel per scroll moment */
+  overflow:      hidden;
+  border-radius: var(--radius-sm);
+  background:    var(--color-primary);
+}
+
+/* Row 2 — geo map, full-width
+   Figma node 1014:6756: aspect ratio via inline style (1315/605)
+*/
+.imagesBottom {
+  position:         relative;
+  width:            100%;
+  overflow:         hidden;
+  border-radius:    var(--radius-sm);
+  background-color: var(--color-primary);
+}
+
+/* Responsive — panels already stacked, reduce height slightly on mobile */
+@media (max-width: 767px) {
+  .imagesRowItem {
+    height: 60vh;
+  }
+}
+
+
+/* ============================================================
+   OUTCOME DARK CARD
+   bg-[var(--primary)], p-64px, rounded-8px
+   Confirmed: Figma node 1005:5971
+   ============================================================ */
+
+.outcomeCard {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-16);
+  padding:        var(--padding-64);
+  background:     var(--color-primary);
+  border-radius:  var(--radius-sm);    /* 8px */
+  width:          100%;
+}
+
+.outcomeLabel {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);      /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  color:          var(--color-tertiary);   /* #cccccc — muted on dark */
+  margin:         0;
+}
+
+.outcomeHeadline {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);        /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h3);    /* -0.84px */
+  text-transform: uppercase;
+  color:          var(--color-secondary);
+  margin:         0;
+}
+
+.outcomeDivider {
+  width:      100%;
+  height:     1px;
+  background: var(--color-tertiary);
+}
+
+.outcomeSubline {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h4);        /* 32px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h4);
+  text-transform: uppercase;
+  color:          var(--color-secondary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   PHASE IMAGE — full width
+   ============================================================ */
+
+.imageWrap {
+  position:         relative;
+  width:            100%;
+  border-radius:    var(--radius-sm);
+  overflow:         hidden;
+  background-color: var(--color-primary);
+}
+
+.image {
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   RESPONSIVE — all elements not covered by inline blocks above
+   Inline blocks already cover:
+     headingRow (1024px)  ·  featureCards (767px)  ·  imagesRowItem (767px)
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  /* ── Phase chip: already full-width, no change needed ── */
+
+  /* ── Heading: H3 (56px) → H4 (32px) on mobile ───────── */
+  /* Applies to 005 standalone heading, 006 standalone heading */
+  .heading {
+    font-size: var(--text-h4);   /* 56px → 32px */
+  }
+
+  /* ── Phase 01 body: remove right-alignment + fixed width ── */
+  /* Desktop: items-end + w-540px creates a right-anchored block */
+  .bodyWrap {
+    align-items: flex-start;
+  }
+
+  .body {
+    width:     100%;
+    max-width: 100%;
+  }
+
+  /* ── Key work tiles (Phase 01): stack to single column ── */
+  /* Desktop: flex-wrap tiles auto-size horizontally */
+  .keyWorkGrid {
+    flex-direction: column;
+    gap:            var(--gap-8);
+  }
+
+  .keyWorkTile {
+    flex:    0 0 auto;
+    width:   100%;
+    padding: var(--padding-40) var(--padding-16);   /* 64px → 40px vertical */
+  }
+
+  /* keyWorkBlock heading: scale down */
+  .keyWorkHeading {
+    font-size: var(--text-h4);
+  }
+
+  /* ── Outcome card: reduce padding, scale headlines ────── */
+  .outcomeCard {
+    padding: var(--padding-40);
+  }
+
+  .outcomeHeadline {
+    font-size: var(--text-h4);   /* 56px → 32px */
+  }
+
+  .outcomeSubline {
+    font-size: var(--text-h5);   /* 32px → 20px */
+  }
+
+  /* ── Key work columns (Phase 03): stack 4-col to single column ── */
+  /* Desktop: flex-row, gap-40, min-height-301px, padding-64 top/bottom */
+  .keyWorkColumns {
+    flex-direction: column;
+    min-height:     unset;
+    padding:        var(--padding-40) 0;   /* 64px → 40px vertical */
+    gap:            var(--gap-24);
+  }
+
+  /* Each column fills full width when stacked */
+  .keyWorkColumn {
+    flex:  0 0 auto;
+    width: 100%;
+  }
+}

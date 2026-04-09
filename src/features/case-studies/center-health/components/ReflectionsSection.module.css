@@ -1,0 +1,165 @@
+/*
+ * ReflectionsSection.module.css — Center Health (014)
+ * Confirmed from Figma node 1237:11350.
+ *
+ * Index-left / content-right row (gap-40).
+ * Content column: heading + 3×2 numbered grid.
+ * Each cell: divider + card (white bg, rounded-16, p-4, gap-24).
+ * py ~77px, white border-b (subtle).
+ */
+
+
+.root {
+  display:         flex;
+  flex-direction:  column;
+  align-items:     flex-start;
+  padding-top:     var(--gap-64);
+  padding-bottom:  var(--gap-64);
+  border-bottom:   1.24px solid var(--color-secondary);  /* Figma: white border */
+  width:           100%;
+}
+
+
+/* ── Row — index (left) + content (right) ───────────────── */
+
+.row {
+  display:     flex;
+  align-items: flex-start;
+  gap:         var(--gap-40);
+  width:       100%;
+}
+
+.index {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);      /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);        /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  white-space:    nowrap;
+  flex-shrink:    0;
+  margin:         0;
+  padding-top:    6px;   /* optical cap-height alignment — unified */
+}
+
+
+/* ── Content column ─────────────────────────────────────── */
+
+.contentCol {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  gap:            var(--gap-64);
+
+  flex:           1 0 0;
+  min-width:      0;
+}
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h3);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+  width:          100%;
+  white-space:    pre-wrap;
+}
+
+
+/* ── Reflections grid — 3×2 ─────────────────────────────── */
+
+.grid {
+  display:               grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:                   var(--gap-24);
+  width:                 100%;
+}
+
+/* Each cell: divider + card */
+.cell {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  justify-content: center;
+}
+
+.cellDivider {
+  width:            100%;
+  height:           1px;
+  background-color: #e5e5e5;
+  flex-shrink:      0;
+}
+
+/* Card: white bg, rounded-16, p-4, gap-24 */
+.card {
+  display:          flex;
+  flex-direction:   column;
+  align-items:      flex-start;
+  gap:              var(--gap-24);
+  padding:          4px;
+  background-color: var(--color-secondary);   /* white */
+  border-radius:    16px;
+  width:            100%;
+  flex:             1 0 0;
+  min-height:       0;
+}
+
+.cardNumber {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);        /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-primary);
+  margin:         0;
+  white-space:    nowrap;
+}
+
+.cardText {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);        /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-primary);
+  margin:         0;
+  width:          100%;
+}
+
+
+/* ── Responsive ─────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .root {
+    padding-top:    var(--padding-40);
+    padding-bottom: var(--padding-40);
+  }
+
+  .row {
+    flex-direction: column;
+    gap:            var(--gap-16);
+  }
+
+  .index {
+    padding-top: 0;
+    width: auto;
+  }
+
+  .contentCol {
+    gap: var(--gap-40);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

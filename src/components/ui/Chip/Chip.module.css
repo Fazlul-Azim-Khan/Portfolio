@@ -1,0 +1,64 @@
+/*
+ * Chip.module.css
+ * Specs confirmed from Figma node 848:87, 1002:5922–5937
+ *
+ * Confirmed values:
+ *   background:    var(--secondary, white)     → --color-secondary
+ *   border:        1px solid var(--primary)    → --color-primary
+ *   padding:       var(--padding-12) all sides  → 12px
+ *   border-radius: 8px                          → --radius-sm
+ *   font:          Inter Regular, 12px, uppercase, lh 20px, nowrap
+ *   color:         var(--primary)               → --color-primary
+ *
+ * Single variant only — no filled or ghost chip in Figma.
+ */
+
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+.chip {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+
+  padding:         var(--padding-12);
+  border-radius:   var(--radius-sm);
+  border:          1px solid var(--color-primary);
+  background-color: var(--color-secondary);
+
+  font-family:     var(--font-body);
+  font-size:       var(--text-lead);
+  font-weight:     var(--weight-regular);
+  line-height:     var(--lh-body);
+  letter-spacing:  var(--tracking-lead);
+  text-transform:  uppercase;
+  white-space:     nowrap;
+  color:           var(--color-primary);
+
+  /* Chips are decorative — no pointer unless explicitly interactive */
+  cursor: default;
+}
+
+
+/* ============================================================
+   INTERACTIVE STATE
+   Applied when the chip is used as a button/toggle
+   ============================================================ */
+
+.interactive {
+  cursor: pointer;
+  transition: background-color var(--transition-base),
+              color             var(--transition-base);
+}
+
+.interactive:hover {
+  background-color: var(--color-primary);
+  color:            var(--color-secondary);
+}
+
+.interactive:focus-visible {
+  outline:        2px solid var(--color-primary);
+  outline-offset: 2px;
+}

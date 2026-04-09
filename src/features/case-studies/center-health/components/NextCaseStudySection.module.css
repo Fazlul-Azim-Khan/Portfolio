@@ -1,0 +1,169 @@
+/*
+ * NextCaseStudySection.module.css — Center Health
+ * Confirmed from Figma node 1242:11481.
+ *
+ * Navigation card linking to the next case study.
+ * Layout: image (1328/710, rounded-8) + text row (gap-16).
+ * Text row: index "01" (left) + content column (label + title, gap-11).
+ */
+
+
+/* ============================================================
+   ROOT — clickable link wrapper
+   flex column, gap-16, full width
+   ============================================================ */
+
+.root {
+  display:           flex;
+  flex-direction:    column;
+  justify-content:   center;
+  gap:               var(--gap-16);
+  width:             100%;
+  text-decoration:   none;
+  color:             inherit;
+  padding-top:       var(--gap-64);
+  padding-bottom:    var(--gap-64);
+
+  /* ── Scroll-snap: locks section into viewport (Step 1) ── */
+  min-height:        100svh;
+  scroll-snap-align: start;
+}
+
+.root:hover .image {
+  opacity:    0.88;
+  transition: opacity var(--transition-base);
+}
+
+.root:focus-visible {
+  outline:        var(--focus-outline-width) solid var(--color-primary);
+  outline-offset: var(--focus-outline-offset);
+  border-radius:  var(--radius-sm);
+}
+
+
+/* ============================================================
+   IMAGE — cover image
+   aspect-ratio 1328/710, rounded-8, overflow hidden
+   ============================================================ */
+
+.imageWrap {
+  position:      relative;
+  width:         100%;
+  aspect-ratio:  1328 / 710;
+  border-radius: var(--radius-sm);    /* 8px */
+  overflow:      hidden;
+  background:    var(--color-divider); /* placeholder */
+  flex-shrink:   0;
+}
+
+.image {
+  object-fit:      cover;
+  object-position: center;
+  transition:      opacity var(--transition-base);
+}
+
+
+/* ============================================================
+   HEADER ROW — index (left) + content column (right)
+   flex row, gap-64, items-start, uppercase
+   ============================================================ */
+
+.header {
+  display:        flex;
+  align-items:    flex-start;
+  gap:            var(--gap-64);
+  width:          100%;
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   INDEX — "01"
+   Lead: Inter 12px, line-height 20px, --color-primary
+   ============================================================ */
+
+.index {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);     /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);       /* 20px */
+  letter-spacing: var(--tracking-lead);
+  color:          var(--color-primary);
+  white-space:    nowrap;
+  flex-shrink:    0;
+  margin:         0;
+}
+
+
+/* ============================================================
+   CONTENT COLUMN — label + title
+   flex column, gap-11px
+   ============================================================ */
+
+.content {
+  display:        flex;
+  flex-direction: column;
+  gap:            11px;
+  flex:           1 0 0;
+  min-width:      0;
+}
+
+
+/* ============================================================
+   LABEL — "Under NDA"
+   Lead: Inter 12px, line-height 20px, --color-primary
+   ============================================================ */
+
+.label {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);     /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);       /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   TITLE — H4 32px Integral CF
+   ============================================================ */
+
+.title {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h4);       /* 32px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);    /* 1 / 100% */
+  letter-spacing: var(--tracking-h4);   /* 0 */
+  text-transform: uppercase;
+  color:          #0a0a0a;
+  margin:         0;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1023px) {
+  .title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .root {
+    padding-top:    var(--gap-40);
+    padding-bottom: var(--gap-40);
+  }
+
+  .header {
+    flex-direction: column;
+    gap:            var(--gap-8);
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}

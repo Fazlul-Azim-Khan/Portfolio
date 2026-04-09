@@ -1,0 +1,330 @@
+/*
+ * CaseStudyResearchSection.module.css
+ * User Research — Section (002)
+ * Confirmed from Figma node 978:6038
+ *
+ * Single dark card — natural page scroll.
+ * NO scroll-snap. NO viewport-height panels.
+ *
+ * Outer layout: flex-row → index column (38.64px) + content column
+ *   Confirmed: Figma 978:6038 gap-[32px], px-[16px], py-[64px], rounded-[16px]
+ *
+ * Inner layout: flex-col, gap-32px
+ *   Confirmed: Figma 1005:5988 gap-[32px]
+ */
+
+
+/* ============================================================
+   ROOT — outer dark card
+   Figma 978:6038: flex-row, gap-32px, padding 64px/16px, bg primary, radius 16px
+   ============================================================ */
+
+.root {
+  display:        flex;
+  flex-direction: row;
+  gap:            var(--gap-32);                  /* Figma: gap-[32px] */
+  padding:        var(--padding-64) var(--layout-padding-x);
+  background:     var(--color-primary);
+  border-radius:  var(--radius-sm);               /* 8px */
+  width:          100%;
+}
+
+
+/* ============================================================
+   INDEX COLUMN — left sidebar
+   38.64px wide — Figma node 978:6039
+   ============================================================ */
+
+.indexCol {
+  width:       var(--case-section-index-w);       /* 38.64px */
+  flex-shrink: 0;
+  padding-top: 8px;                               /* Figma: pt-[8px] */
+}
+
+.index {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);               /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  text-transform: uppercase;
+  color:          var(--color-secondary);         /* Figma: var(--secondary, white) */
+  margin:         0;
+}
+
+
+/* ============================================================
+   MAIN CONTENT COLUMN — right of index
+   Figma 1005:5988: flex-col, gap-32px
+   ============================================================ */
+
+.content {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-32);                  /* Figma: gap-[32px] */
+  flex:           1 0 0;
+  min-width:      0;
+}
+
+
+/* ============================================================
+   INTRO ROW — section heading left + intro paragraph right
+   Figma 978:6042: flex-row, itemSpacing 20px
+   ============================================================ */
+
+.introRow {
+  display:        flex;
+  flex-direction: row;
+  gap:            var(--gap-20);                  /* Figma: gap-[20px] */
+  align-items:    flex-start;
+}
+
+
+/* ============================================================
+   SECTION HEADING — "User Research"
+   Integral CF, 56px, white, tracking -0.84px, uppercase
+   Confirmed: Figma node 978:6044
+   ============================================================ */
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);                 /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h3);             /* -0.84px */
+  text-transform: uppercase;
+  color:          var(--color-secondary);         /* white */
+  margin:         0;
+  flex:           1 0 0;
+}
+
+
+/* ============================================================
+   INTRO PARAGRAPH — right of heading
+   Inter, 16px, white, line-height 27.2px (1.7)
+   Confirmed: Figma node 978:6047 text-[16px] leading-[27.2px]
+   Note: 16px is not in the type scale token — used inline (same pattern as FundingMilestone body)
+   ============================================================ */
+
+.intro {
+  font-family: var(--font-body);
+  font-size:   16px;                              /* Figma: text-[16px] — no --text-16 token */
+  line-height: 1.7;                               /* Figma: leading-[27.2px] / 16px = 1.7 */
+  font-weight: var(--weight-regular);
+  color:       var(--color-secondary);            /* white */
+  margin:      0;
+  flex:        1 0 0;
+}
+
+
+/* ============================================================
+   CHIP SECTION — Personality Traits block
+   Figma 1005:6085: flex-col, gap-32px
+   ============================================================ */
+
+.chipSection {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-32);                  /* Figma: gap-[32px] */
+}
+
+
+/* ============================================================
+   BORDERED SECTION — padding 40px top/bottom
+   Challenges & Pains, Existing Causes, Emotions
+   Confirmed: Figma HorizontalBorder nodes pt-[40px] pb-[41px]
+   ============================================================ */
+
+.borderedSection {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-32);                  /* Figma: gap-[32px] */
+  padding-top:    var(--padding-40);              /* Figma: pt-[40px] */
+  padding-bottom: var(--padding-40);              /* Figma: pb-[41px] */
+}
+
+
+/* ============================================================
+   CHIP SECTION HEADING ROW — main title + sub-label
+   Figma 1005:6086 (Personality Traits): flex-row, itemSpacing 64px
+   Figma 1005:6115 (Challenges & Pains):  flex-row, itemSpacing 40px
+   Both share this layout — heading grows, sub-label stays right
+   ============================================================ */
+
+.chipSectionHead {
+  display:        flex;
+  flex-direction: row;
+  gap:            var(--gap-64);
+  align-items:    flex-end;
+}
+
+
+/* Sub-section headings: "Personality Traits", "Challenges & Pains",
+   "Existing Systems Causes:", "Have to Bring In These Emotions:"
+   Integral CF, 56px, white, uppercase
+   Confirmed: Figma nodes 1005:6089, 1005:6118, 1005:6156, 1005:6171
+*/
+.chipSectionHeading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);                 /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  text-transform: uppercase;
+  color:          var(--color-secondary);
+  margin:         0;
+  flex:           1 0 0;
+}
+
+
+/* Sub-label: "What Emotions Do They Exhibit?", "What Are We Trying To Solve?"
+   Inter, 12px, white, uppercase
+   Confirmed: Figma nodes 1005:6093, 1005:6122
+*/
+.chipSectionSub {
+  font-family: var(--font-body);
+  font-size:   var(--text-lead);                  /* 12px */
+  font-weight: var(--weight-regular);
+  line-height: var(--lh-body);
+  text-transform: uppercase;
+  color:       var(--color-secondary);
+  margin:      0;
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   CHIP GRID — Personality Traits
+   gap-24px — Figma 1005:6096: gap-[var(--gap/24,24px)]
+   ============================================================ */
+
+.chipGrid {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       var(--gap-24);                       /* Figma: gap-[24px] */
+}
+
+
+/* ============================================================
+   CHIP GRID LARGE — Challenges, Existing Causes, Emotions
+   gap-32px — Figma 1005:6123: gap-[32px]
+   Figma 1005:6157/6172 use gap-[0px_32px] (col only) but 32px used for wrapping clarity
+   ============================================================ */
+
+.chipGridLarge {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       var(--gap-32);                       /* Figma: 32px */
+}
+
+
+/* Individual chip — white card, black Integral CF 20px text
+   Confirmed: all chip frames — padding 16px, bg white, radius 8px
+*/
+.chip {
+  display:        inline-flex;
+  align-items:    center;
+  padding:        var(--padding-16);              /* 16px all sides */
+  background:     var(--color-secondary);         /* white */
+  border-radius:  var(--radius-sm);              /* 8px */
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);                /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  color:          var(--color-primary);           /* black */
+}
+
+
+/* ============================================================
+   THREE-COLUMN CONCLUSIONS
+   flex-row, gap-64px, padding-64px top/bottom
+   Confirmed: Figma 1005:5983 py-[64px] gap-[64px]
+   Integral CF 20px white — NOT uppercase (mixed case in Figma)
+   ============================================================ */
+
+.conclusions {
+  display:        flex;
+  flex-direction: row;
+  gap:            var(--gap-64);
+  padding-top:    var(--padding-64);
+  padding-bottom: var(--padding-64);
+  align-items:    flex-start;
+}
+
+.conclusionCol {
+  flex:        1 0 0;
+  font-family: var(--font-display);
+  font-size:   var(--text-h5);                    /* 20px */
+  font-weight: var(--weight-regular);
+  line-height: var(--lh-heading);
+  color:       var(--color-secondary);
+  margin:      0;
+}
+
+
+/* ============================================================
+   DIVIDER — 1px horizontal rule
+   Confirmed: Figma nodes 1014:6851, 1014:6849 — bg-[var(--tirtiary,#ccc)]
+   ============================================================ */
+
+.divider {
+  width:      100%;
+  height:     1px;
+  background: var(--color-divider-dark);          /* #cccccc */
+  border:     none;
+  margin:     0;
+}
+
+
+/* ============================================================
+   RESPONSIVE — mobile reflow
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  .root {
+    flex-direction: column;
+    gap:            var(--gap-24);
+    padding:        var(--padding-40) var(--layout-padding-x);
+    border-radius:  var(--radius-sm);
+  }
+
+  .indexCol {
+    width:       auto;
+    padding-top: 0;
+  }
+
+  .introRow {
+    flex-direction: column;
+    gap:            var(--gap-24);
+  }
+
+  .heading {
+    font-size: var(--text-h4);                    /* 32px on mobile */
+  }
+
+  .chipSectionHeading {
+    font-size: var(--text-h4);                    /* 32px on mobile */
+  }
+
+  .chipSectionHead {
+    flex-direction: column;
+    gap:            var(--gap-16);
+    align-items:    flex-start;
+  }
+
+  .conclusions {
+    flex-direction: column;
+    gap:            var(--gap-24);
+    padding-top:    var(--padding-40);
+    padding-bottom: var(--padding-40);
+  }
+
+  .chipGrid,
+  .chipGridLarge {
+    gap: var(--gap-16);
+  }
+
+  .chip {
+    font-size: var(--text-lead);                  /* scale down on mobile */
+    padding:   var(--padding-12) var(--padding-16);
+  }
+}

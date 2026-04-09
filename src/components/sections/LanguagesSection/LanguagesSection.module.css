@@ -1,0 +1,142 @@
+/*
+ * LanguagesSection.module.css
+ * Specs confirmed from Figma node 1036:7190
+ *
+ * Layout:
+ *   .section     — flex col, gap --gap-40, padding --padding-64 all sides
+ *   .heading     — Integral CF 56px H3, --color-primary, tracking -0.84px
+ *   .row         — flex row, gap --gap-16, two entries side-by-side
+ *   .entry       — flex col, gap --gap-1, flex: 1 0 0
+ *   .language    — Integral CF 20px H5, --color-primary
+ *   .proficiency — Inter 14px body, --color-text-muted (#424242)
+ *
+ * Note: No background override — inherits white from parent Container.
+ * Note: No border-radius — this section sits on the white body background.
+ * (Contrast with ExperienceSection which is a self-contained dark card.)
+ */
+
+
+/* ============================================================
+   SECTION WRAPPER
+   Confirmed: Figma node 1036:7190
+     flex flex-col
+     gap-[var(--gap/40,40px)]   → --gap-40 (between heading and row)
+     p-[var(--padding/64,64px)] → --padding-64 (all sides)
+   ============================================================ */
+
+.section {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-40);       /* 40px — between heading and languages row */
+  padding:        var(--padding-64);   /* 64px all sides — confirmed */
+  width:          100%;
+}
+
+
+/* ============================================================
+   HEADING — "LANGUAGES"
+   Confirmed: Figma node 1036:7193
+     font-['Integral_CF:Regular']
+     text-[56px]          → --text-h3
+     tracking-[-0.84px]   → --tracking-h3
+     leading-[normal]     → --lh-heading (1)
+     text-[color:var(--primary,black)]  → --color-primary
+     uppercase (Integral CF is all-caps by nature)
+   ============================================================ */
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);         /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);      /* 1 */
+  letter-spacing: var(--tracking-h3);     /* -0.84px */
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   LANGUAGES ROW
+   Confirmed: Figma node 1036:7206
+     flex items-start
+     gap-[16px]  → --gap-16 between entries
+     w-full
+   ============================================================ */
+
+.row {
+  display:     flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap:         var(--gap-16);          /* 16px between language entries */
+  width:       100%;
+}
+
+
+/* ============================================================
+   LANGUAGE ENTRY — individual language block
+   Confirmed: Figma nodes 1036:7195, 1036:7200
+     flex flex-col
+     flex-[1_0_0]  → equal-width columns (flex: 1 0 0)
+     gap-px        → --gap-1 (1px tight stack between name and proficiency)
+   ============================================================ */
+
+.entry {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-1);         /* 1px — confirmed: Figma gap-px */
+  flex:           1 0 0;                /* equal width columns */
+}
+
+
+/* ============================================================
+   LANGUAGE NAME — "ENGLISH" / "GERMAN"
+   Confirmed: Figma node 1036:7197
+     font-['Integral_CF:Regular']
+     text-[20px]     → --text-h5
+     leading-[normal] → --lh-heading (1)
+     text-black      → --color-primary
+   Integral CF is all-caps — no text-transform needed
+   ============================================================ */
+
+.language {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);        /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);     /* 1 */
+  letter-spacing: var(--tracking-h5);    /* 0 */
+  color:          var(--color-primary);
+}
+
+
+/* ============================================================
+   PROFICIENCY — "Native" / "Elementary (A1)"
+   Confirmed: Figma node 1036:7199
+     font-['Inter:Regular']
+     text-[14px]      → --text-body
+     leading-[20px]   → --lh-body
+     text-[#424242]   → --color-text-muted
+   Note: NOT uppercase — proficiency strings render in sentence case
+   ============================================================ */
+
+.proficiency {
+  font-family:    var(--font-body);
+  font-size:      var(--text-body);      /* 14px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);        /* 20px */
+  letter-spacing: var(--tracking-lead);  /* 0 */
+  color:          var(--color-text-muted);  /* #424242 — confirmed */
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   Mobile layout not yet confirmed from Figma.
+   Placeholder only — implement when mobile frames provided.
+
+   Likely change: .row to flex-col (stack vertically on small screens).
+   Do NOT implement until design is confirmed.
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* Reserved — implement when mobile layout is confirmed */
+}

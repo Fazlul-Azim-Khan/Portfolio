@@ -1,0 +1,152 @@
+/*
+ * HomeDashboardSection.tsx — Center Health (006)
+ * Confirmed from Figma node 1161:6208 (updated layout).
+ *
+ * Self-contained — does NOT use CaseStudySectionWrapper.
+ * White background, bottom border divider.
+ *
+ * Layout (updated — index-left / content-right row):
+ *
+ *   ┌── section (py-96px, border-b, items-end) ───────────────────────────────┐
+ *   │                                                                          │
+ *   │  (006)  ┌── content col (flex-1, gap-64) ────────────────────────────┐  │
+ *   │         │                                                             │  │
+ *   │         │  HEADING                                                    │  │
+ *   │         │                                    body paragraph (500px)   │  │
+ *   │         │                                                             │  │
+ *   │         │  WHAT I DESIGNED ─────────────────────────────              │  │
+ *   │         │  ┌──────┐  ┌──────┐  ┌──────┐  (3×2 grid + stars)        │  │
+ *   │         │  │  *   │  │  *   │  │  *   │                              │  │
+ *   │         │  │ Item │  │ Item │  │ Item │                              │  │
+ *   │         │  ├──────┤  ├──────┤  ├──────┤                              │  │
+ *   │         │  │  *   │  │  *   │  │  *   │                              │  │
+ *   │         │  │ Item │  │ Item │  │ Item │                              │  │
+ *   │         │  └──────┘  └──────┘  └──────┘                              │  │
+ *   │         │                                                             │  │
+ *   │         │  [full-width image]                                         │  │
+ *   │         │                                                             │  │
+ *   │         │  Results   HEADING TEXT… (H4 32px)                          │  │
+ *   │         └─────────────────────────────────────────────────────────────┘  │
+ *   └──────────────────────────────────────────────────────────────────────────┘
+ *
+ * Typography:
+ *   Index    — Inter 12px lead, --color-text-muted, uppercase
+ *   Heading  — Integral CF 56px H3, tracking -0.84px, uppercase
+ *   Body     — Inter 14px, black, line-height 20px
+ *   Label    — Integral CF 32px H4, black, uppercase
+ *   Grid *   — Integral CF 64px H2, --color-tertiary (gray)
+ *   Grid txt — Integral CF 20px H5, black
+ *   Results  — Integral CF 32px H4, black, uppercase  ← smaller than sections 004–005
+ *
+ * Server Component — no client-side interaction.
+ */
+
+import Image from 'next/image'
+import type { CenterHealthHomeDashboardSection } from '../content'
+import styles from './HomeDashboardSection.module.css'
+
+
+/* ============================================================
+   PROPS
+   ============================================================ */
+
+interface HomeDashboardSectionProps {
+  section: CenterHealthHomeDashboardSection
+}
+
+
+/* ============================================================
+   COMPONENT
+   ============================================================ */
+
+export default function HomeDashboardSection({ section }: HomeDashboardSectionProps) {
+  return (
+    <div className={styles.root}>
+
+      {/* ── Row: index (left) + content (right) ────────────── */}
+      <div className={styles.row}>
+
+        {/* Index — left column */}
+        <p className={styles.index}>{section.index}</p>
+
+        {/* Content column — heading + body + what + image + results */}
+        <div className={styles.contentCol}>
+
+          {/* ── 1. Heading ─────────────────────────────────── */}
+          <h2 className={styles.heading}>{section.heading}</h2>
+
+
+          {/* ── 2. Body paragraph — right-aligned ──────────── */}
+          {/*
+            Figma: flex row, items-center, justify-end, w-full
+            Paragraph: w-500px
+            Confirmed: Figma node 1242:11660
+          */}
+          <div className={styles.bodyRow}>
+            <p className={styles.body}>{section.body}</p>
+          </div>
+
+
+          {/* ── 3. What I Designed — H4 label + grid ───────── */}
+          {/*
+            Figma: flex-col
+            Label row: h-111px — "what i designed" H4 (flex-1) + black line (flex-1)
+            Grid: 3×2 with divider + star + title per cell
+            Confirmed: Figma node 1242:11663
+          */}
+          <div className={styles.whatBlock}>
+
+            <div className={styles.whatLabelRow}>
+              <h3 className={styles.whatLabel}>what i designed</h3>
+              <div className={styles.whatLine} aria-hidden="true" />
+            </div>
+
+            <div className={styles.featureGrid}>
+              {section.whatIDesigned.map((item, i) => (
+                <div key={i} className={styles.featureItem}>
+                  <div className={styles.featureDivider} aria-hidden="true" />
+                  <p className={styles.featureStar} aria-hidden="true">*</p>
+                  <p className={styles.featureTitle}>{item}</p>
+                </div>
+              ))}
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+      {/* ── 4. Image — outside row for full section width ──── */}
+      {/*
+        Figma: aspect-[1504/1128], rounded-sm (8px)
+        Confirmed: Figma node 1242:11699
+      */}
+      <div
+        className={styles.imageWrap}
+        style={{ aspectRatio: section.image.aspect }}
+      >
+        <Image
+          src={section.image.src}
+          alt={section.image.alt}
+          fill
+          sizes="100vw"
+          className={styles.image}
+        />
+      </div>
+
+      {/* ── 5. Results — full section width ──────────────── */}
+      {/*
+        Results text: H4 32px (NOT H3 56px as in sections 004–005).
+        Figma: flex row, gap 24px
+        Confirmed: Figma node 1242:11700
+      */}
+      <div className={styles.results}>
+        <p className={styles.resultsLabel}>Results</p>
+        <h3 className={styles.resultsHeading}>{section.resultsText}</h3>
+      </div>
+
+    </div>
+  )
+}

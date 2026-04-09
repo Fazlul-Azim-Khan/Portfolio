@@ -1,0 +1,79 @@
+/*
+ * SectionWrapper.module.css
+ * Wraps individual landing page sections.
+ *
+ * Responsibilities:
+ *   - Background color (light or dark)
+ *   - Standard vertical padding via --section-padding (64px)
+ *   - Optional rounded corners (used by Experience block)
+ *   - Full width within Container
+ *
+ * Padding philosophy:
+ *   SectionWrapper provides default padding via modifier classes.
+ *   Individual section components may override via their own className
+ *   for asymmetric cases (e.g. More Works: pt-200px pb-64px).
+ *
+ * Confirmed section padding patterns from Figma:
+ *   Hero:           py-64px      → .padded (default)
+ *   Selected Works: py-64px      → .padded (default)
+ *   More Works:     pt-200px pb-64px → overridden in GallerySection
+ *   Experience:     p-64px       → .padded + .paddedX
+ *   Languages:      p-64px       → .padded + .paddedX
+ */
+
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+.wrapper {
+  position:  relative;
+  width:     100%;
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   BACKGROUND VARIANTS
+   ============================================================ */
+
+/* Light — white background (default) */
+.light {
+  background-color: var(--color-secondary);
+  color:            var(--color-primary);
+}
+
+/* Dark — near-black background (Experience section) */
+.dark {
+  background-color: var(--color-primary);
+  color:            var(--color-secondary);
+}
+
+
+/* ============================================================
+   PADDING MODIFIERS
+   Applied as additional classes — sections opt in as needed
+   ============================================================ */
+
+/* Vertical padding — standard 64px top and bottom */
+.padded {
+  padding-top:    var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+/* Horizontal padding — used when section fills its own width
+   (e.g. Experience, Languages which use p-64px all sides) */
+.paddedX {
+  padding-left:  var(--section-padding);
+  padding-right: var(--section-padding);
+}
+
+
+/* ============================================================
+   BORDER RADIUS MODIFIER
+   Used by Experience block (rounded-[8px] in Figma node 1036:7650)
+   ============================================================ */
+
+.rounded {
+  border-radius: var(--radius-sm);
+}

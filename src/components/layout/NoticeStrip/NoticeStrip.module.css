@@ -1,0 +1,99 @@
+/*
+ * NoticeStrip.module.css
+ * Specs confirmed from Figma node 1021:6892 — "Sub"
+ *
+ * Confirmed values:
+ *   background:   #050505    → --color-notice-bg
+ *   padding-x:    64px       → --notice-padding-x
+ *   padding-y:    12px       → --notice-padding-y
+ *   font-family:  Integral CF → --font-display
+ *   font-size:    20px       → --text-h5
+ *   line-height:  100%       → --lh-heading
+ *   color:        white      → --color-secondary
+ *   text-case:    uppercase (visual — Integral CF renders all-caps naturally)
+ *   alignment:    center (items-center)
+ *   width:        full-bleed (outside Container)
+ *
+ * Placement: directly below the NavBar, outside the Container.
+ * The strip is full-width with no max-width constraint.
+ *
+ * ⚠️  Behavior TBD: marquee vs. static.
+ *     Currently built as static. A .marquee modifier class is
+ *     reserved below for future implementation without restructuring.
+ */
+
+
+/* ============================================================
+   STRIP WRAPPER
+   ============================================================ */
+
+.strip {
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+
+  width:           100%;
+  padding-top:     var(--notice-padding-y);
+  padding-bottom:  var(--notice-padding-y);
+  padding-left:    var(--notice-padding-x);
+  padding-right:   var(--notice-padding-x);
+
+  background-color: var(--color-notice-bg);
+
+  /* Prevent text selection on decorative strip */
+  user-select: none;
+}
+
+
+/* ============================================================
+   TEXT
+   ============================================================ */
+
+.text {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-secondary);
+  white-space:    nowrap;
+
+  /* Integral CF renders uppercase glyphs — no text-transform needed */
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .strip {
+    /* Reduce padding from 64px to layout edge on small screens */
+    padding-left:  var(--layout-padding-x);   /* 16px */
+    padding-right: var(--layout-padding-x);
+  }
+
+  .text {
+    /* Allow wrapping — nowrap causes overflow on mobile viewports */
+    white-space: normal;
+    text-align:  center;
+  }
+}
+
+
+/* ============================================================
+   MARQUEE MODIFIER (reserved — not active)
+   Uncomment and implement when scrolling behavior is confirmed
+   ============================================================ */
+
+/*
+.marquee .text {
+  animation: marqueeScroll 30s linear infinite;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+*/

@@ -1,0 +1,78 @@
+/*
+ * NextCaseStudyHero.module.css
+ *
+ * Normal in-flow section — "Next Case Study" preview at the end
+ * of a case study page. Click or scroll-again to navigate.
+ *
+ * No fixed positioning, no runway, no parallax.
+ */
+
+
+/* ============================================================
+   SECTION WRAPPER
+   ============================================================ */
+
+.section {
+  display:        flex;
+  flex-direction: column;
+  width:          100%;
+  padding-top:    var(--gap-64);
+  padding-bottom: var(--gap-64);
+}
+
+
+/* ============================================================
+   LABEL — "Next Case Study"
+   ============================================================ */
+
+.label {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-text-muted);
+  margin:         0;
+  padding-bottom: var(--gap-40);
+}
+
+
+/* ============================================================
+   HERO LINK — wraps CaseStudyHero
+   ============================================================ */
+
+.heroLink {
+  display:         block;
+  width:           100%;
+  text-decoration: none;
+  color:           inherit;
+  cursor:          pointer;
+  transition:      opacity 300ms ease;
+}
+
+.heroLink:hover {
+  opacity: 0.94;
+}
+
+.heroLink:focus-visible {
+  outline:        var(--focus-outline-width) solid var(--color-primary);
+  outline-offset: var(--focus-outline-offset);
+  border-radius:  var(--radius-sm);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .section {
+    padding-top:    var(--gap-40);
+    padding-bottom: var(--gap-40);
+  }
+
+  .label {
+    padding-bottom: var(--gap-24);
+  }
+}

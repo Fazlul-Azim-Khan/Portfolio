@@ -1,0 +1,212 @@
+/*
+ * Experience.module.css
+ * Specs confirmed from Figma node 1036:7650
+ *
+ * .root        — dark bg, negative-margin bleed, flex column, gap-64
+ * .heading     — Integral CF H3 56px, uppercase, white
+ * .list        — unstyled <ul>, border-bottom to close last row
+ * .row         — flex row, space-between, 29px top+bottom padding, border-top
+ * .company     — left col: Integral CF H5 20px, uppercase, white
+ * .roleBlock   — right col: flex column, gap-8
+ * .role        — Integral CF H5 20px, uppercase, white
+ * .period      — Inter Lead 12px, uppercase, --color-tertiary
+ */
+
+
+/* ============================================================
+   ROOT
+   Dark background section.
+   Negative horizontal margin + matching padding breaks out of
+   Container's --layout-padding-x (16px) so the dark bg fills
+   the container edge-to-edge.
+   Internal horizontal padding = layout-padding-x + padding-64
+   so content remains at the same inset as other sections.
+   ============================================================ */
+
+.root {
+  background:     var(--color-primary);   /* #0a0a0a — dark treatment */
+  color:          var(--color-secondary); /* white — default for all text */
+
+  /* Break out of Container's horizontal padding */
+  margin-left:  calc(-1 * var(--layout-padding-x));  /* -16px */
+  margin-right: calc(-1 * var(--layout-padding-x));  /* -16px */
+
+  /* Restore same inset as other sections (padding-x + section padding) */
+  padding-left:  calc(var(--layout-padding-x) + var(--padding-64));  /* 80px */
+  padding-right: calc(var(--layout-padding-x) + var(--padding-64));  /* 80px */
+  padding-top:    var(--padding-64);   /* 64px */
+  padding-bottom: var(--padding-64);   /* 64px */
+
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-64);  /* heading → list */
+
+  width: auto;  /* override any inherited width; let margins do the work */
+}
+
+
+/* ============================================================
+   HEADING
+   "EXPLORE MY DESIGN JOURNEY"
+   Integral CF · H3 (56px) · line-height 1 · tracking -0.84px
+   Uppercase applied via CSS — content is mixed-case in content.ts
+   Confirmed: Figma node 1036:7650
+   ============================================================ */
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);       /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);    /* 1 / 100% */
+  letter-spacing: var(--tracking-h3);  /* -0.84px */
+  text-transform: uppercase;
+  color:          var(--color-secondary);  /* white */
+  margin:         0;
+
+  /* Constrain so heading wraps at ~2 lines on design width */
+  max-width: 520px;
+}
+
+
+/* ============================================================
+   LIST
+   Unstyled <ul>, flex column implied by block stacking.
+   border-bottom closes the divider after the last row.
+   All dividers above rows are handled by border-top on .row.
+   Divider color: --color-divider-dark (#cccccc) — visible on dark bg
+   ============================================================ */
+
+.list {
+  list-style:   none;
+  margin:       0;
+  padding:      0;
+  border-bottom: 1px solid var(--color-divider-dark);  /* closing divider */
+}
+
+
+/* ============================================================
+   ROW
+   CSS Grid — two columns so every row's company and role
+   align to the same x-position regardless of text length.
+   Row padding: --space-experience-row-gap (29px) top + bottom
+   Confirmed: Figma node 1036:7718
+   ============================================================ */
+
+.row {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;   /* company col · role+period col */
+  column-gap:            var(--gap-40);
+  align-items:           start;
+
+  padding-top:    var(--space-experience-row-gap);  /* 29px */
+  padding-bottom: var(--space-experience-row-gap);  /* 29px */
+
+  /* Divider above each row */
+  border-top: 1px solid var(--color-divider-dark);  /* #cccccc */
+}
+
+
+/* ============================================================
+   COMPANY + LOCATION
+   Left column — "GB3 SERVICES LLC, SHERIDAN, WYOMING"
+   Integral CF · H5 (20px) · uppercase · white
+   Confirmed: Figma node 1036:7650
+   ============================================================ */
+
+.company {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);       /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);    /* 1 / 100% */
+  letter-spacing: var(--tracking-h5);  /* 0 */
+  text-transform: uppercase;
+  color:          var(--color-secondary);  /* white */
+  margin:         0;
+
+}
+/* Grid handles column width — no manual flex sizing needed */
+
+
+/* ============================================================
+   ROLE BLOCK
+   Right column — stacks ROLE above PERIOD
+   gap-8 between role label and period sub-label
+   ============================================================ */
+
+.roleBlock {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-8);  /* 8px — between role and period */
+  text-align:     left;
+  flex-shrink:    0;
+}
+
+
+/* ============================================================
+   ROLE
+   "PRODUCT DESIGNER & UX STRATEGIST"
+   Integral CF · H5 (20px) · uppercase · white
+   Same size as company — confirms visual parity in Figma
+   Confirmed: Figma node 1036:7650
+   ============================================================ */
+
+.role {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);       /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);    /* 1 / 100% */
+  letter-spacing: var(--tracking-h5);  /* 0 */
+  text-transform: uppercase;
+  color:          var(--color-secondary);  /* white */
+  margin:         0;
+}
+
+
+/* ============================================================
+   PERIOD
+   "FEBRUARY 2022 – PRESENT"
+   Inter · Lead (12px) · uppercase · --color-tertiary (#cccccc)
+   Lighter than role — visually secondary on dark bg
+   Confirmed: Figma node 1036:7650
+   ============================================================ */
+
+.period {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);    /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);      /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-tertiary);  /* #cccccc — muted on dark bg */
+  margin:         0;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablet — tighten horizontal padding */
+@media (max-width: 1023px) {
+  .root {
+    padding-left:  calc(var(--layout-padding-x) + var(--gap-40));
+    padding-right: calc(var(--layout-padding-x) + var(--gap-40));
+  }
+}
+
+/* Mobile — stack all three fields vertically, left-aligned */
+@media (max-width: 767px) {
+  .root {
+    padding-left:  var(--layout-padding-x);
+    padding-right: var(--layout-padding-x);
+  }
+
+  .row {
+    grid-template-columns: 1fr;   /* single column — everything stacks */
+    gap:                   var(--gap-8);
+  }
+
+  .roleBlock {
+    gap: var(--gap-8);
+  }
+}

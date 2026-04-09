@@ -1,0 +1,371 @@
+/*
+ * AriaSection.module.css — Center Health (007)
+ * Confirmed from Figma node 1161:6257.
+ *
+ * Index-left / content-right row pattern.
+ * Content column holds: heading + body (right) + sub-sections + results.
+ * Two sub-sections: Chat & Feed (with features) and Notification System.
+ * Bottom border divider.
+ */
+
+
+/* ============================================================
+   ROOT — outer section container
+   Figma: flex-col, py-96px, border-b, items-start
+   ============================================================ */
+
+.root {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  gap:            var(--gap-64);
+  padding-top:    var(--gap-64);
+  padding-bottom: var(--gap-64);
+  border-bottom:  1px solid var(--color-divider);
+  width:          100%;
+}
+
+
+/* ============================================================
+   ROW — index (left) + content (right)
+   Figma: flex row, gap-48, items-start, w-full
+   ============================================================ */
+
+.row {
+  display:     flex;
+  align-items: flex-start;
+  gap:         var(--gap-40);
+  width:       100%;
+}
+
+
+/* ============================================================
+   INDEX — left column
+   Figma: Inter 14px (Product Sans Bold in Figma → adapted to Inter lead)
+   #424242, uppercase, shrink-0
+   ============================================================ */
+
+.index {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);        /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-text-muted);
+  white-space:    nowrap;
+  flex-shrink:    0;
+  margin:         0;
+  padding-top:    6px;   /* optical cap-height alignment */
+}
+
+
+/* ============================================================
+   CONTENT COLUMN — heading + body + sub-sections + results
+   Figma: flex-col, flex-1, gap-10px, items-center, justify-center
+   ============================================================ */
+
+.contentCol {
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+  gap:             var(--gap-64);
+
+  flex:            1 0 0;
+  min-width:       0;
+}
+
+
+/* ============================================================
+   HEADING
+   Figma: Integral CF, 56px, tracking -0.84px, black, uppercase
+   pre-wrap for the line break in "ARIA:\ngiving the platform…"
+   ============================================================ */
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h3);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+  width:          100%;
+  white-space:    pre-wrap;
+}
+
+
+/* ============================================================
+   BODY ROW — right-aligned paragraph
+   Figma: flex row, items-center, justify-end, w-full
+   ============================================================ */
+
+.bodyRow {
+  display:         flex;
+  align-items:     center;
+  justify-content: flex-end;
+  width:           100%;
+}
+
+.body {
+  font-family:  var(--font-body);
+  font-size:    14px;
+  font-weight:  var(--weight-regular);
+  line-height:  var(--lh-body);
+  color:        var(--color-primary);
+  width:        392px;              /* Figma: w-[392px] */
+  max-width:    100%;
+  margin:       0;
+}
+
+
+/* ============================================================
+   SUB-SECTION — wrapper for each ARIA sub-area
+   Figma: flex-col, gap-64, items-start, w-full
+   ============================================================ */
+
+.subSection {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  gap:            var(--gap-64);
+  width:          100%;
+}
+
+
+/* ============================================================
+   SUB-HEADING ROW
+   Figma: flex row, items-start, justify-between, py-64, w-full
+   ============================================================ */
+
+.subHeadingRow {
+  display:         flex;
+  align-items:     flex-start;
+  justify-content: space-between;
+  padding-top:     var(--gap-64);
+  padding-bottom:  var(--gap-64);
+  width:           100%;
+}
+
+.subHeading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h3);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+/* Left-aligned: flex-1 */
+.subHeadingLeft {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+/* Right-aligned: fixed width, text-right */
+.subHeadingRight {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   FEATURE ITEMS — flex row, gap-40 (Chat & Feed only)
+   Figma: flex row, gap-40, h-103px (not hardcoded), items-start
+   Each item: flex-1, flex-col, gap-6.66px, divider + H5 title
+   No stars in this section.
+   ============================================================ */
+
+.featureRow {
+  display:     flex;
+  align-items: flex-start;
+  gap:         var(--gap-40);
+  width:       100%;
+}
+
+.featureItem {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  gap:            7px;             /* Figma: gap-6.66px ≈ 7px */
+  flex:           1 0 0;
+  min-width:      0;
+}
+
+.featureDivider {
+  width:            100%;
+  height:           1px;
+  background-color: #e5e5e5;     /* Figma: bg-[#e5e5e5] */
+  flex-shrink:      0;
+}
+
+.featureTitle {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);    /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-primary);
+  margin:         0;
+  width:          100%;
+}
+
+
+/* ============================================================
+   IMAGE — full-width, aspect ratio from content
+   ============================================================ */
+
+.imageWrap {
+  position: relative;
+  width:    100%;
+}
+
+.imageRounded {
+  border-radius: var(--radius-sm);
+  overflow:      hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   RESULTS — row: "Results" H5 + H4 statement
+   Figma: flex row, gap 24px
+   ============================================================ */
+
+.results {
+  display:     flex;
+  align-items: flex-start;
+  gap:         var(--gap-24);
+  width:       100%;
+}
+
+.resultsLabel {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);        /* 12px — Lead typography */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  color:          var(--color-primary);
+  white-space:    nowrap;
+  flex-shrink:    0;
+  margin:         0;
+}
+
+/* H4 32px — same scale as sections 006/008 */
+.resultsHeading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h4);          /* 20px → 32px fluid */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h4);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  flex:           1 0 0;
+  min-width:      0;
+  margin:         0;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .root {
+    padding-top:    var(--padding-40);
+    padding-bottom: var(--padding-40);
+  }
+
+  /* Stack index above content on mobile */
+  .row {
+    flex-direction: column;
+    gap:            var(--gap-16);
+  }
+
+  .index {
+    padding-top: 0;
+  }
+
+  .contentCol {
+    gap: var(--gap-24);
+  }
+
+  /* Body: full-width on mobile */
+  .bodyRow {
+    justify-content: flex-start;
+  }
+
+  .body {
+    width: 100%;
+  }
+
+  /* Sub-section: tighter gap */
+  .subSection {
+    gap: var(--gap-40);
+  }
+
+  .subHeadingRow {
+    padding-top:    var(--gap-40);
+    padding-bottom: var(--gap-40);
+  }
+
+  /* Right-aligned heading: full-width on mobile */
+  .subHeadingRight {
+    text-align: left;
+    width:      100%;
+  }
+
+  /* Feature items: stack on mobile */
+  .featureRow {
+    flex-direction: column;
+    gap:            var(--gap-24);
+  }
+
+  /* Results: stack vertically */
+  .results {
+    flex-direction: column;
+    gap:            var(--gap-16);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contentCol {
+    width: 100%;
+  }
+
+  .body {
+    width: 100%;
+    max-width: 392px;
+  }
+
+  /* Feature items: wrap on tablet */
+  .featureRow {
+    flex-wrap: wrap;
+  }
+
+  .featureItem {
+    min-width: 200px;
+  }
+}
+
+
+/* ============================================================
+   SCREEN-BLOCK RHYTHM — breathing room for slow reading
+   Desktop / tablet only. Each Contents block and Results block
+   gets min-height: 80vh so each feels like its own screen.
+   Content stays pinned to the top of the block (natural flow).
+   ============================================================ */
+
+@media (min-width: 768px) {
+  .row,
+  .results {
+    min-height: var(--screen-block-min-h);
+  }
+}

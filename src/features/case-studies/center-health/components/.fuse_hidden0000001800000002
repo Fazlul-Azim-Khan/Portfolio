@@ -1,0 +1,299 @@
+/*
+ * DesignSystemSection.module.css — Center Health (003)
+ * Confirmed from Figma node 1161:5872 (updated layout).
+ *
+ * Index-left / content-right row pattern.
+ * Content column holds: heading row + feature grid + demo card + results.
+ */
+
+
+/* ============================================================
+   ROOT — outer section container
+   Figma: flex-col, gap-0, py-96px, w-full
+   ============================================================ */
+
+.root {
+  display:        flex;
+  flex-direction: column;
+  padding-top:    var(--gap-64);
+  padding-bottom: var(--gap-64);
+  width:          100%;
+}
+
+
+/* ============================================================
+   ROW — index (left) + content (right)
+   Figma: flex row, gap-48, items-start, w-full
+   ============================================================ */
+
+.row {
+  display:     flex;
+  align-items: flex-start;
+  gap:         48px;     /* Figma: gap-[48px] */
+  width:       100%;
+}
+
+
+/* ============================================================
+   INDEX — left column
+   Figma: Inter 12px, #424242, uppercase, shrink-0
+   ============================================================ */
+
+.index {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);    /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-text-muted);
+  white-space:    nowrap;
+  margin:         0;
+  padding-top:    6px;   /* optical cap-height alignment with 56px heading */
+  flex-shrink:    0;
+}
+
+
+/* ============================================================
+   CONTENT COLUMN — heading row + features + demo + results
+   Figma: flex-col, gap-64, items-start, w-1328px
+   ============================================================ */
+
+.contentCol {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  gap:            var(--gap-64);
+
+  width:          1328px;        /* Figma: w-[1328px] */
+  max-width:      100%;
+  flex-shrink:    0;
+}
+
+
+/* ============================================================
+   HEADING ROW — heading + sidebar text
+   Figma: flex row, gap-48, uppercase, pre-wrap
+   ============================================================ */
+
+.headingRow {
+  display:     flex;
+  align-items: flex-start;
+  gap:         48px;
+  width:       100%;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);          /* 56px desktop */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h3);      /* -0.84px */
+  color:          var(--color-primary);
+  flex:           1 0 0;
+  min-width:      0;
+  margin:         0;
+  white-space:    pre-wrap;
+}
+
+.sideText {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);    /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  color:          var(--color-primary);
+  width:          226px;   /* Figma: w-[226px] */
+  flex-shrink:    0;
+  margin:         0;
+  white-space:    pre-wrap;
+}
+
+
+/* ============================================================
+   FEATURE GRID — 3 columns × 2 rows
+   Figma: grid-cols-[repeat(3,1fr)], gap 24px
+   ============================================================ */
+
+.featureGrid {
+  display:               grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:                   var(--gap-24);
+  width:                 100%;
+}
+
+.featureItem {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+}
+
+.featureDivider {
+  width:            100%;
+  height:           1px;
+  background-color: var(--color-tertiary);   /* #ccc */
+  flex-shrink:      0;
+}
+
+.featureStar {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h2);           /* 64px — decorative bullet */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h2);       /* -0.4px */
+  color:          var(--color-tertiary);    /* #ccc — muted gray */
+  margin:         0;
+  padding-top:    4px;
+}
+
+.featureTitle {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);           /* 20px desktop */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h5);       /* 0 */
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   DEMO CARD — stacked images on off-white background
+   Figma: bg #fafafa, padding 16px, radius 8px, gap 24px
+   ============================================================ */
+
+.demoCard {
+  display:          flex;
+  flex-direction:   column;
+  gap:              var(--gap-24);
+  padding:          var(--padding-16);
+  background-color: #fafafa;
+  border-radius:    var(--radius-sm);
+  width:            100%;
+}
+
+/* Each image container — uses aspect-ratio when provided */
+.demoImageWrap {
+  position:      relative;
+  width:         100%;
+  border-radius: var(--radius-sm);
+  overflow:      hidden;
+  min-height:    200px;
+}
+
+/* When aspect-ratio is set via inline style, let it drive the height */
+.demoImageWrap[style*="aspect-ratio"] {
+  min-height: unset;
+}
+
+.demoImage {
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   RESULTS — label + large heading
+   Figma: flex row, gap 24px
+   ============================================================ */
+
+.results {
+  display:     flex;
+  align-items: flex-start;
+  gap:         var(--gap-24);
+  width:       100%;
+}
+
+.resultsLabel {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);        /* 12px — Lead typography */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  color:          var(--color-primary);
+  white-space:    nowrap;
+  flex-shrink:    0;
+  margin:         0;
+}
+
+.resultsHeading {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);        /* 12px — Lead typography */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  flex:           1 0 0;
+  min-width:      0;
+  margin:         0;
+  white-space:    pre-wrap;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .root {
+    padding-top:    var(--padding-40);
+    padding-bottom: var(--padding-40);
+  }
+
+  /* Stack index above content on mobile */
+  .row {
+    flex-direction: column;
+    gap:            var(--gap-16);
+  }
+
+  .index {
+    padding-top: 0;
+  }
+
+  .contentCol {
+    width: 100%;
+    gap:   var(--gap-40);
+  }
+
+  /* Heading row: stack heading above sidebar */
+  .headingRow {
+    flex-direction: column;
+    gap:            var(--gap-16);
+  }
+
+  .sideText {
+    width: 100%;
+  }
+
+  /* Features: single column on mobile */
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Results: stack label above heading */
+  .results {
+    flex-direction: column;
+    gap:            var(--gap-16);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contentCol {
+    width: 100%;
+  }
+
+  .featureGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .headingRow {
+    flex-wrap: wrap;
+  }
+
+  .sideText {
+    width: auto;
+    min-width: 180px;
+  }
+}

@@ -1,0 +1,148 @@
+/*
+ * SelectedWorks.module.css
+ * Specs confirmed from Figma node 966:7565
+ *
+ * .root        — flex column, padding-y: --padding-64, gap: --gap-40
+ * .header      — three-zone flex row: index · heading · count
+ * .headerIndex — Inter 12px uppercase, --color-tertiary
+ * .headerHeading — Integral CF 56px H3, --color-primary
+ * .headerCount — Inter 12px uppercase, --color-primary, margin-left: auto
+ * .divider     — 1px horizontal rule, --color-divider
+ * .cardsList   — flex column, gap: --space-works-gap (256px)
+ */
+
+
+/* ============================================================
+   ROOT
+   Full-width flex column
+   padding-y: --padding-64 confirmed: Figma node 966:7565
+   gap-40: between header area and cards list
+   ============================================================ */
+
+.root {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-40);
+
+  padding-top:    var(--padding-64);
+  padding-bottom: var(--padding-64);
+
+  width: 100%;
+}
+
+
+/* ============================================================
+   SECTION HEADER ROW
+   Three zones — index · heading · count
+   align-items: baseline — index and count sit on H3 baseline
+   Confirmed: Figma nodes 966:7566–7570
+   ============================================================ */
+
+.header {
+  display:        flex;
+  flex-direction: row;
+  align-items:    baseline;
+  width:          100%;
+  gap:            var(--gap-16);
+}
+
+/* INDEX — "(002)" · Inter 12px uppercase · --color-tertiary */
+.headerIndex {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);    /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);      /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-tertiary);
+  flex-shrink:    0;
+  margin:         0;
+}
+
+/* HEADING — "Selected Works" · Integral CF 56px H3 · --color-primary */
+.headerHeading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);      /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);   /* 1 / 100% */
+  letter-spacing: var(--tracking-h3);  /* -0.84px */
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+  flex:           1;
+}
+
+/* COUNT — "3 Case Studies" · Inter 12px uppercase · --color-primary */
+.headerCount {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);    /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);      /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  flex-shrink:    0;
+  margin-left:    auto;
+  margin-top:     0;
+  margin-bottom:  0;
+}
+
+
+/* ============================================================
+   DIVIDER
+   1px horizontal rule below the header
+   Confirmed: Figma node 1021:6896 — bg-[#e5e5e5] h-px w-full
+   ============================================================ */
+
+.divider {
+  width:      100%;
+  height:     1px;
+  background: var(--color-divider);   /* #e5e5e5 */
+  border:     none;
+  margin:     0;
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   CARDS LIST
+   Single column, gap: --space-works-gap (256px)
+   Confirmed: Figma node 966:7565
+   ============================================================ */
+
+.cardsList {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-works-gap);  /* 256px */
+  width:          100%;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .cardsList {
+    gap: var(--padding-64);   /* 64px — 256px is excessive on tablet */
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .cardsList {
+    gap: var(--gap-40);       /* 40px between stacked cards on mobile */
+  }
+
+  .header {
+    flex-wrap:  wrap;
+    row-gap:    var(--gap-8);
+  }
+
+  /* Push count to its own line on very narrow viewports */
+  .headerCount {
+    margin-left: 0;
+    flex-basis:  100%;
+  }
+}

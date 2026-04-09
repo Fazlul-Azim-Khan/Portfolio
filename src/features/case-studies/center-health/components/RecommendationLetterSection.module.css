@@ -1,0 +1,279 @@
+/*
+ * RecommendationLetterSection.module.css — Center Health (016)
+ * UI adapted from Axion Ray ClientFeedback aesthetic (dark card).
+ *
+ * .section     — dark card: bg-primary, p-64, rounded-8, min-h-800, centered
+ * .heading     — H1 120px Integral CF, white, uppercase
+ * .card        — Center Health blue (#1ab1fe) quote card, clickable
+ * .attribution — right-aligned, H5 Integral CF, white
+ *
+ * Modal: reuses MoreWork pattern (overlay + close + iframe)
+ */
+
+
+/* ============================================================
+   SECTION — full-width dark card
+   Adapted from Axion Ray ClientFeedback section
+   ============================================================ */
+
+.section {
+  display:         flex;
+  flex-direction:  column;
+  gap:             var(--gap-64);
+  padding:         var(--padding-64);
+  background:      var(--color-primary);   /* dark / black */
+  border-radius:   var(--radius-sm);       /* 8px */
+  min-height:      800px;
+  justify-content: center;
+  width:           100%;
+}
+
+
+/* ============================================================
+   HEADING — "Recommendation Letter"
+   H1 120px Integral CF · white · uppercase
+   ============================================================ */
+
+.headingBlock {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+}
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h1);              /* 120px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-h1);                /* 120px */
+  letter-spacing: var(--tracking-case-hero);   /* -1.8px */
+  text-transform: uppercase;
+  color:          var(--color-secondary);       /* white */
+  margin:         0;
+  white-space:    nowrap;
+}
+
+
+/* ============================================================
+   QUOTE CARD — Center Health blue, clickable
+   Single card (not 3 like Axion), contains the pull-quote.
+   Click opens PDF modal.
+   ============================================================ */
+
+.card {
+  background:      #1ab1fe;                /* Center Health brand blue */
+  width:           100%;
+  min-height:      232px;
+  display:         flex;
+  flex-direction:  column;
+  justify-content: center;
+  gap:             var(--gap-16);
+  padding:         32px 40px;
+  border-radius:   var(--radius-sm);       /* 8px */
+
+  /* Reset button chrome */
+  border:          none;
+  text-align:      left;
+  cursor:          pointer;
+}
+
+.card:hover {
+  background: #15a3ec;
+  transition: background var(--transition-fast);
+}
+
+.card:focus-visible {
+  outline:        var(--focus-outline-width) solid var(--color-secondary);
+  outline-offset: var(--focus-outline-offset);
+  border-radius:  var(--radius-sm);
+}
+
+.quoteText {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);          /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);       /* 1 */
+  text-transform: uppercase;
+  color:          var(--color-primary);    /* black on blue */
+  margin:         0;
+}
+
+.quoteHint {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);        /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);          /* 20px */
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+  opacity:        0.5;
+}
+
+
+/* ============================================================
+   ATTRIBUTION — right-aligned below the card
+   ============================================================ */
+
+.attribution {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-end;
+  width:          100%;
+}
+
+.attributionText {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);          /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  text-transform: uppercase;
+  color:          var(--color-secondary);  /* white */
+  margin:         0;
+  white-space:    nowrap;
+}
+
+
+/* ============================================================
+   MODAL — OVERLAY
+   ============================================================ */
+
+.modalOverlay {
+  position:        fixed;
+  inset:           0;
+  z-index:         var(--z-modal);
+  background:      rgba(10, 10, 10, 0.92);
+
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  padding:         var(--gap-40);
+}
+
+
+/* ============================================================
+   MODAL — PANEL
+   ============================================================ */
+
+.modalPanel {
+  position:       relative;
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-16);
+
+  width:          100%;
+  max-width:      900px;
+}
+
+
+/* ============================================================
+   MODAL — CLOSE BUTTON
+   ============================================================ */
+
+.modalClose {
+  position:    absolute;
+  top:         -48px;
+  right:       0;
+
+  background:  transparent;
+  border:      none;
+  padding:     var(--gap-8);
+  cursor:      pointer;
+  line-height: 1;
+
+  font-family: var(--font-body);
+  font-size:   24px;
+  color:       var(--color-secondary);
+
+  transition:  opacity var(--transition-fast);
+}
+
+.modalClose:hover {
+  opacity: 0.72;
+}
+
+.modalClose:focus-visible {
+  outline:        var(--focus-outline-width) solid var(--color-secondary);
+  outline-offset: var(--focus-outline-offset);
+  border-radius:  var(--radius-sm);
+}
+
+
+/* ============================================================
+   MODAL — PDF VIEWER
+   ============================================================ */
+
+.modalPdfWrap {
+  position:       relative;
+  width:          100%;
+  height:         85vh;
+  background:     var(--color-secondary);
+  border-radius:  var(--radius-sm);
+  overflow:       hidden;
+}
+
+.modalPdfIframe {
+  width:  100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* ============================================================
+   MODAL — CAPTION
+   ============================================================ */
+
+.modalCaption {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-secondary);
+  margin:         0;
+  text-align:     center;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1023px) {
+  .heading {
+    font-size:    72px;
+    line-height:  72px;
+    white-space:  normal;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding:    var(--padding-40) var(--layout-padding-x);
+    min-height: unset;
+    gap:        var(--gap-40);
+  }
+
+  .heading {
+    font-size:   40px;
+    line-height: 40px;
+    white-space: normal;
+  }
+
+  .card {
+    min-height: 140px;
+    padding:    24px;
+  }
+
+  .attributionText {
+    white-space: normal;
+    text-align:  left;
+  }
+
+  .modalOverlay {
+    padding: var(--gap-16);
+  }
+
+  .modalPdfWrap {
+    height: 75vh;
+  }
+}

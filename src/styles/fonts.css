@@ -1,0 +1,138 @@
+/*
+ * fonts.css
+ * @font-face declarations for self-hosted typefaces
+ *
+ * Integral CF — all 12 weights/styles
+ * Font files location: /public/fonts/
+ *
+ * Note: Integral CF is used at font-weight: 400 (Regular) in Figma
+ * for all display sizes. Additional weights are available for future use.
+ *
+ * Inter is loaded via next/font/google in layout.tsx — not declared here.
+ */
+
+
+/* ============================================================
+   INTEGRAL CF — REGULAR
+   ============================================================ */
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/fonts/IntegralCF-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/fonts/IntegralCF-RegularOblique.otf') format('opentype');
+  font-weight: 400;
+  font-style: oblique;
+  font-display: swap;
+}
+
+
+/* ============================================================
+   INTEGRAL CF — MEDIUM
+   ============================================================ */
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/fonts/IntegralCF-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/fonts/IntegralCF-MediumOblique.otf') format('opentype');
+  font-weight: 500;
+  font-style: oblique;
+  font-display: swap;
+}
+
+
+/* ============================================================
+   INTEGRAL CF — DEMI BOLD
+   ============================================================ */
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/fonts/IntegralCF-DemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/fonts/IntegralCF-DemiBoldOblique.otf') format('opentype');
+  font-weight: 600;
+  font-style: oblique;
+  font-display: swap;
+}
+
+
+/* ============================================================
+   INTEGRAL CF — BOLD
+   ============================================================ */
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/fonts/IntegralCF-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/fonts/IntegralCF-BoldOblique.otf') format('opentype');
+  font-weight: 700;
+  font-style: oblique;
+  font-display: swap;
+}
+
+
+/* ============================================================
+   INTEGRAL CF — EXTRA BOLD
+   ============================================================ */
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/fonts/IntegralCF-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/fonts/IntegralCF-ExtraBoldOblique.otf') format('opentype');
+  font-weight: 800;
+  font-style: oblique;
+  font-display: swap;
+}
+
+
+/* ============================================================
+   INTEGRAL CF — HEAVY
+   ============================================================ */
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/fonts/IntegralCF-Heavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('/fonts/IntegralCF-HeavyOblique.otf') format('opentype');
+  font-weight: 900;
+  font-style: oblique;
+  font-display: swap;
+}

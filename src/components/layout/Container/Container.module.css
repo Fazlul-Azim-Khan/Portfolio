@@ -1,0 +1,32 @@
+/*
+ * Container.module.css
+ * Specs confirmed from Figma node 1021:6891 — "Body" wrapper
+ *
+ * Confirmed values:
+ *   max-width:    1920px   → --layout-max-width
+ *   padding-x:    16px     → --layout-padding-x
+ *   width:        100%
+ *   flex-dir:     column
+ *   align-items:  start
+ *
+ * This is the single structural wrapper that constrains all page content.
+ * The NoticeStrip and NavBar are placed OUTSIDE this container (full bleed).
+ * Everything from Hero downward lives inside it.
+ */
+
+.container {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+
+  width:          100%;
+  max-width:      var(--layout-max-width);
+  padding-left:   var(--layout-padding-x);
+  padding-right:  var(--layout-padding-x);
+
+  /* Center within the page when viewport exceeds max-width */
+  margin-left:  auto;
+  margin-right: auto;
+
+  position: relative;
+}

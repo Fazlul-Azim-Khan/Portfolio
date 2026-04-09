@@ -1,0 +1,348 @@
+/*
+ * MoreWork.module.css
+ * Specs confirmed from Figma node 1021:6995
+ *
+ * .root         — flex column, padding-top: --space-more-pt (200px), padding-bottom: --padding-64
+ * .header       — two-zone flex row: index · heading (no count — confirmed)
+ * .headerIndex  — Inter 12px uppercase, --color-tertiary
+ * .headerHeading— Integral CF 56px H3, --color-primary
+ * .divider      — 1px horizontal rule, --color-divider
+ * .grid         — CSS Grid, 3 columns, gap-x: --space-gallery-gap-x (40px), gap-y: --space-gallery-gap-y (80px)
+ * .card         — flex column, gap-8, cursor pointer, text-align left, no button chrome
+ * .cardLarge    — image wrap modifier (Groceries, Karaoke)
+ * .cardImageWrap— aspect-ratio: --aspect-gallery-card, overflow hidden, radius --radius-sm
+ * .cardImage    — object-fit: cover, object-position: center
+ * .cardTitle    — Integral CF 20px H5, --color-primary, uppercase
+ *
+ * Modal:
+ * .modalOverlay — position fixed, inset 0, z-index --z-modal, dark bg, flex center
+ * .modalPanel   — relative, max-width 1100px, flex column, gap-16
+ * .modalClose   — absolute, top -48px right 0, text button, --color-secondary (white)
+ * .modalImageWrap — relative, width 100%, height 70vh
+ * .modalImage   — object-fit: contain
+ * .modalCaption — Inter 12px uppercase, --color-secondary
+ */
+
+
+/* ============================================================
+   ROOT
+   Full-width flex column
+   padding-top: --space-more-pt (200px) — Figma node 1021:6995
+   padding-bottom: --padding-64 — consistent with other sections
+   gap-40: between each stacked element (header / divider / grid)
+   ============================================================ */
+
+.root {
+  display:         flex;
+  flex-direction:  column;
+  gap:             var(--gap-40);
+
+  padding-top:     var(--space-more-pt);    /* 200px — Figma node 1021:6995 */
+  padding-bottom:  var(--padding-64);
+
+  width: 100%;
+}
+
+
+/* ============================================================
+   SECTION HEADER ROW
+   Two zones — index · heading (no count on right — confirmed)
+   align-items: baseline — index sits on H3 baseline
+   Confirmed: Figma node 1021:6995
+   ============================================================ */
+
+.header {
+  display:        flex;
+  flex-direction: row;
+  align-items:    baseline;
+  width:          100%;
+  gap:            var(--gap-16);
+}
+
+/* INDEX — "(003)" · Inter 12px uppercase · --color-tertiary */
+.headerIndex {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);    /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);      /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-tertiary);
+  flex-shrink:    0;
+  margin:         0;
+}
+
+/* HEADING — "More glimpse of works" · Integral CF 56px H3 · --color-primary */
+.headerHeading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);      /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);   /* 1 / 100% */
+  letter-spacing: var(--tracking-h3);  /* -0.84px */
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+  flex:           1;
+}
+
+
+/* ============================================================
+   DIVIDER
+   1px horizontal rule below the header
+   Mirrors SelectedWorks divider — same token
+   ============================================================ */
+
+.divider {
+  width:       100%;
+  height:      1px;
+  background:  var(--color-divider);   /* #e5e5e5 */
+  border:      none;
+  margin:      0;
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   GALLERY GRID
+   3 columns × 4 rows = 12 items
+   column-gap: --space-gallery-gap-x (40px) — Figma node 1021:6995
+   row-gap:    --space-gallery-gap-y (80px) — Figma node 1021:6995
+   ============================================================ */
+
+.grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap:            var(--space-gallery-gap-x);  /* 40px */
+  row-gap:               var(--space-gallery-gap-y);  /* 80px */
+  width:                 100%;
+}
+
+
+/* ============================================================
+   GALLERY CARD
+   Unstyled button — flex column, image + title
+   gap-8 between image wrap and title
+   Confirmed: Figma node 1021:7092
+   ============================================================ */
+
+.card {
+  display:         flex;
+  flex-direction:  column;
+  gap:             var(--gap-8);
+
+  /* Reset button chrome */
+  background:      transparent;
+  border:          none;
+  padding:         0;
+  margin:          0;
+  cursor:          pointer;
+  text-align:      left;
+  width:           100%;
+}
+
+/* Hover — subtle image opacity shift, matching WorkCard */
+.card:hover .cardImage {
+  opacity:    0.88;
+  transition: opacity var(--transition-base);
+}
+
+.card:focus-visible .cardImageWrap {
+  outline:        var(--focus-outline-width) solid var(--color-primary);
+  outline-offset: var(--focus-outline-offset);
+}
+
+
+/* ============================================================
+   CARD IMAGE WRAP
+   Aspect-ratio container — clips the fill image
+   Default radius: --radius-sm (8px)
+   Radius: --radius-sm (8px) — project-wide single radius
+   Confirmed: Figma node 1021:7092
+   ============================================================ */
+
+.cardImageWrap {
+  position:      relative;
+  width:         100%;
+  aspect-ratio:  var(--aspect-gallery-card);  /* 410.667 / 326 */
+  border-radius: var(--radius-sm);            /* 8px — default */
+  overflow:      hidden;
+  background:    var(--color-divider);        /* placeholder while loading */
+  flex-shrink:   0;
+}
+
+/* Large radius modifier — Groceries, Karaoke cards */
+.cardLarge .cardImageWrap {
+  border-radius: var(--radius-sm);            /* 8px */
+}
+
+.cardImage {
+  object-fit:      cover;
+  object-position: center;
+  transition:      opacity var(--transition-base);
+}
+
+
+/* ============================================================
+   CARD TITLE
+   Integral CF 20px H5 · --color-primary · uppercase
+   Confirmed: Figma node 1021:7092
+   ============================================================ */
+
+.cardTitle {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);      /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);   /* 1 / 100% */
+  letter-spacing: var(--tracking-h5);  /* 0 */
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   MODAL — OVERLAY
+   Full-viewport fixed overlay
+   z-index: --z-modal (200) — above nav (100)
+   Dark semi-opaque background
+   Click outside panel to close
+   ============================================================ */
+
+.modalOverlay {
+  position:        fixed;
+  inset:           0;
+  z-index:         var(--z-modal);
+  background:      rgba(10, 10, 10, 0.92);
+
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  padding:         var(--gap-40);
+}
+
+
+/* ============================================================
+   MODAL — PANEL
+   Centred content box: close button + image + caption
+   Max-width caps at 1100px for large screens
+   Position relative for close button placement
+   ============================================================ */
+
+.modalPanel {
+  position:       relative;
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-16);
+
+  width:          100%;
+  max-width:      1100px;
+}
+
+
+/* ============================================================
+   MODAL — CLOSE BUTTON
+   Absolute — sits above the panel top-right
+   Unstyled, white text to appear on dark overlay
+   ============================================================ */
+
+.modalClose {
+  position:    absolute;
+  top:         -48px;
+  right:       0;
+
+  /* Reset button chrome */
+  background:  transparent;
+  border:      none;
+  padding:     var(--gap-8);
+  cursor:      pointer;
+  line-height: 1;
+
+  /* Typography */
+  font-family: var(--font-body);
+  font-size:   24px;
+  color:       var(--color-secondary);  /* white */
+
+  transition:  opacity var(--transition-fast);
+}
+
+.modalClose:hover {
+  opacity: 0.72;
+}
+
+.modalClose:focus-visible {
+  outline:        var(--focus-outline-width) solid var(--color-secondary);
+  outline-offset: var(--focus-outline-offset);
+  border-radius:  var(--radius-sm);
+}
+
+
+/* ============================================================
+   MODAL — IMAGE WRAP
+   Fixed 70vh height — object-fit: contain shows full image
+   with letterboxing so nothing is cropped
+   ============================================================ */
+
+.modalImageWrap {
+  position: relative;
+  width:    100%;
+  height:   70vh;
+}
+
+.modalImage {
+  object-fit:      contain;
+  object-position: center;
+}
+
+
+/* ============================================================
+   MODAL — CAPTION
+   Inter 12px uppercase · --color-secondary (white on dark overlay)
+   ============================================================ */
+
+.modalCaption {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);    /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);      /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-secondary);  /* white */
+  margin:         0;
+  text-align:     center;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablet — 2 columns */
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--gap-24);
+    row-gap:    var(--gap-40);
+  }
+
+  .root {
+    padding-top: var(--padding-64);
+  }
+}
+
+/* Mobile — single column, full width, cards stack vertically */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+    row-gap: var(--gap-40);
+  }
+
+  .root {
+    padding-top: var(--gap-40);
+  }
+
+  .header {
+    flex-direction: column;
+    gap: var(--gap-8);
+    align-items: flex-start;
+  }
+}

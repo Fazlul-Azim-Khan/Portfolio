@@ -1,0 +1,194 @@
+/*
+ * Contact.module.css
+ *
+ * ⚠️  STUB — Contact section not yet designed in Figma.
+ *     All values use established tokens and patterns from the design system.
+ *     Update to match Figma when design is provided.
+ *
+ * .root       — dark bg, negative-margin bleed, flex column, gap-64, padding-64
+ * .body       — flex column, gap-64: heading + emailLink
+ * .heading    — Integral CF H3 56px, uppercase, white
+ * .emailLink  — Integral CF H4 32px, uppercase, white, hover opacity
+ * .divider    — 1px --color-divider-dark, separates body from footer bar
+ * .footer     — flex row space-between, align-items center
+ * .brand      — Integral CF H5 20px, uppercase, white
+ * .copyright  — Inter Lead 12px, --color-tertiary
+ */
+
+
+/* ============================================================
+   ROOT
+   Dark background — same treatment as Experience section.
+   Negative horizontal margin + matching padding breaks out of
+   Container's --layout-padding-x (16px) so dark bg fills
+   the container edge-to-edge.
+   ============================================================ */
+
+.root {
+  background:     var(--color-primary);    /* #0a0a0a — dark treatment */
+  color:          var(--color-secondary);  /* white — default for all text */
+
+  /* Break out of Container's horizontal padding */
+  margin-left:  calc(-1 * var(--layout-padding-x));  /* -16px */
+  margin-right: calc(-1 * var(--layout-padding-x));  /* -16px */
+
+  /* Restore same inset as other sections */
+  padding-left:  calc(var(--layout-padding-x) + var(--padding-64));  /* 80px */
+  padding-right: calc(var(--layout-padding-x) + var(--padding-64));  /* 80px */
+  padding-top:    var(--padding-64);   /* 64px */
+  padding-bottom: var(--padding-64);   /* 64px */
+
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-64);   /* body → divider → footer */
+
+  width: auto;
+}
+
+
+/* ============================================================
+   BODY
+   Heading + email CTA block
+   gap-64 gives generous breathing room between the two
+   ⚠️  Layout is a stub — adjust gap/alignment to Figma when provided
+   ============================================================ */
+
+.body {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-64);   /* heading → emailLink */
+}
+
+
+/* ============================================================
+   HEADING
+   "GET IN TOUCH"
+   Integral CF · H3 (56px) · line-height 1 · tracking -0.84px
+   Uppercase via CSS — content is mixed-case in content.ts
+   ⚠️  Stub — update size/layout to Figma when provided
+   ============================================================ */
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);      /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);   /* 1 / 100% */
+  letter-spacing: var(--tracking-h3); /* -0.84px */
+  text-transform: uppercase;
+  color:          var(--color-secondary);  /* white */
+  margin:         0;
+}
+
+
+/* ============================================================
+   EMAIL LINK
+   "fazlul.azim.khan@gmail.com ↗"
+   Integral CF · H4 (32px) · uppercase · white
+   mailto: href — keyboard-navigable, hover opacity transition
+   ⚠️  Stub — update size/treatment to Figma when provided
+   ============================================================ */
+
+.emailLink {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h4);      /* 32px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);   /* 1 / 100% */
+  letter-spacing: var(--tracking-h4); /* 0 */
+  text-transform: uppercase;
+  color:          var(--color-secondary);  /* white */
+  text-decoration: none;
+
+  display: inline-block;
+
+  transition: opacity var(--transition-base);
+}
+
+.emailLink:hover {
+  opacity: 0.72;
+}
+
+.emailLink:focus-visible {
+  outline:        var(--focus-outline-width) solid var(--color-secondary);
+  outline-offset: var(--focus-outline-offset);
+  border-radius:  var(--radius-sm);
+}
+
+
+/* ============================================================
+   DIVIDER
+   Separates the body (CTA) from the footer bar
+   --color-divider-dark (#cccccc) — visible on dark bg
+   ============================================================ */
+
+.divider {
+  width:       100%;
+  height:      1px;
+  background:  var(--color-divider-dark);  /* #cccccc */
+  border:      none;
+  margin:      0;
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   FOOTER BAR
+   Two-zone flex row: brand (left) · copyright (right)
+   align-items: center — vertically centres mismatched font sizes
+   ⚠️  Stub — update layout/content to Figma when provided
+   ============================================================ */
+
+.footer {
+  display:         flex;
+  flex-direction:  row;
+  justify-content: space-between;
+  align-items:     center;
+  width:           100%;
+}
+
+
+/* ============================================================
+   BRAND
+   "FAZ" — sourced from nav.brand.label in content.ts
+   Integral CF · H5 (20px) · uppercase · white
+   ============================================================ */
+
+.brand {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);      /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);   /* 1 / 100% */
+  letter-spacing: var(--tracking-h5); /* 0 */
+  text-transform: uppercase;
+  color:          var(--color-secondary);  /* white */
+  margin:         0;
+}
+
+
+/* ============================================================
+   COPYRIGHT
+   "© 2025 Fazlul Azim Khan"
+   Inter · Lead (12px) · uppercase · --color-tertiary
+   ⚠️  Stub — update text and styling to Figma when provided
+   ============================================================ */
+
+.copyright {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);    /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);      /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-tertiary);  /* #cccccc — muted on dark bg */
+  margin:         0;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ⚠️  Not yet specified — implement when Figma and mobile
+   frames are provided.
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* Reserved */
+}

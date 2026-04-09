@@ -1,0 +1,99 @@
+/*
+ * global.css
+ * Global styles — imports foundation layers and sets base document styles
+ *
+ * Import order is intentional:
+ *   1. fonts    — @font-face declarations (must come before any font usage)
+ *   2. tokens   — CSS custom properties (must come before any token usage)
+ *   3. reset    — normalize browser defaults
+ *   4. base     — document-level styles using tokens
+ */
+
+@import './fonts.css';
+@import './tokens.css';
+@import './reset.css';
+
+
+/* ============================================================
+   BASE DOCUMENT STYLES
+   ============================================================ */
+
+html {
+  /* scroll-behavior handled by SmoothScroller (Lenis equivalent) */
+  /* Native smooth scroll disabled to avoid conflict */
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+  line-height: var(--lh-body);
+}
+
+
+/* ============================================================
+   TYPOGRAPHY — BASE ELEMENTS
+   These are base styles only. Components control their own
+   specific type treatments via CSS modules.
+   ============================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-regular);
+  line-height: var(--lh-heading);
+}
+
+p {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--lh-body);
+}
+
+
+/* ============================================================
+   SELECTION
+   ============================================================ */
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+
+/* ============================================================
+   FOCUS STYLES
+   Accessible focus ring — visible on keyboard navigation only
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+/* ============================================================
+   SCROLLBAR (optional — subtle styling)
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-divider);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-tertiary);
+}

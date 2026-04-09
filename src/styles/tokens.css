@@ -1,0 +1,246 @@
+/*
+ * tokens.css
+ * Design System Tokens — Single Source of Truth
+ * All values extracted directly from Figma (file: Portfolio-Faz, node: 966:7518)
+ *
+ * DO NOT introduce values directly in components.
+ * Every visual value must reference a token from this file.
+ *
+ * Figma variable note: Figma source uses "--tirtiary" (typo).
+ * In code we use "--color-tertiary" for correctness, referenced consistently below.
+ */
+
+:root {
+
+  /* ============================================================
+     COLORS
+     ============================================================ */
+
+  /* Core palette — maps directly to Figma variables */
+  --color-primary:        #0a0a0a;  /* Figma: --primary */
+  --color-secondary:      #ffffff;  /* Figma: --secondary */
+  --color-tertiary:       #cccccc;  /* Figma: --tirtiary (typo in source) */
+
+  /* Extended palette — extracted from Figma layer properties */
+  --color-notice-bg:      #050505;  /* Notice strip background */
+  --color-divider:        #e5e5e5;  /* Light dividers / horizontal rules */
+  --color-divider-dark:   #cccccc;  /* Dividers on dark backgrounds (= --color-tertiary) */
+  --color-text-muted:     #424242;  /* Secondary body text (e.g. language proficiency) */
+  --color-surface-dark:   #141414;  /* Card / surface on dark backgrounds */
+
+
+  /* ============================================================
+     TYPOGRAPHY — FONT FAMILIES
+     ============================================================ */
+
+  --font-display: 'Integral CF', 'Arial Black', sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+
+  /* ============================================================
+     TYPOGRAPHY — TYPE SCALE (FLUID)
+     Fluid via clamp() — Utopia method — 390px → 1920px viewport range.
+     Values confirmed against Figma at desktop (1440–1920px).
+     All components inherit automatically — do not hardcode font-size.
+
+     Figma reference sizes (desktop):
+       H1   → Integral CF, 120px, lh 100%,  tracking -1.5px
+       H3   → Integral CF,  56px, lh 100%,  tracking -0.84px
+       H4   → Integral CF,  32px, lh 100%,  tracking 0
+       H5   → Integral CF,  20px, lh 100%,  tracking 0
+       Lead → Inter,        12px, lh 20px,  tracking 0  (fixed — 1px range negligible)
+       Body → Inter,        16px, lh 20px,  tracking 0  (scales from 13→16px)
+
+     Mobile sizes at 390px:
+       H1 → 48px  |  H3 → 28px  |  H4 → 20px  |  H5 → 14px  |  Body → 13px
+     ============================================================ */
+
+  /* clamp(min, slope*100vw + intercept, max) */
+  --text-h1:   clamp(3rem,    1.853rem + 4.706vw, 7.5rem);   /* 48px → 120px */
+  --text-h2:   clamp(2.25rem, 1.804rem + 1.830vw, 4rem);     /* 36px →  64px — Figma H2 (decorative bullets) */
+  --text-h3:   clamp(1.75rem, 1.304rem + 1.830vw, 3.5rem);   /* 28px →  56px */
+  --text-h4:   clamp(1.25rem, 1.059rem + 0.784vw, 2rem);     /* 20px →  32px */
+  --text-h5:   clamp(0.875rem,0.779rem + 0.392vw, 1.25rem);  /* 14px →  20px */
+  --text-lead: 12px;                                          /* fixed — 1px range negligible */
+  --text-body: clamp(0.8125rem,0.765rem + 0.196vw, 1rem);    /* 13px →  16px */
+
+  /* Line heights */
+  --lh-h1:      1;      /* Unitless — tracks with fluid H1 size (was 120px fixed) */
+  --lh-heading: 1;      /* 100% — for H3, H4, H5 */
+  --lh-body:    20px;   /* Fixed — comfortable for 13–16px body range */
+
+  /* Letter spacing — fixed px (Figma values, acceptable across fluid range) */
+  --tracking-h1:  -1.5px;
+  --tracking-h2:  -0.4px;
+  --tracking-h3:  -0.84px;
+  --tracking-h4:   0;
+  --tracking-h5:   0;
+  --tracking-lead: 0;
+
+  /* Font weight — Integral CF is used at Regular (400) for all display sizes */
+  --weight-regular: 400;
+
+
+  /* ============================================================
+     SPACING — GAP TOKENS
+     Extracted from Figma variable names (--gap/N pattern)
+     ============================================================ */
+
+  --gap-1:     1px;   /* Used for near-zero stacking (e.g. Languages name/proficiency) */
+  --gap-8:     8px;
+  --gap-12:   12px;
+  --gap-16:   16px;
+  --gap-20:   20px;   /* Phase 02 feature card row gap — Figma node 980:7480 itemSpacing */
+  --gap-24:   24px;
+  --gap-32:   32px;
+  --gap-40:   40px;
+  --gap-64:   64px;
+
+
+  /* ============================================================
+     SPACING — PADDING TOKENS
+     Extracted from Figma variable names (--padding/N pattern)
+     ============================================================ */
+
+  --padding-12:  12px;
+  --padding-16:  16px;
+  --padding-32:  32px;
+  --padding-40:  40px;
+  --padding-64:  64px;
+
+
+  /* ============================================================
+     SPACING — SEMANTIC / LAYOUT
+     Larger compositional spacing values observed in Figma layout
+     ============================================================ */
+
+  --space-works-gap:           256px;  /* Vertical gap between Selected Works cards */
+  --space-section-gap:         150px;  /* Gap between sections within Selected Works */
+  --space-gallery-gap-x:        40px;  /* Gallery grid column gap */
+  --space-gallery-gap-y:        80px;  /* Gallery grid row gap */
+  --space-more-pt:             200px;  /* More Works section top padding */
+  --space-experience-row-gap:   29px;  /* Gap between dividers and rows in Experience list
+                                          Confirmed: Figma node 1036:7718 gap-[29px] */
+
+  /* Case study section breathing room
+     Used by Center Health section Contents and Results blocks
+     to create a slow-read rhythm on desktop/tablet.
+     Mobile reverts to natural content flow. */
+  --screen-block-min-h:         80vh;
+
+  /* Gallery card image aspect ratio
+     Derived from Figma node 1021:7092:
+       Column width at 1312px content = (1312 - 40×2) / 3 = 410.667px
+       Row height = 358px total; title (Integral CF 20px, lh normal ≈ 24px) + gap 8px = 32px
+       Image height = 358 - 32 = 326px
+     Result: 410.667 / 326 ≈ 1.259 : 1
+  */
+  --aspect-gallery-card:  410.667 / 326;
+
+
+  /* ============================================================
+     COMPONENT SIZING
+     Fixed dimensions extracted from Figma
+     ============================================================ */
+
+  --button-height:         44px;   /* Confirmed: Figma node 941:6022 / I966:7519;953:11714 */
+  --hero-min-height:      900px;   /* Hero section height — Figma: h-[902.958px], rounded */
+  --hero-arrow-size:      200px;   /* Decorative ↗ character font-size — Figma: text-[200px] */
+  --hero-arrow-tracking:   -3px;   /* Decorative ↗ letter-spacing — Figma: tracking-[-3px] */
+
+  /* Case study specific */
+  --case-hero-aspect:      1408 / 700;  /* Case study hero row aspect — Figma: aspect-[1408/700] */
+  --case-hero-img-aspect:  1408 / 776;  /* Case study hero image aspect — Figma: aspect-[1408/776] */
+  --tracking-case-hero:   -1.8px;       /* Case study H1 letter-spacing — Figma node 977:5890 */
+  --case-section-index-w:  38.64px;     /* Index column width — Figma node 978:6023 */
+  --case-section-gap:      200px;       /* Vertical gap between case study sections — Figma node 977:5838 */
+  --case-section-col-gap:   40px;       /* Gap between index column and content — Figma: gap-[var(--gap/40)] */
+
+
+  /* ============================================================
+     BORDER RADIUS
+     Extracted from Figma border-radius values
+     ============================================================ */
+
+  --radius-sm:    8px;     /* Project-wide single radius — all components */
+  --radius-pill: 9999px;   /* Fully rounded / pill shape */
+
+
+  /* ============================================================
+     LAYOUT
+     Container and section structure
+     ============================================================ */
+
+  --layout-max-width:    1920px;  /* Outer body container max-width */
+  --layout-padding-x:      16px;  /* Body horizontal padding — Figma: px-[var(--padding/16)] */
+  --nav-height:            60px;  /* NavBar height — Figma: aspect-[1440/60] at design width */
+  --nav-padding-x:         40px;  /* Navigation bar horizontal padding */
+  --nav-padding-top:        8px;  /* NavBar top padding — Figma: pt-[8px] */
+  --nav-items-gap:         19px;  /* Gap between nav links and between CTA buttons */
+  --notice-padding-x:      64px;  /* Notice strip horizontal padding — Figma: px-[var(--gap/64)] */
+  --notice-padding-y:      12px;  /* Notice strip vertical padding — Figma: py-[var(--gap/12)] */
+  --section-padding:       64px;  /* Standard section padding (all / top+bottom) */
+
+
+  /* ============================================================
+     Z-INDEX SCALE
+     ============================================================ */
+
+  --z-base:   0;
+  --z-raised: 10;
+  --z-nav:    100;   /* Sticky navigation — above all page content */
+  --z-modal:  200;   /* Modals / overlays (reserved) */
+
+
+  /* ============================================================
+     BREAKPOINTS
+     Referenced in CSS media queries — not used as custom properties
+     but documented here for system reference:
+
+     --bp-mobile:   480px
+     --bp-tablet:   768px
+     --bp-laptop:  1024px
+     --bp-desktop: 1280px
+     --bp-wide:    1440px
+     ============================================================ */
+
+
+  /* ============================================================
+     MOTION
+     ============================================================ */
+
+  /* Focus ring — accessibility */
+  --focus-outline-width:  2px;
+  --focus-outline-offset: 4px;
+
+
+  --transition-fast:    150ms ease;
+  --transition-base:    250ms ease;
+  --transition-slow:    400ms ease;
+  --transition-spring:  400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   Disable all non-essential transitions when user prefers it
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast:   0ms;
+    --transition-base:   0ms;
+    --transition-slow:   0ms;
+    --transition-spring: 0ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

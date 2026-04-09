@@ -1,0 +1,92 @@
+/*
+ * CaseStudySectionWrapper.module.css
+ * Confirmed from Figma nodes 978:6022, 978:6038, 1005:6337, 978:7108, 978:7314
+ *
+ * Two-column layout: narrow index + flex-1 content
+ * Column gap: 40px (--case-section-col-gap)
+ * Index column width: 38.64px (--case-section-index-w)
+ */
+
+
+/* ============================================================
+   BASE WRAPPER
+   Default: light background (no wrapper styling beyond flex)
+   ============================================================ */
+
+.wrapper {
+  display:   flex;
+  gap:       var(--case-section-col-gap);   /* 40px */
+  width:     100%;
+  align-items: flex-start;
+}
+
+
+/* ============================================================
+   DARK VARIANT — User Research section (002)
+   bg: --color-primary, px-16px, py-64px, border-radius 16px
+   Confirmed: Figma node 978:6038
+   ============================================================ */
+
+.dark {
+  background:    var(--color-primary);
+  padding:       var(--padding-64) var(--layout-padding-x);  /* 64px 16px */
+  border-radius: var(--radius-sm);                           /* 8px */
+}
+
+
+/* ============================================================
+   INDEX COLUMN
+   Fixed width: 38.64px, padding-top 8px
+   Confirmed: Figma node 978:6023
+   ============================================================ */
+
+.indexCol {
+  flex-shrink: 0;
+  width:       var(--case-section-index-w);   /* 38.64px */
+  padding-top: 8px;
+}
+
+.index {
+  display:        block;
+  font-family:    var(--font-body);
+  font-size:      var(--text-body);     /* 14px — Figma uses DM Sans opsz-14, Inter is equivalent */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);       /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+}
+
+/* Dark variant — index text becomes white */
+.dark .index {
+  color: var(--color-secondary);
+}
+
+
+/* ============================================================
+   CONTENT COLUMN
+   flex-1, min-width 0 to allow proper flex shrink
+   ============================================================ */
+
+.content {
+  flex:      1 0 0;
+  min-width: 0;
+}
+
+
+/* ============================================================
+   RESPONSIVE — collapse index column on narrow screens
+   ============================================================ */
+
+@media (max-width: 767px) {
+  /* Collapse 2-col (index + content) to single column on mobile */
+  .wrapper {
+    flex-direction: column;
+    gap:            var(--gap-16);
+  }
+
+  .indexCol {
+    width:       auto;
+    padding-top: 0;
+  }
+}

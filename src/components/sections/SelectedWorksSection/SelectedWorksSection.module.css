@@ -1,0 +1,115 @@
+/*
+ * SelectedWorksSection.module.css
+ * Specs confirmed from Figma node 966:7565
+ *
+ * Section layout:
+ *   .section      — flex column, padding-y: --padding-64, gap: --gap-40
+ *   .header       — three-zone row: index (left) · heading (centre) · count (right)
+ *   .headerIndex  — Inter 12px uppercase, --color-tertiary
+ *   .headerHeading — Integral CF 56px H3, --color-primary
+ *   .headerCount  — Inter 12px uppercase, --color-primary, margin-left: auto
+ *   .cardsList    — flex column, gap: --space-works-gap (256px)
+ */
+
+
+/* ============================================================
+   SECTION WRAPPER
+   Full-width, flex column
+   py-64px confirmed from Figma node 966:7565
+   ============================================================ */
+
+.section {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-40);          /* gap between header area and cards list */
+
+  padding-top:    var(--padding-64);
+  padding-bottom: var(--padding-64);
+
+  width: 100%;
+}
+
+
+/* ============================================================
+   SECTION HEADER ROW
+   Three zones — index · heading · count
+   Confirmed: Figma nodes 966:7566–7570
+   align-items: baseline so index and count sit on the H3 baseline
+   ============================================================ */
+
+.header {
+  display:     flex;
+  flex-direction: row;
+  align-items: baseline;
+  width:       100%;
+  gap:         var(--gap-16);            /* min gap — count uses margin-left: auto */
+}
+
+
+/* INDEX — "(002)"
+   Confirmed: Inter 12px uppercase, --color-tertiary, left-aligned */
+.headerIndex {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);       /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);         /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-tertiary);
+  flex-shrink:    0;
+}
+
+
+/* HEADING — "Selected Works"
+   Confirmed: Integral CF 56px H3, tracking -0.84px, --color-primary */
+.headerHeading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);         /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);      /* 1 / 100% */
+  letter-spacing: var(--tracking-h3);     /* -0.84px */
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+  flex:           1;                      /* takes remaining horizontal space */
+}
+
+
+/* COUNT — "3 Case Studies"
+   Confirmed: Inter 12px uppercase, --color-primary, right-aligned */
+.headerCount {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);       /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);         /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  flex-shrink:    0;
+  margin-left:    auto;                   /* pushes count to far right */
+}
+
+
+/* ============================================================
+   CARDS LIST
+   Single column, gap: --space-works-gap (256px) between cards
+   Confirmed: Figma node 966:7565
+   ============================================================ */
+
+.cardsList {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-works-gap); /* 256px */
+  width:          100%;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   Mobile layout not yet confirmed from Figma.
+   Placeholder only — implement when mobile frames provided.
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* Reserved — implement when mobile layout is confirmed */
+}

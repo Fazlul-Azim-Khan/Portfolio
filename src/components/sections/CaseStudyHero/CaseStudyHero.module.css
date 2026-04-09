@@ -1,0 +1,217 @@
+/*
+ * CaseStudyHero.module.css
+ * Confirmed from Figma node 966:7654 (Axionray frame)
+ *
+ * Hero row aspect: 1408/700 — Figma node 977:5889
+ * Image aspect:    1408/776 — Figma node 966:7719
+ * H1 tracking:     -1.8px   — Figma node 977:5890 (--tracking-case-hero)
+ * Meta sidebar w:  ~300px   — Figma node 999:5836
+ */
+
+
+/* ============================================================
+   ROOT WRAPPER
+   Stacks heroRow + image vertically with no gap between them
+   ============================================================ */
+
+.root {
+  display:        flex;
+  flex-direction: column;
+  width:          100%;
+  position:       relative;
+}
+
+
+/* ============================================================
+   BACK LINK
+   Positioned above the hero row as a standalone line
+   ============================================================ */
+
+.back {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             var(--gap-8);
+
+  font-family:     var(--font-body);
+  font-size:       var(--text-lead);        /* 12px */
+  font-weight:     var(--weight-regular);
+  line-height:     var(--lh-body);
+  letter-spacing:  var(--tracking-lead);
+  text-transform:  uppercase;
+  color:           var(--color-text-muted);
+  text-decoration: none;
+
+  padding-bottom:  var(--gap-40);
+
+  transition: color var(--transition-fast);
+}
+
+.back:hover         { color: var(--color-primary); }
+.back:focus-visible {
+  outline:        var(--focus-outline-width) solid var(--color-primary);
+  outline-offset: var(--focus-outline-offset);
+  border-radius:  2px;
+}
+
+
+/* ============================================================
+   AI WATERMARK
+   Absolutely positioned over the hero row
+   Figma node 1036:7745 — w:523px h:442px
+   centre-right of the hero area
+   ============================================================ */
+
+.aiWatermark {
+  position:       absolute;
+  left:           calc(50% + 266.5px);
+  top:            calc(50% - 258px);
+  width:          523px;
+  height:         442px;
+  transform:      translate(-50%, -50%);
+  pointer-events: none;
+  user-select:    none;
+}
+
+
+/* ============================================================
+   HERO ROW — title left + meta sidebar right
+   Aspect ratio: 1408/700 — Figma node 977:5889
+   ============================================================ */
+
+.heroRow {
+  display:        flex;
+  flex-direction: column;
+  width:          100%;
+}
+
+/* The actual two-column layout sits inside heroRow */
+.titleWrap {
+  display:   flex;
+  flex:      1 0 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* ============================================================
+   TITLE
+   Integral CF, 120px, letter-spacing -1.8px
+   Confirmed: Figma node 977:5890
+   ============================================================ */
+
+.title {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h1);              /* 120px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-h1);                /* 120px */
+  letter-spacing: var(--tracking-case-hero);   /* -1.8px */
+  color:          var(--color-primary);
+  margin:         0;
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   META SIDEBAR
+   flex-col, gap-24px, w-[300px], h-[480px]
+   Confirmed: Figma node 999:5836
+   ============================================================ */
+
+.meta {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-24);
+
+  padding-top:    var(--section-padding);  /* gives breathing room below title */
+}
+
+.metaRow {
+  display:        flex;
+  flex-direction: column;
+  gap:            0.44px;   /* Figma: gap-[0.44px] — near-zero optical spacing */
+}
+
+.metaLabel {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);    /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+.metaValue {
+  font-family:    var(--font-body);
+  font-size:      var(--text-body);    /* 14px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+.chips {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       var(--gap-12);
+  /* Spacing from last meta row handled by parent .meta gap-24 — no extra margin */
+}
+
+
+/* ============================================================
+   HERO IMAGE
+   aspect-ratio: 1408/776 — Figma node 966:7719
+   Full-width, border-radius 8px
+   ============================================================ */
+
+.imageWrap {
+  position:     relative;
+  width:        100%;
+  aspect-ratio: var(--case-hero-img-aspect);   /* 1408/776 */
+
+  border-radius:    var(--radius-sm);           /* 8px */
+  overflow:         hidden;
+  background-color: var(--color-primary);        /* fallback while image loads */
+
+  margin-top: var(--gap-40);
+}
+
+.image {
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   At desktop, show 2-col layout (title left, meta right)
+   At mobile, stack vertically
+   ============================================================ */
+
+/* Hide watermark on mobile — hardcoded coordinates overflow at narrow viewports */
+@media (max-width: 767px) {
+  .aiWatermark {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .heroRow {
+    flex-direction:  row;
+    align-items:     center;
+    aspect-ratio:    var(--case-hero-aspect);   /* 1408/700 */
+    gap:             var(--gap-16);
+  }
+
+  .titleWrap {
+    flex: 1 0 0;
+  }
+
+  .meta {
+    width:       300px;
+    height:      480px;
+    flex-shrink: 0;
+    padding-top: 0;
+  }
+}

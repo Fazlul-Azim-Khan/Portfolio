@@ -1,0 +1,260 @@
+/*
+ * Hero.module.css
+ * Specs confirmed from Figma node 966:7520 / 966:7524
+ *
+ * Layout: 2-column × 2-row grid inside a min-height wrapper.
+ *
+ * Grid confirmed from node 966:7524 ("Main"):
+ *   grid-template-columns: repeat(2, minmax(0, 1fr))
+ *   grid-template-rows:    repeat(2, fit-content(100%))
+ *   gap:                   40px both axes  →  --gap-40
+ *   padding-y:             64px            →  --padding-64
+ *
+ * Hero wrapper:
+ *   min-height: ~900px  →  --hero-min-height
+ *   centers the grid vertically within that height
+ *
+ * Cell assignments:
+ *   [row 1 / col 1]     .arrowCell    — decorative ↗ flipped to ↘
+ *   [row 1 / col 2]     .bioCell      — bio paragraph + chip tags
+ *   [row 2 / col 1–2]   .headlineCell — name + headline + subline
+ */
+
+
+/* ============================================================
+   HERO WRAPPER
+   Full-width, min-height ~900px, centers grid vertically.
+   Confirmed: h-[902.958px] items-start justify-center (node 966:7520)
+   ============================================================ */
+
+.hero {
+  display:         flex;
+  flex-direction:  column;
+  justify-content: center;
+  align-items:     flex-start;
+
+  width:       100%;
+  min-height:  var(--hero-min-height);   /* 900px */
+  position:    relative;
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   INNER GRID
+   Confirmed: node 966:7524 — "Main"
+   ============================================================ */
+
+.grid {
+  display:               grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows:    repeat(2, fit-content(100%));
+  gap:                   var(--gap-40);
+
+  padding-top:    var(--padding-64);
+  padding-bottom: var(--padding-64);
+
+  width:    100%;
+  position: relative;
+}
+
+
+/* ============================================================
+   CELL — TOP LEFT: Decorative arrow
+   Confirmed: node 966:7546 · col 1 / row 1
+   ============================================================ */
+
+.arrowCell {
+  grid-column: 1;
+  grid-row:    1;
+
+  display:         flex;
+  align-items:     flex-start;
+  justify-content: flex-start;
+}
+
+.arrow {
+  /*
+   * ↗ rendered at 200px, flipped vertically → appears as ↘
+   * Confirmed: -scale-y-100 + text-[200px] + tracking-[-3px] in Figma
+   */
+  font-family:    var(--font-body);            /* Inter — glyph is font-agnostic */
+  font-size:      var(--hero-arrow-size);      /* 200px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-h1);               /* 120px */
+  letter-spacing: var(--hero-arrow-tracking);  /* -3px */
+  color:          var(--color-tertiary);
+
+  transform:   scaleY(-1);
+  display:     block;
+  user-select: none;
+}
+
+
+/* ============================================================
+   CELL — TOP RIGHT: Bio + Specialty chips
+   Confirmed: node 966:7525 · col 2 / row 1 · aspect-[636/309]
+   gap-16 between bio and chips group
+   ============================================================ */
+
+.bioCell {
+  grid-column: 2;
+  grid-row:    1;
+
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-16);
+  align-items:    flex-start;
+  align-self:     flex-start;
+  justify-self:   stretch;
+  max-width:      636px;   /* Figma node 966:7525 — aspect-[636/309] */
+}
+
+/* Bio paragraph — Lead style (12px Inter, uppercase) */
+.bio {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);       /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);         /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  width:          100%;
+  margin:         0;
+}
+
+/* Chip tags row — wrapping flex
+   gap-8 between chips confirmed: node 966:7527 */
+.chips {
+  display:     flex;
+  flex-wrap:   wrap;
+  gap:         var(--gap-8);
+  align-items: center;
+  width:       100%;
+}
+
+
+/* ============================================================
+   CELL — BOTTOM FULL-WIDTH: Name + Headline + Subline
+   Confirmed: node 966:7542 · col 1 / span 2 · row 2
+   gap-12 between name, headline block, and subline
+   ============================================================ */
+
+.headlineCell {
+  grid-column: 1 / span 2;
+  grid-row:    2;
+
+  display:         flex;
+  flex-direction:  column;
+  gap:             var(--gap-12);
+  align-items:     flex-start;
+  justify-content: center;
+  align-self:      flex-start;
+  justify-self:    stretch;
+}
+
+/* Name label — "FAZLUL AZIM KHAN"
+   Confirmed: node 966:7543 — Integral CF 20px, --color-primary */
+.name {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);        /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);     /* 1 / 100% */
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-primary);
+  width:          100%;
+  margin:         0;
+}
+
+/* Headline block — wraps both headline lines
+   Confirmed: node 966:7544 — tracking-[-1.5px] */
+.headlineBlock {
+  width: 100%;
+}
+
+/* Each headline line — "Product DESIGNER" / "& UX STRATEGIST"
+   Confirmed: Integral CF 120px, line-height 120px, uppercase */
+.headlineLine {
+  display:        block;
+  font-family:    var(--font-display);
+  font-size:      var(--text-h1);        /* 120px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-h1);          /* 120px */
+  letter-spacing: var(--tracking-case-hero);  /* -1.8px — Figma node 966:7544 */
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  width:          100%;
+}
+
+/* "&" ampersand — renders in --color-tertiary (#ccc)
+   Confirmed: node 966:7544 span — text-[#ccc] */
+.ampersand {
+  color: var(--color-tertiary);
+}
+
+/* Subline — "Enterprise AI · Safety-critical domains · MVP to $25M scale"
+   Confirmed: node 966:7545 — Integral CF 20px, --color-primary */
+.subline {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);        /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);     /* 1 / 100% */
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-primary);
+  width:          100%;
+  margin:         0;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   Mobile layout not yet confirmed from Figma.
+   Placeholder — do not implement until mobile frames provided.
+   ============================================================ */
+
+@media (max-width: 767px) {
+  /* Hero wrapper: let content dictate height on mobile — 900px is too tall */
+  .hero {
+    min-height: unset;
+  }
+
+  /* Grid: collapse to single column, reduce padding and gap */
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows:    auto auto;
+    gap:                   var(--gap-24);
+    padding-top:           var(--padding-40);
+    padding-bottom:        var(--padding-40);
+  }
+
+  /* Arrow: decorative only — hide on mobile to save vertical space */
+  .arrowCell {
+    display: none;
+  }
+
+  /* Bio cell: now spans full width in row 1 */
+  .bioCell {
+    grid-column: 1;
+    grid-row:    1;
+    max-width:   100%;
+  }
+
+  /* Headline cell: spans full width in row 2 */
+  .headlineCell {
+    grid-column: 1;
+    grid-row:    2;
+  }
+
+  /* Scale down the 120px headline — too large for mobile viewports.
+     Fluid: 40px at 390px viewport, grows to 120px at wider breakpoints. */
+  .headlineLine {
+    font-size:   clamp(40px, 10.26vw, var(--text-h1));
+    line-height: 1;
+  }
+
+  /* Name + subline scale down slightly */
+  .name,
+  .subline {
+    font-size: var(--text-lead);  /* 12px — keep label style on mobile */
+  }
+}

@@ -1,0 +1,145 @@
+/*
+ * Languages.module.css
+ * Specs confirmed from Figma node 1036:7190 / 1036:7193
+ *
+ * .root        — flex column, padding-64, gap-40, light bg
+ * .heading     — Integral CF H3 56px, uppercase, --color-primary
+ * .grid        — CSS Grid 2 × 1fr (equal columns)
+ * .item        — flex column, gap-1 (near-zero stacking)
+ * .language    — Integral CF H5 20px, uppercase, --color-primary
+ * .proficiency — Inter Body 14px, mixed-case, --color-text-muted
+ * .divider     — 1px, --color-divider, closes section bottom
+ */
+
+
+/* ============================================================
+   ROOT
+   Flex column — heading · grid · divider
+   padding-64 on all sides, gap-40 between stacked elements
+   Light background (default — no override needed)
+   ============================================================ */
+
+.root {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-40);   /* heading → grid → divider */
+
+  padding: var(--padding-64);     /* 64px all sides */
+  width:   100%;
+}
+
+
+/* ============================================================
+   HEADING
+   "LANGUAGES"
+   Integral CF · H3 (56px) · line-height 1 · tracking -0.84px
+   Uppercase via CSS — content is mixed-case in content.ts
+   Confirmed: Figma node 1036:7190
+   ============================================================ */
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);      /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);   /* 1 / 100% */
+  letter-spacing: var(--tracking-h3); /* -0.84px */
+  text-transform: uppercase;
+  color:          var(--color-primary);  /* #0a0a0a */
+  margin:         0;
+}
+
+
+/* ============================================================
+   LANGUAGE GRID
+   2 equal columns — one per language item
+   No gap between columns (items are self-contained)
+   Confirmed: Figma node 1036:7190
+   ============================================================ */
+
+.grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;   /* English left · German right */
+  width:                 100%;
+}
+
+
+/* ============================================================
+   LANGUAGE ITEM
+   Flex column — language name stacked above proficiency
+   gap: --gap-1 (1px) — near-zero stacking
+   Token comment: "Used for near-zero stacking (e.g. Languages name/proficiency)"
+   Confirmed: Figma node 1036:7190 / 1036:7193
+   ============================================================ */
+
+.item {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-1);   /* 1px — near-zero stacking */
+}
+
+
+/* ============================================================
+   LANGUAGE NAME
+   "ENGLISH" / "GERMAN"
+   Integral CF · H5 (20px) · line-height 1 · uppercase
+   --color-primary (#0a0a0a)
+   Confirmed: Figma node 1036:7190
+   ============================================================ */
+
+.language {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);      /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);   /* 1 / 100% */
+  letter-spacing: var(--tracking-h5); /* 0 */
+  text-transform: uppercase;
+  color:          var(--color-primary);  /* #0a0a0a */
+  margin:         0;
+}
+
+
+/* ============================================================
+   PROFICIENCY
+   "Native" / "Elementary (A1)"
+   Inter · Body (14px) · line-height 20px · mixed-case (no uppercase)
+   --color-text-muted (#424242) — secondary on light bg
+   Confirmed: Figma node 1036:7193
+   ============================================================ */
+
+.proficiency {
+  font-family:    var(--font-body);
+  font-size:      var(--text-body);    /* 14px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);      /* 20px */
+  letter-spacing: var(--tracking-lead);
+  /* No text-transform — mixed-case as written in content.ts */
+  color:          var(--color-text-muted);  /* #424242 */
+  margin:         0;
+}
+
+
+/* ============================================================
+   BOTTOM DIVIDER
+   1px horizontal rule — closes the section visually
+   Confirmed: Figma node 1036:7190 (visible at screenshot bottom)
+   ============================================================ */
+
+.divider {
+  width:       100%;
+  height:      1px;
+  background:  var(--color-divider);   /* #e5e5e5 */
+  border:      none;
+  margin:      0;
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   Mobile layout not yet confirmed from Figma.
+   Placeholder — implement when mobile frames are provided.
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* Reserved */
+}

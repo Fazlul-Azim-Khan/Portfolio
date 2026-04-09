@@ -1,0 +1,15 @@
+/*
+ * LandingPage.module.css
+ *
+ * Structural styles for section wrappers only.
+ * Visual / layout styles belong in each section's own module.
+ *
+ * .section wraps each snappable content section.
+ * It participates in Container's flex column without shrinking.
+ */
+
+.section {
+  width:        100%;
+  flex-shrink:  0;   /* Do not allow sections to shrink inside Container flex column */
+  position:     relative;
+}

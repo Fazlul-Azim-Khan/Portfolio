@@ -1,0 +1,285 @@
+/*
+ * DevicesSection.module.css — Center Health (005)
+ * Confirmed from Figma node 1172:6231.
+ *
+ * Blue brand card (#1ab1fe).
+ * padding: 96px vertical, 12px horizontal (inner card inset).
+ * gap-8px between all top-level sub-areas.
+ * All text: white (--color-secondary).
+ * Border radius: --radius-sm (8px).
+ */
+
+
+/* ============================================================
+   CARD — outer blue container
+   Figma: bg #1ab1fe, px-12px, py-96px, gap-8px, rounded-8px
+   ============================================================ */
+
+.card {
+  display:          flex;
+  flex-direction:   column;
+  gap:              var(--gap-64);
+  padding:          var(--gap-64) var(--padding-12);
+  background-color: #1ab1fe;              /* Center Health brand blue */
+  border-radius:    var(--radius-sm);
+  width:            100%;
+}
+
+
+/* ============================================================
+   INDEX — alone at top
+   Figma: flex-col container, index label only
+   ============================================================ */
+
+.indexWrap {
+  display: flex;
+  width:   100%;
+}
+
+.index {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);        /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-secondary);
+  white-space:    nowrap;
+  margin:         0;
+}
+
+
+/* ============================================================
+   HEADING ROW — spacer + heading + body
+   Figma: flex row, gap 24px
+   Spacer: 284px × 20px | Heading: flex-1 | Body: 351px
+   ============================================================ */
+
+.headingRow {
+  display:     flex;
+  align-items: flex-start;
+  gap:         var(--gap-24);
+  width:       100%;
+}
+
+/* Left spacer — pushes heading to start at ~284px */
+.headingSpacer {
+  width:       284px;
+  height:      20px;
+  flex-shrink: 0;
+}
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);          /* 56px desktop */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h3);      /* -0.84px */
+  text-transform: uppercase;
+  color:          var(--color-secondary);
+  flex:           1 0 0;
+  min-width:      0;
+  margin:         0;
+}
+
+.bodyText {
+  font-family:  var(--font-body);
+  font-size:    14px;               /* Figma B1: 14px */
+  font-weight:  var(--weight-regular);
+  line-height:  var(--lh-body);     /* 20px */
+  color:        var(--color-secondary);
+  width:        351px;
+  flex-shrink:  0;
+  margin:       0;
+  white-space:  pre-wrap;           /* preserves \n\n paragraph break */
+}
+
+
+/* ============================================================
+   WHAT I DESIGNED
+   Same structure as OnboardingSection but white text throughout
+   ============================================================ */
+
+.whatBlock {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-24);
+  width:          100%;
+}
+
+/* Label row: "what i designed" (flex-1) + white extending line (flex-1) */
+.whatLabelRow {
+  display:     flex;
+  align-items: center;
+  gap:         var(--gap-24);
+  width:       100%;
+  height:      111px;   /* Figma: h-[111px] — maintains design rhythm */
+}
+
+.whatLabel {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h4);       /* 32px desktop */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h4);
+  text-transform: uppercase;
+  color:          var(--color-secondary);
+  white-space:    nowrap;
+  margin:         0;
+  flex:           1 0 0;         /* Figma: flex-1 (equal with line) */
+}
+
+/* White extending line */
+.whatLine {
+  flex:             1 0 0;
+  height:           1px;
+  background-color: var(--color-secondary);
+}
+
+/* Items — flex-wrap row, gap 24px (updated from CSS grid) */
+.whatItems {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       var(--gap-24);
+  width:     100%;
+}
+
+/* Each item — divider + title (no star) */
+.whatItem {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  gap:            var(--gap-24);   /* Figma: gap-24 between divider and title */
+  flex:           1 0 0;          /* Figma: flex-1 per item */
+  min-width:      180px;          /* prevent items from becoming too narrow */
+}
+
+/* Light gray divider on blue bg */
+.whatDivider {
+  width:            100%;
+  height:           1px;
+  background-color: #e5e5e5;     /* Figma: bg-[#e5e5e5] */
+  flex-shrink:      0;
+}
+
+.whatItemTitle {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);       /* 20px desktop */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-secondary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   IMAGES — 4 stacked, full-width with aspect ratios
+   Figma nodes: 1172:6270, 6272, 6274, 6276
+   ============================================================ */
+
+.imageWrap {
+  position:      relative;
+  width:         100%;
+  border-radius: var(--radius-sm);
+  overflow:      hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   RESULTS — column layout (label above heading), all white
+   Figma: flex-col, gap 24px, h-345px, justify-center
+   ============================================================ */
+
+.results {
+  display:         flex;
+  flex-direction:  row;
+  gap:             var(--gap-24);
+  justify-content: center;
+  width:           100%;
+  padding-top:     var(--gap-24);   /* extra breathing room above results */
+}
+
+.resultsLabel {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);        /* 12px — Lead typography */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  color:          var(--color-secondary);
+  margin:         0;
+}
+
+.resultsHeading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h4);          /* 20px → 32px fluid */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h4);
+  text-transform: uppercase;
+  color:          var(--color-secondary);
+  margin:         0;
+  white-space:    pre-wrap;
+  width:          100%;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .card {
+    padding: var(--padding-40) var(--padding-16);
+    gap:     var(--gap-24);   /* loosen gap on mobile for readability */
+  }
+
+  /* Hide spacer — heading starts at left edge on mobile */
+  .headingSpacer {
+    display: none;
+  }
+
+  /* Heading row: stack heading above body paragraph */
+  .headingRow {
+    flex-direction: column;
+    gap:            var(--gap-16);
+  }
+
+  .bodyText {
+    width: 100%;
+  }
+
+  /* Label row: remove fixed height, allow natural wrap */
+  .whatLabelRow {
+    height: auto;
+  }
+
+  .whatLabel {
+    white-space: normal;
+  }
+
+  /* Items: single column on mobile */
+  .whatItems {
+    flex-direction: column;
+  }
+
+  .whatItem {
+    min-width: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Spacer: reduce width on tablet */
+  .headingSpacer {
+    width: 140px;
+  }
+
+  /* Items: allow natural wrapping on tablet */
+  .whatItem {
+    min-width: 200px;
+  }
+}

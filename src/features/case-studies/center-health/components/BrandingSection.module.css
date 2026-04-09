@@ -1,0 +1,133 @@
+/*
+ * BrandingSection.module.css — Center Health (012)
+ * Corrected from Figma node 1237:11424.
+ *
+ * Layout: index-left / content-right ROW (gap-24).
+ * Content column (gap-64): heading + image.
+ * py-64px, border-b.
+ */
+
+
+/* ============================================================
+   ROOT
+   ============================================================ */
+
+.root {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  gap:            var(--gap-64);
+  padding-top:    var(--gap-64);
+  padding-bottom: var(--gap-64);
+  border-bottom:  1px solid var(--color-divider);
+  width:          100%;
+}
+
+
+/* ============================================================
+   ROW — index (left) + content (right)
+   Figma: flex row, gap-24, items-start
+   ============================================================ */
+
+.row {
+  display:     flex;
+  align-items: flex-start;
+  gap:         var(--gap-24);
+  width:       100%;
+}
+
+
+/* ============================================================
+   INDEX — left column
+   ============================================================ */
+
+.index {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-text-muted);
+  flex-shrink:    0;
+  margin:         0;
+  padding-top:    6px;   /* optical cap-height alignment */
+}
+
+
+/* ============================================================
+   CONTENT COLUMN — right side
+   Figma: flex-1, flex-col, gap-64, items-start, justify-center
+   ============================================================ */
+
+.contentCol {
+  display:         flex;
+  flex-direction:  column;
+  align-items:     flex-start;
+  justify-content: center;
+  gap:             var(--gap-64);
+  flex:            1 0 0;
+  min-width:       0;
+}
+
+
+/* ============================================================
+   HEADING
+   ============================================================ */
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h3);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+  white-space:    nowrap;
+}
+
+
+/* ============================================================
+   IMAGE
+   ============================================================ */
+
+.imageWrap {
+  position:      relative;
+  width:         100%;
+  border-radius: var(--radius-sm);
+  overflow:      hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .root {
+    padding-top:    var(--padding-40);
+    padding-bottom: var(--padding-40);
+  }
+
+  .row {
+    flex-direction: column;
+    gap:            var(--gap-16);
+  }
+
+  .index {
+    padding-top: 0;
+  }
+
+  .contentCol {
+    gap: var(--gap-40);
+  }
+
+  .heading {
+    white-space: normal;
+  }
+}

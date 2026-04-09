@@ -1,0 +1,156 @@
+/*
+ * WorkCard.module.css
+ * Specs confirmed from Figma node 942:5673
+ *
+ * Card layout:
+ *   .card          — flex column, full-width, no background (transparent)
+ *   .imageWrap     — aspect-ratio container (1328/710), radius-sm, overflow hidden
+ *   .image         — Next.js fill image, object-fit: cover
+ *   .header        — two-column row: index (left) + titleBlock (right)
+ *                    gap-64 between columns — confirmed node 942:5673
+ *   .index         — Inter 12px uppercase, --color-tertiary
+ *   .titleBlock    — flex column, gap-12
+ *   .client        — Inter 12px uppercase, --color-primary
+ *   .title         — Integral CF 32px H4, --color-primary
+ *
+ * Hover behaviour:
+ *   Subtle opacity transition on image — preserves card hierarchy on hover.
+ */
+
+
+/* ============================================================
+   CARD WRAPPER
+   Full-width link — flex column with gap between image and header
+   ============================================================ */
+
+.card {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-40);        /* gap between image and project header */
+
+  width:          100%;
+  text-decoration: none;
+  color:          inherit;
+
+  /* Prevent text from being highlighted on click */
+  user-select: none;
+}
+
+/* Hover: lift image slightly */
+.card:hover .image {
+  opacity: 0.88;
+  transition: opacity var(--transition-base);
+}
+
+.card:focus-visible {
+  outline:        var(--focus-outline-width) solid var(--color-primary);
+  outline-offset: var(--focus-outline-offset);
+  border-radius:  var(--radius-sm);
+}
+
+
+/* ============================================================
+   IMAGE WRAPPER
+   Aspect-ratio container — 1328 × 710 — confirmed: Figma node 942:5673
+   overflow hidden + border-radius clips the Next.js fill image
+   ============================================================ */
+
+.imageWrap {
+  position:      relative;
+  width:         100%;
+  aspect-ratio:  1328 / 710;
+  border-radius: var(--radius-sm);        /* 8px */
+  overflow:      hidden;
+  background:    var(--color-divider);    /* placeholder bg while image loads */
+  flex-shrink:   0;
+}
+
+.image {
+  object-fit:     cover;
+  object-position: center;
+  transition:     opacity var(--transition-base);
+}
+
+
+/* ============================================================
+   PROJECT HEADER ROW
+   Two columns: index (left) + title block (right)
+   Confirmed: gap-64 between columns — Figma node 942:5673
+   ============================================================ */
+
+.header {
+  display:     flex;
+  flex-direction: row;
+  gap:         var(--gap-64);           /* 64px between index and title block */
+  align-items: flex-start;
+  width:       100%;
+}
+
+
+/* ============================================================
+   INDEX — "01" / "02" / "03"
+   Confirmed: Inter 12px uppercase, --color-tertiary
+   ============================================================ */
+
+.index {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);       /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);         /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-tertiary);
+
+  /* Prevent index from shrinking when title is long */
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   TITLE BLOCK — client name above project title
+   ============================================================ */
+
+.titleBlock {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-12);         /* 12px between client and title */
+  flex:           1;                     /* takes remaining width */
+}
+
+
+/* CLIENT — "Under NDA" / "Center Health" / "Arrival OS"
+   Confirmed: Inter 12px uppercase, --color-tertiary */
+.client {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);       /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);         /* 20px */
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-tertiary);
+}
+
+
+/* TITLE — project name
+   Confirmed: Integral CF 32px H4, --color-primary */
+.title {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h4);         /* 32px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);      /* 1 / 100% */
+  letter-spacing: var(--tracking-h4);     /* 0 */
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   Mobile layout not yet confirmed from Figma.
+   Placeholder only — implement when mobile frames provided.
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* Reserved — implement when mobile layout is confirmed */
+}

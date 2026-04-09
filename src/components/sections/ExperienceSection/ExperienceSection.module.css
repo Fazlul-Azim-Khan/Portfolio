@@ -1,0 +1,182 @@
+/*
+ * ExperienceSection.module.css
+ * Specs confirmed from Figma node 1036:7650
+ *
+ * Layout:
+ *   .section    — dark card: bg --color-primary, p-64, radius-sm, flex col, gap-64
+ *   .heading    — Integral CF 56px H3, --color-secondary, tracking -0.84px
+ *   .list       — flex col, gap: --space-experience-row-gap (29px)
+ *   .row        — flex row, justify-between, items-start
+ *   .company    — Integral CF 20px H5, --color-secondary (left column)
+ *   .right      — flex col, px: --padding-64 (right column)
+ *   .role       — Integral CF 20px H5, --color-secondary
+ *   .period     — Inter 12px Lead, --color-secondary, uppercase
+ *
+ * KEY: This section is a self-contained dark card.
+ *   It manages its own bg, padding, and border-radius.
+ *   It does NOT sit inside a SectionWrapper.
+ */
+
+
+/* ============================================================
+   SECTION WRAPPER — Dark card
+   Confirmed: Figma node 1036:7650
+     bg-[var(--primary,black)]            → --color-primary
+     p-[var(--padding/64,64px)]           → --padding-64 all sides
+     rounded-[var(--border--radius/8,8px)] → --radius-sm
+     flex flex-col gap-[var(--gap/64,64px)] → --gap-64
+   ============================================================ */
+
+.section {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-64);          /* 64px — between heading and list */
+
+  padding:        var(--padding-64);      /* 64px all sides — confirmed */
+  background:     var(--color-primary);   /* #0a0a0a — dark bg */
+  border-radius:  var(--radius-sm);       /* 8px — dark card corners */
+
+  width: 100%;
+}
+
+
+/* ============================================================
+   HEADING
+   Confirmed: Figma node 1036:7716
+     font-['Integral_CF:Regular']
+     text-[56px]          → --text-h3
+     tracking-[-0.84px]   → --tracking-h3
+     leading-[normal]     → --lh-heading (1)
+     text-[color:var(--secondary,white)]  → --color-secondary
+     uppercase (Integral CF is all-caps by nature)
+   ============================================================ */
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);         /* 56px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);      /* 1 */
+  letter-spacing: var(--tracking-h3);     /* -0.84px */
+  color:          var(--color-secondary); /* white */
+  margin:         0;
+
+  /* Integral CF is an all-caps font — no text-transform needed */
+}
+
+
+/* ============================================================
+   WORK HISTORY LIST
+   Flat flex column — dividers and rows as direct children
+   Gap 29px applies between ALL children (divider ↔ row ↔ divider ↔ row)
+   Confirmed: Figma node 1036:7718 gap-[29px] → --space-experience-row-gap
+   ============================================================ */
+
+.list {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-experience-row-gap);  /* 29px */
+  width:          100%;
+
+  /* Allows Divider <hr> to stretch full width */
+  align-items:    stretch;
+}
+
+
+/* ============================================================
+   EXPERIENCE ROW
+   Two-column flex row — company/location left, role/period right
+   Confirmed: Figma node 1036:7651 and all subsequent row nodes
+     flex items-start justify-between
+   ============================================================ */
+
+.row {
+  display:         flex;
+  flex-direction:  row;
+  align-items:     flex-start;
+  justify-content: space-between;
+  width:           100%;
+}
+
+
+/* ============================================================
+   LEFT COLUMN — "{company}, {location}"
+   Confirmed: Figma node 1036:7652
+     font-['Integral_CF:Regular'] text-[20px] → --text-h5
+     text-[color:var(--secondary,white)]       → --color-secondary
+     leading-[normal]                          → --lh-heading (1)
+     w-[715px] in Figma — not hardcoded here, left column takes natural width
+   ============================================================ */
+
+.company {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);         /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);      /* 1 */
+  letter-spacing: var(--tracking-h5);     /* 0 */
+  color:          var(--color-secondary);
+
+  /* Constrain left column to prevent it from consuming all space */
+  flex:           0 0 50%;
+  max-width:      50%;
+}
+
+
+/* ============================================================
+   RIGHT COLUMN — role + period block
+   Confirmed: Figma node 1036:7653 and subsequent right containers
+     flex-[1_0_0]                → flex: 1 0 0 (takes remaining width)
+     px-[var(--padding/64,64px)] → --padding-64 left+right padding
+     flex flex-col items-start
+   ============================================================ */
+
+.right {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  padding-left:   var(--padding-64);     /* 64px left padding — confirmed */
+  padding-right:  var(--padding-64);     /* 64px right padding — confirmed */
+  flex:           1 0 0;                 /* takes remaining width */
+}
+
+
+/* ROLE — "Product Designer & UX Strategist"
+   Confirmed: Figma node 1036:7654
+     font-['Integral_CF:Regular'] text-[20px] leading-[normal]
+     color inherited from parent (--color-secondary / white) */
+.role {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);         /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);      /* 1 */
+  letter-spacing: var(--tracking-h5);     /* 0 */
+  color:          var(--color-secondary);
+}
+
+
+/* PERIOD — "February 2022 – Present"
+   Confirmed: Figma node 1036:7655
+     font-['Inter:Regular'] text-[12px] leading-[20px] uppercase
+     color inherited from parent (--color-secondary / white) */
+.period {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);       /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);         /* 20px */
+  letter-spacing: var(--tracking-lead);   /* 0 */
+  text-transform: uppercase;
+  color:          var(--color-secondary);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   Mobile layout not yet confirmed from Figma.
+   Placeholder only — implement when mobile frames provided.
+
+   Likely change: .row to flex-col, .company and .right to full width,
+   .right padding to 0. Do NOT implement until design is confirmed.
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* Reserved — implement when mobile layout is confirmed */
+}

@@ -1,0 +1,71 @@
+/*
+ * Chip.module.css
+ * Specs confirmed from Figma nodes 848:87, 1002:5922–5937
+ *
+ * Confirmed values:
+ *   background:    white           → --color-secondary
+ *   border:        1px solid black → 1px solid --color-primary
+ *   padding:       12px all sides  → --padding-12
+ *   border-radius: 8px             → --radius-sm
+ *   font-family:   Inter           → --font-body
+ *   font-size:     12px            → --text-lead
+ *   font-weight:   400             → --weight-regular
+ *   line-height:   20px            → --lh-body
+ *   text-transform: uppercase
+ *   color:         black           → --color-primary
+ *
+ * Single visual variant only — no filled or ghost chip in Figma.
+ * Interactive state (hover invert) applied via .interactive modifier.
+ */
+
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+.chip {
+  display:          inline-flex;
+  align-items:      center;
+  justify-content:  center;
+
+  padding:          var(--padding-12);
+  border-radius:    var(--radius-sm);     /* 8px */
+  border:           1px solid var(--color-primary);
+  background-color: var(--color-secondary);
+
+  font-family:      var(--font-body);
+  font-size:        var(--text-lead);     /* 12px */
+  font-weight:      var(--weight-regular);
+  line-height:      var(--lh-body);       /* 20px */
+  letter-spacing:   var(--tracking-lead);
+  text-transform:   uppercase;
+  white-space:      nowrap;
+  color:            var(--color-primary);
+
+  /* Decorative by default — no pointer unless interactive */
+  cursor: default;
+}
+
+
+/* ============================================================
+   INTERACTIVE MODIFIER
+   Applied when chip is used as a button or filter toggle.
+   Hover inverts colors (white bg → black bg, black text → white text).
+   ============================================================ */
+
+.interactive {
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    color            var(--transition-base);
+}
+
+.interactive:hover {
+  background-color: var(--color-primary);
+  color:            var(--color-secondary);
+}
+
+.interactive:focus-visible {
+  outline:        var(--focus-outline-width) solid var(--color-primary);
+  outline-offset: var(--focus-outline-offset);
+}

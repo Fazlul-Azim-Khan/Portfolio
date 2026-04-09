@@ -1,0 +1,259 @@
+/*
+ * WhyItMatteredSection.module.css — Center Health (001)
+ * Confirmed from Figma node 1161:5809 (updated layout)
+ *
+ * Structure: index-left / content-right row pattern.
+ * Content column: heading (centered) + cards row.
+ *
+ * Section:     border-bottom, py-96px, items-end
+ * Cards:       white bg, rounded-16px, blue shadow, p-64px, gap-12px
+ * Card shadow: 0 8px 14px -3px rgba(149,197,255,0.14)
+ *
+ * Left col:    370px, 2 stacked person cards (gap-24px)
+ * Right col:   flex-1, single quote card
+ */
+
+
+/* ============================================================
+   SECTION WRAPPER
+   ============================================================ */
+
+.section {
+  display:         flex;
+  flex-direction:  column;
+  align-items:     flex-end;       /* Figma: items-end */
+  justify-content: center;
+
+  width:           100%;
+  padding-top:     var(--gap-64);
+  padding-bottom:  var(--gap-64);
+
+  border-bottom:   1px solid var(--color-divider);
+}
+
+
+/* ============================================================
+   ROW — index (left) + content (right)
+   Figma: flex-row, gap-24, items-start, w-full
+   ============================================================ */
+
+.row {
+  display:     flex;
+  align-items: flex-start;
+  gap:         48px;
+
+  width:       100%;
+}
+
+
+/* ============================================================
+   INDEX — left column
+   Figma: 14px, #424242, uppercase, shrink-0
+   ============================================================ */
+
+.index {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  text-transform: uppercase;
+  color:          var(--color-text-muted);
+  white-space:    nowrap;
+  flex-shrink:    0;
+  margin:         0;
+  padding-top:    6px;   /* optical cap-height alignment */
+}
+
+
+/* ============================================================
+   CONTENT COLUMN — heading + cards
+   Figma: flex-1, flex-col, gap-10px, items-center
+   ============================================================ */
+
+.contentCol {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;         /* Figma: items-center — centers the heading */
+  justify-content: center;
+  gap:            var(--gap-64);
+
+  flex:           1 0 0;
+  min-width:      0;
+}
+
+
+/* ============================================================
+   HEADING
+   Figma: 64px Integral CF, tracking -0.4px, w-732px
+   ============================================================ */
+
+.heading {
+  font-family:     var(--font-display);
+  font-size:       var(--text-h2);
+  font-weight:     var(--weight-regular);
+  line-height:     var(--lh-heading);
+  letter-spacing:  var(--tracking-h2);
+  text-transform:  uppercase;
+  color:           var(--color-primary);
+  margin:          0;
+
+  width:           732px;         /* Figma: w-[732px] — constrained heading width */
+  max-width:       100%;
+}
+
+
+/* ============================================================
+   CARDS ROW
+   Figma: flex, gap-24, items-center, w-full
+   ============================================================ */
+
+.cardsRow {
+  display:     flex;
+  align-items: center;
+  gap:         var(--gap-24);
+
+  width:       100%;
+}
+
+
+/* ============================================================
+   PEOPLE COLUMN — stacked person cards
+   Figma: w-370px, flex-col, gap-24px, full height
+   ============================================================ */
+
+.peopleCol {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-24);  /* Figma: gap-24 (updated from 15px) */
+
+  width:          370px;
+  flex-shrink:    0;
+  align-self:     stretch;
+}
+
+
+/* ============================================================
+   CARD — shared style for person cards and quote card
+   Figma: white bg, rounded-16, blue shadow, p-64, gap-12, items-center
+   ============================================================ */
+
+.card {
+  display:          flex;
+  flex-direction:   column;
+  align-items:      center;
+  gap:              var(--gap-12);
+
+  padding:          var(--padding-64);
+  background-color: var(--color-secondary);
+  border-radius:    16px;                    /* Figma: rounded-[16px] */
+  box-shadow:       0 8px 14px -3px rgba(149, 197, 255, 0.14);
+}
+
+/* Person cards stretch to fill the column height equally */
+.peopleCol .card {
+  flex:            1 0 0;
+  min-height:      0;
+  justify-content: center;
+}
+
+
+/* ============================================================
+   QUOTE CARD — right column
+   Figma: w-[971px] fixed width
+   ============================================================ */
+
+.quoteCard {
+  flex:       1 0 0;             /* Figma: flex-[1_0_0] — takes remaining space */
+  min-width:  0;
+}
+
+
+/* ============================================================
+   CARD INTERNALS
+   ============================================================ */
+
+/* 1px divider at top of each card */
+.cardDivider {
+  width:            100%;
+  height:           1px;
+  background-color: var(--color-divider);
+  flex-shrink:      0;
+}
+
+/* Person name — H4 32px Integral CF */
+.cardName {
+  font-family:     var(--font-display);
+  font-size:       var(--text-h4);
+  font-weight:     var(--weight-regular);
+  line-height:     var(--lh-heading);
+  letter-spacing:  var(--tracking-h4);
+  text-transform:  uppercase;
+  color:           var(--color-primary);
+  margin:          0;
+
+  width:           100%;
+}
+
+/* Person detail — Inter 14px body */
+.cardDetail {
+  font-family:     var(--font-body);
+  font-size:       var(--text-body);
+  font-weight:     var(--weight-regular);
+  line-height:     var(--lh-body);
+  color:           var(--color-primary);
+  margin:          0;
+
+  width:           100%;
+}
+
+/* Quote text — H4 32px Integral CF uppercase */
+.quote {
+  font-family:     var(--font-display);
+  font-size:       var(--text-h4);
+  font-weight:     var(--weight-regular);
+  line-height:     var(--lh-heading);
+  letter-spacing:  var(--tracking-h4);
+  text-transform:  uppercase;
+  color:           var(--color-primary);
+  margin:          0;
+
+  width:           100%;
+}
+
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  .section {
+    padding-top:    48px;
+    padding-bottom: 48px;
+  }
+
+  /* Stack index above content on mobile */
+  .row {
+    flex-direction: column;
+    gap:            var(--gap-16);
+  }
+
+  .heading {
+    width: 100%;
+  }
+
+  /* Stack cards vertically on mobile */
+  .cardsRow {
+    flex-direction: column;
+  }
+
+  .peopleCol {
+    width:          100%;
+    flex-direction: row;      /* Person cards side by side on mobile */
+    gap:            var(--gap-12);
+  }
+
+  .card {
+    padding: var(--padding-32);
+  }
+}

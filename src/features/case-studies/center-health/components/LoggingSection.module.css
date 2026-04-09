@@ -1,0 +1,291 @@
+/*
+ * LoggingSection.module.css — Center Health (008)
+ * Confirmed from Figma node 1161:6410 (updated layout).
+ *
+ * Index-left / content-right row pattern.
+ * Content column holds: headingRow (heading + body) + features + image + results.
+ * py-64px, border-b.
+ */
+
+
+/* ============================================================
+   ROOT — outer section container
+   Figma: flex-col, gap-0, py-64px, border-b, items-start
+   ============================================================ */
+
+.root {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  gap:            var(--gap-64);
+  padding-top:    var(--gap-64);
+  padding-bottom: var(--gap-64);
+  border-bottom:  1px solid var(--color-divider);
+  width:          100%;
+}
+
+
+/* ============================================================
+   ROW — index (left) + content (right)
+   Figma: flex row, gap-48, items-start, w-full
+   ============================================================ */
+
+.row {
+  display:     flex;
+  align-items: flex-start;
+  gap:         var(--gap-40);
+  width:       100%;
+}
+
+
+/* ============================================================
+   INDEX — left column
+   Figma: Inter 14px (adapted to 12px lead), #424242, uppercase
+   ============================================================ */
+
+.index {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);        /* 12px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-text-muted);
+  white-space:    nowrap;
+  flex-shrink:    0;
+  margin:         0;
+  padding-top:    6px;   /* optical cap-height alignment */
+}
+
+
+/* ============================================================
+   CONTENT COLUMN — headingRow + features + image + results
+   Figma: flex-col, flex-1, gap-64, items-start
+   ============================================================ */
+
+.contentCol {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  gap:            var(--gap-64);
+
+  flex:           1 0 0;
+  min-width:      0;
+}
+
+
+/* ============================================================
+   HEADING ROW — heading (flex-1) + body (310px)
+   Figma: flex row, gap-48, items-start, w-full
+   ============================================================ */
+
+.headingRow {
+  display:     flex;
+  align-items: flex-start;
+  gap:         48px;
+  width:       100%;
+}
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h3);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  flex:           1 0 0;
+  min-width:      0;
+  margin:         0;
+}
+
+.body {
+  font-family:  var(--font-body);
+  font-size:    14px;
+  font-weight:  var(--weight-regular);
+  line-height:  var(--lh-body);
+  color:        var(--color-primary);
+  width:        310px;              /* Figma: w-[310px] */
+  flex-shrink:  0;
+  margin:       0;
+  white-space:  pre-wrap;           /* preserves \n line breaks */
+}
+
+
+/* ============================================================
+   FEATURE ITEMS — flex row, gap-24
+   Figma: flex row, gap-24, each flex-1, divider + H5 title
+   No stars, no bullets.
+   ============================================================ */
+
+.featureRow {
+  display:     flex;
+  align-items: flex-start;
+  gap:         var(--gap-24);
+  width:       100%;
+}
+
+.featureItem {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  gap:            7px;             /* Figma: gap-6.66px ≈ 7px */
+  flex:           1 0 0;
+  min-width:      0;
+}
+
+.featureDivider {
+  width:            100%;
+  height:           1px;
+  background-color: #e5e5e5;     /* Figma: bg-[#e5e5e5] */
+  flex-shrink:      0;
+}
+
+.featureTitle {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);    /* 20px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-primary);
+  margin:         0;
+  width:          100%;
+}
+
+
+/* ============================================================
+   IMAGE — full-width, aspect ratio from content
+   Figma: aspect-[1600/1200], rounded-sm (8px)
+   ============================================================ */
+
+.imageWrap {
+  position:      relative;
+  width:         100%;
+  border-radius: var(--radius-sm);
+  overflow:      hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   RESULTS — row: "Results" H5 label + H4 32px statement
+   Figma: flex row, gap 24px
+   ============================================================ */
+
+.results {
+  display:     flex;
+  align-items: flex-start;
+  gap:         var(--gap-24);
+  width:       100%;
+}
+
+.resultsLabel {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);        /* 12px — Lead typography */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  color:          var(--color-primary);
+  white-space:    nowrap;
+  flex-shrink:    0;
+  margin:         0;
+}
+
+/* H4 32px — same scale as sections 006/007 results */
+.resultsHeading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h4);          /* 20px → 32px fluid */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h4);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  flex:           1 0 0;
+  min-width:      0;
+  margin:         0;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .root {
+    padding-top:    var(--padding-40);
+    padding-bottom: var(--padding-40);
+  }
+
+  /* Stack index above content on mobile */
+  .row {
+    flex-direction: column;
+    gap:            var(--gap-16);
+  }
+
+  .index {
+    padding-top: 0;
+  }
+
+  .contentCol {
+    gap: var(--gap-40);
+  }
+
+  /* Heading row: stack heading above body */
+  .headingRow {
+    flex-direction: column;
+    gap:            var(--gap-16);
+  }
+
+  .body {
+    width: 100%;
+  }
+
+  /* Feature items: stack on mobile */
+  .featureRow {
+    flex-direction: column;
+  }
+
+  /* Results: stack vertically */
+  .results {
+    flex-direction: column;
+    gap:            var(--gap-16);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contentCol {
+    width: 100%;
+  }
+
+  .body {
+    width: 100%;
+    max-width: 310px;
+  }
+
+  /* Feature items: wrap on tablet */
+  .featureRow {
+    flex-wrap: wrap;
+  }
+
+  .featureItem {
+    min-width: 200px;
+  }
+}
+
+
+/* ============================================================
+   SCREEN-BLOCK RHYTHM — breathing room for slow reading
+   Desktop / tablet only. Each Contents block and Results block
+   gets min-height: 80vh so each feels like its own screen.
+   Content stays pinned to the top of the block (natural flow).
+   ============================================================ */
+
+@media (min-width: 768px) {
+  .row,
+  .results {
+    min-height: var(--screen-block-min-h);
+  }
+}

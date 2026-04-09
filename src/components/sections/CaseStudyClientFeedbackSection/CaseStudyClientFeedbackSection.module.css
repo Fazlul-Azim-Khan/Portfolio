@@ -1,0 +1,155 @@
+/*
+ * CaseStudyClientFeedbackSection.module.css
+ * Confirmed from Figma node 1005:6253
+ */
+
+
+/* ============================================================
+   SECTION — full-width dark card
+   bg-[var(--primary)], p-64px, rounded-8px, min-h-800px
+   Confirmed: Figma node 1005:6253
+   ============================================================ */
+
+.section {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-64);
+  padding:        var(--padding-64);
+  background:     var(--color-primary);
+  border-radius:  var(--radius-sm);   /* 8px — Figma node 1005:6253: rounded-[var(--border--radius/8)] */
+  min-height:     800px;
+  justify-content: center;
+  width:          100%;
+}
+
+
+/* ============================================================
+   HEADING — H1 scale, white, 120px
+   Confirmed: Figma node 1005:6255
+   ============================================================ */
+
+.headingBlock {
+  display:  flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h1);              /* 120px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-h1);                /* 120px */
+  letter-spacing: var(--tracking-case-hero);   /* -1.8px */
+  text-transform: uppercase;
+  color:          var(--color-secondary);
+  margin:         0;
+  white-space:    nowrap;
+}
+
+
+/* ============================================================
+   QUOTE CARDS — 3-col flex row of teal cards
+   Confirmed: Figma node 1005:6256
+   ============================================================ */
+
+.cards {
+  display: flex;
+  gap:     var(--gap-40);
+  width:   100%;
+}
+
+/* Individual teal card */
+/* #2fe3ff is the Axion brand colour — content-layer value only */
+.card {
+  background:     #2fe3ff;
+  flex:           1 0 0;
+  min-width:      0;
+  height:         232px;
+  display:        flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:        16px 20px;
+  border-radius:  var(--radius-sm);  /* 8px */
+}
+
+.quote {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);          /* 20px */
+  font-weight:    var(--weight-regular);   /* Figma: Integral CF Regular (400) — was 700 */
+  line-height:    var(--lh-heading);       /* 1 */
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   ATTRIBUTION — right-aligned below the cards
+   Confirmed: Figma node 1014:6742
+   ============================================================ */
+
+.attribution {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-end;
+  width:          100%;
+}
+
+.attributionText {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);          /* 20px */
+  font-weight:    var(--weight-regular);   /* Figma: Integral CF Regular (400) — was 700 */
+  line-height:    var(--lh-heading);
+  text-transform: uppercase;
+  color:          var(--color-secondary);
+  margin:         0;
+  white-space:    nowrap;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .section {
+    padding:    var(--padding-40) var(--layout-padding-x);
+    min-height: unset;
+    gap:        var(--gap-40);
+  }
+
+  /* Allow heading to wrap on narrow viewports — nowrap causes overflow */
+  .heading {
+    white-space: normal;
+  }
+
+  /* Stack 3-col cards to single column */
+  .cards {
+    flex-direction: column;
+    gap:            var(--gap-24);
+  }
+
+  /* Remove fixed height — card grows to content on mobile */
+  .card {
+    height:     auto;
+    min-height: 140px;
+  }
+
+  /* Attribution wraps and left-aligns on mobile */
+  .attributionText {
+    white-space: normal;
+    text-align:  left;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cards {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex:       1 1 calc(50% - var(--gap-40) / 2);
+    height:     auto;
+    min-height: 200px;
+  }
+}

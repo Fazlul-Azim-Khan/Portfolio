@@ -1,0 +1,27 @@
+/*
+ * CaseStudyPage.module.css
+ * Body layout for case study pages
+ * Confirmed from Figma node 977:5838
+ *
+ * gap-[200px] between all major sections
+ * (--case-section-gap token = 200px)
+ */
+
+.body {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--case-section-gap);   /* 200px */
+  align-items:    center;
+  width:          100%;
+}
+
+/*
+ * Each section is wrapped in a bare <div key={i}>.
+ * align-items: center on the parent means flex items shrink to content width
+ * unless explicitly told to stretch. Sections with only position:absolute
+ * children (e.g. the scroll-driven research section) collapse to 0 width.
+ * This class forces all section wrappers to full width.
+ */
+.sectionItem {
+  width: 100%;
+}
