@@ -159,8 +159,7 @@ export const axionRay: AxionRayCaseStudy = {
       stage:  'Pre-Seed → Seed → Series A',
       year:   '2021 – 2022',
       sector: 'Industrial AI · Predictive Reliability',
-      note:   'Company name withheld under NDA',
-      chips:  ['Case Study', 'Enterprise AI', 'Confidential'],
+      chips:  ['Case Study', 'Enterprise AI', 'Industrial AI'],
     },
   },
 
@@ -489,7 +488,7 @@ export const axionRay: AxionRayCaseStudy = {
         },
         {
           title: 'Enterprise Collaboration',
-          desc:  'Working with product, engineering and customer stakeholders including Boeing, Denso, Baxter and Raytheon.',
+          desc:  'Working across product and engineering to scale design systems and investigation workflows for an enterprise-grade platform.',
         },
       ],
 
@@ -516,9 +515,8 @@ export const axionRay: AxionRayCaseStudy = {
       type:    'outcome',
       index:   '(009)',
       heading: 'Outcome: A platform engineers trust. A product investors backed.',
-      // ⚠️ "platforM" (capital M) verbatim from Figma node 982:5778 — confirm if intentional typo
       descriptor:
-        'From whiteboard concept to $25M-funded enterprise platforM — ' +
+        'From whiteboard concept to $25M-funded enterprise platform — ' +
         'I was part of it from the first screen.',
 
       metrics: [
@@ -529,8 +527,8 @@ export const axionRay: AxionRayCaseStudy = {
       ],
 
       impactStatement:
-        'The platform enabled reliability engineers at Boeing, Denso, Baxter and Raytheon ' +
-        'to detect failure signals earlier and investigate large-scale manufacturing datasets more effectively.',
+        'The platform raised $25M across three stages, backed by strategic investors including ' +
+        'Boeing, Denso, Baxter, and Raytheon — validating AI-driven reliability intelligence for manufacturing at scale.',
 
       skills: [
         'Enterprise Product Design',
@@ -541,7 +539,7 @@ export const axionRay: AxionRayCaseStudy = {
         'Startup Product Scaling',
       ],
 
-      ndaNote: 'All visuals subject to NDA. Interfaces shown are conceptual reconstructions.',
+      ndaNote: 'Interfaces shown are illustrative reconstructions.',
     } satisfies OutcomeSection,
 
 
