@@ -69,7 +69,7 @@ export const hero = {
   subline: 'Enterprise AI · Safety-critical domains · MVP to $25M scale',
 
   /** Renders in Lead (12px Inter, uppercase) in top-right grid cell */
-  bio: 'I design AI-powered enterprise products for expert-user domains — manufacturing reliability, clinical decision support, metabolic health intelligence. My work has contributed to $25M in venture funding and products deployed at Boeing, Raytheon, Denso, and Baxter.',
+  bio: 'I design AI-powered enterprise products for expert-user domains — clinical decision support, metabolic health intelligence, and manufacturing reliability. Most recently at Center Health, shaping an AI-powered diabetes management platform. Earlier at Axion Ray — an industrial-AI startup backed by Boeing, Raytheon, Denso, and Baxter.',
 
   /** Specialty chip tags — order matches Figma layout (left→right, wrapping) */
   chips: [
@@ -97,7 +97,7 @@ export const selectedWorks = {
     {
       id:     'manufacturing-platform',
       index:  '01',
-      client: 'Under NDA',   // ← NDA — do not expose real client name
+      client: 'Axion Ray',
       title:  'AI-powered manufacturing reliability platform',
       slug:   'manufacturing-platform',
       mockup: '/images/works/manufacturing-platform/mockup.jpg',
@@ -178,27 +178,13 @@ export interface ExperienceEntry {
 export const experience = {
   meta: { heading: 'Explore my design journey' },
   entries: [
-    // ── Work Experience — sourced verbatim from CV (Fazlul_Azim_Khan_CV.docx) ──
+    // ── Work Experience ────────────────────────────────────────────────────────
     {
       id:       'gb3-services',
       company:  'GB3 Services LLC',
       location: 'Sheridan, Wyoming',
       role:     'Product Designer & UX Strategist',
-      period:   'Jan 2024 – Dec 2025',
-    },
-    {
-      id:       'faz-studio',
-      company:  'Faz Studio',
-      location: 'Bangladesh',
-      role:     'Founder & Lead Product Designer',
-      period:   'Jun 2022 – Nov 2025',
-    },
-    {
-      id:       'freelance',
-      company:  'Upwork · PeoplePerHour',
-      location: 'Freelance',
-      role:     'Senior Product & UX Designer',
-      period:   'Feb 2021 – Present',
+      period:   'Jan 2025 – Nov 2025',
     },
     {
       id:       'center-health',
@@ -206,6 +192,13 @@ export const experience = {
       location: 'San Francisco, California',
       role:     'Product Designer & UX Designer',
       period:   'Oct 2021 – Dec 2023',
+    },
+    {
+      id:       'axion-ray',
+      company:  'Axion Ray',
+      location: 'Remote',
+      role:     'Product Designer (Contractor)',
+      period:   'Feb 2021 – Aug 2022',
     },
     {
       id:       'elo',

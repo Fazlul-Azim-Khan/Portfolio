@@ -96,7 +96,7 @@ export default function Contact() {
         </p>
 
         <p className={styles.copyright}>
-          © 2025 Fazlul Azim Khan
+          © 2026 Fazlul Azim Khan
         </p>
 
       </footer>
