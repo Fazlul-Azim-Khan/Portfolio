@@ -94,7 +94,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);   /* 1 / 100% */
   letter-spacing: var(--tracking-h4); /* 0 */
-  text-transform: uppercase;
+  text-transform: lowercase;          /* override: email must render lowercase */
   color:          var(--color-secondary);  /* white */
   text-decoration: none;
 

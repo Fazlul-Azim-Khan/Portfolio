@@ -145,7 +145,7 @@ export const gallery = {
     // Row 1
     { id: 'bm-solutions-btl-rates',        title: 'BM Solutions BTL Rates',         image: '/images/gallery/bm-solutions-btl-rates.png',         radiusVariant: 'default' as GalleryRadiusVariant },
     { id: 'training-courses-platform',     title: 'Training Courses Platform',      image: '/images/gallery/training-courses-platform.jpg',      radiusVariant: 'default' as GalleryRadiusVariant },
-    { id: 'mnmridez-chauffeur-service',    title: 'MnMridez Chauffeur Service',     image: '/images/gallery/mnmridez-chauffeur-service.png',     radiusVariant: 'default' as GalleryRadiusVariant, backgroundColor: '#c0d004' },
+    { id: 'mnmridez-chauffeur-service',    title: 'MnMridez Chauffeur Service',     image: '/images/gallery/mnmridez-chauffeur-service.png',     radiusVariant: 'default' as GalleryRadiusVariant },
     // Row 2
     { id: 'task-manager-app',              title: 'Task Manager App',               image: '/images/gallery/task-manager-app.png',               radiusVariant: 'default' as GalleryRadiusVariant },
     { id: 'sales-tracking-app',            title: 'Sales Tracking App',             image: '/images/gallery/sales-tracking-app.png',             radiusVariant: 'default' as GalleryRadiusVariant },
@@ -247,7 +247,7 @@ export const languages = {
   meta: { heading: 'Languages' },
   items: [
     { language: 'English', proficiency: 'Native'          },
-    { language: 'German',  proficiency: 'Elementary (A1)' },
+    { language: 'German',  proficiency: 'Elementary (A2)' },
   ],
 } as const
 
