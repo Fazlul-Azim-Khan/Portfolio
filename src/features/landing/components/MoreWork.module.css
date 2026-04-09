@@ -54,7 +54,7 @@
 .header {
   display:        flex;
   flex-direction: row;
-  align-items:    baseline;
+  align-items:    flex-start;
   width:          100%;
   gap:            var(--gap-16);
 }
@@ -70,9 +70,18 @@
   color:          var(--color-tertiary);
   flex-shrink:    0;
   margin:         0;
+  padding-top:    4px;                 /* optical alignment with heading cap-height */
 }
 
-/* HEADING — "More glimpse of works" · Integral CF 56px H3 · --color-primary */
+/* HEADER CONTENT — right column: heading + subheading stacked */
+.headerContent {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-16);
+  flex:           1;
+}
+
+/* HEADING — "More works" · Integral CF 56px H3 · --color-primary */
 .headerHeading {
   font-family:    var(--font-display);
   font-size:      var(--text-h3);      /* 56px */
@@ -82,7 +91,18 @@
   text-transform: uppercase;
   color:          var(--color-primary);
   margin:         0;
-  flex:           1;
+}
+
+/* SUBHEADING — Inter body · --color-tertiary · max-width 500px */
+.headerSubheading {
+  font-family:    var(--font-body);
+  font-size:      var(--text-body);    /* 16px */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);      /* 20px */
+  letter-spacing: var(--tracking-body);
+  color:          var(--color-tertiary);
+  max-width:      500px;
+  margin:         0;
 }
 
 

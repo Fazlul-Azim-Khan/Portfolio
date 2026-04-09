@@ -99,9 +99,14 @@ export default function MoreWork() {
         <p className={styles.headerIndex}>
           {gallery.meta.index}
         </p>
-        <h2 className={styles.headerHeading}>
-          {gallery.meta.heading}
-        </h2>
+        <div className={styles.headerContent}>
+          <h2 className={styles.headerHeading}>
+            {gallery.meta.heading}
+          </h2>
+          <p className={styles.headerSubheading}>
+            {gallery.meta.subheading}
+          </p>
+        </div>
       </div>
 
       {/* ── Divider below header ─────────────────────────── */}

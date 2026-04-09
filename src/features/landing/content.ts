@@ -138,8 +138,9 @@ export interface GalleryItem {
 
 export const gallery = {
   meta: {
-    index:   '(003)',
-    heading: 'More glimpse of works',
+    index:      '(003)',
+    heading:    'More works',
+    subheading: 'A broader range across fintech, health, productivity, and consumer apps — from earlier client and studio work.',
   },
   items: [
     // Row 1
