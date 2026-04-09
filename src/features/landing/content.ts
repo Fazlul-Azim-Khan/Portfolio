@@ -158,7 +158,7 @@ export const gallery = {
     { id: 'yourself-online-dashboard',    title: 'Yourself.online Dashboard',      image: '/images/gallery/yourself-online-dashboard.png',      radiusVariant: 'default' as GalleryRadiusVariant },
     { id: 'click-on-offers-dashboard',    title: 'Click On Offers Dashboard',      image: '/images/gallery/click-on-offers-dashboard.png',      radiusVariant: 'default' as GalleryRadiusVariant },
     { id: 'karaoke-singing-app',         title: 'Karaoke Singing App',            image: '/images/gallery/karaoke-singing-app.png',            radiusVariant: 'large'   as GalleryRadiusVariant },
-  ] satisfies GalleryItem[],
+  ] as GalleryItem[],
 } as const
 
 
