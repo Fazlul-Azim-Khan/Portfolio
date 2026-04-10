@@ -163,34 +163,14 @@
 
 /* ============================================================
    MODAL — CLOSE BUTTON
+   Positioning wrapper for <IconButton variant="light" />
+   Visual/hover/focus styles come from the IconButton component itself.
    ============================================================ */
 
 .modalClose {
-  position:    absolute;
-  top:         -48px;
-  right:       0;
-
-  background:  transparent;
-  border:      none;
-  padding:     var(--gap-8);
-  cursor:      pointer;
-  line-height: 1;
-
-  font-family: var(--font-body);
-  font-size:   24px;
-  color:       var(--color-secondary);
-
-  transition:  opacity var(--transition-fast);
-}
-
-.modalClose:hover {
-  opacity: 0.72;
-}
-
-.modalClose:focus-visible {
-  outline:        var(--focus-outline-width) solid var(--color-secondary);
-  outline-offset: var(--focus-outline-offset);
-  border-radius:  var(--radius-sm);
+  position: absolute;
+  top:      -56px;
+  right:    0;
 }
 
 
@@ -235,14 +215,6 @@
    RESPONSIVE
    ============================================================ */
 
-@media (max-width: 1023px) {
-  .heading {
-    font-size:    72px;
-    line-height:  72px;
-    white-space:  normal;
-  }
-}
-
 @media (max-width: 767px) {
   .section {
     padding:    var(--padding-40) var(--layout-padding-x);
@@ -251,8 +223,6 @@
   }
 
   .heading {
-    font-size:   40px;
-    line-height: 40px;
     white-space: normal;
   }
 

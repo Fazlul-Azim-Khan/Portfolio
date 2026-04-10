@@ -14,6 +14,8 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import type { CenterHealthRecommendationLetterSection } from '../content'
+import IconButton from '@/components/ui/IconButton'
+import { X } from '@/components/icons'
 import styles from './RecommendationLetterSection.module.css'
 
 
@@ -94,15 +96,15 @@ export default function RecommendationLetterSection({
             onClick={(e) => e.stopPropagation()}
           >
 
-            {/* Close button */}
-            <button
-              className={styles.modalClose}
+            {/* Close button — uses design-system IconButton (light variant for dark overlay) */}
+            <IconButton
+              icon={<X />}
+              variant="light"
               onClick={closeModal}
               aria-label="Close preview"
-              type="button"
-            >
-              ✕
-            </button>
+              className={styles.modalClose}
+            />
+
 
             {/* PDF iframe */}
             <div className={styles.modalPdfWrap}>
