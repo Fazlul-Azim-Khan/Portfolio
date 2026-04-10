@@ -101,6 +101,108 @@ UserResearch contains four clearly structured sub-sections:
 - Never use `Section1`, `Section2`, or numeric suffixes
 - CSS Modules co-located with each component file
 
+### CSS Class Naming Convention
+
+All CSS Module class names follow this structure:
+
+```
+[section]-[element]
+[section]-[element]-[modifier]
+```
+
+**Rules:**
+- All lowercase, hyphen-separated — no camelCase, no BEM `__` or `--`
+- The section prefix matches the component's short-name (see table below)
+- The element word describes what the element IS, not what it looks like
+- The modifier (optional third segment) describes a variant or state
+
+**Section prefix table:**
+
+| Component | Prefix |
+|---|---|
+| CaseStudyDecisionsSection | `decisions` |
+| CaseStudySolutionSection | `solution` |
+| CaseStudyResearchSection | `research` |
+| CaseStudyPhaseSection | `phase` |
+| CaseStudyProblemSection | `problem` |
+| FundingMilestone | `funding` |
+| OutcomeSection | `outcome` |
+| ReflectionsSection | `reflections` |
+| CaseStudyClientFeedbackSection | `feedback` |
+| NextCaseStudyHero | `next` |
+| CaseStudySectionWrapper | `wrapper` |
+| Landing Hero | `hero` |
+| Selected Works | `works` |
+| Gallery | `gallery` |
+| Experience | `experience` |
+| Contact | `contact` |
+| Footer | `footer` |
+
+**Shared element vocabulary** (same word = same meaning across all sections):
+
+| Word | Describes |
+|---|---|
+| `heading` | Large section title (H1 / display) |
+| `subheading` | Secondary heading below the main title |
+| `title` | Card or block-level heading (H2 / H3) |
+| `label` | Small uppercase eyebrow / caption text |
+| `body` | Body paragraph text |
+| `desc` | Short description (shorter than body) |
+| `chip` | Pill / tag element |
+| `divider` | Horizontal rule or separator line |
+| `panel` | Full-height breathing block (80vh pattern) |
+| `content` | Direct layout wrapper inside a section |
+| `grid` | Grid layout container |
+| `list` | List container |
+| `item` | One entry within a list or grid |
+| `row` | Horizontal flex row |
+| `col` | Column within a row or grid |
+| `image` | Image or media block |
+| `line` | Decorative line (not a divider rule) |
+| `block` | Self-contained card or group unit |
+| `number` | Numeral — step number, index |
+
+**Examples:**
+
+```css
+/* CaseStudyDecisionsSection */
+.decisions-content       /* flex-column wrapper */
+.decisions-heading       /* H1 section title */
+.decisions-divider       /* hr between cards */
+.decisions-block         /* one full decision unit */
+.decisions-block-panel   /* 80vh modifier on the block */
+.decisions-title-row     /* row containing title + decorative line */
+.decisions-title         /* H2 decision heading */
+.decisions-title-line    /* decorative horizontal line in title row */
+.decisions-tri-col       /* CHOSE / WHY / TRADEOFF 3-col layout */
+.decisions-tri-item      /* one column within the tri-col */
+.decisions-tri-divider   /* top border of each tri-col item */
+.decisions-tri-label     /* CHOSE / WHY / TRADEOFF label */
+.decisions-tri-body      /* body text inside each tri-col item */
+```
+
+```css
+/* CaseStudySolutionSection */
+.solution-sub-section    /* one of three 80vh sub-panels */
+.solution-panel          /* 80vh modifier */
+.solution-sub-header     /* row containing title + source list or flow */
+.solution-title          /* H2 sub-section heading */
+.solution-sources-list   /* data sources list */
+.solution-source-item    /* one data source */
+.solution-source-name    /* data source name */
+.solution-source-desc    /* data source description */
+.solution-flow-list      /* end-to-end flow step list */
+.solution-flow-item      /* one flow step */
+.solution-flow-number    /* step number (01, 02 …) */
+.solution-flow-label     /* step label text */
+.solution-pipeline-list  /* data flow pipeline list */
+.solution-pipeline-item  /* one pipeline stage */
+.solution-pipeline-detail /* detail text below pipeline stage name */
+```
+
+**Apply this convention to every new CSS Module created from this point forward.**
+**Existing modules must be migrated when explicitly requested — not silently.**
+
 ---
 
 ## Content Rule
@@ -268,13 +370,17 @@ Every section header is a two-part flex row:
 - `WorkCard .title` and `CaseStudyHero .title` both use `--weight-regular` — same as everything else in the project.
 - Never `--weight-medium` on these.
 
-### Outfit is case-sensitive — Title Case content is required
+### Outfit is case-sensitive — sentence case is required everywhere
 
 - Unlike Integral CF, **Outfit does not auto-uppercase anything.** The browser renders exactly the case stored in `content.ts`.
-- All content strings must be authored in the exact case they should render:
-  - Headings, subtitles, decision titles, phase headings, reflection insight titles, project titles, section captions → **Title Case**
-  - Body paragraphs → sentence case
-- **Never rely on CSS `text-transform` to "fix" lowercase content.** Fix the source string in `content.ts`.
+- All content strings must be authored in sentence case — **first word capitalised, all other words lowercase**, except:
+  - Proper nouns: company names (Boeing, Raytheon, Bessemer), product names, people's names, place names
+  - Acronyms and initialisms: AI, UX, UI, SBIR, NDA, RTX, etc.
+  - Established proper terms: "Series A", "Series B" (VC stage names)
+  - Brand identifiers rendered by design intent: FAZ, EN, DE, FAZLUL AZIM KHAN (all-caps display)
+- This rule applies to: headings, sub-headings, decision titles, phase headings, card titles, labels, chip text, section captions, metric labels, skill chips, reflection titles, nav labels, and body paragraphs alike.
+- **Never rely on CSS `text-transform` to "fix" casing.** Fix the source string in `content.ts`.
+- **Never revert to Title Case.** The sentence case audit was intentional and approved.
 
 ### Uppercase is reserved
 
