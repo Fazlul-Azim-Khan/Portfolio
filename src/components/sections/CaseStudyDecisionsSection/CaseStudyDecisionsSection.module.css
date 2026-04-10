@@ -61,10 +61,10 @@
   width:          100%;
 }
 
-/* 80vh breathing panel — applied to specific decisions that should
-   occupy a full viewport-height block (e.g. Interpretability Over
-   Abstraction). Overrides the fixed 400px height and vertically
-   centers the title + tri-column group. Mobile resets to auto. */
+/* 80vh breathing panel — applied to all decision cards in the
+   Key Design Decisions section (:003 scope). Overrides the fixed
+   400px height and vertically centers the title + tri-column group.
+   Mobile resets to auto. */
 .decisionBlockPanel {
   height:          auto;
   min-height:      var(--screen-block-min-h);   /* 80vh */

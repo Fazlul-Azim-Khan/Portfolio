@@ -51,15 +51,8 @@ export default function CaseStudyDecisionsSection({ section }: CaseStudyDecision
           {/* Divider above each decision */}
           <div className={styles.divider} aria-hidden="true" />
 
-          {/* Decision block — h-[400px], or 80vh panel for the first card
-              (Interpretability Over Abstraction — per :003 scope) */}
-          <div
-            className={
-              i === 0
-                ? `${styles.decisionBlock} ${styles.decisionBlockPanel}`
-                : styles.decisionBlock
-            }
-          >
+          {/* Decision block — 80vh panel (all three decisions per :003 scope) */}
+          <div className={`${styles.decisionBlock} ${styles.decisionBlockPanel}`}>
 
             {/* Title row with inline line — h-[111px] */}
             {/*
