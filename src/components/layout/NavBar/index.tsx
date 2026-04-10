@@ -42,18 +42,18 @@ export default function NavBar() {
   }, [])
 
   return (
-    <header className={styles.navbar} role="banner">
+    <header className={styles['nav-bar']} role="banner">
 
       {/* ── Contents row ────────────────────────────────────── */}
-      <div className={styles.contents}>
+      <div className={styles['nav-contents']}>
 
         {/* ── Left group: Logo + Language switcher ───────── */}
-        <div className={styles.leftGroup}>
+        <div className={styles['nav-left-group']}>
 
           {/* Logo */}
           <Link
             href={navBrand.href}
-            className={styles.logo}
+            className={styles['nav-logo']}
             aria-label="Fazlul Azim Khan — home"
           >
             {navBrand.label}
@@ -61,7 +61,7 @@ export default function NavBar() {
 
           {/* Language switcher */}
           <nav
-            className={styles.langSwitcher}
+            className={styles['nav-lang-switcher']}
             aria-label="Language selection"
           >
             {navLanguages.map((lang) => (
@@ -69,8 +69,8 @@ export default function NavBar() {
                 key={lang.code}
                 type="button"
                 className={[
-                  styles.langItem,
-                  lang.active ? styles.langActive : styles.langInactive,
+                  styles['nav-lang-item'],
+                  lang.active ? styles['nav-lang-active'] : styles['nav-lang-inactive'],
                 ].join(' ')}
                 aria-current={lang.active ? 'true' : undefined}
                 aria-label={`Switch to ${lang.label}`}
@@ -83,7 +83,7 @@ export default function NavBar() {
         </div>
 
         {/* CTA buttons — visible on desktop, hidden on mobile */}
-        <div className={styles.ctaGroup} aria-label="Actions">
+        <div className={styles['nav-cta-group']} aria-label="Actions">
           {navCTAs.map((cta) => (
             <Button
               key={cta.label}
@@ -99,30 +99,30 @@ export default function NavBar() {
         {/* Hamburger button — visible on mobile only */}
         <button
           type="button"
-          className={styles.hamburger}
+          className={styles['nav-hamburger']}
           onClick={toggleDrawer}
           aria-expanded={drawerOpen}
           aria-controls="mobile-nav-drawer"
           aria-label={drawerOpen ? 'Close menu' : 'Open menu'}
         >
-          <span className={[styles.hamburgerLine, drawerOpen ? styles.hamburgerOpen : ''].join(' ')} />
-          <span className={[styles.hamburgerLine, drawerOpen ? styles.hamburgerOpen : ''].join(' ')} />
-          <span className={[styles.hamburgerLine, drawerOpen ? styles.hamburgerOpen : ''].join(' ')} />
+          <span className={[styles['nav-hamburger-line'], drawerOpen ? styles['nav-hamburger-open'] : ''].join(' ')} />
+          <span className={[styles['nav-hamburger-line'], drawerOpen ? styles['nav-hamburger-open'] : ''].join(' ')} />
+          <span className={[styles['nav-hamburger-line'], drawerOpen ? styles['nav-hamburger-open'] : ''].join(' ')} />
         </button>
 
       </div>
       {/* ── End contents row ────────────────────────────────── */}
 
       {/* Bottom divider */}
-      <div className={styles.border} role="presentation" aria-hidden="true" />
+      <div className={styles['nav-border']} role="presentation" aria-hidden="true" />
 
       {/* ── Mobile drawer ──────────────────────────────────── */}
       <nav
         id="mobile-nav-drawer"
-        className={[styles.drawer, drawerOpen ? styles.drawerOpen : ''].join(' ')}
+        className={[styles['nav-drawer'], drawerOpen ? styles['nav-drawer-open'] : ''].join(' ')}
         aria-label="Mobile navigation"
       >
-        <div className={styles.drawerContent}>
+        <div className={styles['nav-drawer-content']}>
           {navCTAs.map((cta) => (
             <Button
               key={cta.label}
@@ -131,7 +131,7 @@ export default function NavBar() {
               href={cta.href}
               target={cta.href.startsWith('http') ? '_blank' : undefined}
               download={cta.download}
-              className={styles.drawerButton}
+              className={styles['nav-drawer-button']}
               onClick={closeDrawer}
             />
           ))}

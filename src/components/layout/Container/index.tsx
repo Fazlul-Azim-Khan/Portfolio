@@ -6,21 +6,6 @@
  * It constrains width to --layout-max-width (1920px) and adds
  * horizontal padding of --layout-padding-x (16px) on each side.
  *
- * Layout hierarchy:
- *   <page>
- *     <NavBar />         ← full bleed, outside Container
- *     <NoticeStrip />    ← full bleed, outside Container
- *     <Container>        ← this component
- *       <HeroSection />
- *       <Divider />
- *       <SelectedWorksSection />
- *       <MoreWork />
- *       <ExperienceSection />
- *       <LanguagesSection />
- *       ...
- *     </Container>
- *   </page>
- *
  * Usage:
  *   <Container>
  *     {children}
@@ -56,7 +41,7 @@ export default function Container({
 }: ContainerProps) {
 
   const combinedClass = [
-    styles.container,
+    styles['layout-container'],
     className,
   ].filter(Boolean).join(' ')
 

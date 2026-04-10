@@ -2,9 +2,11 @@
  * NavBar.module.css
  * Specs confirmed from Figma node 966:7519
  *
+ * Prefix: nav-
+ *
  * Desktop layout:
  *   Logo + Lang  |  (spacer)  |  CTA buttons
- *   justify-content: space-between on .contents
+ *   justify-content: space-between on .nav-contents
  *
  * Mobile layout (≤768px):
  *   Logo + Lang  |  Hamburger icon
@@ -29,7 +31,7 @@
    NAV — OUTER WRAPPER
    ============================================================ */
 
-.navbar {
+.nav-bar {
   position:   sticky;
   top:        0;
   z-index:    var(--z-nav);
@@ -53,7 +55,7 @@
    justify-between spreads them across full width
    ============================================================ */
 
-.contents {
+.nav-contents {
   display:         flex;
   align-items:     center;
   justify-content: space-between;
@@ -69,7 +71,7 @@
    Figma: logo container ~318px, lang sits immediately after it.
    ============================================================ */
 
-.leftGroup {
+.nav-left-group {
   display:     flex;
   align-items: center;
   gap:         var(--gap-8);
@@ -83,7 +85,7 @@
    Node: I966:7519;942:5725
    ============================================================ */
 
-.logo {
+.nav-logo {
   display:         flex;
   align-items:     center;
   flex-shrink:     0;
@@ -99,7 +101,7 @@
   transition: opacity var(--transition-base);
 }
 
-.logo:hover {
+.nav-logo:hover {
   opacity: 0.7;
 }
 
@@ -111,14 +113,14 @@
    Node: I966:7519;1036:7731
    ============================================================ */
 
-.langSwitcher {
+.nav-lang-switcher {
   display:     flex;
   align-items: center;
   gap:         var(--gap-8);
   flex-shrink: 0;
 }
 
-.langItem {
+.nav-lang-item {
   font-family:     var(--font-body);
   font-size:       var(--text-lead);
   font-weight:     var(--weight-regular);
@@ -135,16 +137,16 @@
 }
 
 /* Active language — --color-primary (confirmed: EN is active) */
-.langActive {
+.nav-lang-active {
   color: var(--color-primary);
 }
 
 /* Inactive language — --color-tertiary (confirmed: DE is muted) */
-.langInactive {
+.nav-lang-inactive {
   color: var(--color-tertiary);
 }
 
-.langInactive:hover {
+.nav-lang-inactive:hover {
   color: var(--color-primary);
 }
 
@@ -155,7 +157,7 @@
    Node: I966:7519;958:5735
    ============================================================ */
 
-.ctaGroup {
+.nav-cta-group {
   display:         flex;
   align-items:     center;
   justify-content: flex-end;
@@ -169,7 +171,7 @@
    Figma renders this as an SVG line — replicated in CSS
    ============================================================ */
 
-.border {
+.nav-border {
   width:            100%;
   height:           1px;
   background-color: var(--color-divider);
@@ -182,7 +184,7 @@
    Line-based icon: 3 horizontal bars
    ============================================================ */
 
-.hamburger {
+.nav-hamburger {
   display:    none;            /* hidden on desktop */
   flex-direction: column;
   justify-content: center;
@@ -199,7 +201,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.hamburgerLine {
+.nav-hamburger-line {
   display:          block;
   width:            20px;
   height:           1.5px;
@@ -211,15 +213,15 @@
 }
 
 /* Animated X state when drawer is open */
-.hamburgerLine.hamburgerOpen:nth-child(1) {
+.nav-hamburger-line.nav-hamburger-open:nth-child(1) {
   transform: translateY(6.5px) rotate(45deg);
 }
 
-.hamburgerLine.hamburgerOpen:nth-child(2) {
+.nav-hamburger-line.nav-hamburger-open:nth-child(2) {
   opacity: 0;
 }
 
-.hamburgerLine.hamburgerOpen:nth-child(3) {
+.nav-hamburger-line.nav-hamburger-open:nth-child(3) {
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
@@ -229,7 +231,7 @@
    Contains the CTA buttons for mobile layout
    ============================================================ */
 
-.drawer {
+.nav-drawer {
   display:        none;        /* hidden on desktop */
   flex-direction: column;
   width:          100%;
@@ -239,11 +241,11 @@
   transition:     max-height 0.3s ease;
 }
 
-.drawer.drawerOpen {
+.nav-drawer.nav-drawer-open {
   max-height:     300px;       /* enough room for 3 buttons */
 }
 
-.drawerContent {
+.nav-drawer-content {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-12);
@@ -251,7 +253,7 @@
   padding-bottom: var(--gap-16);
 }
 
-.drawerButton {
+.nav-drawer-button {
   width: 100%;
   justify-content: center;
 }
@@ -263,23 +265,23 @@
 
 @media (max-width: 768px) {
 
-  .navbar {
+  .nav-bar {
     padding-left:  var(--layout-padding-x);
     padding-right: var(--layout-padding-x);
   }
 
   /* Hide desktop CTA buttons */
-  .ctaGroup {
+  .nav-cta-group {
     display: none;
   }
 
   /* Show hamburger */
-  .hamburger {
+  .nav-hamburger {
     display: flex;
   }
 
   /* Show drawer container */
-  .drawer {
+  .nav-drawer {
     display: flex;
   }
 }

@@ -51,6 +51,12 @@ interface SectionWrapperProps {
   'aria-labelledby'?: string
 }
 
+// Explicit map so dynamic background lookup stays type-safe after rename
+const bgClass: Record<'light' | 'dark', string> = {
+  light: styles['sw-light'],
+  dark:  styles['sw-dark'],
+}
+
 
 /* ============================================================
    COMPONENT
@@ -69,11 +75,11 @@ export default function SectionWrapper({
 }: SectionWrapperProps) {
 
   const combinedClass = [
-    styles.wrapper,
-    styles[background],
-    padded  ? styles.padded  : undefined,
-    paddedX ? styles.paddedX : undefined,
-    rounded ? styles.rounded : undefined,
+    styles['sw-wrapper'],
+    bgClass[background],
+    padded  ? styles['sw-padded']   : undefined,
+    paddedX ? styles['sw-padded-x'] : undefined,
+    rounded ? styles['sw-rounded']  : undefined,
     className,
   ].filter(Boolean).join(' ')
 

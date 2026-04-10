@@ -41,8 +41,8 @@ export default function NoticeStrip({
 }: NoticeStripProps) {
 
   const stripClass = [
-    styles.strip,
-    marquee   ? styles.marquee : undefined,
+    styles['notice-strip'],
+    marquee   ? styles['notice-marquee'] : undefined,
     className,
   ].filter(Boolean).join(' ')
 
@@ -52,7 +52,7 @@ export default function NoticeStrip({
       role="banner"
       aria-label="Availability notice"
     >
-      <p className={styles.text}>
+      <p className={styles['notice-text']}>
         {noticeStrip.text}
       </p>
     </div>
