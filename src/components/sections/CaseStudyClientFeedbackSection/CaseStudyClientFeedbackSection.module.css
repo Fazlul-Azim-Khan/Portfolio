@@ -10,7 +10,7 @@
    Confirmed: Figma node 1005:6253
    ============================================================ */
 
-.section {
+.feedback-section {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-64);
@@ -28,13 +28,13 @@
    Confirmed: Figma node 1005:6255
    ============================================================ */
 
-.headingBlock {
+.feedback-heading-block {
   display:  flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.heading {
+.feedback-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);              /* 120px */
   font-weight:    var(--weight-regular);
@@ -51,7 +51,7 @@
    Confirmed: Figma node 1005:6256
    ============================================================ */
 
-.cards {
+.feedback-cards {
   display: flex;
   gap:     var(--gap-40);
   width:   100%;
@@ -59,7 +59,7 @@
 
 /* Individual teal card */
 /* #2fe3ff is the Axion brand colour — content-layer value only */
-.card {
+.feedback-card {
   background:     #2fe3ff;
   flex:           1 0 0;
   min-width:      0;
@@ -71,7 +71,7 @@
   border-radius:  var(--radius-sm);  /* 8px */
 }
 
-.quote {
+.feedback-quote {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);          /* 20px */
   font-weight:    var(--weight-regular);   /* Figma: Integral CF Regular (400) — was 700 */
@@ -86,14 +86,14 @@
    Confirmed: Figma node 1014:6742
    ============================================================ */
 
-.attribution {
+.feedback-attribution {
   display:        flex;
   flex-direction: column;
   align-items:    flex-end;
   width:          100%;
 }
 
-.attributionText {
+.feedback-attribution-text {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);          /* 20px */
   font-weight:    var(--weight-regular);   /* Figma: Integral CF Regular (400) — was 700 */
@@ -109,42 +109,42 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  .section {
+  .feedback-section {
     padding:    var(--padding-40) var(--layout-padding-x);
     min-height: unset;
     gap:        var(--gap-40);
   }
 
   /* Allow heading to wrap on narrow viewports — nowrap causes overflow */
-  .heading {
+  .feedback-heading {
     white-space: normal;
   }
 
   /* Stack 3-col cards to single column */
-  .cards {
+  .feedback-cards {
     flex-direction: column;
     gap:            var(--gap-24);
   }
 
   /* Remove fixed height — card grows to content on mobile */
-  .card {
+  .feedback-card {
     height:     auto;
     min-height: 140px;
   }
 
   /* Attribution wraps and left-aligns on mobile */
-  .attributionText {
+  .feedback-attribution-text {
     white-space: normal;
     text-align:  left;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .cards {
+  .feedback-cards {
     flex-wrap: wrap;
   }
 
-  .card {
+  .feedback-card {
     flex:       1 1 calc(50% - var(--gap-40) / 2);
     height:     auto;
     min-height: 200px;

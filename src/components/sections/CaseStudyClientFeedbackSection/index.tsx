@@ -43,15 +43,15 @@ export default function CaseStudyClientFeedbackSection({
   section,
 }: CaseStudyClientFeedbackSectionProps) {
   return (
-    <div className={styles.section}>
+    <div className={styles['feedback-section']}>
 
       {/* ── Heading ──────────────────────────────────────── */}
       {/*
         120px Integral CF, white, tracking -1.8px, leading-[120px]
         Confirmed: Figma node 1005:6255
       */}
-      <div className={styles.headingBlock}>
-        <h1 className={styles.heading}>{section.heading}</h1>
+      <div className={styles['feedback-heading-block']}>
+        <h1 className={styles['feedback-heading']}>{section.heading}</h1>
       </div>
 
       {/* ── Quote cards ──────────────────────────────────── */}
@@ -60,10 +60,10 @@ export default function CaseStudyClientFeedbackSection({
         px-20px, py-16px, rounded-8px, Integral CF 20px black
         Confirmed: Figma node 1005:6256–6262
       */}
-      <div className={styles.cards}>
+      <div className={styles['feedback-cards']}>
         {section.quotes.map((quote, i) => (
-          <div key={i} className={styles.card}>
-            <p className={styles.quote}>{quote}</p>
+          <div key={i} className={styles['feedback-card']}>
+            <p className={styles['feedback-quote']}>{quote}</p>
           </div>
         ))}
       </div>
@@ -73,8 +73,8 @@ export default function CaseStudyClientFeedbackSection({
         Right-aligned, Integral CF 20px white
         Confirmed: Figma node 1014:6742
       */}
-      <div className={styles.attribution}>
-        <p className={styles.attributionText}>{section.attribution}</p>
+      <div className={styles['feedback-attribution']}>
+        <p className={styles['feedback-attribution-text']}>{section.attribution}</p>
       </div>
 
     </div>
