@@ -2,6 +2,8 @@
  * Button.module.css
  * Specs confirmed from Figma nodes 941:6021–6025, I966:7519;953:11714–11715
  *
+ * Prefix: btn-
+ *
  * Confirmed values:
  *   height:        44px
  *   padding:       var(--padding-12) var(--gap-16)  →  12px 16px
@@ -10,9 +12,9 @@
  *   border:        1px solid (outlined only)
  *
  * Variants:
- *   primary  → bg --color-primary,   text --color-secondary,  no border
- *   outlined → bg transparent,        text --color-primary,    1px solid --color-primary
- *   ghost    → bg transparent,        text --color-primary,    no border
+ *   btn-primary  → bg --color-primary,   text --color-secondary,  no border
+ *   btn-outlined → bg transparent,        text --color-primary,    1px solid --color-primary
+ *   btn-ghost    → bg transparent,        text --color-primary,    no border
  */
 
 
@@ -20,7 +22,7 @@
    BASE
    ============================================================ */
 
-.button {
+.btn-root {
   display:         inline-flex;
   align-items:     center;
   justify-content: center;
@@ -48,7 +50,7 @@
     opacity          var(--transition-base);
 }
 
-.button:focus-visible {
+.btn-root:focus-visible {
   outline:        2px solid var(--color-primary);
   outline-offset: 2px;
 }
@@ -60,17 +62,17 @@
    Confirmed: Figma node 941:6024–6025
    ============================================================ */
 
-.primary {
+.btn-primary {
   background-color: var(--color-primary);
   color:            var(--color-secondary);
   border:           none;
 }
 
-.primary:hover {
+.btn-primary:hover {
   opacity: 0.85;
 }
 
-.primary:active {
+.btn-primary:active {
   opacity: 0.7;
 }
 
@@ -81,18 +83,18 @@
    Confirmed: Figma node 941:6021–6022, I966:7519;953:11714–11715
    ============================================================ */
 
-.outlined {
+.btn-outlined {
   background-color: transparent;
   color:            var(--color-primary);
   border:           1px solid var(--color-primary);
 }
 
-.outlined:hover {
+.btn-outlined:hover {
   background-color: var(--color-primary);
   color:            var(--color-secondary);
 }
 
-.outlined:active {
+.btn-outlined:active {
   opacity: 0.8;
 }
 
@@ -103,7 +105,7 @@
    Not explicitly in Figma — reserved for future use
    ============================================================ */
 
-.ghost {
+.btn-ghost {
   background-color: transparent;
   color:            var(--color-primary);
   border:           none;
@@ -111,10 +113,10 @@
   padding-right:    0;
 }
 
-.ghost:hover {
+.btn-ghost:hover {
   opacity: 0.6;
 }
 
-.ghost:active {
+.btn-ghost:active {
   opacity: 0.4;
 }

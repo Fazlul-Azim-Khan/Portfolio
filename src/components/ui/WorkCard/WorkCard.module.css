@@ -2,16 +2,18 @@
  * WorkCard.module.css
  * Specs confirmed from Figma node 942:5673
  *
+ * Prefix: ui-card-
+ *
  * Card layout:
- *   .card          — flex column, full-width, no background (transparent)
- *   .imageWrap     — aspect-ratio container (1328/710), radius-sm, overflow hidden
- *   .image         — Next.js fill image, object-fit: cover
- *   .header        — two-column row: index (left) + titleBlock (right)
- *                    gap-64 between columns — confirmed node 942:5673
- *   .index         — Inter 12px uppercase, --color-tertiary
- *   .titleBlock    — flex column, gap-12
- *   .client        — Inter 12px uppercase, --color-primary
- *   .title         — Integral CF 32px H4, --color-primary
+ *   .ui-card-root       — flex column, full-width, no background (transparent)
+ *   .ui-card-image-wrap — aspect-ratio container (1328/710), radius-sm, overflow hidden
+ *   .ui-card-image      — Next.js fill image, object-fit: cover
+ *   .ui-card-header     — two-column row: index (left) + title-block (right)
+ *                         gap-64 between columns — confirmed node 942:5673
+ *   .ui-card-index      — Inter 12px uppercase, --color-tertiary
+ *   .ui-card-title-block — flex column, gap-12
+ *   .ui-card-client     — Inter 12px uppercase, --color-primary
+ *   .ui-card-title      — Integral CF 32px H4, --color-primary
  *
  * Hover behaviour:
  *   Subtle opacity transition on image — preserves card hierarchy on hover.
@@ -23,7 +25,7 @@
    Full-width link — flex column with gap between image and header
    ============================================================ */
 
-.card {
+.ui-card-root {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-40);        /* gap between image and project header */
@@ -37,12 +39,12 @@
 }
 
 /* Hover: lift image slightly */
-.card:hover .image {
+.ui-card-root:hover .ui-card-image {
   opacity: 0.88;
   transition: opacity var(--transition-base);
 }
 
-.card:focus-visible {
+.ui-card-root:focus-visible {
   outline:        var(--focus-outline-width) solid var(--color-primary);
   outline-offset: var(--focus-outline-offset);
   border-radius:  var(--radius-sm);
@@ -55,7 +57,7 @@
    overflow hidden + border-radius clips the Next.js fill image
    ============================================================ */
 
-.imageWrap {
+.ui-card-image-wrap {
   position:      relative;
   width:         100%;
   aspect-ratio:  1328 / 710;
@@ -65,7 +67,7 @@
   flex-shrink:   0;
 }
 
-.image {
+.ui-card-image {
   object-fit:     cover;
   object-position: center;
   transition:     opacity var(--transition-base);
@@ -78,7 +80,7 @@
    Confirmed: gap-64 between columns — Figma node 942:5673
    ============================================================ */
 
-.header {
+.ui-card-header {
   display:     flex;
   flex-direction: row;
   gap:         var(--gap-64);           /* 64px between index and title block */
@@ -92,7 +94,7 @@
    Confirmed: Inter 12px uppercase, --color-tertiary
    ============================================================ */
 
-.index {
+.ui-card-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);       /* 12px */
   font-weight:    var(--weight-regular);
@@ -110,7 +112,7 @@
    TITLE BLOCK — client name above project title
    ============================================================ */
 
-.titleBlock {
+.ui-card-title-block {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-12);         /* 12px between client and title */
@@ -120,7 +122,7 @@
 
 /* CLIENT — "Under NDA" / "Center Health" / "Arrival OS"
    Confirmed: Inter 12px uppercase, --color-tertiary */
-.client {
+.ui-card-client {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);       /* 12px */
   font-weight:    var(--weight-regular);
@@ -133,7 +135,7 @@
 
 /* TITLE — project name
    Outfit Medium H4, --color-primary */
-.title {
+.ui-card-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h4);         /* 32px */
   font-weight: var(--weight-regular);

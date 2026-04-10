@@ -26,6 +26,12 @@ interface DividerProps {
   className?: string
 }
 
+// Explicit map so dynamic variant lookup stays type-safe after rename
+const variantClass: Record<DividerVariant, string> = {
+  light: styles['divider-light'],
+  dark:  styles['divider-dark'],
+}
+
 
 /* ============================================================
    COMPONENT
@@ -37,8 +43,8 @@ export default function Divider({
 }: DividerProps) {
 
   const combinedClass = [
-    styles.divider,
-    styles[variant],
+    styles['divider-root'],
+    variantClass[variant],
     className,
   ].filter(Boolean).join(' ')
 

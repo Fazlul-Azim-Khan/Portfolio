@@ -40,8 +40,8 @@ export default function Chip({
 }: ChipProps) {
 
   const combinedClass = [
-    styles.chip,
-    interactive ? styles.interactive : undefined,
+    styles['chip-root'],
+    interactive ? styles['chip-interactive'] : undefined,
     className,
   ].filter(Boolean).join(' ')
 

@@ -4,6 +4,8 @@
  *   Light (node 1021:6896): bg-[#e5e5e5] h-px w-full  → --color-divider
  *   Dark  (node 1036:7697): bg-[var(--tirtiary,#ccc)] h-px w-full → --color-divider-dark
  *
+ * Prefix: divider-
+ *
  * Both variants are 1px height, full width.
  * Used as horizontal rules between sections and list entries.
  */
@@ -13,7 +15,7 @@
    BASE
    ============================================================ */
 
-.divider {
+.divider-root {
   display:    block;
   width:      100%;
   height:     1px;
@@ -28,7 +30,7 @@
    Confirmed: node 1021:6896 — bg-[#e5e5e5]
    ============================================================ */
 
-.light {
+.divider-light {
   background-color: var(--color-divider);
 }
 
@@ -39,6 +41,6 @@
    Confirmed: node 1036:7697 — bg-[var(--tirtiary,#ccc)]
    ============================================================ */
 
-.dark {
+.divider-dark {
   background-color: var(--color-divider-dark);
 }

@@ -45,7 +45,7 @@ export default function WorkCard({ work, priority = false }: WorkCardProps) {
   return (
     <Link
       href={`/work/${work.slug}`}
-      className={styles.card}
+      className={styles['ui-card-root']}
       aria-label={`View case study: ${work.title}`}
     >
 
@@ -55,13 +55,13 @@ export default function WorkCard({ work, priority = false }: WorkCardProps) {
         Image fills the wrapper via object-fit: cover.
         fill prop used so Next.js handles responsive sizing.
       */}
-      <div className={styles.imageWrap}>
+      <div className={styles['ui-card-image-wrap']}>
         <Image
           src={work.mockup}
           alt={work.title}
           fill
           sizes="(max-width: 768px) 100vw, 100vw"
-          className={styles.image}
+          className={styles['ui-card-image']}
           priority={priority}
         />
       </div>
@@ -73,17 +73,17 @@ export default function WorkCard({ work, priority = false }: WorkCardProps) {
           Right — client name above project title (Integral CF 32px)
         Gap: --gap-64 between columns — confirmed from Figma
       */}
-      <div className={styles.header}>
+      <div className={styles['ui-card-header']}>
 
         {/* Index — "01" / "02" / "03" */}
-        <p className={styles.index} aria-label={`Project ${work.index}`}>
+        <p className={styles['ui-card-index']} aria-label={`Project ${work.index}`}>
           {work.index}
         </p>
 
         {/* Client + title block */}
-        <div className={styles.titleBlock}>
-          <p className={styles.client}>{work.client}</p>
-          <h3 className={styles.title}>{work.title}</h3>
+        <div className={styles['ui-card-title-block']}>
+          <p className={styles['ui-card-client']}>{work.client}</p>
+          <h3 className={styles['ui-card-title']}>{work.title}</h3>
         </div>
 
       </div>

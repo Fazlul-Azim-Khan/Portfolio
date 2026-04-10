@@ -2,6 +2,8 @@
  * Chip.module.css
  * Specs confirmed from Figma node 848:87, 1002:5922–5937
  *
+ * Prefix: chip-
+ *
  * Confirmed values:
  *   background:    var(--secondary, white)     → --color-secondary
  *   border:        1px solid var(--primary)    → --color-primary
@@ -18,7 +20,7 @@
    BASE
    ============================================================ */
 
-.chip {
+.chip-root {
   display:         inline-flex;
   align-items:     center;
   justify-content: center;
@@ -47,18 +49,18 @@
    Applied when the chip is used as a button/toggle
    ============================================================ */
 
-.interactive {
+.chip-interactive {
   cursor: pointer;
   transition: background-color var(--transition-base),
               color             var(--transition-base);
 }
 
-.interactive:hover {
+.chip-interactive:hover {
   background-color: var(--color-primary);
   color:            var(--color-secondary);
 }
 
-.interactive:focus-visible {
+.chip-interactive:focus-visible {
   outline:        2px solid var(--color-primary);
   outline-offset: 2px;
 }

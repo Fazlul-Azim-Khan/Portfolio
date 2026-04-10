@@ -1,14 +1,16 @@
 /*
  * IconButton.module.css
  *
+ * Prefix: icon-btn-
+ *
  * Square icon button — always width = height = --button-height (44px)
  * Same design language as Button.module.css.
  *
  * Variants:
- *   .primary  — black bg, white icon
- *   .outlined — transparent bg, black icon, 1px border
- *   .ghost    — transparent bg, black icon, no border
- *   .light    — transparent bg, white icon, 1px white border (for dark backgrounds)
+ *   icon-btn-primary  — black bg, white icon
+ *   icon-btn-outlined — transparent bg, black icon, 1px border
+ *   icon-btn-ghost    — transparent bg, black icon, no border
+ *   icon-btn-light    — transparent bg, white icon, 1px white border (for dark backgrounds)
  */
 
 
@@ -16,7 +18,7 @@
    BASE
    ============================================================ */
 
-.button {
+.icon-btn-root {
   display:         inline-flex;
   align-items:     center;
   justify-content: center;
@@ -37,12 +39,12 @@
     opacity          var(--transition-base);
 }
 
-.button:disabled {
+.icon-btn-root:disabled {
   opacity: 0.36;
   cursor:  not-allowed;
 }
 
-.button:focus-visible {
+.icon-btn-root:focus-visible {
   outline:        2px solid var(--color-primary);
   outline-offset: 2px;
 }
@@ -53,17 +55,17 @@
    Black bg, white icon
    ============================================================ */
 
-.primary {
+.icon-btn-primary {
   background-color: var(--color-primary);
   color:            var(--color-secondary);
   border:           none;
 }
 
-.primary:hover:not(:disabled) {
+.icon-btn-primary:hover:not(:disabled) {
   opacity: 0.85;
 }
 
-.primary:active:not(:disabled) {
+.icon-btn-primary:active:not(:disabled) {
   opacity: 0.7;
 }
 
@@ -73,18 +75,18 @@
    Transparent bg, black icon, 1px border
    ============================================================ */
 
-.outlined {
+.icon-btn-outlined {
   background-color: transparent;
   color:            var(--color-primary);
   border:           1px solid var(--color-primary);
 }
 
-.outlined:hover:not(:disabled) {
+.icon-btn-outlined:hover:not(:disabled) {
   background-color: var(--color-primary);
   color:            var(--color-secondary);
 }
 
-.outlined:active:not(:disabled) {
+.icon-btn-outlined:active:not(:disabled) {
   opacity: 0.8;
 }
 
@@ -94,17 +96,17 @@
    No border, no background
    ============================================================ */
 
-.ghost {
+.icon-btn-ghost {
   background-color: transparent;
   color:            var(--color-primary);
   border:           none;
 }
 
-.ghost:hover:not(:disabled) {
+.icon-btn-ghost:hover:not(:disabled) {
   opacity: 0.6;
 }
 
-.ghost:active:not(:disabled) {
+.icon-btn-ghost:active:not(:disabled) {
   opacity: 0.4;
 }
 
@@ -115,21 +117,21 @@
    Transparent bg, white icon, 1px white border.
    ============================================================ */
 
-.light {
+.icon-btn-light {
   background-color: transparent;
   color:            var(--color-secondary);   /* white */
   border:           1px solid var(--color-secondary);
 }
 
-.light:hover:not(:disabled) {
+.icon-btn-light:hover:not(:disabled) {
   background-color: var(--color-secondary);  /* white fill on hover */
   color:            var(--color-primary);    /* black icon on hover */
 }
 
-.light:active:not(:disabled) {
+.icon-btn-light:active:not(:disabled) {
   opacity: 0.8;
 }
 
-.light:focus-visible {
+.icon-btn-light:focus-visible {
   outline-color: var(--color-secondary);     /* white focus ring on dark bg */
 }

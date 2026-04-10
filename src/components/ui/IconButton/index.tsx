@@ -41,6 +41,14 @@ interface IconButtonProps {
   'aria-label': string                 // required — no text label to fall back on
 }
 
+// Explicit map so dynamic variant lookup stays type-safe after rename
+const variantClass: Record<IconButtonVariant, string> = {
+  primary:  styles['icon-btn-primary'],
+  outlined: styles['icon-btn-outlined'],
+  ghost:    styles['icon-btn-ghost'],
+  light:    styles['icon-btn-light'],
+}
+
 
 /* ============================================================
    COMPONENT
@@ -57,8 +65,8 @@ export default function IconButton({
 }: IconButtonProps) {
 
   const combined = [
-    styles.button,
-    styles[variant],
+    styles['icon-btn-root'],
+    variantClass[variant],
     className,
   ].filter(Boolean).join(' ')
 

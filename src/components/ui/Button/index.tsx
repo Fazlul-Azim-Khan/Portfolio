@@ -32,6 +32,13 @@ interface ButtonProps {
   'aria-label'?: string
 }
 
+// Explicit map so dynamic variant lookup stays type-safe after rename
+const variantClass: Record<ButtonVariant, string> = {
+  primary:  styles['btn-primary'],
+  outlined: styles['btn-outlined'],
+  ghost:    styles['btn-ghost'],
+}
+
 
 /* ============================================================
    COMPONENT
@@ -50,10 +57,9 @@ export default function Button({
   'aria-label': ariaLabel,
 }: ButtonProps) {
 
-  const variantClass = styles[variant]
   const combinedClass = [
-    styles.button,
-    variantClass,
+    styles['btn-root'],
+    variantClass[variant],
     className,
   ].filter(Boolean).join(' ')
 
