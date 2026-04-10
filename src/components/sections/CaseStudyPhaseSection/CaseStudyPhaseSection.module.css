@@ -13,7 +13,7 @@
    Selector [data-layout="wide"] targets Phase 02 and Phase 03.
    ============================================================ */
 
-.content {
+.phase-content {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-40);
@@ -22,7 +22,7 @@
   border-bottom:  1px solid var(--color-secondary);
 }
 
-.content[data-layout="wide"] {
+.phase-content[data-layout="wide"] {
   gap: var(--gap-64);
 }
 
@@ -34,7 +34,7 @@
    align-self: flex-start enforces label hug inside column flex parent.
    ============================================================ */
 
-.phaseChip {
+.phase-chip {
   display:    flex;
   gap:        10px;
   align-self: flex-start;
@@ -46,7 +46,7 @@
    Confirmed: Figma node 978:7372
    ============================================================ */
 
-.heading {
+.phase-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);        /* 120px fluid */
   font-weight: var(--weight-regular);
@@ -62,14 +62,14 @@
    Confirmed: Figma node 978:7374 (items-end) + 978:7375 (w-[540px])
    ============================================================ */
 
-.bodyWrap {
+.phase-body-wrap {
   display:        flex;
   flex-direction: column;
   align-items:    flex-end;   /* right-aligned */
   width:          100%;
 }
 
-.body {
+.phase-body {
   font-family:    var(--font-body);
   font-size:      var(--text-body);   /* 14px — Figma: node 966:8047 */
   font-weight:    var(--weight-regular);
@@ -87,7 +87,7 @@
    Confirmed: Figma node 1005:6244 — flex, justify-between, items-start
    ============================================================ */
 
-.headingRow {
+.phase-heading-row {
   display:         flex;
   flex-direction:  row;
   justify-content: space-between;
@@ -96,8 +96,8 @@
   width:           100%;
 }
 
-/* heading inside headingRow — same style as .heading but no margin */
-.headingRow .heading {
+/* heading inside phase-heading-row — same style as .phase-heading but no margin */
+.phase-heading-row .phase-heading {
   flex:  0 0 auto;
   width: 730px;
   max-width: 100%;
@@ -106,7 +106,7 @@
 /* body text right column — Inter 14px, w-400px
    Confirmed: Figma node 966:8047 — fontSize 14, Inter Regular, leading 20px
 */
-.headingRowBody {
+.phase-heading-row-body {
   font-family:  var(--font-body);
   font-size:    var(--text-body);   /* 14px */
   font-weight:  var(--weight-regular);
@@ -119,11 +119,11 @@
 }
 
 @media (max-width: 1024px) {
-  .headingRow {
+  .phase-heading-row {
     flex-direction: column;
   }
-  .headingRow .heading,
-  .headingRowBody {
+  .phase-heading-row .phase-heading,
+  .phase-heading-row-body {
     width: 100%;
   }
 }
@@ -137,14 +137,14 @@
    border-radius uses --radius-sm (8px) — project-wide single radius.
    ============================================================ */
 
-.featureCards {
+.phase-feature-cards {
   display:        flex;
   flex-direction: row;
   gap:            var(--gap-20);         /* Figma: itemSpacing 20px */
   width:          100%;
 }
 
-.featureCard {
+.phase-feature-card {
   flex:           1 0 0;
   display:        flex;
   flex-direction: column;
@@ -158,7 +158,7 @@
 /* Card title — 32px Integral CF UPPER, white
    Confirmed: Figma nodes 980:7514, 980:7541, 980:7579 — fontSize 32, Integral CF, textCase UPPER
 */
-.featureCardTitle {
+.phase-feature-card-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h4);        /* 32px */
   font-weight:    var(--weight-regular);
@@ -171,7 +171,7 @@
 /* Bullet list — reset browser list styles
    Figma: each row = 3px white circle dot + 12px Inter text, gap 6.4px between rows
 */
-.featureCardBullets {
+.phase-feature-card-bullets {
   display:        flex;
   flex-direction: column;
   gap:            6px;                   /* Figma: itemSpacing 6.4px — rounded */
@@ -181,7 +181,7 @@
 }
 
 /* Individual bullet item — custom white dot via ::before */
-.featureCardBullet {
+.phase-feature-card-bullet {
   position:    relative;
   padding-left: 12px;
   font-family:  var(--font-body);
@@ -191,7 +191,7 @@
   color:        var(--color-secondary);
 }
 
-.featureCardBullet::before {
+.phase-feature-card-bullet::before {
   content:          '';
   position:         absolute;
   left:             0;
@@ -206,7 +206,7 @@
 /* Closing description — 14px Inter, white
    Confirmed: Figma text nodes — fontSize 14, Inter Regular
 */
-.featureCardDesc {
+.phase-feature-card-desc {
   font-family:  var(--font-body);
   font-size:    var(--text-body);        /* 14px */
   font-weight:  var(--weight-regular);
@@ -218,7 +218,7 @@
 
 /* Responsive — stack cards on mobile */
 @media (max-width: 767px) {
-  .featureCards {
+  .phase-feature-cards {
     flex-direction: column;
   }
 }
@@ -229,13 +229,13 @@
    Confirmed: Figma node 979:7382
    ============================================================ */
 
-.keyWorkBlock {
+.phase-key-work-block {
   display:        flex;
   flex-direction: column;
   gap:            10.98px;   /* Figma: gap-[10.98px] */
 }
 
-.keyWorkHeading {
+.phase-key-work-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h3);        /* 56px */
   font-weight:    var(--weight-regular);
@@ -246,13 +246,13 @@
 }
 
 /* Wrapping grid of dark tiles */
-.keyWorkGrid {
+.phase-key-work-grid {
   display:   flex;
   flex-wrap: wrap;
   gap:       0 9.7px;   /* Figma: gap-[0px_9.7px] */
 }
 
-.keyWorkTile {
+.phase-key-work-tile {
   display:        flex;
   flex:           1 0 0;
   min-width:      0;
@@ -264,7 +264,7 @@
   border-radius:  var(--radius-sm);    /* 8px */
 }
 
-.keyWorkLabel {
+.phase-key-work-label {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);      /* 20px */
   font-weight:    var(--weight-regular);
@@ -279,7 +279,7 @@
    Confirmed: Figma node 966:8051  (h-[301px], py-64px, gap-40px)
    ============================================================ */
 
-.keyWorkColumns {
+.phase-key-work-cols {
   display:    flex;
   gap:        var(--gap-40);
   min-height: 301px;
@@ -288,7 +288,7 @@
   align-items: flex-start;
 }
 
-.keyWorkColumn {
+.phase-key-work-col {
   flex:           1 0 0;
   display:        flex;
   flex-direction: column;
@@ -297,14 +297,14 @@
 }
 
 /* Light grey top rule on each column */
-.keyWorkColDivider {
+.phase-key-work-col-divider {
   width:      100%;
   height:     1px;
   background: #e5e5e5;
   flex-shrink: 0;
 }
 
-.keyWorkColTitle {
+.phase-key-work-col-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);      /* 20px */
   font-weight:    var(--weight-regular);
@@ -313,7 +313,7 @@
   margin:         0;
 }
 
-.keyWorkColDesc {
+.phase-key-work-col-desc {
   font-family:    var(--font-body);
   font-size:      var(--text-body);
   font-weight:    var(--weight-regular);
@@ -329,11 +329,11 @@
    Confirmed: Figma node 1014:6751
      bg: #000, radius: 8px, padding: 8px, flex-col, gap: 10px
    Inner structure:
-     Row 1 (1014:6752): .imagesRow  — 3 images flex-1, gap-24, h-390px each
-     Row 2 (1014:6756): .imagesBottom — 1 full-width geo map image
+     Row 1 (1014:6752): .phase-images-row  — 3 images flex-1, gap-24, h-390px each
+     Row 2 (1014:6756): .phase-images-bottom — 1 full-width geo map image
    ============================================================ */
 
-.imagesCard {
+.phase-images-card {
   display:        flex;
   flex-direction: column;
   gap:            10px;                  /* Figma: itemSpacing 10 */
@@ -348,14 +348,14 @@
    one panel per screen-moment as the user scrolls.
    (Figma shows side-by-side, but this improves readability for dashboard panels.)
 */
-.imagesRow {
+.phase-images-row {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-24);
   width:          100%;
 }
 
-.imagesRowItem {
+.phase-images-row-item {
   position:      relative;
   width:         100%;
   height:        100vh;                 /* Full viewport height — one panel per scroll moment */
@@ -367,7 +367,7 @@
 /* Row 2 — geo map, full-width
    Figma node 1014:6756: aspect ratio via inline style (1315/605)
 */
-.imagesBottom {
+.phase-images-bottom {
   position:         relative;
   width:            100%;
   overflow:         hidden;
@@ -377,7 +377,7 @@
 
 /* Responsive — panels already stacked, reduce height slightly on mobile */
 @media (max-width: 767px) {
-  .imagesRowItem {
+  .phase-images-row-item {
     height: 60vh;
   }
 }
@@ -389,7 +389,7 @@
    Confirmed: Figma node 1005:5971
    ============================================================ */
 
-.outcomeCard {
+.phase-outcome-card {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-16);
@@ -399,7 +399,7 @@
   width:          100%;
 }
 
-.outcomeLabel {
+.phase-outcome-label {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);      /* 20px */
   font-weight:    var(--weight-regular);
@@ -408,7 +408,7 @@
   margin:         0;
 }
 
-.outcomeHeadline {
+.phase-outcome-headline {
   font-family:    var(--font-display);
   font-size:      var(--text-h3);        /* 56px */
   font-weight:    var(--weight-regular);
@@ -418,13 +418,13 @@
   margin:         0;
 }
 
-.outcomeDivider {
+.phase-outcome-divider {
   width:      100%;
   height:     1px;
   background: var(--color-tertiary);
 }
 
-.outcomeSubline {
+.phase-outcome-subline {
   font-family:    var(--font-display);
   font-size:      var(--text-h4);        /* 32px */
   font-weight:    var(--weight-regular);
@@ -439,7 +439,7 @@
    PHASE IMAGE — full width
    ============================================================ */
 
-.imageWrap {
+.phase-image-wrap {
   position:         relative;
   width:            100%;
   border-radius:    var(--radius-sm);
@@ -447,7 +447,7 @@
   background-color: var(--color-primary);
 }
 
-.image {
+.phase-image {
   object-fit: cover;
 }
 
@@ -455,7 +455,7 @@
 /* ============================================================
    RESPONSIVE — all elements not covered by inline blocks above
    Inline blocks already cover:
-     headingRow (1024px)  ·  featureCards (767px)  ·  imagesRowItem (767px)
+     phase-heading-row (1024px)  ·  phase-feature-cards (767px)  ·  phase-images-row-item (767px)
    ============================================================ */
 
 @media (max-width: 767px) {
@@ -464,49 +464,49 @@
 
   /* ── Phase 01 body: remove right-alignment + fixed width ── */
   /* Desktop: items-end + w-540px creates a right-anchored block */
-  .bodyWrap {
+  .phase-body-wrap {
     align-items: flex-start;
   }
 
-  .body {
+  .phase-body {
     width:     100%;
     max-width: 100%;
   }
 
   /* ── Key work tiles (Phase 01): stack to single column ── */
   /* Desktop: flex-wrap tiles auto-size horizontally */
-  .keyWorkGrid {
+  .phase-key-work-grid {
     flex-direction: column;
     gap:            var(--gap-8);
   }
 
-  .keyWorkTile {
+  .phase-key-work-tile {
     flex:    0 0 auto;
     width:   100%;
     padding: var(--padding-40) var(--padding-16);   /* 64px → 40px vertical */
   }
 
-  /* keyWorkBlock heading: scale down */
-  .keyWorkHeading {
+  /* phase-key-work-block heading: scale down */
+  .phase-key-work-heading {
     font-size: var(--text-h4);
   }
 
   /* ── Outcome card: reduce padding, scale headlines ────── */
-  .outcomeCard {
+  .phase-outcome-card {
     padding: var(--padding-40);
   }
 
-  .outcomeHeadline {
+  .phase-outcome-headline {
     font-size: var(--text-h4);   /* 56px → 32px */
   }
 
-  .outcomeSubline {
+  .phase-outcome-subline {
     font-size: var(--text-h5);   /* 32px → 20px */
   }
 
   /* ── Key work columns (Phase 03): stack 4-col to single column ── */
   /* Desktop: flex-row, gap-40, min-height-301px, padding-64 top/bottom */
-  .keyWorkColumns {
+  .phase-key-work-cols {
     flex-direction: column;
     min-height:     unset;
     padding:        var(--padding-40) 0;   /* 64px → 40px vertical */
@@ -514,7 +514,7 @@
   }
 
   /* Each column fills full width when stacked */
-  .keyWorkColumn {
+  .phase-key-work-col {
     flex:  0 0 auto;
     width: 100%;
   }

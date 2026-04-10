@@ -60,17 +60,17 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
 
   return (
     <div
-      className={styles.content}
+      className={styles['phase-content']}
       data-layout={isWideLayout ? 'wide' : undefined}
     >
 
       {/* ── Phase chip ───────────────────────────────────── */}
       {/*
         Figma node 1005:6223: chip has size-full — fills the content column width.
-        .phaseChip overrides the default inline-flex to flex + w-100%.
+        .phase-chip overrides the default inline-flex to flex + w-100%.
         The Chip base styles (border, padding, radius, font) are unchanged.
       */}
-      <Chip label={section.chip} className={styles.phaseChip} />
+      <Chip label={section.chip} className={styles['phase-chip']} />
 
       {/* ── Phase 03: heading + body side-by-side row ────── */}
       {/*
@@ -80,14 +80,14 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
         Confirmed: Phase 03 only (keyWorkItems is the Phase 03 marker)
       */}
       {hasHeadingRow ? (
-        <div className={styles.headingRow}>
-          <h1 className={styles.heading}>{section.heading}</h1>
-          <p className={styles.headingRowBody}>{section.body}</p>
+        <div className={styles['phase-heading-row']}>
+          <h1 className={styles['phase-heading']}>{section.heading}</h1>
+          <p className={styles['phase-heading-row-body']}>{section.body}</p>
         </div>
       ) : (
         <>
           {/* ── Phase 01/02: heading alone ──────────────── */}
-          <h1 className={styles.heading}>{section.heading}</h1>
+          <h1 className={styles['phase-heading']}>{section.heading}</h1>
 
           {/* ── Phase 01: body right-aligned 540px block ── */}
           {/*
@@ -95,8 +95,8 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
             Confirmed: Figma node 978:7374 (Phase 01 only)
           */}
           {section.body && (
-            <div className={styles.bodyWrap}>
-              <p className={styles.body}>{section.body}</p>
+            <div className={styles['phase-body-wrap']}>
+              <p className={styles['phase-body']}>{section.body}</p>
             </div>
           )}
         </>
@@ -110,22 +110,22 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
         Card: bg black, border-radius 20px, padding 16px/20px, gap 12px
       */}
       {section.featureCards && section.featureCards.length > 0 && (
-        <div className={styles.featureCards}>
+        <div className={styles['phase-feature-cards']}>
           {section.featureCards.map((card) => (
-            <div key={card.title} className={styles.featureCard}>
+            <div key={card.title} className={styles['phase-feature-card']}>
 
               {/* Card title — 32px Integral CF UPPER */}
-              <p className={styles.featureCardTitle}>{card.title}</p>
+              <p className={styles['phase-feature-card-title']}>{card.title}</p>
 
               {/* Bullet list — 12px Inter, white dot */}
-              <ul className={styles.featureCardBullets}>
+              <ul className={styles['phase-feature-card-bullets']}>
                 {card.bullets.map((b) => (
-                  <li key={b} className={styles.featureCardBullet}>{b}</li>
+                  <li key={b} className={styles['phase-feature-card-bullet']}>{b}</li>
                 ))}
               </ul>
 
               {/* Closing description — 14px Inter */}
-              <p className={styles.featureCardDesc}>{card.description}</p>
+              <p className={styles['phase-feature-card-desc']}>{card.description}</p>
 
             </div>
           ))}
@@ -138,12 +138,12 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
         Confirmed: Figma node 979:7382
       */}
       {section.keyWork && section.keyWork.length > 0 && (
-        <div className={styles.keyWorkBlock}>
-          <h3 className={styles.keyWorkHeading}>Key Work</h3>
-          <div className={styles.keyWorkGrid}>
+        <div className={styles['phase-key-work-block']}>
+          <h3 className={styles['phase-key-work-heading']}>Key Work</h3>
+          <div className={styles['phase-key-work-grid']}>
             {section.keyWork.map((item) => (
-              <div key={item} className={styles.keyWorkTile}>
-                <p className={styles.keyWorkLabel}>{item}</p>
+              <div key={item} className={styles['phase-key-work-tile']}>
+                <p className={styles['phase-key-work-label']}>{item}</p>
               </div>
             ))}
           </div>
@@ -157,12 +157,12 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
         Confirmed: Figma node 966:8051
       */}
       {section.keyWorkItems && section.keyWorkItems.length > 0 && (
-        <div className={styles.keyWorkColumns}>
+        <div className={styles['phase-key-work-cols']}>
           {section.keyWorkItems.map((item) => (
-            <div key={item.title} className={styles.keyWorkColumn}>
-              <div className={styles.keyWorkColDivider} aria-hidden="true" />
-              <p className={styles.keyWorkColTitle}>{item.title}</p>
-              <p className={styles.keyWorkColDesc}>{item.desc}</p>
+            <div key={item.title} className={styles['phase-key-work-col']}>
+              <div className={styles['phase-key-work-col-divider']} aria-hidden="true" />
+              <p className={styles['phase-key-work-col-title']}>{item.title}</p>
+              <p className={styles['phase-key-work-col-desc']}>{item.desc}</p>
             </div>
           ))}
         </div>
@@ -174,11 +174,11 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
         Confirmed: Figma node 1005:5971 (Phase 01) · 999:5833 (Phase 03)
       */}
       {section.outcome && (
-        <div className={styles.outcomeCard}>
-          <p className={styles.outcomeLabel}>{section.outcome.label}</p>
-          <h3 className={styles.outcomeHeadline}>{section.outcome.headline}</h3>
-          <div className={styles.outcomeDivider} aria-hidden="true" />
-          <p className={styles.outcomeSubline}>{section.outcome.subline}</p>
+        <div className={styles['phase-outcome-card']}>
+          <p className={styles['phase-outcome-label']}>{section.outcome.label}</p>
+          <h3 className={styles['phase-outcome-headline']}>{section.outcome.headline}</h3>
+          <div className={styles['phase-outcome-divider']} aria-hidden="true" />
+          <p className={styles['phase-outcome-subline']}>{section.outcome.subline}</p>
         </div>
       )}
 
@@ -191,9 +191,9 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
       */}
       {/* ── Composite image — single export of panels+geo dark card ── */}
       {section.imagesComposite && (
-        <div className={styles.imagesCard}>
+        <div className={styles['phase-images-card']}>
           <div
-            className={styles.imagesBottom}
+            className={styles['phase-images-bottom']}
             style={section.imagesCompositeAspect
               ? { aspectRatio: section.imagesCompositeAspect }
               : undefined
@@ -204,7 +204,7 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
               alt={`${section.heading} — dashboard panels`}
               fill
               sizes="100vw"
-              className={styles.image}
+              className={styles['phase-image']}
             />
           </div>
         </div>
@@ -212,19 +212,19 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
 
       {/* ── Separate panels + geo (legacy — kept for future use) ── */}
       {!section.imagesComposite && (section.imagesRow?.length || section.imagesBottom) && (
-        <div className={styles.imagesCard}>
+        <div className={styles['phase-images-card']}>
 
           {/* Row 1 — 3 images side-by-side */}
           {section.imagesRow && section.imagesRow.length > 0 && (
-            <div className={styles.imagesRow}>
+            <div className={styles['phase-images-row']}>
               {section.imagesRow.map((src, idx) => (
-                <div key={src} className={styles.imagesRowItem}>
+                <div key={src} className={styles['phase-images-row-item']}>
                   <Image
                     src={src}
                     alt={`${section.heading} — panel ${idx + 1}`}
                     fill
                     sizes="33vw"
-                    className={styles.image}
+                    className={styles['phase-image']}
                   />
                 </div>
               ))}
@@ -234,7 +234,7 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
           {/* Row 2 — geo map, full width */}
           {section.imagesBottom && (
             <div
-              className={styles.imagesBottom}
+              className={styles['phase-images-bottom']}
               style={section.imagesBottomAspect
                 ? { aspectRatio: section.imagesBottomAspect }
                 : undefined
@@ -245,7 +245,7 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
                 alt={`${section.heading} — map`}
                 fill
                 sizes="100vw"
-                className={styles.image}
+                className={styles['phase-image']}
               />
             </div>
           )}
@@ -261,7 +261,7 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
       */}
       {section.image && (
         <div
-          className={styles.imageWrap}
+          className={styles['phase-image-wrap']}
           style={section.imageAspect
             ? { aspectRatio: section.imageAspect }
             : { aspectRatio: '16 / 9' }
@@ -272,7 +272,7 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
             alt={`${section.heading} — phase image`}
             fill
             sizes="100vw"
-            className={styles.image}
+            className={styles['phase-image']}
           />
         </div>
       )}
