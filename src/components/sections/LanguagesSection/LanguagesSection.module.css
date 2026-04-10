@@ -124,7 +124,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-body);        /* 20px */
   letter-spacing: var(--tracking-lead);  /* 0 */
-  color:          var(--color-text-muted);  /* #424242 — confirmed */
+  color:          var(--color-primary);
 }
 
 

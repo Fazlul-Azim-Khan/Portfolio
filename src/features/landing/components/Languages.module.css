@@ -111,7 +111,7 @@
   line-height:    var(--lh-body);      /* 20px */
   letter-spacing: var(--tracking-lead);
   /* No text-transform — mixed-case as written in content.ts */
-  color:          var(--color-text-muted);  /* #424242 */
+  color:          var(--color-primary);
   margin:         0;
 }
 

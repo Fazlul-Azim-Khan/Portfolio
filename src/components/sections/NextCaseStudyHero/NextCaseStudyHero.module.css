@@ -32,7 +32,7 @@
   line-height:    var(--lh-body);
   letter-spacing: var(--tracking-lead);
   text-transform: uppercase;
-  color:          var(--color-text-muted);
+  color:          var(--color-primary);
   margin:         0;
   padding-bottom: var(--gap-40);
 }
