@@ -17,7 +17,7 @@
 // "Availibility" matches Figma source spelling exactly — update when confirmed
 
 export const noticeStrip = {
-  text: 'GERMANY  ·  CHANCENKARTE  ·  No Sponsorship Needed  ·  Full time Work Availability',
+  text: 'GERMANY  ·  CHANCENKARTE  ·  No Sponsorship Needed  ·  Available Full-Time',
 } as const
 
 
@@ -34,9 +34,9 @@ export const nav = {
     { code: 'DE', label: 'DE', active: false },
   ],
   links: [
-    { label: 'Portfolio', href: '/'         },
-    { label: 'Services',  href: '/services' },
-    { label: 'Profile',   href: '/profile'  },
+    { label: 'Portfolio', href: '/'       },
+    { label: 'Services',  href: '#works'  },
+    { label: 'Profile',   href: '#contact' },
   ],
   ctas: [
     { label: 'Download CV ↓', href: '/cv.pdf',                                          variant: 'outlined' as const },
