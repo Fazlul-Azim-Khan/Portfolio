@@ -35,20 +35,20 @@ interface CaseStudyProblemSectionProps {
 
 export default function CaseStudyProblemSection({ section }: CaseStudyProblemSectionProps) {
   return (
-    <div className={styles.content}>
+    <div className={styles['problem-content']}>
 
       {/* ── Heading ──────────────────────────────────────── */}
-      <h1 className={styles.heading}>{section.heading}</h1>
+      <h1 className={styles['problem-heading']}>{section.heading}</h1>
 
       {/* ── Divider ──────────────────────────────────────── */}
-      <div className={styles.divider} aria-hidden="true" />
+      <div className={styles['problem-divider']} aria-hidden="true" />
 
       {/* ── Quote ─────────────────────────────────────────── */}
       {/*
         H3 scale (56px) — same font size as heading.
         Full width. Confirmed: Figma node 978:6035
       */}
-      <blockquote className={styles.quote}>
+      <blockquote className={styles['problem-quote']}>
         {section.quote}
       </blockquote>
 
@@ -57,8 +57,8 @@ export default function CaseStudyProblemSection({ section }: CaseStudyProblemSec
         Inter 14px, w-[600px], bottom-right aligned.
         Confirmed: Figma node 978:6031
       */}
-      <div className={styles.bodyWrap}>
-        <p className={styles.body}>{section.body}</p>
+      <div className={styles['problem-body-wrap']}>
+        <p className={styles['problem-body']}>{section.body}</p>
       </div>
 
     </div>

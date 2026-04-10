@@ -16,7 +16,7 @@
    gap-[64px] between heading block and body block
    ============================================================ */
 
-.content {
+.problem-content {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-64);
@@ -33,7 +33,7 @@
    HEADING — H3, Integral CF, 56px
    ============================================================ */
 
-.heading {
+.problem-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);        /* 120px fluid */
   font-weight: var(--weight-regular);
@@ -49,7 +49,7 @@
    Confirmed: Figma node 1044:5788
    ============================================================ */
 
-.divider {
+.problem-divider {
   width:  100%;
   height: 1px;
   background: var(--color-divider);   /* #e5e5e5 */
@@ -63,7 +63,7 @@
    Confirmed: Figma node 978:6035
    ============================================================ */
 
-.quote {
+.problem-quote {
   font-family:    var(--font-display);
   font-size:      var(--text-h3);        /* 56px */
   font-weight:    var(--weight-regular);
@@ -81,14 +81,14 @@
    Confirmed: Figma node 978:6030 (items-end, gap-[0px])
    ============================================================ */
 
-.bodyWrap {
+.problem-body-wrap {
   display:         flex;
   flex-direction:  column;
   align-items:     flex-end;   /* Figma: items-end */
   width:           100%;
 }
 
-.body {
+.problem-body {
   font-family:    var(--font-body);
   font-size:      var(--text-body);      /* 14px */
   font-weight:    var(--weight-regular);
@@ -106,18 +106,18 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  .content {
+  .problem-content {
     /* 191px desktop top padding is too large for mobile viewports */
     padding-top: var(--padding-40);
     gap:         var(--gap-40);
   }
 
   /* Right-aligned body reads poorly on narrow mobile — switch to left */
-  .bodyWrap {
+  .problem-body-wrap {
     align-items: flex-start;
   }
 
-  .body {
+  .problem-body {
     /* width: 600px is constrained by max-width: 100% but reset explicitly for clarity */
     width: 100%;
   }
