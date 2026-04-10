@@ -9,7 +9,7 @@
    Figma node 978:7112
    ============================================================ */
 
-.content {
+.solution-content {
   display:        flex;
   flex-direction: column;
   gap:            124px;   /* Figma: gap-[124px] */
@@ -23,13 +23,13 @@
    HEADING BLOCK
    ============================================================ */
 
-.headingBlock {
+.solution-heading-block {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-64);
 }
 
-.heading {
+.solution-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);        /* 120px fluid */
   font-weight: var(--weight-regular);
@@ -44,7 +44,7 @@
    DIVIDER — --color-tertiary
    ============================================================ */
 
-.divider {
+.solution-divider {
   width:      100%;
   height:     1px;
   background: var(--color-tertiary);
@@ -56,7 +56,7 @@
    SUB-SECTION wrapper — gap-[64px]
    ============================================================ */
 
-.subSection {
+.solution-sub-section {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-64);
@@ -71,7 +71,7 @@
    Mobile reverts to natural flow.
    ============================================================ */
 
-.panel {
+.solution-panel {
   min-height:      var(--screen-block-min-h);   /* 80vh */
   justify-content: center;
 }
@@ -82,14 +82,14 @@
    Confirmed: Figma node 1005:5940
    ============================================================ */
 
-.subHeader {
+.solution-sub-header {
   display:         flex;
   justify-content: space-between;
   align-items:     flex-start;
   gap:             var(--gap-20);   /* Figma: gap-[20px] — token exists */
 }
 
-.subTitle {
+.solution-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h2);       /* 36px → 64px fluid */
   font-weight:    var(--weight-regular);
@@ -105,14 +105,14 @@
    Confirmed: Figma node 978:7123
    ============================================================ */
 
-.sourcesGrid {
+.solution-sources-grid {
   display:   flex;
   gap:       var(--gap-40);
   height:    106px;
   align-items: flex-start;
 }
 
-.sourceItem {
+.solution-source-item {
   display:        flex;
   flex-direction: column;
   gap:            6.66px;   /* Figma: gap-[6.66px] */
@@ -120,13 +120,13 @@
   min-width:      0;
 }
 
-.sourceDivider {
+.solution-source-divider {
   width:      100%;
   height:     1px;
   background: var(--color-divider);   /* #e5e5e5 */
 }
 
-.sourceName {
+.solution-source-name {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);      /* 20px */
   font-weight:    var(--weight-regular);
@@ -135,7 +135,7 @@
   margin:         0;
 }
 
-.sourceDesc {
+.solution-source-desc {
   font-family:    var(--font-body);
   font-size:      var(--text-body);    /* 14px */
   font-weight:    var(--weight-regular);
@@ -150,20 +150,20 @@
    Confirmed: Figma node 1014:6772
    ============================================================ */
 
-.flowRow {
+.solution-flow-row {
   display:   flex;
   align-items: center;
   gap:       0;
 }
 
-.flowItem {
+.solution-flow-item {
   display:   flex;
   align-items: center;
   flex:      1 0 0;
   min-width: 0;
 }
 
-.stepBox {
+.solution-flow-step {
   display:        flex;
   flex-direction: column;
   gap:            2.05px;   /* Figma: gap-[2.05px] */
@@ -172,13 +172,13 @@
   align-self:     stretch;
 }
 
-.stepDivider {
+.solution-flow-step-divider {
   width:      100%;
   height:     1px;
   background: var(--color-divider);
 }
 
-.stepNumber {
+.solution-flow-number {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);      /* 20px */
   font-weight:    var(--weight-regular);
@@ -188,7 +188,7 @@
   white-space:    nowrap;
 }
 
-.stepLabel {
+.solution-flow-label {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);      /* 20px */
   font-weight:    var(--weight-regular);
@@ -197,7 +197,7 @@
   margin:         0;
 }
 
-.flowArrow {
+.solution-flow-arrow {
   font-family:    var(--font-body);
   font-size:      var(--text-body);
   color:          var(--color-primary);
@@ -211,14 +211,14 @@
    h-[188px], nodes flex-1 — Figma node 978:7239
    ============================================================ */
 
-.pipeline {
+.solution-pipeline-row {
   display:     flex;
   align-items: center;
   height:      188px;   /* Figma: h-[188px] */
   gap:         0;
 }
 
-.pipelineItem {
+.solution-pipeline-item {
   display:   flex;
   align-items: center;
   flex:      1 0 0;
@@ -226,7 +226,7 @@
   height:    100%;
 }
 
-.pipelineNode {
+.solution-pipeline-node {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-24);       /* Figma: gap-[var(--gap/24,24px)] — nodes 978:7241/7218/7224 */
@@ -238,13 +238,13 @@
   border-radius:  var(--radius-sm);    /* 8px */
 }
 
-.pipelineDivider {
+.solution-pipeline-node-divider {
   width:      100%;
   height:     1px;
   background: var(--color-divider);
 }
 
-.nodeName {
+.solution-pipeline-name {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);      /* 20px */
   font-weight:    var(--weight-regular);
@@ -253,7 +253,7 @@
   margin:         0;
 }
 
-.nodeDetail {
+.solution-pipeline-detail {
   font-family:    var(--font-body);
   font-size:      var(--text-body);    /* 14px */
   font-weight:    var(--weight-regular);
@@ -263,7 +263,7 @@
   white-space:    nowrap;
 }
 
-.pipelineArrow {
+.solution-pipeline-arrow {
   font-family:    var(--font-body);
   font-size:      var(--text-body);
   color:          var(--color-primary);
@@ -279,122 +279,122 @@
 
 @media (max-width: 767px) {
   /* Reduce large inter-section gap on mobile */
-  .content {
+  .solution-content {
     gap: var(--gap-64);
   }
 
   /* Panel: no forced viewport height on mobile */
-  .panel {
+  .solution-panel {
     min-height:      auto;
     justify-content: flex-start;
   }
 
   /* subTitle: scale H2 down on mobile */
-  .subTitle {
+  .solution-title {
     font-size: var(--text-h4);   /* 36px–64px → clamp 20px–32px */
   }
 
   /* Sub-header: stack title vertically (no body to stack with, kept for
      future-proofing / consistency) */
-  .subHeader {
+  .solution-sub-header {
     flex-direction: column;
     gap:            var(--gap-24);
   }
 
   /* ── DATA SOURCES: single-column stack ─────────────── */
-  .sourcesGrid {
+  .solution-sources-grid {
     flex-direction: column;
     height:         auto;
     gap:            var(--gap-24);
   }
 
-  .sourceItem {
+  .solution-source-item {
     flex:  unset;
     width: 100%;
   }
 
   /* ── FLOW STEPS: single-column stack ──────────────── */
-  .flowRow {
+  .solution-flow-row {
     flex-direction: column;
     align-items:    stretch;
     gap:            var(--gap-16);
   }
 
-  .flowItem {
+  .solution-flow-item {
     flex:  unset;
     width: 100%;
   }
 
   /* stepBox fills full width when stacked */
-  .stepBox {
+  .solution-flow-step {
     align-self: stretch;
   }
 
   /* stepNumber nowrap not needed in single-column */
-  .stepNumber {
+  .solution-flow-number {
     white-space: normal;
   }
 
   /* Arrows between flow steps don't apply in vertical layout */
-  .flowArrow {
+  .solution-flow-arrow {
     display: none;
   }
 
   /* ── PIPELINE: single-column stack ────────────────── */
-  .pipeline {
+  .solution-pipeline-row {
     flex-direction: column;
     height:         auto;
     gap:            var(--gap-16);
     align-items:    stretch;
   }
 
-  .pipelineItem {
+  .solution-pipeline-item {
     flex:   unset;
     width:  100%;
     height: auto;
   }
 
-  .pipelineNode {
+  .solution-pipeline-node {
     height: auto;
   }
 
   /* Node details wrap in single-column context */
-  .nodeDetail {
+  .solution-pipeline-detail {
     white-space: normal;
   }
 
   /* Arrows between pipeline nodes don't apply in vertical layout */
-  .pipelineArrow {
+  .solution-pipeline-arrow {
     display: none;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   /* Sources: 3-col on tablet */
-  .sourcesGrid {
+  .solution-sources-grid {
     flex-wrap: wrap;
     height:    auto;
   }
 
-  .sourceItem {
+  .solution-source-item {
     flex: 1 1 calc(33% - var(--gap-40) / 3);
   }
 
   /* Pipeline: remove fixed height on tablet */
-  .pipeline {
+  .solution-pipeline-row {
     height: auto;
   }
 
-  .pipelineItem {
+  .solution-pipeline-item {
     height: auto;
   }
 
-  .pipelineNode {
+  .solution-pipeline-node {
     height:     auto;
     min-height: 160px;
   }
 
-  .nodeDetail {
+  .solution-pipeline-detail {
     white-space: normal;
   }
 }

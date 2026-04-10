@@ -183,21 +183,33 @@ All CSS Module class names follow this structure:
 
 ```css
 /* CaseStudySolutionSection */
-.solution-sub-section    /* one of three 80vh sub-panels */
-.solution-panel          /* 80vh modifier */
-.solution-sub-header     /* row containing title + source list or flow */
-.solution-title          /* H2 sub-section heading */
-.solution-sources-list   /* data sources list */
-.solution-source-item    /* one data source */
-.solution-source-name    /* data source name */
-.solution-source-desc    /* data source description */
-.solution-flow-list      /* end-to-end flow step list */
-.solution-flow-item      /* one flow step */
-.solution-flow-number    /* step number (01, 02 …) */
-.solution-flow-label     /* step label text */
-.solution-pipeline-list  /* data flow pipeline list */
-.solution-pipeline-item  /* one pipeline stage */
-.solution-pipeline-detail /* detail text below pipeline stage name */
+.solution-content              /* outer flex-column wrapper */
+.solution-heading-block        /* heading + top divider group */
+.solution-heading              /* H1 section title */
+.solution-divider              /* horizontal rule (tertiary colour) */
+.solution-sub-section          /* one of three 80vh sub-panels */
+.solution-panel                /* 80vh modifier on sub-section */
+.solution-sub-header           /* row containing the H2 title */
+.solution-title                /* H2 sub-section heading */
+.solution-sources-grid         /* 5-column data sources flex row */
+.solution-source-item          /* one data source column */
+.solution-source-divider       /* top rule of a source column */
+.solution-source-name          /* source name (H5) */
+.solution-source-desc          /* source description (body) */
+.solution-flow-row             /* 6-step end-to-end flow flex row */
+.solution-flow-item            /* one step + its arrow connector */
+.solution-flow-step            /* step box: divider + number + label */
+.solution-flow-step-divider    /* top rule of a step box */
+.solution-flow-number          /* step number (01, 02 …) */
+.solution-flow-label           /* step label text */
+.solution-flow-arrow           /* → arrow between flow steps */
+.solution-pipeline-row         /* 4-node pipeline flex row */
+.solution-pipeline-item        /* one node + its arrow connector */
+.solution-pipeline-node        /* dark node box */
+.solution-pipeline-node-divider /* top rule inside a node box */
+.solution-pipeline-name        /* node name (H5, white) */
+.solution-pipeline-detail      /* node detail text (body, white) */
+.solution-pipeline-arrow       /* → arrow between pipeline nodes */
 ```
 
 **Apply this convention to every new CSS Module created from this point forward.**
