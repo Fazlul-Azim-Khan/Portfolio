@@ -64,6 +64,20 @@
 
 
 /* ============================================================
+   PANEL — 80vh breathing block
+   Applied to each sub-section in :004 Solution Structure (Data
+   Sources, End-to-End Flow, Data Flow Pipeline) to match the
+   viewport-height rhythm established in :002 and :003.
+   Mobile reverts to natural flow.
+   ============================================================ */
+
+.panel {
+  min-height:      var(--screen-block-min-h);   /* 80vh */
+  justify-content: center;
+}
+
+
+/* ============================================================
    SUB-HEADER — title left (H4) + body right (Inter 16px)
    Confirmed: Figma node 1005:5940
    ============================================================ */
@@ -280,6 +294,12 @@
   /* Reduce large inter-section gap on mobile */
   .content {
     gap: var(--gap-64);
+  }
+
+  /* Panel: no forced viewport height on mobile */
+  .panel {
+    min-height:      auto;
+    justify-content: flex-start;
   }
 
   /* subTitle: reduce from H4 on mobile */

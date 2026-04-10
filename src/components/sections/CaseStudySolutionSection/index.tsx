@@ -54,7 +54,7 @@ export default function CaseStudySolutionSection({ section }: CaseStudySolutionS
         Title (H4) left + body right, then 5-col source grid below
         Confirmed: Figma node 1014:6819
       */}
-      <div className={styles.subSection}>
+      <div className={`${styles.subSection} ${styles.panel}`}>
 
         <div className={styles.subHeader}>
           <h3 className={styles.subTitle}>
@@ -90,7 +90,7 @@ export default function CaseStudySolutionSection({ section }: CaseStudySolutionS
         Title + 6 numbered steps connected by arrows
         Confirmed: Figma node 1014:6770
       */}
-      <div className={styles.subSection}>
+      <div className={`${styles.subSection} ${styles.panel}`}>
 
         <h3 className={styles.subTitle}>
           {section.flowTitle.split('\n').map((line, i) => (
@@ -126,7 +126,7 @@ export default function CaseStudySolutionSection({ section }: CaseStudySolutionS
         Title + 4 dark nodes with arrows between them
         Confirmed: Figma node 978:7201
       */}
-      <div className={styles.subSection}>
+      <div className={`${styles.subSection} ${styles.panel}`}>
 
         <div className={styles.subHeader}>
           <h3 className={styles.subTitle}>{section.dataFlowTitle}</h3>
