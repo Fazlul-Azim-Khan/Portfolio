@@ -53,19 +53,19 @@ export const hero = {
   /** Large decorative ↗ in top-left cell — flipped vertically in CSS to appear as ↘ */
   decorativeArrow: '↗',
 
-  /** Renders in H5 (20px Integral CF) above the headline */
+  /** Renders in H5 above the headline */
   name: 'FAZLUL AZIM KHAN',
 
-  /** Renders in H1 (120px Integral CF) — split to allow per-word colour control */
+  /** Renders in H1 (120px) — split to allow per-word colour control */
   headline: {
-    line1: 'Product DESIGNER',
+    line1: 'Product Designer',
     line2: {
       ampersand: '&',            // renders in --color-tertiary
-      rest:      ' UX STRATEGIST',
+      rest:      ' UX Strategist',
     },
   },
 
-  /** Renders in H5 (20px Integral CF) below the headline */
+  /** Renders in H5 below the headline — Lead uppercase via CSS */
   subline: 'Enterprise AI · Clinical & Industrial · 2 AI Products Shipped',
 
   /** Renders in Lead (12px Inter, uppercase) in top-right grid cell */

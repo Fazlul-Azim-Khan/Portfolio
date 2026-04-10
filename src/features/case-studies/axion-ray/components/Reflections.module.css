@@ -56,7 +56,6 @@
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h5);
   color:          var(--color-primary);  /* black — was --color-text-muted (#424242) */
-  text-transform: uppercase;
   margin:         0;
 }
 

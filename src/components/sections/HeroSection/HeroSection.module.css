@@ -178,7 +178,6 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-h1);         /* 120px */
   letter-spacing: var(--tracking-h1);   /* -1.5px */
-  text-transform: uppercase;
   color:          var(--color-primary);
   width:          100%;
 }

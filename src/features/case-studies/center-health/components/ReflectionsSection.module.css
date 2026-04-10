@@ -62,7 +62,6 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h3);
-  text-transform: uppercase;
   color:          var(--color-primary);
   margin:         0;
   width:          100%;

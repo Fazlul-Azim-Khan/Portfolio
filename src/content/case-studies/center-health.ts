@@ -17,7 +17,7 @@ export const centerHealth: CaseStudy = {
   slug: 'center-health',
 
   hero: {
-    title:       'ai-powered health & diabetes Management platform',
+    title:       'AI-Powered Health & Diabetes Management Platform',
     heroImage:   '/images/works/center-health/hero.jpg',
     imageAspect: '1328 / 710',
     meta: {

@@ -28,7 +28,7 @@ export const manufacturingPlatform: CaseStudy = {
      ────────────────────────────────────────────────────────── */
 
   hero: {
-    title:     'AI-powered Manufacturing forecasting platform',
+    title:     'AI-Powered Manufacturing Forecasting Platform',
     heroImage: '/images/works/manufacturing-platform/axion-1.jpg',
     meta: {
       role:   'Product UI/UX Designer',

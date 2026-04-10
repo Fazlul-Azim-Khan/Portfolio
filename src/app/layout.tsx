@@ -1,17 +1,17 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Outfit } from 'next/font/google'
 import Providers from './Providers'
 import '@/styles/global.css'
 
 /*
- * Inter — body font
- * Only weight 400 confirmed from Figma.
- * Add weights here if needed in the future (e.g. 500 for medium body text).
+ * Outfit — primary typeface for all text
+ * Weights: 400 (Regular) for body + lead, 500 (Medium) for headings
+ * Variable font — both weights served from a single file
  */
-const inter = Inter({
+const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-inter-loaded',
+  weight: ['400', '500'],
+  variable: '--font-outfit',
   display: 'swap',
 })
 
@@ -46,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={outfit.variable}>
       <body>
         <Providers>{children}</Providers>
       </body>

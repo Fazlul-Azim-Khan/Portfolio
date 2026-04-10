@@ -181,7 +181,6 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-h1);          /* 120px */
   letter-spacing: var(--tracking-case-hero);  /* -1.8px — Figma node 966:7544 */
-  text-transform: uppercase;
   color:          var(--color-primary);
   width:          100%;
 }

@@ -308,7 +308,7 @@ export const centerHealth: CenterHealthCaseStudy = {
      ─────────────────────────────────────────────────────────── */
 
   hero: {
-    title:        'ai-powered health & diabetes Management platform',
+    title:        'AI-Powered Health & Diabetes Management Platform',
     heroImage:    '/images/works/center-health/hero.jpg',
     imageAspect:  '1328 / 710',
     // aiWatermark intentionally omitted — Center Health has none
@@ -349,7 +349,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'scope-of-work',
       index:   '(002)',
-      heading: 'What I have Designed',
+      heading: 'What I Have Designed',
       items: [
         'Feature Research & Credibility Evaluation.',
         'Aria AI UX Flow & Interaction design, making it the BRAIN & Soul of the app.',
@@ -414,7 +414,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'onboarding',
       index:   '(004)',
-      heading: 'Onboarding: Adaptive UX based Pre personalised Experience.',
+      heading: 'Onboarding: Adaptive UX Based on Pre-Personalised Experience',
       body:    'Center Health expanded from one user type to five: Type 1, Type 2, prediabetes, weight-loss users, caregivers, and clinicians. One single onboarding funnel wasn\'t going to cut it.',
       whatIDesigned: [
         'Persona-based branching on step one',
@@ -440,14 +440,14 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'devices',
       index:   '(005)',
-      heading: 'Devices Integration, interaction & Results',
+      heading: 'Devices Integration, Interaction & Results',
       body:    'The platform supported a growing range of connected health devices. Each had its own pairing logic, data format, and edge cases — and each needed to feel seamless.',
       whatIDesigned: [
-        'BLOOD GLUCOSE METER FLOW',
-        'BLOOD PRESSURE CALF FLOW',
-        'WEIGHT SCALE WITH PULSE DETECTION FLOW.',
-        'CGM INTEGRATION FLOW',
-        'FITNESS DATA SOURCE INTEGRATION MODULES',
+        'Blood Glucose Meter Flow',
+        'Blood Pressure Calf Flow',
+        'Weight Scale With Pulse Detection Flow',
+        'CGM Integration Flow',
+        'Fitness Data Source Integration Modules',
       ],
       images: [
         { src: '/images/works/center-health/devices-1.jpg', alt: 'Center Health — blood glucose meter flow screens', aspect: '828 / 701' },
@@ -469,7 +469,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'home-dashboard',
       index:   '(006)',
-      heading: 'Home: turning readings into real understanding',
+      heading: 'Home: Turning Readings into Real Understanding',
       body:    'The v1 dashboard was perfect for early strip users.…but the product had grown into something much bigger: CGM data, nutrition, meds, sleep, activity, mood, weight, caregiver access. We needed a dashboard that behaved like a health intelligence layer, not just a chart.',
       whatIDesigned: [
         '"glanceable" safety strip: current BG + time-in-range',
@@ -502,7 +502,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'aria',
       index:   '(007)',
-      heading: 'ARIA:\ngiving the platform a brain & Soul.',
+      heading: 'ARIA: Giving the Platform a Brain & Soul',
       body:    'Aria become the mind and soul with insights, trends and suggestions. Aria already powered insights in the backend. But to users, it felt like an invisible ghost. We needed to give Aria a face, voice, personality, and safe boundaries.',
       subSections: [
         {
@@ -551,7 +551,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'logging',
       index:   '(008)',
-      heading: 'Logging, reminders & habit systems',
+      heading: 'Logging, Reminders & Habit Systems',
       body:    'Better logging = smarter Aria.\nBut logging is… logging.\nPeople forget.',
       features: [
         'One-tap logging hub',
@@ -581,7 +581,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'meal-logging',
       index:   '(009)',
-      heading: 'Meal logging, nutrition & Restaurants based menu Suggestions.',
+      heading: 'Meal Logging, Nutrition & Restaurant Menu Suggestions',
       body:    'If BG is the "what," then food is the "why."\nThe product needed a diabetic-friendly approach to meals.',
       features: [
         'Curated searchable food database',
@@ -608,7 +608,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'website',
       index:   '(010)',
-      heading: 'Website:\nrewriting the story for an ai-first future',
+      heading: 'Website: Rewriting the Story for an AI-First Future',
       features: [
         'Aria-driven hero narrative, as the product shifted its pitch from strips to ARIA.',
         'Clear explanation of how AI turns data into coaching',
@@ -655,7 +655,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'provider-portal',
       index:   '(011)',
-      heading: 'Provider portal:\ngiving clinicians superpowers',
+      heading: 'Provider Portal: Giving Clinicians Superpowers',
       body:    'Doctors were working off screenshots sent by patients. Not scalable. Not safe. Not helpful.',
       features: [
         'A triage-friendly patient list with at-a-glance risk indicators',
@@ -680,7 +680,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'branding',
       index:   '(012)',
-      heading: 'Branding, packaging designs',
+      heading: 'Branding, Packaging Designs',
       image: {
         src:    '/images/works/center-health/branding.jpg',
         alt:    'Center Health branding and packaging design — welcome letter and getting started guide',
@@ -698,7 +698,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:     'continuous-ux',
       index:    '(013)',
-      heading:  'The continuous ux engine',
+      heading:  'The Continuous UX Engine',
       features: [
         'Hotjar session reviews',
         'Research User feedback from app+play store, customer Support, Analyze &  loop',
@@ -718,7 +718,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'reflections',
       index:   '(014)',
-      heading: 'Reflections of Two & Half years.\nThe scale up stage.',
+      heading: 'Reflections of Two & Half Years. The Scale-Up Stage.',
       reflections: [
         { number: '01', text: 'Domain depth improves design decisions.' },
         { number: '02', text: 'Adaptive AI UX' },

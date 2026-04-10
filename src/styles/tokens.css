@@ -33,8 +33,8 @@
      TYPOGRAPHY — FONT FAMILIES
      ============================================================ */
 
-  --font-display: 'Integral CF', 'Arial Black', sans-serif;
-  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-outfit, 'Outfit', sans-serif);
+  --font-body:    var(--font-outfit, 'Outfit', sans-serif);
 
 
   /* ============================================================
@@ -77,8 +77,9 @@
   --tracking-h5:   0;
   --tracking-lead: 0;
 
-  /* Font weight — Integral CF is used at Regular (400) for all display sizes */
-  --weight-regular: 400;
+  /* Font weights — Outfit variable font */
+  --weight-regular: 400;   /* Body, Lead */
+  --weight-medium:  500;   /* Headings H1–H5 */
 
 
   /* ============================================================

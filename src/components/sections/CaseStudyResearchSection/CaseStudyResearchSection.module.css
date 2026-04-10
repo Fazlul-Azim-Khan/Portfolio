@@ -91,7 +91,6 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h3);             /* -0.84px */
-  text-transform: uppercase;
   color:          var(--color-secondary);         /* white */
   margin:         0;
   flex:           1 0 0;
@@ -168,7 +167,6 @@
   font-size:      var(--text-h3);                 /* 56px */
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
-  text-transform: uppercase;
   color:          var(--color-secondary);
   margin:         0;
   flex:           1 0 0;

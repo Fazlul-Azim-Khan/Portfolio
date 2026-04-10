@@ -38,7 +38,6 @@
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h3);
   color:          var(--color-primary);
-  text-transform: uppercase;
   margin:         0;
 }
 
@@ -90,7 +89,6 @@
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h3);
   color:          var(--color-secondary);
-  text-transform: uppercase;
   white-space:    nowrap;
   margin:         0;
 }
@@ -106,7 +104,6 @@
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h5);
   color:          var(--color-tertiary);
-  text-transform: uppercase;
   text-align:     center;
   white-space:    nowrap;
   margin:         0;
@@ -138,7 +135,6 @@
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h4);
   color:          var(--color-secondary);
-  text-transform: uppercase;
   margin:         0;
 }
 

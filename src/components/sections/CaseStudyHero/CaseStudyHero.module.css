@@ -107,7 +107,6 @@
   letter-spacing: var(--tracking-case-hero);   /* -1.8px */
   color:          var(--color-primary);
   margin:         0;
-  text-transform: uppercase;
 }
 
 

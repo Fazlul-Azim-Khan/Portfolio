@@ -46,7 +46,6 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-h1);                /* 120px */
   letter-spacing: var(--tracking-case-hero);   /* -1.8px */
-  text-transform: uppercase;
   color:          var(--color-secondary);       /* white */
   margin:         0;
   white-space:    nowrap;
@@ -92,7 +91,6 @@
   font-size:      var(--text-h5);          /* 20px */
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);       /* 1 */
-  text-transform: uppercase;
   color:          var(--color-primary);    /* black on blue */
   margin:         0;
 }
@@ -125,7 +123,6 @@
   font-size:      var(--text-h5);          /* 20px */
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
-  text-transform: uppercase;
   color:          var(--color-secondary);  /* white */
   margin:         0;
   white-space:    nowrap;

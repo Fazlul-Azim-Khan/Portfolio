@@ -151,7 +151,7 @@ export const axionRay: AxionRayCaseStudy = {
      ─────────────────────────────────────────────────────────── */
 
   hero: {
-    title:       'AI-powered Manufacturing forecasting platform',
+    title:       'AI-Powered Manufacturing Forecasting Platform',
     heroImage:   '/images/works/manufacturing-platform/axion-1.jpg',
     aiWatermark: '/images/works/manufacturing-platform/ai-watermark.png',
     meta: {

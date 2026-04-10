@@ -75,7 +75,6 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h3);      /* -0.84px */
-  text-transform: uppercase;
   color:          var(--color-secondary);
   flex:           1 0 0;
   min-width:      0;
@@ -122,7 +121,6 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h3);
-  text-transform: uppercase;
   color:          var(--color-secondary);
   white-space:    nowrap;
   margin:         0;
@@ -220,7 +218,6 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h3);
-  text-transform: uppercase;
   color:          var(--color-secondary);
   margin:         0;
   white-space:    pre-wrap;

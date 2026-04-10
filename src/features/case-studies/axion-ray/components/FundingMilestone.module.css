@@ -113,7 +113,6 @@
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h3);
   color:          var(--color-secondary);
-  text-transform: uppercase;
   margin:         0;
 }
 

@@ -40,7 +40,6 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-h1);                /* 120px */
   letter-spacing: var(--tracking-case-hero);   /* -1.8px */
-  text-transform: uppercase;
   color:          var(--color-secondary);
   margin:         0;
   white-space:    nowrap;
@@ -77,7 +76,6 @@
   font-size:      var(--text-h5);          /* 20px */
   font-weight:    var(--weight-regular);   /* Figma: Integral CF Regular (400) — was 700 */
   line-height:    var(--lh-heading);       /* 1 */
-  text-transform: uppercase;
   color:          var(--color-primary);
   margin:         0;
 }
@@ -100,7 +98,6 @@
   font-size:      var(--text-h5);          /* 20px */
   font-weight:    var(--weight-regular);   /* Figma: Integral CF Regular (400) — was 700 */
   line-height:    var(--lh-heading);
-  text-transform: uppercase;
   color:          var(--color-secondary);
   margin:         0;
   white-space:    nowrap;
