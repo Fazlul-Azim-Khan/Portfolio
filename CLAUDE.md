@@ -19,7 +19,7 @@ reusable components, spacing system, typography system, design tokens, consisten
 - TypeScript
 - CSS Modules
 - Design tokens via `src/styles/tokens.css`
-- Fonts: Integral CF (display), Inter (body)
+- Fonts: **Outfit only** (display + body, 400 Regular + 500 Medium, loaded via `next/font/google`)
 
 ---
 
@@ -56,7 +56,7 @@ The existing `src/components/` tree is legacy and must not be modified unless ex
 
 1. `Hero` — who I am, what I do
 2. `SelectedWorks` — 3 case studies (one is NDA → use safe generic label)
-3. `MoreWork` — image grid gallery, click opens modal, modal has close button
+3. `MoreWork` — image grid gallery, click opens modal. Gallery items support **multiple images** (`images: string[]`). When `images.length > 1`, the modal renders prev/next navigation via `IconButton` plus a counter. Single-image items render the modal without nav controls.
 4. `Experience` — companies / projects worked on
 5. `Languages` — English, German
 6. `Contact` — email, merged with Footer
@@ -174,6 +174,33 @@ Do not put page-specific or feature-specific components here.
 
 ---
 
+## Icon System
+
+Icons are **inline SVG components**, not an installed library.
+
+- Location: `src/components/icons/index.tsx`
+- Design language matches Lucide: `viewBox="0 0 24 24"`, `fill: none`, `stroke: currentColor`, `strokeWidth: 1.5`, `strokeLinecap: round`, `strokeLinejoin: round`
+- Each icon accepts `size` (default 20), `className`, `aria-hidden`
+- Current exports: `ArrowLeft`, `ArrowRight`, `X`, `ChevronLeft`, `ChevronRight`
+- Add new icons in the same file, same style. No exceptions — do not mix icon sources.
+
+**Do not install `lucide-react`** or any icon package. The sandbox npm registry is blocked, and the inline approach is intentional (zero runtime dependency, zero bundle cost, full control over stroke weight).
+
+### IconButton component
+
+- Location: `src/components/ui/IconButton/`
+- The **only** way to render a square icon button in the project.
+- Size: `44×44px` (`var(--button-height)` × `var(--button-height)`), `border-radius: var(--radius-sm)`
+- Variants:
+  - `primary` — black background, white icon
+  - `outlined` — black border, dark icon (default)
+  - `ghost` — no background or border
+  - `light` — white border + white icon + white focus ring, for use on dark overlays (MoreWork modal, dark sections)
+- `aria-label` is **required** on every usage.
+- Disabled state: `opacity: 0.36; cursor: not-allowed;` — already built in.
+
+---
+
 ## Design System Rules
 
 All visual values must use tokens from `src/styles/tokens.css`.
@@ -184,10 +211,117 @@ Token categories:
 - `--text-*` — font sizes
 - `--weight-*` — font weights
 - `--lh-*` — line heights
+- `--tracking-*` — letter spacing
 - `--font-*` — font families
 - `--spacing-*` / `--gap-*` / `--padding-*` — spacing
 - `--radius-*` — border radius
 - `--layout-*` — layout widths and padding
+
+---
+
+## Typography Rules (Critical)
+
+This section is the authoritative reference for every typographic decision in the project.
+Violating any of these rules counts as a regression.
+
+### Single font family
+
+- **Outfit is the only font used in this project.** Display and body, everywhere.
+- Never reference Inter, Integral CF, or any other font family in CSS, `fonts.css`, or component files.
+- If you find a stale Inter/Integral CF reference, it must be removed (only in the files where you are already making an approved change — do not do a blanket sweep without explicit instruction).
+- Two weights only: `--weight-regular` (400) and `--weight-medium` (500).
+
+### Section headings = H1
+
+- Every section main heading across landing + case studies uses the `<h1>` element.
+- A page intentionally has multiple `<h1>`s — each section is its own screen in the step-scroll system.
+- H1 visual specs (all required together):
+  - `font-size: var(--text-h1)` — fluid 48px → 120px via `clamp(3rem, 1.853rem + 4.706vw, 7.5rem)`
+  - `font-weight: var(--weight-medium)`
+  - `line-height: var(--lh-h1)` — `1`
+  - `letter-spacing: var(--tracking-h1)` — `-1.5px`
+- **No section heading may use `--text-h2` or `--text-h3`.** Those tokens still exist for sub-headings and card titles, not section headings.
+- `--weight-regular` is not valid for section headings. Always `--weight-medium`.
+
+### Header row pattern
+
+Every section header is a two-part flex row:
+
+```
+[headerIndex]   [<h1> heading ]
+  (00X)
+```
+
+- Container: `display: flex; flex-direction: row; gap: var(--gap-16); align-items: flex-start;`
+- `headerIndex`: **Outfit** 12px, `text-transform: uppercase`, `--weight-regular`, `padding-top: 4px` for optical baseline alignment with the large H1
+- `<h1>`: receives `flex: 1` so it can wrap properly next to the index
+- Indexes are defined in `content.ts` under `meta.index` as strings like `'(001)'`, `'(002)'`, `'(003)'`
+- Current landing indexes: Hero none, SelectedWorks `(001)`, MoreWork `(002)`, Experience `(004)`, Languages `(005)`, Contact `(006)`
+
+### Hero bio = H5
+
+- `Hero .bio` is H5, not a lead paragraph.
+- Specs: `font-size: var(--text-h5)`, `font-weight: var(--weight-medium)`, `line-height: var(--lh-heading)`, `letter-spacing: var(--tracking-h5)`
+- **No `text-transform: uppercase`** on the bio.
+
+### Card + case study title weight
+
+- `WorkCard .title` and `CaseStudyHero .title` both use `--weight-medium` (matches the section H1 style family).
+- Never `--weight-regular` on these.
+
+### Outfit is case-sensitive — Title Case content is required
+
+- Unlike Integral CF, **Outfit does not auto-uppercase anything.** The browser renders exactly the case stored in `content.ts`.
+- All content strings must be authored in the exact case they should render:
+  - Headings, subtitles, decision titles, phase headings, reflection insight titles, project titles, section captions → **Title Case**
+  - Body paragraphs → sentence case
+- **Never rely on CSS `text-transform` to "fix" lowercase content.** Fix the source string in `content.ts`.
+
+### Uppercase is reserved
+
+`text-transform: uppercase` is only allowed on these small-label elements:
+
+- `headerIndex` — the `(00X)` labels
+- `period`, `copyright` — Experience and Contact labels
+- `company`, `role` — Experience meta strip
+- `language` — Languages label
+- modal `counter` — MoreWork modal image counter
+
+**Never** on headings, bios, subtitles, card titles, body text, or any display element.
+
+---
+
+## Color Rules (Critical)
+
+Text color must match the background context. These rules are not negotiable.
+
+### White / light backgrounds
+
+All text must use `--color-primary`. This includes:
+
+- `headerIndex`
+- result tags
+- proficiency labels
+- subheadings
+- back links
+- footer meta text
+
+**Never** use `--color-text-muted` or `--color-tertiary` on white backgrounds.
+
+### Dark backgrounds
+
+- Primary text: `--color-secondary` (white)
+- Muted / supporting text: `--color-tertiary` (#cccccc) — only valid on dark sections
+- Current dark sections: Experience, Contact, FundingMilestone
+
+### Decorative exceptions
+
+The following decorative elements keep their designed colors and are not affected by the text color rule:
+
+- Hero decorative arrow
+- Hero ampersand
+- Feature star
+- Any intentional accent mark documented in the component
 
 ---
 
@@ -260,6 +394,8 @@ After implementing, state:
 - `src/styles/reset.css`
 - `src/styles/fonts.css`
 - `src/types/index.ts`
-- Any file inside `src/components/` (legacy — do not touch)
+- Any file inside `src/components/` (legacy — do not touch) **except**:
+  - `src/components/icons/index.tsx` — design-system primitive, only add new icons in-style
+  - `src/components/ui/IconButton/` — design-system primitive, only extend variants with approval
 - Font files
 - Image assets in `public/`
