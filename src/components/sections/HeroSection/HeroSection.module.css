@@ -9,9 +9,9 @@
  *   padding-y:             64px            →  --padding-64
  *
  * Cell assignments:
- *   [row 1 / col 1] .arrowCell    — decorative ↗, flipped to ↘
- *   [row 1 / col 2] .bioCell      — bio paragraph + chip tags
- *   [row 2 / col 1-2] .headlineCell — name + headline + subline
+ *   [row 1 / col 1] .hero-arrow-cell   — decorative ↗, flipped to ↘
+ *   [row 1 / col 2] .hero-bio-cell     — bio paragraph + chip tags
+ *   [row 2 / col 1-2] .hero-headline-cell — name + headline + subline
  *
  * Hero wrapper:
  *   height:   ~900px   →  --hero-min-height
@@ -25,7 +25,7 @@
    Confirmed: h-[902.958px] items-start justify-center (Figma node 966:7520)
    ============================================================ */
 
-.hero {
+.hero-section {
   display:         flex;
   flex-direction:  column;
   justify-content: center;
@@ -44,7 +44,7 @@
    Confirmed: node 966:7524 — "Main"
    ============================================================ */
 
-.grid {
+.hero-grid {
   display:               grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows:    repeat(2, fit-content(100%));
@@ -63,7 +63,7 @@
    Confirmed: node 966:7546, col-1 row-1
    ============================================================ */
 
-.arrowCell {
+.hero-arrow-cell {
   grid-column: 1;
   grid-row:    1;
 
@@ -72,7 +72,7 @@
   justify-content: center;
 }
 
-.arrow {
+.hero-arrow {
   /* Character: ↗ rendered at 200px, flipped vertically → appears as ↘ */
   font-family:     var(--font-body);       /* Figma: Inter (glyph is font-agnostic) */
   font-size:       var(--hero-arrow-size); /* 200px */
@@ -97,7 +97,7 @@
    gap-16 between bio and chips group
    ============================================================ */
 
-.bioCell {
+.hero-bio-cell {
   grid-column: 2;
   grid-row:    1;
 
@@ -109,7 +109,7 @@
   justify-self:   stretch;
 }
 
-.bio {
+.hero-bio {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);     /* 12px */
   font-weight:    var(--weight-regular);
@@ -120,7 +120,7 @@
   width:          100%;
 }
 
-.chips {
+.hero-chips {
   display:     flex;
   flex-wrap:   wrap;
   gap:         var(--gap-8);           /* 8px between chips — confirmed node 966:7527 */
@@ -136,7 +136,7 @@
    justify-center within the cell
    ============================================================ */
 
-.headlineCell {
+.hero-headline-cell {
   grid-column: 1 / span 2;
   grid-row:    2;
 
@@ -151,7 +151,7 @@
 
 /* Name label — "FAZLUL AZIM KHAN"
    Confirmed: node 966:7543 — Integral CF 20px, --color-primary */
-.name {
+.hero-name {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);       /* 20px */
   font-weight:    var(--weight-regular);
@@ -165,13 +165,13 @@
    Confirmed: node 966:7544 — tracking-[-1.8px] in Figma code,
    design system tokens define --tracking-h1: -1.5px.
    Using token value for design system consistency. */
-.headlineBlock {
+.hero-headline-block {
   width: 100%;
 }
 
 /* Each headline line — "Product DESIGNER" / "& UX STRATEGIST"
    Confirmed: Integral CF, 120px, line-height 120px, uppercase */
-.headlineLine {
+.hero-headline-line {
   display:        block;
   font-family:    var(--font-display);
   font-size:      var(--text-h1);       /* 120px */
@@ -184,13 +184,13 @@
 
 /* The "&" ampersand on line 2 — renders in --color-tertiary
    Confirmed: node 966:7544 span — text-[#ccc] */
-.ampersand {
+.hero-ampersand {
   color: var(--color-tertiary);
 }
 
 /* Subline — "Enterprise AI · Safety-critical domains · MVP to $25M scale"
    Confirmed: node 966:7545 — Integral CF 20px, --color-primary */
-.subline {
+.hero-subline {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);       /* 20px */
   font-weight:    var(--weight-regular);

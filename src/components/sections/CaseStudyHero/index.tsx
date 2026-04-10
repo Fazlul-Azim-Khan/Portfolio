@@ -47,10 +47,10 @@ export default function CaseStudyHero({ hero }: CaseStudyHeroProps) {
   const { title, heroImage, imageAspect, aiWatermark, meta } = hero
 
   return (
-    <div className={styles.root}>
+    <div className={styles['case-hero-root']}>
 
       {/* ── Back link — above hero row ────────────────────── */}
-      <Link href="/#works" className={styles.back} aria-label="Back to selected works">
+      <Link href="/#works" className={styles['case-hero-back']} aria-label="Back to selected works">
         ← Work
       </Link>
 
@@ -65,7 +65,7 @@ export default function CaseStudyHero({ hero }: CaseStudyHeroProps) {
           src={aiWatermark}
           alt=""
           aria-hidden="true"
-          className={styles.aiWatermark}
+          className={styles['case-hero-watermark']}
         />
       )}
 
@@ -74,11 +74,11 @@ export default function CaseStudyHero({ hero }: CaseStudyHeroProps) {
         aspect-[1408/700] — Figma: node 977:5889
         flex row: title takes flex-1, meta sidebar is fixed-width
       */}
-      <div className={styles.heroRow}>
+      <div className={styles['case-hero-row']}>
 
         {/* H1 title — left, flex-1 */}
-        <div className={styles.titleWrap}>
-          <h1 className={styles.title}>{title}</h1>
+        <div className={styles['case-hero-title-wrap']}>
+          <h1 className={styles['case-hero-title']}>{title}</h1>
         </div>
 
         {/* Meta sidebar — right, fixed width */}
@@ -86,7 +86,7 @@ export default function CaseStudyHero({ hero }: CaseStudyHeroProps) {
           Container: flex-col, gap-24px, h-[480px], w-[300px]
           Confirmed: Figma node 999:5836
         */}
-        <div className={styles.meta}>
+        <div className={styles['case-hero-meta']}>
 
           {/* Key-value rows — Role, Stage, Year, Sector, Note */}
           {([
@@ -96,15 +96,15 @@ export default function CaseStudyHero({ hero }: CaseStudyHeroProps) {
             { label: 'Sector', value: meta.sector },
             ...(meta.note ? [{ label: 'Note', value: meta.note }] : []),
           ] as { label: string; value: string }[]).map((row) => (
-            <div key={row.label} className={styles.metaRow}>
-              <p className={styles.metaLabel}>{row.label}</p>
-              <p className={styles.metaValue}>{row.value}</p>
+            <div key={row.label} className={styles['case-hero-meta-row']}>
+              <p className={styles['case-hero-meta-label']}>{row.label}</p>
+              <p className={styles['case-hero-meta-value']}>{row.value}</p>
             </div>
           ))}
 
           {/* Chips row */}
           {meta.chips.length > 0 && (
-            <div className={styles.chips}>
+            <div className={styles['case-hero-chips']}>
               {meta.chips.map((chip) => (
                 <Chip key={chip} label={chip} />
               ))}
@@ -123,7 +123,7 @@ export default function CaseStudyHero({ hero }: CaseStudyHeroProps) {
       */}
       {heroImage && (
         <div
-          className={styles.imageWrap}
+          className={styles['case-hero-image-wrap']}
           style={imageAspect ? { aspectRatio: imageAspect } : undefined}
         >
           <Image
@@ -131,7 +131,7 @@ export default function CaseStudyHero({ hero }: CaseStudyHeroProps) {
             alt={`${title} — hero image`}
             fill
             sizes="100vw"
-            className={styles.image}
+            className={styles['case-hero-image']}
             priority
           />
         </div>

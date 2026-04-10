@@ -3,12 +3,12 @@
  * Specs confirmed from Figma node 966:7565
  *
  * Section layout:
- *   .section      — flex column, padding-y: --padding-64, gap: --gap-40
- *   .header       — three-zone row: index (left) · heading (centre) · count (right)
- *   .headerIndex  — Inter 12px uppercase, --color-tertiary
- *   .headerHeading — Integral CF 56px H3, --color-primary
- *   .headerCount  — Inter 12px uppercase, --color-primary, margin-left: auto
- *   .cardsList    — flex column, gap: --space-works-gap (256px)
+ *   .works-section        — flex column, padding-y: --padding-64, gap: --gap-40
+ *   .works-header         — three-zone row: index (left) · heading (centre) · count (right)
+ *   .works-header-index   — Inter 12px uppercase, --color-tertiary
+ *   .works-header-heading — Integral CF 56px H3, --color-primary
+ *   .works-header-count   — Inter 12px uppercase, --color-primary, margin-left: auto
+ *   .works-cards-list     — flex column, gap: --space-works-gap (256px)
  */
 
 
@@ -18,7 +18,7 @@
    py-64px confirmed from Figma node 966:7565
    ============================================================ */
 
-.section {
+.works-section {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-40);          /* gap between header area and cards list */
@@ -37,7 +37,7 @@
    align-items: baseline so index and count sit on the H3 baseline
    ============================================================ */
 
-.header {
+.works-header {
   display:     flex;
   flex-direction: row;
   align-items: baseline;
@@ -48,7 +48,7 @@
 
 /* INDEX — "(002)"
    Confirmed: Inter 12px uppercase, --color-tertiary, left-aligned */
-.headerIndex {
+.works-header-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);       /* 12px */
   font-weight:    var(--weight-regular);
@@ -62,7 +62,7 @@
 
 /* HEADING — "Selected Works"
    Confirmed: Integral CF 56px H3, tracking -0.84px, --color-primary */
-.headerHeading {
+.works-header-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);         /* 120px fluid */
   font-weight: var(--weight-regular);
@@ -76,7 +76,7 @@
 
 /* COUNT — "3 Case Studies"
    Confirmed: Inter 12px uppercase, --color-primary, right-aligned */
-.headerCount {
+.works-header-count {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);       /* 12px */
   font-weight:    var(--weight-regular);
@@ -95,7 +95,7 @@
    Confirmed: Figma node 966:7565
    ============================================================ */
 
-.cardsList {
+.works-cards-list {
   display:        flex;
   flex-direction: column;
   gap:            var(--space-works-gap); /* 256px */

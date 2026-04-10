@@ -40,9 +40,9 @@ import styles from './HeroSection.module.css'
 
 export default function HeroSection() {
   return (
-    <section className={styles.hero} aria-label="Hero">
+    <section className={styles['hero-section']} aria-label="Hero">
 
-      <div className={styles.grid}>
+      <div className={styles['hero-grid']}>
 
         {/* ── TOP LEFT: Decorative arrow ──────────────────── */}
         {/*
@@ -50,22 +50,22 @@ export default function HeroSection() {
           Confirmed: Figma uses -scale-y-100 on the container div.
           aria-hidden — purely decorative, no semantic meaning.
         */}
-        <div className={styles.arrowCell} aria-hidden="true">
-          <span className={styles.arrow}>
+        <div className={styles['hero-arrow-cell']} aria-hidden="true">
+          <span className={styles['hero-arrow']}>
             {heroDecorativeArrow}
           </span>
         </div>
 
         {/* ── TOP RIGHT: Bio + Chips ──────────────────────── */}
-        <div className={styles.bioCell}>
+        <div className={styles['hero-bio-cell']}>
 
           {/* Bio paragraph */}
-          <p className={styles.bio}>
+          <p className={styles['hero-bio']}>
             {heroBio}
           </p>
 
           {/* Specialty chip tags */}
-          <div className={styles.chips} role="list" aria-label="Specialties">
+          <div className={styles['hero-chips']} role="list" aria-label="Specialties">
             {heroChips.map((chip) => (
               <div key={chip} role="listitem">
                 <Chip label={chip} />
@@ -76,23 +76,23 @@ export default function HeroSection() {
         </div>
 
         {/* ── BOTTOM FULL-WIDTH: Name + Headline + Subline ── */}
-        <div className={styles.headlineCell}>
+        <div className={styles['hero-headline-cell']}>
 
           {/* Name label */}
-          <p className={styles.name}>
+          <p className={styles['hero-name']}>
             {heroName}
           </p>
 
           {/* Headline — two lines, "&" in tertiary colour */}
-          <div className={styles.headlineBlock} aria-label={`${heroHeadline.line1} ${heroHeadline.line2.ampersand}${heroHeadline.line2.rest}`}>
+          <div className={styles['hero-headline-block']} aria-label={`${heroHeadline.line1} ${heroHeadline.line2.ampersand}${heroHeadline.line2.rest}`}>
             {/* Line 1: "Product DESIGNER" */}
-            <span className={styles.headlineLine}>
+            <span className={styles['hero-headline-line']}>
               {heroHeadline.line1}
             </span>
 
             {/* Line 2: "& UX STRATEGIST" — & is in --color-tertiary */}
-            <span className={styles.headlineLine}>
-              <span className={styles.ampersand}>
+            <span className={styles['hero-headline-line']}>
+              <span className={styles['hero-ampersand']}>
                 {heroHeadline.line2.ampersand}
               </span>
               {heroHeadline.line2.rest}
@@ -100,7 +100,7 @@ export default function HeroSection() {
           </div>
 
           {/* Subline */}
-          <p className={styles.subline}>
+          <p className={styles['hero-subline']}>
             {heroSubline}
           </p>
 

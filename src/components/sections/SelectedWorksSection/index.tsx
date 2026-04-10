@@ -36,7 +36,7 @@ import styles     from './SelectedWorksSection.module.css'
 
 export default function SelectedWorksSection() {
   return (
-    <section className={styles.section} aria-label="Selected Works">
+    <section className={styles['works-section']} aria-label="Selected Works">
 
       {/* ── Section header ─────────────────────────────────── */}
       {/*
@@ -46,10 +46,10 @@ export default function SelectedWorksSection() {
           Right  — "3 Case Studies" — Inter 12px uppercase
         Confirmed: Figma nodes 966:7566–7570
       */}
-      <div className={styles.header}>
-        <p className={styles.headerIndex}>{selectedWorksMeta.index}</p>
-        <h1 className={styles.headerHeading}>{selectedWorksMeta.heading}</h1>
-        <p className={styles.headerCount}>{selectedWorksMeta.count}</p>
+      <div className={styles['works-header']}>
+        <p className={styles['works-header-index']}>{selectedWorksMeta.index}</p>
+        <h1 className={styles['works-header-heading']}>{selectedWorksMeta.heading}</h1>
+        <p className={styles['works-header-count']}>{selectedWorksMeta.count}</p>
       </div>
 
       {/* Divider below header — separates header from cards list */}
@@ -61,7 +61,7 @@ export default function SelectedWorksSection() {
         Confirmed: Figma node 966:7565
         First card gets priority={true} so its image loads as LCP candidate.
       */}
-      <div className={styles.cardsList}>
+      <div className={styles['works-cards-list']}>
         {selectedWorks.map((work, i) => (
           <WorkCard
             key={work.id}

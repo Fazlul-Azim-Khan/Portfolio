@@ -51,7 +51,7 @@ import styles        from './ExperienceSection.module.css'
 export default function ExperienceSection() {
   return (
     <section
-      className={styles.section}
+      className={styles['exp-section']}
       aria-label="Design Journey / Experience"
     >
 
@@ -60,7 +60,7 @@ export default function ExperienceSection() {
         Integral CF 56px H3, --color-secondary (white), tracking -0.84px
         No index label — confirmed: Figma node 1036:7716 shows heading only
       */}
-      <h1 className={styles.heading}>{experienceMeta.heading}</h1>
+      <h1 className={styles['exp-heading']}>{experienceMeta.heading}</h1>
 
       {/* ── Work history list ──────────────────────────────── */}
       {/*
@@ -68,7 +68,7 @@ export default function ExperienceSection() {
         Pattern: [Divider] [Row] [Divider] [Row] ... (no trailing divider)
         Confirmed: Figma node 1036:7718
       */}
-      <div className={styles.list}>
+      <div className={styles['exp-list']}>
         {experienceEntries.map((entry) => (
           <Fragment key={entry.id}>
 
@@ -82,17 +82,17 @@ export default function ExperienceSection() {
                 Right — flex col with px-64px padding — role + period
               Confirmed: Figma node 1036:7651 and subsequent rows
             */}
-            <div className={styles.row} role="listitem">
+            <div className={styles['exp-row']} role="listitem">
 
               {/* Left: company name + location as single display string */}
-              <p className={styles.company}>
+              <p className={styles['exp-company']}>
                 {entry.company}, {entry.location}
               </p>
 
               {/* Right: role (H5) stacked above period (Lead) */}
-              <div className={styles.right}>
-                <p className={styles.role}>{entry.role}</p>
-                <p className={styles.period}>{entry.period}</p>
+              <div className={styles['exp-right']}>
+                <p className={styles['exp-role']}>{entry.role}</p>
+                <p className={styles['exp-period']}>{entry.period}</p>
               </div>
 
             </div>

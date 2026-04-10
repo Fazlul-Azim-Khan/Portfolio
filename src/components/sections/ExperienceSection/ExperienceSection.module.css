@@ -3,14 +3,14 @@
  * Specs confirmed from Figma node 1036:7650
  *
  * Layout:
- *   .section    — dark card: bg --color-primary, p-64, radius-sm, flex col, gap-64
- *   .heading    — Integral CF 56px H3, --color-secondary, tracking -0.84px
- *   .list       — flex col, gap: --space-experience-row-gap (29px)
- *   .row        — flex row, justify-between, items-start
- *   .company    — Integral CF 20px H5, --color-secondary (left column)
- *   .right      — flex col, px: --padding-64 (right column)
- *   .role       — Integral CF 20px H5, --color-secondary
- *   .period     — Inter 12px Lead, --color-secondary, uppercase
+ *   .exp-section  — dark card: bg --color-primary, p-64, radius-sm, flex col, gap-64
+ *   .exp-heading  — Integral CF 56px H3, --color-secondary, tracking -0.84px
+ *   .exp-list     — flex col, gap: --space-experience-row-gap (29px)
+ *   .exp-row      — flex row, justify-between, items-start
+ *   .exp-company  — Integral CF 20px H5, --color-secondary (left column)
+ *   .exp-right    — flex col, px: --padding-64 (right column)
+ *   .exp-role     — Integral CF 20px H5, --color-secondary
+ *   .exp-period   — Inter 12px Lead, --color-secondary, uppercase
  *
  * KEY: This section is a self-contained dark card.
  *   It manages its own bg, padding, and border-radius.
@@ -27,7 +27,7 @@
      flex flex-col gap-[var(--gap/64,64px)] → --gap-64
    ============================================================ */
 
-.section {
+.exp-section {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-64);          /* 64px — between heading and list */
@@ -51,7 +51,7 @@
      uppercase (Integral CF is all-caps by nature)
    ============================================================ */
 
-.heading {
+.exp-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);         /* 120px fluid */
   font-weight: var(--weight-regular);
@@ -71,7 +71,7 @@
    Confirmed: Figma node 1036:7718 gap-[29px] → --space-experience-row-gap
    ============================================================ */
 
-.list {
+.exp-list {
   display:        flex;
   flex-direction: column;
   gap:            var(--space-experience-row-gap);  /* 29px */
@@ -89,7 +89,7 @@
      flex items-start justify-between
    ============================================================ */
 
-.row {
+.exp-row {
   display:         flex;
   flex-direction:  row;
   align-items:     flex-start;
@@ -107,7 +107,7 @@
      w-[715px] in Figma — not hardcoded here, left column takes natural width
    ============================================================ */
 
-.company {
+.exp-company {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);         /* 20px */
   font-weight:    var(--weight-regular);
@@ -129,7 +129,7 @@
      flex flex-col items-start
    ============================================================ */
 
-.right {
+.exp-right {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -143,7 +143,7 @@
    Confirmed: Figma node 1036:7654
      font-['Integral_CF:Regular'] text-[20px] leading-[normal]
      color inherited from parent (--color-secondary / white) */
-.role {
+.exp-role {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);         /* 20px */
   font-weight:    var(--weight-regular);
@@ -157,7 +157,7 @@
    Confirmed: Figma node 1036:7655
      font-['Inter:Regular'] text-[12px] leading-[20px] uppercase
      color inherited from parent (--color-secondary / white) */
-.period {
+.exp-period {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);       /* 12px */
   font-weight:    var(--weight-regular);
@@ -173,8 +173,8 @@
    Mobile layout not yet confirmed from Figma.
    Placeholder only — implement when mobile frames provided.
 
-   Likely change: .row to flex-col, .company and .right to full width,
-   .right padding to 0. Do NOT implement until design is confirmed.
+   Likely change: .exp-row to flex-col, .exp-company and .exp-right to full width,
+   .exp-right padding to 0. Do NOT implement until design is confirmed.
    ============================================================ */
 
 @media (max-width: 768px) {

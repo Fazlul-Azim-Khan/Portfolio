@@ -11,10 +11,10 @@
 
 /* ============================================================
    ROOT WRAPPER
-   Stacks heroRow + image vertically with no gap between them
+   Stacks case-hero-row + image vertically with no gap between them
    ============================================================ */
 
-.root {
+.case-hero-root {
   display:        flex;
   flex-direction: column;
   width:          100%;
@@ -27,7 +27,7 @@
    Positioned above the hero row as a standalone line
    ============================================================ */
 
-.back {
+.case-hero-back {
   display:         inline-flex;
   align-items:     center;
   gap:             var(--gap-8);
@@ -46,8 +46,8 @@
   transition: color var(--transition-fast);
 }
 
-.back:hover         { color: var(--color-primary); }
-.back:focus-visible {
+.case-hero-back:hover         { color: var(--color-primary); }
+.case-hero-back:focus-visible {
   outline:        var(--focus-outline-width) solid var(--color-primary);
   outline-offset: var(--focus-outline-offset);
   border-radius:  2px;
@@ -61,7 +61,7 @@
    centre-right of the hero area
    ============================================================ */
 
-.aiWatermark {
+.case-hero-watermark {
   position:       absolute;
   left:           calc(50% + 266.5px);
   top:            calc(50% - 258px);
@@ -78,14 +78,14 @@
    Aspect ratio: 1408/700 — Figma node 977:5889
    ============================================================ */
 
-.heroRow {
+.case-hero-row {
   display:        flex;
   flex-direction: column;
   width:          100%;
 }
 
-/* The actual two-column layout sits inside heroRow */
-.titleWrap {
+/* The actual two-column layout sits inside case-hero-row */
+.case-hero-title-wrap {
   display:   flex;
   flex:      1 0 0;
   flex-direction: column;
@@ -98,7 +98,7 @@
    Outfit Medium, 120px, letter-spacing -1.8px
    ============================================================ */
 
-.title {
+.case-hero-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);              /* 120px */
   font-weight: var(--weight-regular);
@@ -115,7 +115,7 @@
    Confirmed: Figma node 999:5836
    ============================================================ */
 
-.meta {
+.case-hero-meta {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-24);
@@ -123,13 +123,13 @@
   padding-top:    var(--section-padding);  /* gives breathing room below title */
 }
 
-.metaRow {
+.case-hero-meta-row {
   display:        flex;
   flex-direction: column;
   gap:            0.44px;   /* Figma: gap-[0.44px] — near-zero optical spacing */
 }
 
-.metaLabel {
+.case-hero-meta-label {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);    /* 12px */
   font-weight:    var(--weight-regular);
@@ -140,7 +140,7 @@
   margin:         0;
 }
 
-.metaValue {
+.case-hero-meta-value {
   font-family:    var(--font-body);
   font-size:      var(--text-body);    /* 14px */
   font-weight:    var(--weight-regular);
@@ -150,11 +150,11 @@
   margin:         0;
 }
 
-.chips {
+.case-hero-chips {
   display:   flex;
   flex-wrap: wrap;
   gap:       var(--gap-12);
-  /* Spacing from last meta row handled by parent .meta gap-24 — no extra margin */
+  /* Spacing from last meta row handled by parent .case-hero-meta gap-24 — no extra margin */
 }
 
 
@@ -164,7 +164,7 @@
    Full-width, border-radius 8px
    ============================================================ */
 
-.imageWrap {
+.case-hero-image-wrap {
   position:     relative;
   width:        100%;
   aspect-ratio: var(--case-hero-img-aspect);   /* 1408/776 */
@@ -176,7 +176,7 @@
   margin-top: var(--gap-40);
 }
 
-.image {
+.case-hero-image {
   object-fit: cover;
 }
 
@@ -189,24 +189,24 @@
 
 /* Hide watermark on mobile — hardcoded coordinates overflow at narrow viewports */
 @media (max-width: 767px) {
-  .aiWatermark {
+  .case-hero-watermark {
     display: none;
   }
 }
 
 @media (min-width: 768px) {
-  .heroRow {
+  .case-hero-row {
     flex-direction:  row;
     align-items:     center;
     aspect-ratio:    var(--case-hero-aspect);   /* 1408/700 */
     gap:             var(--gap-16);
   }
 
-  .titleWrap {
+  .case-hero-title-wrap {
     flex: 1 0 0;
   }
 
-  .meta {
+  .case-hero-meta {
     width:       300px;
     height:      480px;
     flex-shrink: 0;

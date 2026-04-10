@@ -3,12 +3,12 @@
  * Specs confirmed from Figma node 1036:7190
  *
  * Layout:
- *   .section     — flex col, gap --gap-40, padding --padding-64 all sides
- *   .heading     — Integral CF 56px H3, --color-primary, tracking -0.84px
- *   .row         — flex row, gap --gap-16, two entries side-by-side
- *   .entry       — flex col, gap --gap-1, flex: 1 0 0
- *   .language    — Integral CF 20px H5, --color-primary
- *   .proficiency — Inter 14px body, --color-text-muted (#424242)
+ *   .lang-section     — flex col, gap --gap-40, padding --padding-64 all sides
+ *   .lang-heading     — Integral CF 56px H3, --color-primary, tracking -0.84px
+ *   .lang-row         — flex row, gap --gap-16, two entries side-by-side
+ *   .lang-entry       — flex col, gap --gap-1, flex: 1 0 0
+ *   .lang-name        — Integral CF 20px H5, --color-primary
+ *   .lang-proficiency — Inter 14px body, --color-text-muted (#424242)
  *
  * Note: No background override — inherits white from parent Container.
  * Note: No border-radius — this section sits on the white body background.
@@ -24,7 +24,7 @@
      p-[var(--padding/64,64px)] → --padding-64 (all sides)
    ============================================================ */
 
-.section {
+.lang-section {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-40);       /* 40px — between heading and languages row */
@@ -44,7 +44,7 @@
      uppercase (Integral CF is all-caps by nature)
    ============================================================ */
 
-.heading {
+.lang-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);         /* 120px fluid */
   font-weight: var(--weight-regular);
@@ -63,7 +63,7 @@
      w-full
    ============================================================ */
 
-.row {
+.lang-row {
   display:     flex;
   flex-direction: row;
   align-items: flex-start;
@@ -80,7 +80,7 @@
      gap-px        → --gap-1 (1px tight stack between name and proficiency)
    ============================================================ */
 
-.entry {
+.lang-entry {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-1);         /* 1px — confirmed: Figma gap-px */
@@ -98,7 +98,7 @@
    Integral CF is all-caps — no text-transform needed
    ============================================================ */
 
-.language {
+.lang-name {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);        /* 20px */
   font-weight:    var(--weight-regular);
@@ -118,7 +118,7 @@
    Note: NOT uppercase — proficiency strings render in sentence case
    ============================================================ */
 
-.proficiency {
+.lang-proficiency {
   font-family:    var(--font-body);
   font-size:      var(--text-body);      /* 14px */
   font-weight:    var(--weight-regular);
@@ -133,7 +133,7 @@
    Mobile layout not yet confirmed from Figma.
    Placeholder only — implement when mobile frames provided.
 
-   Likely change: .row to flex-col (stack vertically on small screens).
+   Likely change: .lang-row to flex-col (stack vertically on small screens).
    Do NOT implement until design is confirmed.
    ============================================================ */
 

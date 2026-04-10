@@ -46,7 +46,7 @@ import styles from './LanguagesSection.module.css'
 export default function LanguagesSection() {
   return (
     <section
-      className={styles.section}
+      className={styles['lang-section']}
       aria-label="Languages"
     >
 
@@ -55,7 +55,7 @@ export default function LanguagesSection() {
         Integral CF 56px H3, --color-primary, tracking -0.84px
         Confirmed: Figma node 1036:7193
       */}
-      <h1 className={styles.heading}>{languagesMeta.heading}</h1>
+      <h1 className={styles['lang-heading']}>{languagesMeta.heading}</h1>
 
       {/* ── Languages row ──────────────────────────────────── */}
       {/*
@@ -63,21 +63,21 @@ export default function LanguagesSection() {
         gap: --gap-16 between entries
         Confirmed: Figma node 1036:7206 — gap-[16px]
       */}
-      <div className={styles.row} role="list">
+      <div className={styles['lang-row']} role="list">
         {languages.map((entry) => (
           <div
             key={entry.language}
-            className={styles.entry}
+            className={styles['lang-entry']}
             role="listitem"
           >
 
             {/* Language name — Integral CF 20px H5
                 Confirmed: Figma node 1036:7197 */}
-            <p className={styles.language}>{entry.language}</p>
+            <p className={styles['lang-name']}>{entry.language}</p>
 
             {/* Proficiency — Inter 14px body, --color-text-muted
                 Confirmed: Figma node 1036:7199 — text-[#424242] text-[14px] */}
-            <p className={styles.proficiency}>{entry.proficiency}</p>
+            <p className={styles['lang-proficiency']}>{entry.proficiency}</p>
 
           </div>
         ))}
