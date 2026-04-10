@@ -314,9 +314,9 @@ export const centerHealth: CenterHealthCaseStudy = {
     // aiWatermark intentionally omitted — Center Health has none
     meta: {
       role:   'Product UI/UX Designer',
-      stage:  'Pre-Seed → Seed → Series A',
-      year:   '2021 – 2022',
-      sector: 'Clinical Healthcare · AI Health Management',  // ⚠️ confirm in Figma — Figma placeholder may still show Axion Ray sector
+      stage:  'Redesign & Scale — Strip App to Full Health Ecosystem',
+      year:   '2021 – 2023',
+      sector: 'Clinical Healthcare · AI Health Management',
       note:   'Forbes 30 Under 30 - Consumer Technology (2021)',
       chips:  ['Case Study', 'Enterprise AI', 'Clinical Healthcare'],
     },
@@ -376,7 +376,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       sideText: 'Three platforms.\nMultiple feature teams.\nWe needed coherence.',
       features: [
         'Tokenized foundation: color, spacing, typography, Shadow.',
-        'Everything is aN Instance of a master atomic component.',
+        'Everything is an instance of a master atomic component.',
         'Level based nested Block Structure contain predefining padding, Gap & Typography behaviour.',
         'Custom Icon, Image & Illustration Library with color-coded health domains.',
         'Interaction, Tone and Component Use case, Adaptive logic all Documented.',
@@ -402,7 +402,7 @@ export const centerHealth: CenterHealthCaseStudy = {
           aspect: '2424 / 1558',
         },
       ],
-      resultsText: '40% Faster ship cycles. Cleaner UIs.\nLower cognitive load for users.\nAnd fewer surprises for developers.',
+      resultsText: '40% Faster ship cycles. Cleaner UIs. Lower cognitive load for users. And fewer surprises for developers.',
     },
 
     /* ── (004) Onboarding: Adaptive UX ───────────────────────
@@ -428,7 +428,7 @@ export const centerHealth: CenterHealthCaseStudy = {
         src: '/images/works/center-health/onboarding.jpg',
         alt: 'Center Health onboarding flow — adaptive UX screens',
       },
-      resultsText: '40% Faster ship cycles. Cleaner UIs.\nLower cognitive load for users.\nAnd fewer surprises for developers.',
+      resultsText: 'Users entered the app already feeling understood. Setup completion rates improved — and Aria had better data from day one.',
     },
 
     /* ── (005) Devices Integration, interaction & Results ────
@@ -441,9 +441,9 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'devices',
       index:   '(005)',
       heading: 'Devices Integration, interaction & Results',
-      body:    'Center Health expanded from one user type to five\n\nType 1, Type 2, pre-diabetes, weight-loss users, caregivers, and clinicians. One single onboarding funnel wasn\'t going to cut it.',
+      body:    'The platform supported a growing range of connected health devices. Each had its own pairing logic, data format, and edge cases — and each needed to feel seamless.',
       whatIDesigned: [
-        'BLOOD GLOUCE METER FLOW',
+        'BLOOD GLUCOSE METER FLOW',
         'BLOOD PRESSURE CALF FLOW',
         'WEIGHT SCALE WITH PULSE DETECTION FLOW.',
         'CGM INTEGRATION FLOW',
@@ -455,7 +455,7 @@ export const centerHealth: CenterHealthCaseStudy = {
         { src: '/images/works/center-health/devices-3.jpg', alt: 'Center Health — weight scale with pulse detection', aspect: '828 / 638' },
         { src: '/images/works/center-health/devices-4.jpg', alt: 'Center Health — CGM integration flow screens',      aspect: '780 / 568' },
       ],
-      resultsText: '40% Faster ship cycles. Cleaner UIs.\nLower cognitive load for users.\nAnd fewer surprises for developers.',
+      resultsText: 'Each device integration reduced manual logging friction and fed Aria richer real-time data.',
     },
 
     /* ── (006) Home: turning readings into real understanding ─
@@ -470,7 +470,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'home-dashboard',
       index:   '(006)',
       heading: 'Home: turning readings into real understanding',
-      body:    'The v1 dashboard was perfect for early strip users.…but the product had grown into something much bigger: CGM data, nutrition, meds, sleep, activity, mood, weight, caregiver access.We needed a dashboard that behaved like a health intelligence layer, not just a chart.',
+      body:    'The v1 dashboard was perfect for early strip users.…but the product had grown into something much bigger: CGM data, nutrition, meds, sleep, activity, mood, weight, caregiver access. We needed a dashboard that behaved like a health intelligence layer, not just a chart.',
       whatIDesigned: [
         '"glanceable" safety strip: current BG + time-in-range',
         '3×2 dynamic health tiles: auto-ranked by what the user logs most',
@@ -506,7 +506,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       body:    'Aria become the mind and soul with insights, trends and suggestions. Aria already powered insights in the backend. But to users, it felt like an invisible ghost. We needed to give Aria a face, voice, personality, and safe boundaries.',
       subSections: [
         {
-          heading:      'ARIA CHat & Feed',
+          heading:      'ARIA Chat & Feed',
           headingAlign: 'left',
           features: [
             'Personalised to the core & Individual User aligned.',
@@ -556,7 +556,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       features: [
         'One-tap logging hub',
         'Context-aware defaults (fasting, post-meal, etc.)',
-        'Logging type ascendent based on frequency.',
+        'Logging type ascending based on frequency.',
         'Daily tasks & streaks to gently drive consistency',
         'Passive integrations (Apple Health, Google Fit)',
       ],
@@ -595,7 +595,7 @@ export const centerHealth: CenterHealthCaseStudy = {
         alt:    'Center Health meal logging — nutrition tracking and restaurant menu suggestions',
         aspect: '1325 / 932',
       },
-      resultsText: 'Metabolism, Diet & calorie count become as precious as possible.',
+      resultsText: 'Food became as measurable as blood sugar — giving Aria the context it needed to coach more precisely.',
     },
 
     /* ── (010) Website: rewriting the story for an AI-first future
@@ -754,7 +754,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:  'next-case-study',
       index: '01',
-      label: 'Under NDA',
+      label: 'Axion Ray',
       title: 'AI-powered manufacturing reliability platform',
       image: '/images/works/manufacturing-platform/mockup.jpg',
       href:  '/work/manufacturing-platform',
