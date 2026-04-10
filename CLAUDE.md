@@ -116,31 +116,99 @@ All CSS Module class names follow this structure:
 - The element word describes what the element IS, not what it looks like
 - The modifier (optional third segment) describes a variant or state
 
-**Section prefix table:**
+**Section prefix table — complete:**
 
-Entries marked ✅ are confirmed in code. Entries marked 🔲 are planned but not yet implemented.
+All entries are confirmed in code (✅). Grouped by area.
 
-| Component | Prefix | Status |
-|---|---|---|
-| CaseStudyHero | `case-hero` | ✅ |
-| CaseStudyProblemSection | `problem` | ✅ |
-| CaseStudyResearchSection | `research` | ✅ |
-| CaseStudyDecisionsSection | `decisions` | ✅ |
-| CaseStudySolutionSection | `solution` | ✅ |
-| CaseStudyPhaseSection | `phase` | ✅ |
-| CaseStudyClientFeedbackSection | `feedback` | ✅ |
-| CaseStudySectionWrapper | `section` | ✅ |
-| NextCaseStudyHero | `next` | ✅ |
-| HeroSection | `hero` | ✅ |
-| SelectedWorksSection | `works` | ✅ |
-| ExperienceSection | `exp` | ✅ |
-| LanguagesSection | `lang` | ✅ |
-| FundingMilestone | `funding` | ✅ |
-| OutcomeSection | `outcome` | ✅ |
-| ReflectionsSection | `reflections` | ✅ |
-| GallerySection | `gallery` | 🔲 |
-| ContactSection | `contact` | 🔲 |
-| FooterSection | `footer` | 🔲 |
+**Shared case study sections** (`src/components/sections/`):
+
+| Component | Prefix |
+|---|---|
+| CaseStudyHero | `case-hero-` |
+| CaseStudyProblemSection | `problem-` |
+| CaseStudyResearchSection | `research-` |
+| CaseStudyDecisionsSection | `decisions-` |
+| CaseStudySolutionSection | `solution-` |
+| CaseStudyPhaseSection | `phase-` |
+| CaseStudyClientFeedbackSection | `feedback-` |
+| CaseStudySectionWrapper | `section-` |
+| NextCaseStudyHero | `next-` |
+
+**Axion-ray feature-local** (`src/features/case-studies/axion-ray/components/`):
+
+| Component | Prefix |
+|---|---|
+| FundingMilestone | `funding-` |
+| Outcome | `outcome-` |
+| Reflections | `reflections-` |
+| NextCaseStudy | `next-cs-` |
+
+**Center-health feature-local** (`src/features/case-studies/center-health/components/`):
+
+| Component | Prefix |
+|---|---|
+| AriaSection | `aria-` |
+| BrandingSection | `brand-` |
+| ContinuousUXSection | `cux-` |
+| DesignSystemSection | `ds-` |
+| DevicesSection | `dev-` |
+| HomeDashboardSection | `home-` |
+| LoggingSection | `log-` |
+| MealLoggingSection | `meal-` |
+| NextCaseStudySection | `ncs-` |
+| OnboardingSection | `onb-` |
+| ProviderPortalSection | `pps-` |
+| RecommendationLetterSection | `rec-` |
+| ReflectionsSection | `ch-ref-` |
+| ScopeSection | `scope-` |
+| WebsiteSection | `web-` |
+| WhyItMatteredSection | `wim-` |
+
+**CaseStudyPage wrappers** (3 files — `app/work/[slug]/`, `axion-ray/`, `center-health/`):
+
+| Component | Prefix |
+|---|---|
+| CaseStudyPage | `csp-` |
+
+**Landing feature** (`src/features/landing/components/`):
+
+| Component | Prefix |
+|---|---|
+| Hero | `lp-hero-` |
+| SelectedWorks | `lp-works-` |
+| MoreWork | `more-work-` |
+| Experience | `lp-exp-` |
+| Languages | `lp-lang-` |
+| Contact | `contact-` |
+| WorkCard (landing) | `wc-` |
+| LandingPage | `lp-` |
+
+**Layout** (`src/components/layout/`):
+
+| Component | Prefix |
+|---|---|
+| NavBar | `nav-` |
+| SectionWrapper | `sw-` |
+| Container | `layout-container` |
+| NoticeStrip | `notice-` |
+
+**UI primitives** (`src/components/ui/`):
+
+| Component | Prefix |
+|---|---|
+| Button | `btn-` |
+| Chip | `chip-` |
+| Divider | `divider-` |
+| IconButton | `icon-btn-` |
+| WorkCard (ui) | `ui-card-` |
+
+**Shared UI** (`src/shared/ui/`):
+
+| Component | Prefix |
+|---|---|
+| Button | `btn-` |
+| Chip | `chip-` |
+| Container | `shared-container` |
 
 **Shared element vocabulary** (same word = same meaning across all sections):
 
@@ -217,7 +285,7 @@ Entries marked ✅ are confirmed in code. Entries marked 🔲 are planned but no
 ```
 
 **Apply this convention to every new CSS Module created from this point forward.**
-**Existing modules must be migrated when explicitly requested — not silently.**
+**The full project migration is complete — all existing modules follow this convention.**
 
 ---
 
