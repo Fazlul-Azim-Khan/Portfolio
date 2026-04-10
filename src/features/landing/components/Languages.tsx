@@ -50,9 +50,12 @@ export default function Languages() {
         Content is mixed-case in content.ts — uppercase applied via CSS.
         Confirmed: Figma node 1036:7190
       */}
-      <h1 className={styles.heading}>
-        {languages.meta.heading}
-      </h1>
+      <div className={styles.headerRow}>
+        <p className={styles.headerIndex}>{languages.meta.index}</p>
+        <h1 className={styles.heading}>
+          {languages.meta.heading}
+        </h1>
+      </div>
 
       {/* ── Language grid ─────────────────────────────────── */}
       {/*

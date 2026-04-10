@@ -30,21 +30,44 @@
 
 
 /* ============================================================
-   HEADING
-   "LANGUAGES"
-   Integral CF · H3 (56px) · line-height 1 · tracking -0.84px
-   Uppercase via CSS — content is mixed-case in content.ts
-   Confirmed: Figma node 1036:7190
+   HEADER ROW
+   ============================================================ */
+
+.headerRow {
+  display:        flex;
+  flex-direction: row;
+  align-items:    flex-start;
+  gap:            var(--gap-16);
+  width:          100%;
+}
+
+.headerIndex {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  text-transform: uppercase;
+  color:          var(--color-primary);
+  flex-shrink:    0;
+  margin:         0;
+  padding-top:    4px;
+}
+
+
+/* ============================================================
+   HEADING — H1 (120px fluid)
    ============================================================ */
 
 .heading {
   font-family:    var(--font-display);
-  font-size:      var(--text-h3);      /* 56px */
-  font-weight:    var(--weight-regular);
-  line-height:    var(--lh-heading);   /* 1 / 100% */
-  letter-spacing: var(--tracking-h3); /* -0.84px */
-  color:          var(--color-primary);  /* #0a0a0a */
+  font-size:      var(--text-h1);
+  font-weight:    var(--weight-medium);
+  line-height:    var(--lh-h1);
+  letter-spacing: var(--tracking-h1);  /* -1.5px */
+  color:          var(--color-primary);
   margin:         0;
+  flex:           1;
 }
 
 

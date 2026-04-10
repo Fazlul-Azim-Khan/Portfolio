@@ -248,7 +248,7 @@ export interface ExperienceEntry {
 }
 
 export const experience = {
-  meta: { heading: 'Explore my design journey' },
+  meta: { index: '(004)', heading: 'Explore my design journey' },
   entries: [
     // ── Work Experience ────────────────────────────────────────────────────────
     {
@@ -316,7 +316,7 @@ export const experience = {
 // Confirmed from Figma node 1036:7190 / 1036:7193
 
 export const languages = {
-  meta: { heading: 'Languages' },
+  meta: { index: '(005)', heading: 'Languages' },
   items: [
     { language: 'English', proficiency: 'Native'          },
     { language: 'German',  proficiency: 'Elementary (A2)' },
@@ -329,6 +329,6 @@ export const languages = {
 //     Populate when Figma design is provided.
 
 export const contact = {
-  meta: { heading: 'Get in touch' },
+  meta: { index: '(006)', heading: 'Get in touch' },
   email: 'fazlul.azim.khan@gmail.com',
 } as const

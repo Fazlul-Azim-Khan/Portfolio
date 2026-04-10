@@ -52,16 +52,13 @@ export default function Experience() {
   return (
     <div className={styles.root} aria-label="Experience">
 
-      {/* ── Heading ──────────────────────────────────────── */}
-      {/*
-        "EXPLORE MY DESIGN JOURNEY"
-        Integral CF · H3 (56px) · uppercase · white
-        Confirmed: Figma node 1036:7650
-        Content is mixed-case in content.ts — uppercase applied via CSS.
-      */}
-      <h1 className={styles.heading}>
-        {experience.meta.heading}
-      </h1>
+      {/* ── Header row: index + heading ──────────────────── */}
+      <div className={styles.headerRow}>
+        <p className={styles.headerIndex}>{experience.meta.index}</p>
+        <h1 className={styles.heading}>
+          {experience.meta.heading}
+        </h1>
+      </div>
 
       {/* ── Experience list ───────────────────────────────── */}
       {/*

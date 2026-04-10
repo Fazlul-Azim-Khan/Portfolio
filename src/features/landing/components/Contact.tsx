@@ -65,9 +65,12 @@ export default function Contact() {
       */}
       <div className={styles.body}>
 
-        <h1 className={styles.heading}>
-          {contact.meta.heading}
-        </h1>
+        <div className={styles.headerRow}>
+          <p className={styles.headerIndex}>{contact.meta.index}</p>
+          <h1 className={styles.heading}>
+            {contact.meta.heading}
+          </h1>
+        </div>
 
         <a
           href={`mailto:${contact.email}`}
