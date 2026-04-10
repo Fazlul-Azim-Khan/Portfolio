@@ -14,17 +14,6 @@
  *   │  ─────────────────────── divider ───────────────────── │
  *   └─────────────────────────────────────────────────────────┘
  *
- * Two-column grid (2 × 1fr):
- *   Left  — English · Native
- *   Right — German  · Elementary (A1)
- *
- * Each language item stacks:
- *   Language name  — Integral CF H5 (20px) · uppercase   · --color-primary
- *   Proficiency    — Inter Body  (14px)    · mixed-case  · --color-text-muted
- *   gap: --gap-1 (1px) — near-zero stacking confirmed from token comment
- *
- * Bottom <hr> closes the section visually.
- *
  * Server component — no interactivity required.
  * The <section> wrapper and scroll ref are owned by LandingPage.
  *
@@ -41,46 +30,28 @@ import styles        from './Languages.module.css'
 
 export default function Languages() {
   return (
-    <div className={styles.root} aria-label="Languages">
+    <div className={styles['lp-lang-root']} aria-label="Languages">
 
       {/* ── Heading ──────────────────────────────────────── */}
-      {/*
-        "LANGUAGES"
-        Integral CF · H3 (56px) · uppercase · --color-primary
-        Content is mixed-case in content.ts — uppercase applied via CSS.
-        Confirmed: Figma node 1036:7190
-      */}
-      <div className={styles.headerRow}>
-        <p className={styles.headerIndex}>{languages.meta.index}</p>
-        <h1 className={styles.heading}>
+      <div className={styles['lp-lang-header-row']}>
+        <p className={styles['lp-lang-header-index']}>{languages.meta.index}</p>
+        <h1 className={styles['lp-lang-heading']}>
           {languages.meta.heading}
         </h1>
       </div>
 
       {/* ── Language grid ─────────────────────────────────── */}
-      {/*
-        2-column equal grid.
-        Left  — English  / Native
-        Right — German   / Elementary (A1)
-        Each item stacks language name (H5) over proficiency (Body).
-        gap between name and proficiency: --gap-1 (1px)
-        Confirmed: Figma node 1036:7190 / 1036:7193
-      */}
-      <div className={styles.grid}>
+      <div className={styles['lp-lang-grid']}>
         {languages.items.map((item) => (
-          <div key={item.language} className={styles.item}>
-            <p className={styles.language}>{item.language}</p>
-            <p className={styles.proficiency}>{item.proficiency}</p>
+          <div key={item.language} className={styles['lp-lang-item']}>
+            <p className={styles['lp-lang-language']}>{item.language}</p>
+            <p className={styles['lp-lang-proficiency']}>{item.proficiency}</p>
           </div>
         ))}
       </div>
 
       {/* ── Bottom divider ────────────────────────────────── */}
-      {/*
-        1px horizontal rule — closes the section visually.
-        Confirmed: Figma node 1036:7190 (visible at bottom of screenshot)
-      */}
-      <hr className={styles.divider} aria-hidden="true" />
+      <hr className={styles['lp-lang-divider']} aria-hidden="true" />
 
     </div>
   )

@@ -7,14 +7,14 @@
  *
  *   ┌─────────────────────┬──────────────────────────────────────┐
  *   │  Arrow ↗ (flipped)  │  Bio paragraph                       │
- *   │  arrowCell          │  + Specialty chip tags               │
- *   │  col 1 / row 1      │  bioCell · col 2 / row 1             │
+ *   │  lp-hero-arrow-cell │  + Specialty chip tags               │
+ *   │  col 1 / row 1      │  lp-hero-bio-cell · col 2 / row 1    │
  *   ├─────────────────────┴──────────────────────────────────────┤
  *   │  FAZLUL AZIM KHAN                                           │
  *   │  Product DESIGNER                                           │
  *   │  & UX STRATEGIST                                           │
  *   │  Enterprise AI · Safety-critical domains · ...             │
- *   │  headlineCell · col 1-2 / row 2 (full span)                │
+ *   │  lp-hero-headline-cell · col 1-2 / row 2 (full span)       │
  *   └────────────────────────────────────────────────────────────┘
  *
  * Content:  src/features/landing/content.ts
@@ -35,9 +35,9 @@ import styles       from './Hero.module.css'
 
 export default function Hero() {
   return (
-    <div className={styles.hero} aria-label="Hero">
+    <div className={styles['lp-hero']} aria-label="Hero">
 
-      <div className={styles.grid}>
+      <div className={styles['lp-hero-grid']}>
 
         {/* ── TOP LEFT: Decorative arrow ──────────────────── */}
         {/*
@@ -46,20 +46,20 @@ export default function Hero() {
           Confirmed: Figma uses -scale-y-100 on this element.
           aria-hidden — purely decorative, no semantic meaning.
         */}
-        <div className={styles.arrowCell} aria-hidden="true">
-          <span className={styles.arrow}>
+        <div className={styles['lp-hero-arrow-cell']} aria-hidden="true">
+          <span className={styles['lp-hero-arrow']}>
             {hero.decorativeArrow}
           </span>
         </div>
 
         {/* ── TOP RIGHT: Bio + Specialty chips ────────────── */}
-        <div className={styles.bioCell}>
+        <div className={styles['lp-hero-bio-cell']}>
 
-          <p className={styles.bio}>
+          <p className={styles['lp-hero-bio']}>
             {hero.bio}
           </p>
 
-          <div className={styles.chips} role="list" aria-label="Specialties">
+          <div className={styles['lp-hero-chips']} role="list" aria-label="Specialties">
             {hero.chips.map((chip) => (
               <div key={chip} role="listitem">
                 <Chip label={chip} />
@@ -70,26 +70,26 @@ export default function Hero() {
         </div>
 
         {/* ── BOTTOM FULL-WIDTH: Name + Headline + Subline ── */}
-        <div className={styles.headlineCell}>
+        <div className={styles['lp-hero-headline-cell']}>
 
           {/* Name label — "FAZLUL AZIM KHAN" */}
-          <p className={styles.name}>
+          <p className={styles['lp-hero-name']}>
             {hero.name}
           </p>
 
           {/* Headline — split across two lines for per-word colour control */}
           <div
-            className={styles.headlineBlock}
+            className={styles['lp-hero-headline-block']}
             aria-label={`${hero.headline.line1} ${hero.headline.line2.ampersand}${hero.headline.line2.rest}`}
           >
             {/* Line 1: "Product DESIGNER" */}
-            <span className={styles.headlineLine}>
+            <span className={styles['lp-hero-headline-line']}>
               {hero.headline.line1}
             </span>
 
             {/* Line 2: "& UX STRATEGIST" — & renders in --color-tertiary */}
-            <span className={styles.headlineLine}>
-              <span className={styles.ampersand}>
+            <span className={styles['lp-hero-headline-line']}>
+              <span className={styles['lp-hero-ampersand']}>
                 {hero.headline.line2.ampersand}
               </span>
               {hero.headline.line2.rest}
@@ -97,7 +97,7 @@ export default function Hero() {
           </div>
 
           {/* Subline */}
-          <p className={styles.subline}>
+          <p className={styles['lp-hero-subline']}>
             {hero.subline}
           </p>
 

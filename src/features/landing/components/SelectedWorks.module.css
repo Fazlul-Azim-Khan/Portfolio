@@ -2,13 +2,15 @@
  * SelectedWorks.module.css
  * Specs confirmed from Figma node 966:7565
  *
- * .root        — flex column, padding-y: --padding-64, gap: --gap-40
- * .header      — three-zone flex row: index · heading · count
- * .headerIndex — Inter 12px uppercase, --color-tertiary
- * .headerHeading — Integral CF 56px H3, --color-primary
- * .headerCount — Inter 12px uppercase, --color-primary, margin-left: auto
- * .divider     — 1px horizontal rule, --color-divider
- * .cardsList   — flex column, gap: --space-works-gap (256px)
+ * Prefix: lp-works-
+ *
+ * .lp-works-root         — flex column, padding-y: --padding-64, gap: --gap-40
+ * .lp-works-header       — three-zone flex row: index · heading · count
+ * .lp-works-header-index — Inter 12px uppercase, --color-tertiary
+ * .lp-works-header-heading — Integral CF 56px H3, --color-primary
+ * .lp-works-header-count — Inter 12px uppercase, --color-primary, margin-left: auto
+ * .lp-works-divider      — 1px horizontal rule, --color-divider
+ * .lp-works-cards-list   — flex column, gap: --space-works-gap (256px)
  */
 
 
@@ -19,7 +21,7 @@
    gap-40: between header area and cards list
    ============================================================ */
 
-.root {
+.lp-works-root {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-40);
@@ -38,7 +40,7 @@
    Confirmed: Figma nodes 966:7566–7570
    ============================================================ */
 
-.header {
+.lp-works-header {
   display:        flex;
   flex-direction: row;
   align-items:    baseline;
@@ -47,7 +49,7 @@
 }
 
 /* INDEX — "(002)" · Inter 12px uppercase · --color-tertiary */
-.headerIndex {
+.lp-works-header-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);    /* 12px */
   font-weight:    var(--weight-regular);
@@ -60,7 +62,7 @@
 }
 
 /* HEADING — "Selected Works" · Integral CF 56px H3 · --color-primary */
-.headerHeading {
+.lp-works-header-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);      /* 120px fluid */
   font-weight: var(--weight-regular);
@@ -72,7 +74,7 @@
 }
 
 /* COUNT — "3 Case Studies" · Inter 12px uppercase · --color-primary */
-.headerCount {
+.lp-works-header-count {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);    /* 12px */
   font-weight:    var(--weight-regular);
@@ -93,7 +95,7 @@
    Confirmed: Figma node 1021:6896 — bg-[#e5e5e5] h-px w-full
    ============================================================ */
 
-.divider {
+.lp-works-divider {
   width:      100%;
   height:     1px;
   background: var(--color-divider);   /* #e5e5e5 */
@@ -109,7 +111,7 @@
    Confirmed: Figma node 966:7565
    ============================================================ */
 
-.cardsList {
+.lp-works-cards-list {
   display:        flex;
   flex-direction: column;
   gap:            var(--space-works-gap);  /* 256px */
@@ -123,24 +125,24 @@
 
 /* Tablet */
 @media (max-width: 1023px) {
-  .cardsList {
+  .lp-works-cards-list {
     gap: var(--padding-64);   /* 64px — 256px is excessive on tablet */
   }
 }
 
 /* Mobile */
 @media (max-width: 767px) {
-  .cardsList {
+  .lp-works-cards-list {
     gap: var(--gap-40);       /* 40px between stacked cards on mobile */
   }
 
-  .header {
+  .lp-works-header {
     flex-wrap:  wrap;
     row-gap:    var(--gap-8);
   }
 
   /* Push count to its own line on very narrow viewports */
-  .headerCount {
+  .lp-works-header-count {
     margin-left: 0;
     flex-basis:  100%;
   }

@@ -70,32 +70,32 @@ export default function LandingPage() {
       <Container as="main">
 
         {/* (001) Hero */}
-        <section ref={heroRef} className={styles.section}>
+        <section ref={heroRef} className={styles['lp-section']}>
           <Hero />
         </section>
 
         {/* (002) Selected Works */}
-        <section ref={selectedWorksRef} className={styles.section}>
+        <section ref={selectedWorksRef} className={styles['lp-section']}>
           <SelectedWorks />
         </section>
 
         {/* (003) More Work */}
-        <section ref={moreWorkRef} className={styles.section}>
+        <section ref={moreWorkRef} className={styles['lp-section']}>
           <MoreWork />
         </section>
 
         {/* (004) Experience */}
-        <section ref={experienceRef} className={styles.section}>
+        <section ref={experienceRef} className={styles['lp-section']}>
           <Experience />
         </section>
 
         {/* (005) Languages */}
-        <section ref={languagesRef} className={styles.section}>
+        <section ref={languagesRef} className={styles['lp-section']}>
           <Languages />
         </section>
 
         {/* (006) Contact + Footer */}
-        <section ref={contactRef} className={styles.section}>
+        <section ref={contactRef} className={styles['lp-section']}>
           <Contact />
         </section>
 

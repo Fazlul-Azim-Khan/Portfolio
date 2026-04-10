@@ -37,37 +37,26 @@ import styles                     from './SelectedWorks.module.css'
 
 export default function SelectedWorks() {
   return (
-    <div className={styles.root} aria-label="Selected Works">
+    <div className={styles['lp-works-root']} aria-label="Selected Works">
 
       {/* ── Section header row ───────────────────────────── */}
-      {/*
-        Three-zone flex row:
-          Left   — index "(002)"       Inter 12px uppercase, --color-tertiary
-          Centre — "Selected Works"    Integral CF 56px H3, --color-primary
-          Right  — "3 Case Studies"    Inter 12px uppercase, --color-primary
-        Confirmed: Figma nodes 966:7566–7570
-      */}
-      <div className={styles.header}>
-        <p className={styles.headerIndex}>
+      <div className={styles['lp-works-header']}>
+        <p className={styles['lp-works-header-index']}>
           {selectedWorks.meta.index}
         </p>
-        <h1 className={styles.headerHeading}>
+        <h1 className={styles['lp-works-header-heading']}>
           {selectedWorks.meta.heading}
         </h1>
-        <p className={styles.headerCount}>
+        <p className={styles['lp-works-header-count']}>
           {selectedWorks.meta.count}
         </p>
       </div>
 
       {/* ── Divider below header ─────────────────────────── */}
-      <hr className={styles.divider} aria-hidden="true" />
+      <hr className={styles['lp-works-divider']} aria-hidden="true" />
 
       {/* ── Cards list ───────────────────────────────────── */}
-      {/*
-        Single column, gap: --space-works-gap (256px)
-        First card gets priority to avoid LCP penalty.
-      */}
-      <div className={styles.cardsList}>
+      <div className={styles['lp-works-cards-list']}>
         {selectedWorks.items.map((work, i) => (
           <WorkCard
             key={work.id}

@@ -2,14 +2,16 @@
  * Experience.module.css
  * Specs confirmed from Figma node 1036:7650
  *
- * .root        — dark bg, negative-margin bleed, flex column, gap-64
- * .heading     — Integral CF H3 56px, uppercase, white
- * .list        — unstyled <ul>, border-bottom to close last row
- * .row         — flex row, space-between, 29px top+bottom padding, border-top
- * .company     — left col: Integral CF H5 20px, uppercase, white
- * .roleBlock   — right col: flex column, gap-8
- * .role        — Integral CF H5 20px, uppercase, white
- * .period      — Inter Lead 12px, uppercase, --color-tertiary
+ * Prefix: lp-exp-
+ *
+ * .lp-exp-root        — dark bg, negative-margin bleed, flex column, gap-64
+ * .lp-exp-heading     — Integral CF H3 56px, uppercase, white
+ * .lp-exp-list        — unstyled <ul>, border-bottom to close last row
+ * .lp-exp-row         — flex row, space-between, 29px top+bottom padding, border-top
+ * .lp-exp-company     — left col: Integral CF H5 20px, uppercase, white
+ * .lp-exp-role-block  — right col: flex column, gap-8
+ * .lp-exp-role        — Integral CF H5 20px, uppercase, white
+ * .lp-exp-period      — Inter Lead 12px, uppercase, --color-tertiary
  */
 
 
@@ -23,7 +25,7 @@
    so content remains at the same inset as other sections.
    ============================================================ */
 
-.root {
+.lp-exp-root {
   background:     var(--color-primary);   /* #0a0a0a — dark treatment */
   color:          var(--color-secondary); /* white — default for all text */
 
@@ -50,7 +52,7 @@
    index (left) + heading (right) — same pattern as SelectedWorks
    ============================================================ */
 
-.headerRow {
+.lp-exp-header-row {
   display:     flex;
   flex-direction: row;
   align-items: flex-start;
@@ -58,7 +60,7 @@
   width:       100%;
 }
 
-.headerIndex {
+.lp-exp-header-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);    /* 12px */
   font-weight:    var(--weight-regular);
@@ -77,7 +79,7 @@
    Confirmed: Figma node 1036:7650
    ============================================================ */
 
-.heading {
+.lp-exp-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);
   font-weight: var(--weight-regular);
@@ -93,11 +95,11 @@
    LIST
    Unstyled <ul>, flex column implied by block stacking.
    border-bottom closes the divider after the last row.
-   All dividers above rows are handled by border-top on .row.
+   All dividers above rows are handled by border-top on .lp-exp-row.
    Divider color: --color-divider-dark (#cccccc) — visible on dark bg
    ============================================================ */
 
-.list {
+.lp-exp-list {
   list-style:   none;
   margin:       0;
   padding:      0;
@@ -113,7 +115,7 @@
    Confirmed: Figma node 1036:7718
    ============================================================ */
 
-.row {
+.lp-exp-row {
   display:               grid;
   grid-template-columns: 1fr 1fr;   /* company col · role+period col */
   column-gap:            var(--gap-40);
@@ -134,7 +136,7 @@
    Confirmed: Figma node 1036:7650
    ============================================================ */
 
-.company {
+.lp-exp-company {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);       /* 20px */
   font-weight:    var(--weight-regular);
@@ -142,7 +144,6 @@
   letter-spacing: var(--tracking-h5);  /* 0 */
   color:          var(--color-secondary);  /* white */
   margin:         0;
-
 }
 /* Grid handles column width — no manual flex sizing needed */
 
@@ -153,7 +154,7 @@
    gap-8 between role label and period sub-label
    ============================================================ */
 
-.roleBlock {
+.lp-exp-role-block {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-8);  /* 8px — between role and period */
@@ -170,7 +171,7 @@
    Confirmed: Figma node 1036:7650
    ============================================================ */
 
-.role {
+.lp-exp-role {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);       /* 20px */
   font-weight:    var(--weight-regular);
@@ -189,7 +190,7 @@
    Confirmed: Figma node 1036:7650
    ============================================================ */
 
-.period {
+.lp-exp-period {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);    /* 12px */
   font-weight:    var(--weight-regular);
@@ -207,7 +208,7 @@
 
 /* Tablet — tighten horizontal padding */
 @media (max-width: 1023px) {
-  .root {
+  .lp-exp-root {
     padding-left:  calc(var(--layout-padding-x) + var(--gap-40));
     padding-right: calc(var(--layout-padding-x) + var(--gap-40));
   }
@@ -215,17 +216,17 @@
 
 /* Mobile — stack all three fields vertically, left-aligned */
 @media (max-width: 767px) {
-  .root {
+  .lp-exp-root {
     padding-left:  var(--layout-padding-x);
     padding-right: var(--layout-padding-x);
   }
 
-  .row {
+  .lp-exp-row {
     grid-template-columns: 1fr;   /* single column — everything stacks */
     gap:                   var(--gap-8);
   }
 
-  .roleBlock {
+  .lp-exp-role-block {
     gap: var(--gap-8);
   }
 }

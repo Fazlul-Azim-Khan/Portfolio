@@ -2,13 +2,15 @@
  * Languages.module.css
  * Specs confirmed from Figma node 1036:7190 / 1036:7193
  *
- * .root        — flex column, padding-64, gap-40, light bg
- * .heading     — Integral CF H3 56px, uppercase, --color-primary
- * .grid        — CSS Grid 2 × 1fr (equal columns)
- * .item        — flex column, gap-1 (near-zero stacking)
- * .language    — Integral CF H5 20px, uppercase, --color-primary
- * .proficiency — Inter Body 14px, mixed-case, --color-text-muted
- * .divider     — 1px, --color-divider, closes section bottom
+ * Prefix: lp-lang-
+ *
+ * .lp-lang-root        — flex column, padding-64, gap-40, light bg
+ * .lp-lang-heading     — Integral CF H3 56px, uppercase, --color-primary
+ * .lp-lang-grid        — CSS Grid 2 × 1fr (equal columns)
+ * .lp-lang-item        — flex column, gap-1 (near-zero stacking)
+ * .lp-lang-language    — Integral CF H5 20px, uppercase, --color-primary
+ * .lp-lang-proficiency — Inter Body 14px, mixed-case, --color-text-muted
+ * .lp-lang-divider     — 1px, --color-divider, closes section bottom
  */
 
 
@@ -19,7 +21,7 @@
    Light background (default — no override needed)
    ============================================================ */
 
-.root {
+.lp-lang-root {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-40);   /* heading → grid → divider */
@@ -33,7 +35,7 @@
    HEADER ROW
    ============================================================ */
 
-.headerRow {
+.lp-lang-header-row {
   display:        flex;
   flex-direction: row;
   align-items:    flex-start;
@@ -41,7 +43,7 @@
   width:          100%;
 }
 
-.headerIndex {
+.lp-lang-header-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);
   font-weight:    var(--weight-regular);
@@ -59,7 +61,7 @@
    HEADING — H1 (120px fluid)
    ============================================================ */
 
-.heading {
+.lp-lang-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);
   font-weight: var(--weight-regular);
@@ -78,7 +80,7 @@
    Confirmed: Figma node 1036:7190
    ============================================================ */
 
-.grid {
+.lp-lang-grid {
   display:               grid;
   grid-template-columns: 1fr 1fr;   /* English left · German right */
   width:                 100%;
@@ -93,7 +95,7 @@
    Confirmed: Figma node 1036:7190 / 1036:7193
    ============================================================ */
 
-.item {
+.lp-lang-item {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-1);   /* 1px — near-zero stacking */
@@ -108,7 +110,7 @@
    Confirmed: Figma node 1036:7190
    ============================================================ */
 
-.language {
+.lp-lang-language {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);      /* 20px */
   font-weight:    var(--weight-regular);
@@ -127,7 +129,7 @@
    Confirmed: Figma node 1036:7193
    ============================================================ */
 
-.proficiency {
+.lp-lang-proficiency {
   font-family:    var(--font-body);
   font-size:      var(--text-body);    /* 14px */
   font-weight:    var(--weight-regular);
@@ -145,7 +147,7 @@
    Confirmed: Figma node 1036:7190 (visible at screenshot bottom)
    ============================================================ */
 
-.divider {
+.lp-lang-divider {
   width:       100%;
   height:      1px;
   background:  var(--color-divider);   /* #e5e5e5 */

@@ -1,18 +1,20 @@
 /*
  * Contact.module.css
  *
+ * Prefix: contact-
+ *
  * ⚠️  STUB — Contact section not yet designed in Figma.
  *     All values use established tokens and patterns from the design system.
  *     Update to match Figma when design is provided.
  *
- * .root       — dark bg, negative-margin bleed, flex column, gap-64, padding-64
- * .body       — flex column, gap-64: heading + emailLink
- * .heading    — Integral CF H3 56px, uppercase, white
- * .emailLink  — Integral CF H4 32px, uppercase, white, hover opacity
- * .divider    — 1px --color-divider-dark, separates body from footer bar
- * .footer     — flex row space-between, align-items center
- * .brand      — Integral CF H5 20px, uppercase, white
- * .copyright  — Inter Lead 12px, --color-tertiary
+ * .contact-root       — dark bg, negative-margin bleed, flex column, gap-64, padding-64
+ * .contact-body       — flex column, gap-64: heading + emailLink
+ * .contact-heading    — Integral CF H3 56px, uppercase, white
+ * .contact-email-link — Integral CF H4 32px, uppercase, white, hover opacity
+ * .contact-divider    — 1px --color-divider-dark, separates body from footer bar
+ * .contact-footer     — flex row space-between, align-items center
+ * .contact-brand      — Integral CF H5 20px, uppercase, white
+ * .contact-copyright  — Inter Lead 12px, --color-tertiary
  */
 
 
@@ -24,7 +26,7 @@
    the container edge-to-edge.
    ============================================================ */
 
-.root {
+.contact-root {
   background:     var(--color-primary);    /* #0a0a0a — dark treatment */
   color:          var(--color-secondary);  /* white — default for all text */
 
@@ -53,7 +55,7 @@
    ⚠️  Layout is a stub — adjust gap/alignment to Figma when provided
    ============================================================ */
 
-.body {
+.contact-body {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-64);   /* heading → emailLink */
@@ -64,7 +66,7 @@
    HEADER ROW — index + heading
    ============================================================ */
 
-.headerRow {
+.contact-header-row {
   display:        flex;
   flex-direction: row;
   align-items:    flex-start;
@@ -72,7 +74,7 @@
   width:          100%;
 }
 
-.headerIndex {
+.contact-header-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);
   font-weight:    var(--weight-regular);
@@ -90,7 +92,7 @@
    HEADING — H1 (120px fluid)
    ============================================================ */
 
-.heading {
+.contact-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);
   font-weight: var(--weight-regular);
@@ -110,7 +112,7 @@
    ⚠️  Stub — update size/treatment to Figma when provided
    ============================================================ */
 
-.emailLink {
+.contact-email-link {
   font-family:    var(--font-body);    /* Inter — supports lowercase glyphs (Integral CF does not) */
   font-size:      var(--text-h4);      /* 32px */
   font-weight:    var(--weight-regular);
@@ -125,11 +127,11 @@
   transition: opacity var(--transition-base);
 }
 
-.emailLink:hover {
+.contact-email-link:hover {
   opacity: 0.72;
 }
 
-.emailLink:focus-visible {
+.contact-email-link:focus-visible {
   outline:        var(--focus-outline-width) solid var(--color-secondary);
   outline-offset: var(--focus-outline-offset);
   border-radius:  var(--radius-sm);
@@ -142,7 +144,7 @@
    --color-divider-dark (#cccccc) — visible on dark bg
    ============================================================ */
 
-.divider {
+.contact-divider {
   width:       100%;
   height:      1px;
   background:  var(--color-divider-dark);  /* #cccccc */
@@ -159,7 +161,7 @@
    ⚠️  Stub — update layout/content to Figma when provided
    ============================================================ */
 
-.footer {
+.contact-footer {
   display:         flex;
   flex-direction:  row;
   justify-content: space-between;
@@ -174,7 +176,7 @@
    Integral CF · H5 (20px) · uppercase · white
    ============================================================ */
 
-.brand {
+.contact-brand {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);      /* 20px */
   font-weight:    var(--weight-regular);
@@ -192,7 +194,7 @@
    ⚠️  Stub — update text and styling to Figma when provided
    ============================================================ */
 
-.copyright {
+.contact-copyright {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);    /* 12px */
   font-weight:    var(--weight-regular);

@@ -97,34 +97,34 @@ export default function MoreWork() {
 
   // ── Render ────────────────────────────────────────────────
   return (
-    <div className={styles.root} aria-label="More Works">
+    <div className={styles['more-work-root']} aria-label="More Works">
 
       {/* ── Section header row ───────────────────────────── */}
-      <div className={styles.header}>
-        <p className={styles.headerIndex}>
+      <div className={styles['more-work-header']}>
+        <p className={styles['more-work-header-index']}>
           {gallery.meta.index}
         </p>
-        <div className={styles.headerContent}>
-          <h1 className={styles.headerHeading}>
+        <div className={styles['more-work-header-content']}>
+          <h1 className={styles['more-work-header-heading']}>
             {gallery.meta.heading}
           </h1>
-          <p className={styles.headerSubheading}>
+          <p className={styles['more-work-header-subheading']}>
             {gallery.meta.subheading}
           </p>
         </div>
       </div>
 
       {/* ── Divider below header ─────────────────────────── */}
-      <hr className={styles.divider} aria-hidden="true" />
+      <hr className={styles['more-work-divider']} aria-hidden="true" />
 
       {/* ── Gallery grid ─────────────────────────────────── */}
-      <div className={styles.grid} role="list">
+      <div className={styles['more-work-grid']} role="list">
         {gallery.items.map((item) => (
           <button
             key={item.id}
             className={[
-              styles.card,
-              item.radiusVariant === 'large' ? styles.cardLarge : '',
+              styles['more-work-card'],
+              item.radiusVariant === 'large' ? styles['more-work-card-large'] : '',
             ].join(' ').trim()}
             style={item.backgroundColor ? { backgroundColor: item.backgroundColor } : undefined}
             onClick={() => openModal(item)}
@@ -133,24 +133,24 @@ export default function MoreWork() {
             type="button"
           >
             {/* Image container — aspect ratio clipped — shows first image */}
-            <div className={styles.cardImageWrap}>
+            <div className={styles['more-work-card-image-wrap']}>
               <Image
                 src={item.images[0]}
                 alt={item.title}
                 fill
                 sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                className={styles.cardImage}
+                className={styles['more-work-card-image']}
               />
               {/* Multi-image badge */}
               {item.images.length > 1 && (
-                <span className={styles.cardBadge} aria-hidden="true">
+                <span className={styles['more-work-card-badge']} aria-hidden="true">
                   {item.images.length}
                 </span>
               )}
             </div>
 
             {/* Card title */}
-            <p className={styles.cardTitle}>{item.title}</p>
+            <p className={styles['more-work-card-title']}>{item.title}</p>
           </button>
         ))}
       </div>
@@ -158,20 +158,20 @@ export default function MoreWork() {
       {/* ── Modal ────────────────────────────────────────── */}
       {activeItem && (
         <div
-          className={styles.modalOverlay}
+          className={styles['more-work-modal-overlay']}
           role="dialog"
           aria-modal="true"
           aria-label={`Preview: ${activeItem.title}`}
           onClick={closeModal}
         >
           <div
-            className={styles.modalPanel}
+            className={styles['more-work-modal-panel']}
             onClick={(e) => e.stopPropagation()}
           >
 
             {/* ── Modal top bar: caption + close ─────────── */}
-            <div className={styles.modalTopBar}>
-              <p className={styles.modalCaption}>
+            <div className={styles['more-work-modal-top-bar']}>
+              <p className={styles['more-work-modal-caption']}>
                 {activeItem.title}
               </p>
               <IconButton
@@ -183,21 +183,21 @@ export default function MoreWork() {
             </div>
 
             {/* ── Image ──────────────────────────────────── */}
-            <div className={styles.modalImageWrap}>
+            <div className={styles['more-work-modal-image-wrap']}>
               <Image
                 key={activeImageIndex}         /* force re-render on index change */
                 src={activeItem.images[activeImageIndex]}
                 alt={`${activeItem.title} — image ${activeImageIndex + 1} of ${imageCount}`}
                 fill
                 sizes="100vw"
-                className={styles.modalImage}
+                className={styles['more-work-modal-image']}
                 priority
               />
             </div>
 
             {/* ── Modal bottom bar: prev · counter · next ── */}
             {hasMultiple && (
-              <div className={styles.modalNav}>
+              <div className={styles['more-work-modal-nav']}>
                 <IconButton
                   icon={<ArrowLeft size={20} />}
                   variant="light"
@@ -206,7 +206,7 @@ export default function MoreWork() {
                   aria-label="Previous image"
                 />
 
-                <p className={styles.modalCounter} aria-live="polite">
+                <p className={styles['more-work-modal-counter']} aria-live="polite">
                   {activeImageIndex + 1} / {imageCount}
                 </p>
 

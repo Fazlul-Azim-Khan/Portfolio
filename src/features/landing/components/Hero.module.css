@@ -2,6 +2,8 @@
  * Hero.module.css
  * Specs confirmed from Figma node 966:7520 / 966:7524
  *
+ * Prefix: lp-hero-
+ *
  * Layout: 2-column × 2-row grid inside a min-height wrapper.
  *
  * Grid confirmed from node 966:7524 ("Main"):
@@ -15,9 +17,9 @@
  *   centers the grid vertically within that height
  *
  * Cell assignments:
- *   [row 1 / col 1]     .arrowCell    — decorative ↗ flipped to ↘
- *   [row 1 / col 2]     .bioCell      — bio paragraph + chip tags
- *   [row 2 / col 1–2]   .headlineCell — name + headline + subline
+ *   [row 1 / col 1]     .lp-hero-arrow-cell    — decorative ↗ flipped to ↘
+ *   [row 1 / col 2]     .lp-hero-bio-cell      — bio paragraph + chip tags
+ *   [row 2 / col 1–2]   .lp-hero-headline-cell — name + headline + subline
  */
 
 
@@ -27,7 +29,7 @@
    Confirmed: h-[902.958px] items-start justify-center (node 966:7520)
    ============================================================ */
 
-.hero {
+.lp-hero {
   display:         flex;
   flex-direction:  column;
   justify-content: center;
@@ -45,7 +47,7 @@
    Confirmed: node 966:7524 — "Main"
    ============================================================ */
 
-.grid {
+.lp-hero-grid {
   display:               grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows:    repeat(2, fit-content(100%));
@@ -64,7 +66,7 @@
    Confirmed: node 966:7546 · col 1 / row 1
    ============================================================ */
 
-.arrowCell {
+.lp-hero-arrow-cell {
   grid-column: 1;
   grid-row:    1;
 
@@ -73,7 +75,7 @@
   justify-content: flex-start;
 }
 
-.arrow {
+.lp-hero-arrow {
   /*
    * ↗ rendered at 200px, flipped vertically → appears as ↘
    * Confirmed: -scale-y-100 + text-[200px] + tracking-[-3px] in Figma
@@ -97,7 +99,7 @@
    gap-16 between bio and chips group
    ============================================================ */
 
-.bioCell {
+.lp-hero-bio-cell {
   grid-column: 2;
   grid-row:    1;
 
@@ -111,7 +113,7 @@
 }
 
 /* Bio paragraph — H5 style (14px→20px fluid, Outfit Regular) */
-.bio {
+.lp-hero-bio {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);         /* 14px → 20px fluid */
   font-weight:    var(--weight-regular);
@@ -125,7 +127,7 @@
 
 /* Chip tags row — wrapping flex
    gap-8 between chips confirmed: node 966:7527 */
-.chips {
+.lp-hero-chips {
   display:     flex;
   flex-wrap:   wrap;
   gap:         var(--gap-8);
@@ -140,7 +142,7 @@
    gap-12 between name, headline block, and subline
    ============================================================ */
 
-.headlineCell {
+.lp-hero-headline-cell {
   grid-column: 1 / span 2;
   grid-row:    2;
 
@@ -155,7 +157,7 @@
 
 /* Name label — "FAZLUL AZIM KHAN"
    Confirmed: node 966:7543 — Integral CF 20px, --color-primary */
-.name {
+.lp-hero-name {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);        /* 20px */
   font-weight:    var(--weight-regular);
@@ -168,13 +170,13 @@
 
 /* Headline block — wraps both headline lines
    Confirmed: node 966:7544 — tracking-[-1.5px] */
-.headlineBlock {
+.lp-hero-headline-block {
   width: 100%;
 }
 
 /* Each headline line — "Product DESIGNER" / "& UX STRATEGIST"
    Confirmed: Integral CF 120px, line-height 120px, uppercase */
-.headlineLine {
+.lp-hero-headline-line {
   display:        block;
   font-family:    var(--font-display);
   font-size:      var(--text-h1);        /* 120px */
@@ -187,13 +189,13 @@
 
 /* "&" ampersand — renders in --color-tertiary (#ccc)
    Confirmed: node 966:7544 span — text-[#ccc] */
-.ampersand {
+.lp-hero-ampersand {
   color: var(--color-tertiary);
 }
 
 /* Subline — "Enterprise AI · Safety-critical domains · MVP to $25M scale"
    Confirmed: node 966:7545 — Integral CF 20px, --color-primary */
-.subline {
+.lp-hero-subline {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);        /* 20px */
   font-weight:    var(--weight-regular);
@@ -213,12 +215,12 @@
 
 @media (max-width: 767px) {
   /* Hero wrapper: let content dictate height on mobile — 900px is too tall */
-  .hero {
+  .lp-hero {
     min-height: unset;
   }
 
   /* Grid: collapse to single column, reduce padding and gap */
-  .grid {
+  .lp-hero-grid {
     grid-template-columns: 1fr;
     grid-template-rows:    auto auto;
     gap:                   var(--gap-24);
@@ -227,33 +229,33 @@
   }
 
   /* Arrow: decorative only — hide on mobile to save vertical space */
-  .arrowCell {
+  .lp-hero-arrow-cell {
     display: none;
   }
 
   /* Bio cell: now spans full width in row 1 */
-  .bioCell {
+  .lp-hero-bio-cell {
     grid-column: 1;
     grid-row:    1;
     max-width:   100%;
   }
 
   /* Headline cell: spans full width in row 2 */
-  .headlineCell {
+  .lp-hero-headline-cell {
     grid-column: 1;
     grid-row:    2;
   }
 
   /* Scale down the 120px headline — too large for mobile viewports.
      Fluid: 40px at 390px viewport, grows to 120px at wider breakpoints. */
-  .headlineLine {
+  .lp-hero-headline-line {
     font-size:   clamp(40px, 10.26vw, var(--text-h1));
     line-height: 1;
   }
 
   /* Name + subline scale down slightly */
-  .name,
-  .subline {
+  .lp-hero-name,
+  .lp-hero-subline {
     font-size: var(--text-lead);  /* 12px — keep label style on mobile */
   }
 }

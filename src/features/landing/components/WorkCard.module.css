@@ -2,14 +2,16 @@
  * WorkCard.module.css
  * Specs confirmed from Figma node 942:5673
  *
- * .card        — flex column link, full-width, gap-40 between image and header
- * .imageWrap   — aspect-ratio 1328/710 container, radius-sm, overflow hidden
- * .image       — Next.js fill image, object-fit: cover
- * .header      — flex row, gap-64 between index and title block
- * .index       — Inter 12px uppercase, --color-tertiary
- * .titleBlock  — flex column, gap-12
- * .client      — Inter 12px uppercase, --color-tertiary
- * .title       — Integral CF 32px H4, --color-primary
+ * Prefix: wc-
+ *
+ * .wc-card        — flex column link, full-width, gap-40 between image and header
+ * .wc-image-wrap  — aspect-ratio 1328/710 container, radius-sm, overflow hidden
+ * .wc-image       — Next.js fill image, object-fit: cover
+ * .wc-header      — flex row, gap-64 between index and title block
+ * .wc-index       — Inter 12px uppercase, --color-tertiary
+ * .wc-title-block — flex column, gap-12
+ * .wc-client      — Inter 12px uppercase, --color-tertiary
+ * .wc-title       — Integral CF 32px H4, --color-primary
  */
 
 
@@ -19,7 +21,7 @@
    gap-40 between mockup image and project header
    ============================================================ */
 
-.card {
+.wc-card {
   display:         flex;
   flex-direction:  column;
   gap:             var(--gap-40);
@@ -30,12 +32,12 @@
   user-select:     none;
 }
 
-.card:hover .image {
+.wc-card:hover .wc-image {
   opacity:    0.88;
   transition: opacity var(--transition-base);
 }
 
-.card:focus-visible {
+.wc-card:focus-visible {
   outline:        var(--focus-outline-width) solid var(--color-primary);
   outline-offset: var(--focus-outline-offset);
   border-radius:  var(--radius-sm);
@@ -48,7 +50,7 @@
    overflow hidden + border-radius clips the Next.js fill image
    ============================================================ */
 
-.imageWrap {
+.wc-image-wrap {
   position:      relative;
   width:         100%;
   aspect-ratio:  1328 / 710;
@@ -58,7 +60,7 @@
   flex-shrink:   0;
 }
 
-.image {
+.wc-image {
   object-fit:      cover;
   object-position: center;
   transition:      opacity var(--transition-base);
@@ -71,7 +73,7 @@
    gap-64 confirmed: Figma node 942:5673
    ============================================================ */
 
-.header {
+.wc-header {
   display:        flex;
   flex-direction: row;
   gap:            var(--gap-64);
@@ -85,7 +87,7 @@
    Inter 12px uppercase, --color-primary
    ============================================================ */
 
-.index {
+.wc-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);    /* 12px */
   font-weight:    var(--weight-regular);
@@ -102,7 +104,7 @@
    TITLE BLOCK — client name above project title
    ============================================================ */
 
-.titleBlock {
+.wc-title-block {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-12);
@@ -111,7 +113,7 @@
 
 /* CLIENT — "Axion Ray" / "Center Health"
    Inter 12px uppercase, --color-primary */
-.client {
+.wc-client {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);    /* 12px */
   font-weight:    var(--weight-regular);
@@ -124,7 +126,7 @@
 
 /* TITLE — project name
    Outfit Medium H4, --color-primary */
-.title {
+.wc-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h4);      /* 32px */
   font-weight: var(--weight-regular);
@@ -141,12 +143,12 @@
 
 @media (max-width: 767px) {
   /* Tighten gap between image and project header */
-  .card {
+  .wc-card {
     gap: var(--gap-16);
   }
 
   /* Reduce gap between index number and title block */
-  .header {
+  .wc-header {
     gap: var(--gap-16);
   }
 }

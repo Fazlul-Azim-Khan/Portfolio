@@ -17,23 +17,6 @@
  *   │  ───────────────────────── divider ──────────────────   │
  *   └─────────────────────────────────────────────────────────┘
  *
- * Row anatomy:
- *   Left  — COMPANY, LOCATION       Integral CF H5 (20px) · uppercase · white
- *   Right — ROLE                    Integral CF H5 (20px) · uppercase · white
- *            PERIOD                 Inter Lead (12px)     · uppercase · --color-tertiary
- *
- * Row padding: --space-experience-row-gap (29px) top + bottom
- *              Confirmed: Figma node 1036:7718
- *
- * Dividers: 1px · --color-divider-dark (#cccccc) — readable on dark bg
- *   One divider above each row + one closing divider after the last row
- *   Implemented via border-top on each <li> + border-bottom on <ul>
- *
- * Background:
- *   --color-primary (#0a0a0a) — dark treatment.
- *   Negative-margin bleed breaks out of Container's padding-x so the
- *   dark bg reaches the container edges (effectively full-width at design size).
- *
  * Server component — no interactivity, no client JS required.
  * The <section> wrapper and scroll ref are owned by LandingPage.
  *
@@ -50,40 +33,30 @@ import styles         from './Experience.module.css'
 
 export default function Experience() {
   return (
-    <div className={styles.root} aria-label="Experience">
+    <div className={styles['lp-exp-root']} aria-label="Experience">
 
       {/* ── Header row: index + heading ──────────────────── */}
-      <div className={styles.headerRow}>
-        <p className={styles.headerIndex}>{experience.meta.index}</p>
-        <h1 className={styles.heading}>
+      <div className={styles['lp-exp-header-row']}>
+        <p className={styles['lp-exp-header-index']}>{experience.meta.index}</p>
+        <h1 className={styles['lp-exp-heading']}>
           {experience.meta.heading}
         </h1>
       </div>
 
       {/* ── Experience list ───────────────────────────────── */}
-      {/*
-        One <li> per entry.
-        Each row: flex-row, justify-content: space-between
-          Left  — COMPANY, LOCATION  (Integral CF H5)
-          Right — ROLE + PERIOD      (flex-column)
-
-        Dividers via CSS:
-          border-top on each <li>
-          border-bottom on <ul>
-      */}
-      <ul className={styles.list} role="list">
+      <ul className={styles['lp-exp-list']} role="list">
         {experience.entries.map((entry) => (
-          <li key={entry.id} className={styles.row}>
+          <li key={entry.id} className={styles['lp-exp-row']}>
 
             {/* Left — COMPANY, LOCATION */}
-            <p className={styles.company}>
+            <p className={styles['lp-exp-company']}>
               {entry.company}, {entry.location}
             </p>
 
             {/* Right — ROLE (stacked above) + PERIOD (below) */}
-            <div className={styles.roleBlock}>
-              <p className={styles.role}>{entry.role}</p>
-              <p className={styles.period}>{entry.period}</p>
+            <div className={styles['lp-exp-role-block']}>
+              <p className={styles['lp-exp-role']}>{entry.role}</p>
+              <p className={styles['lp-exp-period']}>{entry.period}</p>
             </div>
 
           </li>

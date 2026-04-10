@@ -17,11 +17,6 @@
  *   │  gap: --gap-64 between columns       │
  *   └──────────────────────────────────────┘
  *
- * Typography:
- *   index  — Inter 12px uppercase, --color-tertiary
- *   client — Inter 12px uppercase, --color-tertiary
- *   title  — Integral CF 32px H4, --color-primary
- *
  * The whole card is a link to /work/[slug].
  * Server Component — no client interaction needed.
  */
@@ -59,43 +54,32 @@ export default function WorkCard({ work, priority = false }: WorkCardProps) {
   return (
     <Link
       href={`/work/${work.slug}`}
-      className={styles.card}
+      className={styles['wc-card']}
       aria-label={`View case study: ${work.title}`}
     >
 
       {/* ── Mockup image ─────────────────────────────────── */}
-      {/*
-        Aspect ratio: 1328 / 710 — confirmed Figma node 942:5673
-        Next.js fill + object-fit: cover handles responsive sizing.
-        overflow: hidden + border-radius on wrapper clips the image.
-      */}
-      <div className={styles.imageWrap}>
+      <div className={styles['wc-image-wrap']}>
         <Image
           src={work.mockup}
           alt={work.title}
           fill
           sizes="100vw"
-          className={styles.image}
+          className={styles['wc-image']}
           priority={priority}
         />
       </div>
 
       {/* ── Project header ───────────────────────────────── */}
-      {/*
-        Two-column row:
-          Left  — index number  (Inter 12px, --color-tertiary)
-          Right — client + title block
-        Gap: --gap-64 between columns — confirmed Figma node 942:5673
-      */}
-      <div className={styles.header}>
+      <div className={styles['wc-header']}>
 
-        <p className={styles.index} aria-label={`Project ${work.index}`}>
+        <p className={styles['wc-index']} aria-label={`Project ${work.index}`}>
           {work.index}
         </p>
 
-        <div className={styles.titleBlock}>
-          <p className={styles.client}>{work.client}</p>
-          <h3 className={styles.title}>{work.title}</h3>
+        <div className={styles['wc-title-block']}>
+          <p className={styles['wc-client']}>{work.client}</p>
+          <h3 className={styles['wc-title']}>{work.title}</h3>
         </div>
 
       </div>
