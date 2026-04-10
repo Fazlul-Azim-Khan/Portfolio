@@ -12,10 +12,8 @@
 .solution-content {
   display:        flex;
   flex-direction: column;
-  gap:            124px;   /* Figma: gap-[124px] */
+  gap:            var(--gap-64);
   width:          100%;
-  padding-bottom: 42px;
-  border-bottom:  1px solid var(--color-secondary);
 }
 
 
@@ -256,9 +254,9 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  /* Reduce large inter-section gap on mobile */
+  /* Match desktop gap token on mobile */
   .solution-content {
-    gap: var(--gap-64);
+    gap: var(--gap-40);
   }
 
   /* Panel: no forced viewport height on mobile */
