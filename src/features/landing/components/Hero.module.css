@@ -119,6 +119,7 @@
   letter-spacing: var(--tracking-h5);     /* 0 */
   color:          var(--color-primary);
   width:          100%;
+  max-width:      var(--text-measure);    /* Paragraph measure — 500px */
   margin:         0;
 }
 

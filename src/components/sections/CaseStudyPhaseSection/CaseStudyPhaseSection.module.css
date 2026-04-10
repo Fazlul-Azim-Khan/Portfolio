@@ -320,6 +320,7 @@
   line-height:    20px;
   color:          var(--color-primary);
   margin:         0;
+  max-width:      var(--text-measure);    /* Paragraph measure — 500px */
 }
 
 

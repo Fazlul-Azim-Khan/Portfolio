@@ -64,6 +64,9 @@
   --text-lead: 12px;                                          /* fixed — 1px range negligible */
   --text-body: clamp(0.8125rem,0.765rem + 0.196vw, 1rem);    /* 13px →  16px */
 
+  /* Paragraph max line length — caps body/prose width for readability */
+  --text-measure: 500px;
+
   /* Line heights */
   --lh-h1:      1;      /* Unitless — tracks with fluid H1 size (was 120px fixed) */
   --lh-heading: 1;      /* 100% — for H3, H4, H5 */
