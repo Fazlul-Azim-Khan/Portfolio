@@ -21,7 +21,7 @@ export default function NextCaseStudy({ section }: NextCaseStudyProps) {
     <NextCaseStudyHero
       hero={centerHealth.hero}
       href={section.href}
-      label="Next Case Study"
+      label="Next case study"
     />
   )
 }

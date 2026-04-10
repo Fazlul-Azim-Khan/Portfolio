@@ -60,7 +60,7 @@ interface NextCaseStudyHeroProps {
 export default function NextCaseStudyHero({
   hero,
   href,
-  label = 'Next Case Study',
+  label = 'Next case study',
 }: NextCaseStudyHeroProps) {
   const router = useRouter()
 

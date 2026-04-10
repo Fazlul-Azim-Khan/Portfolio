@@ -57,6 +57,6 @@ export const selectedWorks: WorkItem[] = [
 
 export const selectedWorksMeta = {
   index:    '(002)',
-  heading:  'Selected Works',
-  count:    '2 Case Studies',
+  heading:  'Selected works',
+  count:    '2 case studies',
 } as const

@@ -21,7 +21,7 @@ export default function NextCaseStudySection({ section }: NextCaseStudySectionPr
     <NextCaseStudyHero
       hero={axionRay.hero}
       href={section.href}
-      label="Next Case Study"
+      label="Next case study"
     />
   )
 }

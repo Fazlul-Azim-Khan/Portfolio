@@ -66,7 +66,7 @@ export const hero = {
   },
 
   /** Renders in H5 below the headline — Lead uppercase via CSS */
-  subline: 'Enterprise AI · Clinical & Industrial · 2 AI Products Shipped',
+  subline: 'Enterprise AI · Clinical & industrial · 2 AI products shipped',
 
   /** Renders in Lead (12px Inter, uppercase) in top-right grid cell */
   bio: 'I design AI-powered products for expert-user domains — clinical decision support, metabolic health, and industrial reliability. Two shipped AI products. Most recently at Center Health. Earlier at Axion Ray, backed by Boeing, Raytheon, Denso, and Baxter.',
@@ -78,7 +78,7 @@ export const hero = {
     'AI data visualisation',
     'Clinical AI visualisation',
     'Interaction design',
-    'Product Strategy',
+    'Product strategy',
   ],
 } as const
 
@@ -90,15 +90,15 @@ export const hero = {
 export const selectedWorks = {
   meta: {
     index:   '(002)',
-    heading: 'Selected Works',
-    count:   '2 Case Studies',
+    heading: 'Selected works',
+    count:   '2 case studies',
   },
   items: [
     {
       id:     'manufacturing-platform',
       index:  '01',
       client: 'Axion Ray',
-      title:  'AI-Powered Manufacturing Reliability Platform',
+      title:  'AI-powered manufacturing reliability platform',
       slug:   'manufacturing-platform',
       mockup: '/images/works/manufacturing-platform/mockup.jpg',
     },
@@ -106,7 +106,7 @@ export const selectedWorks = {
       id:     'center-health',
       index:  '02',
       client: 'Center Health',
-      title:  'AI-Powered Diabetes Management Platform',
+      title:  'AI-powered diabetes management platform',
       slug:   'center-health',
       mockup: '/images/works/center-health/mockup.jpg',
     },
@@ -163,70 +163,70 @@ export const gallery = {
     },
     {
       id:           'training-courses-platform',
-      title:        'Training Courses Platform',
+      title:        'Training courses platform',
       images:       ['/images/gallery/training-courses-platform.jpg'],
       radiusVariant: 'default' as GalleryRadiusVariant,
     },
     {
       id:           'mnmridez-chauffeur-service',
-      title:        'MnMridez Chauffeur Service',
+      title:        'MnMridez chauffeur service',
       images:       ['/images/gallery/mnmridez-chauffeur-service.png'],
       radiusVariant: 'default' as GalleryRadiusVariant,
     },
     // Row 2
     {
       id:           'task-manager-app',
-      title:        'Task Manager App',
+      title:        'Task manager app',
       images:       ['/images/gallery/task-manager-app.png'],
       radiusVariant: 'default' as GalleryRadiusVariant,
     },
     {
       id:           'sales-tracking-app',
-      title:        'Sales Tracking App',
+      title:        'Sales tracking app',
       images:       ['/images/gallery/sales-tracking-app.png'],
       radiusVariant: 'default' as GalleryRadiusVariant,
     },
     {
       id:           'video-call-app',
-      title:        'Video Call App',
+      title:        'Video call app',
       images:       ['/images/gallery/video-call-app.png'],
       radiusVariant: 'default' as GalleryRadiusVariant,
     },
     // Row 3
     {
       id:           'nrb-banking-app',
-      title:        'NRB Banking App',
+      title:        'NRB banking app',
       images:       ['/images/gallery/nrb-banking-app.png'],
       radiusVariant: 'default' as GalleryRadiusVariant,
     },
     {
       id:           'groceries-mobile-app',
-      title:        'Groceries Mobile App',
+      title:        'Groceries mobile app',
       images:       ['/images/gallery/groceries-mobile-app.png'],
       radiusVariant: 'large' as GalleryRadiusVariant,
     },
     {
       id:           'soda-finder-app',
-      title:        'Soda Finder App',
+      title:        'Soda finder app',
       images:       ['/images/gallery/soda-finder-app.png'],
       radiusVariant: 'default' as GalleryRadiusVariant,
     },
     // Row 4
     {
       id:           'yourself-online-dashboard',
-      title:        'Yourself.online Dashboard',
+      title:        'Yourself.online dashboard',
       images:       ['/images/gallery/yourself-online-dashboard.png'],
       radiusVariant: 'default' as GalleryRadiusVariant,
     },
     {
       id:           'click-on-offers-dashboard',
-      title:        'Click On Offers Dashboard',
+      title:        'Click on offers dashboard',
       images:       ['/images/gallery/click-on-offers-dashboard.png'],
       radiusVariant: 'default' as GalleryRadiusVariant,
     },
     {
       id:           'karaoke-singing-app',
-      title:        'Karaoke Singing App',
+      title:        'Karaoke singing app',
       images:       ['/images/gallery/karaoke-singing-app.png'],
       radiusVariant: 'large' as GalleryRadiusVariant,
     },

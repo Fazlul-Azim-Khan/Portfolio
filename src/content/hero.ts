@@ -69,7 +69,7 @@ export const heroChips: string[] = [
   'AI-assisted learning',
   'Clinical AI visualisation',
   'AI content & marketing tools',
-  'Product Strategy',
+  'Product strategy',
 ]
 
 

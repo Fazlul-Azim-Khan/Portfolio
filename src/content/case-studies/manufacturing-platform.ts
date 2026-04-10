@@ -28,14 +28,14 @@ export const manufacturingPlatform: CaseStudy = {
      ────────────────────────────────────────────────────────── */
 
   hero: {
-    title:     'AI-Powered Manufacturing Forecasting Platform',
+    title:     'AI-powered manufacturing forecasting platform',
     heroImage: '/images/works/manufacturing-platform/axion-1.jpg',
     meta: {
       role:   'Product UI/UX Designer',
       stage:  'Pre-Seed → Seed → Series A',
       year:   '2021 – 2022',
       sector: 'Industrial AI · Predictive Reliability',
-      chips:  ['Case Study', 'Enterprise AI', 'Industrial AI'],
+      chips:  ['Case study', 'Enterprise AI', 'Industrial AI'],
     },
   },
 
@@ -69,7 +69,7 @@ export const manufacturingPlatform: CaseStudy = {
     {
       type:    'research',
       index:   '(002)',
-      heading: 'User Research',
+      heading: 'User research',
 
       intro:
         'Reliability engineers need to justify every decision to their team. ' +
@@ -78,10 +78,10 @@ export const manufacturingPlatform: CaseStudy = {
 
       personalityTraits: [
         'Creativity',
-        'Collaborative Spirit, Embraces Feedback',
-        'Work-Life Balance Adept To Collaboration',
-        'Critical Thinking',
-        'Direct, Open & Honest',
+        'Collaborative spirit, embraces feedback',
+        'Work-life balance adept to collaboration',
+        'Critical thinking',
+        'Direct, open & honest',
         'Curiosity',
       ],
 
@@ -93,7 +93,7 @@ export const manufacturingPlatform: CaseStudy = {
         'Anecdotal feedback from engineering dept for improvement',
         'Accurate visibility into program/project metrics',
         'Deadline & engineering activities incompatibilities',
-        'Timing Pressure',
+        'Timing pressure',
       ],
 
       existingCauses: [
@@ -124,11 +124,11 @@ export const manufacturingPlatform: CaseStudy = {
     {
       type:    'decisions',
       index:   '(003)',
-      heading: 'Key Design Decisions',
+      heading: 'Key design decisions',
 
       decisions: [
         {
-          title: 'Interpretability Over Abstraction',
+          title: 'Interpretability over abstraction',
           chose:
             'Every anomaly card shows WHY the AI flagged it, WHAT signals contributed, ' +
             'and HOW confident the model is — rather than just surfacing an alert.',
@@ -140,7 +140,7 @@ export const manufacturingPlatform: CaseStudy = {
             'disclosure: summary view for scanning, expanded view for investigation.',
         },
         {
-          title: 'Layered Drill-Down Over Single-Screen Density',
+          title: 'Layered drill-down over single-screen density',
           chose:
             'Every anomaly card shows WHY the AI flagged it, WHAT signals contributed, ' +
             'and HOW confident the model is — rather than just surfacing an alert.',
@@ -152,7 +152,7 @@ export const manufacturingPlatform: CaseStudy = {
             'disclosure: summary view for scanning, expanded view for investigation.',
         },
         {
-          title: 'Consistent Visual Encoding Over Per-Chart Flexibility',
+          title: 'Consistent visual encoding over per-chart flexibility',
           chose:
             'A unified chart grammar where the same visual treatment — colour, density, axis scale ' +
             '— means the same thing across all five data source types.',
@@ -172,37 +172,37 @@ export const manufacturingPlatform: CaseStudy = {
     {
       type:    'solution',
       index:   '(004)',
-      heading: 'Solution Structure',
+      heading: 'Solution structure',
 
       dataSourcesTitle: 'Five data sources. One intelligence layer.',
 
       dataSources: [
         {
-          name:        'Warranty Claims',
+          name:        'Warranty claims',
           description: 'Structured field failure data — the clearest signal, but always lagging.',
         },
         {
-          name:        'Service Reports',
+          name:        'Service reports',
           description: 'Technician observations — unstructured but rich with early warning insight.',
         },
         {
-          name:        'Manufacturing Logs',
+          name:        'Manufacturing logs',
           description: 'Assembly line process deviations and quality checkpoints.',
         },
         {
-          name:        'Engineering Feedback',
+          name:        'Engineering feedback',
           description: 'Internal reliability assessments from engineering teams.',
         },
         {
-          name:        'Supplier Data',
+          name:        'Supplier data',
           description: 'Component quality metrics and inspection reports.',
         },
       ],
 
-      flowTitle: 'From signal to root cause.\nEnd-to-End Experience',
+      flowTitle: 'From signal to root cause.\nEnd-to-end experience',
 
       flowSteps: [
-        { number: '01', label: 'AI Detects Anomaly' },
+        { number: '01', label: 'AI detects anomaly' },
         { number: '02', label: 'Signal surfaces in reliability dashboard' },
         { number: '03', label: 'Engineer opens anomaly insight panel' },
         { number: '04', label: 'Trend visualization shows deviation' },
@@ -210,13 +210,13 @@ export const manufacturingPlatform: CaseStudy = {
         { number: '06', label: 'Component-level root cause investigation' },
       ],
 
-      dataFlowTitle: 'Data Flow',
+      dataFlowTitle: 'Data flow',
 
       pipeline: [
-        { name: 'Manufacturing Data Sources' },
-        { name: 'AI Processing Layer',          detail: 'pattern detection · anomaly scoring' },
-        { name: 'Insight Layer',                detail: 'anomaly alerts · signal trends' },
-        { name: 'Engineer Investigation Workspace', detail: 'dashboards · charts · master tables' },
+        { name: 'Manufacturing data sources' },
+        { name: 'AI processing layer',          detail: 'pattern detection · anomaly scoring' },
+        { name: 'Insight layer',                detail: 'anomaly alerts · signal trends' },
+        { name: 'Engineer investigation workspace', detail: 'dashboards · charts · master tables' },
       ],
     },
 
@@ -226,8 +226,8 @@ export const manufacturingPlatform: CaseStudy = {
     {
       type:    'phase',
       index:   '(005)',
-      chip:    'Phase 01 · Pre-Seed · 2021',
-      heading: 'Building the Foundation. Sole Designer. Zero to Investor-Ready.',
+      chip:    'Phase 01 · Pre-seed · 2021',
+      heading: 'Building the foundation. Sole designer. Zero to investor-ready.',
 
       body:
         "When I joined, the company had a thesis, a technical team, and an urgent need: build " +
@@ -244,8 +244,8 @@ export const manufacturingPlatform: CaseStudy = {
       ],
 
       outcome: {
-        label:    'Series Outcome',
-        headline: '$7.5M Seed Raise — February 2023',
+        label:    'Series outcome',
+        headline: '$7.5M seed raise — February 2023',
         subline:  'Investors: Boeing · Amplo · Inspired Capital',
       },
 
@@ -261,12 +261,12 @@ export const manufacturingPlatform: CaseStudy = {
     {
       type:    'phase',
       index:   '(006)',
-      chip:    'Phase 02 · Seed Stage · 2021 – 2022',
-      heading: "Designing for Engineers Who Don't Trust What They Can't Audit.",
+      chip:    'Phase 02 · Seed stage · 2021 – 2022',
+      heading: "Designing for engineers who don't trust what they can't audit.",
 
       featureCards: [
         {
-          title: 'AI Insight Interface',
+          title: 'AI insight interface',
           bullets: [
             'Anomaly alerts',
             'Signal confidence indicators',
@@ -277,7 +277,7 @@ export const manufacturingPlatform: CaseStudy = {
             'Engineers could see what changed, how unusual it was, and why the system flagged it.',
         },
         {
-          title: 'Data Visualization System',
+          title: 'Data visualization system',
           bullets: [
             'Trend charts',
             'Anomaly score graphs',
@@ -288,7 +288,7 @@ export const manufacturingPlatform: CaseStudy = {
             'Helped engineers interpret patterns quickly across millions of records.',
         },
         {
-          title: 'Enterprise Data Tables',
+          title: 'Enterprise data tables',
           bullets: [
             'Multi-dimensional filtering',
             'Configurable column views',
@@ -316,7 +316,7 @@ export const manufacturingPlatform: CaseStudy = {
       type:    'phase',
       index:   '(007)',
       chip:    'Phase 03 · Post Series A · 2022',
-      heading: 'From Sole Designer to Scaling an Enterprise Platform.',
+      heading: 'From sole designer to scaling an enterprise platform.',
 
       body:
         'Following Series A funding, the product team expanded. I transitioned from ' +
@@ -325,27 +325,27 @@ export const manufacturingPlatform: CaseStudy = {
 
       keyWorkItems: [
         {
-          title: 'Investigation Workflow Refinement',
+          title: 'Investigation workflow refinement',
           desc:  'Reducing friction between anomaly alerts and root-cause analysis.',
         },
         {
-          title: 'Data Interface Scaling',
+          title: 'Data interface scaling',
           desc:  'Supporting larger datasets and more complex filtering scenarios.',
         },
         {
-          title: 'Design System Growth',
+          title: 'Design system growth',
           desc:  "Contributing new chart and table components and aligning the platform's UI patterns.",
         },
         {
-          title: 'Enterprise Collaboration',
+          title: 'Enterprise collaboration',
           desc:  'Working with product, engineering and customer stakeholders including Boeing, Denso, Baxter and Raytheon.',
         },
       ],
 
       outcome: {
-        label:    'Series A Outcome',
-        headline: '$17.5M Series A — March 2024, Total Raised: $25M',
-        subline:  'Led by Bessemer Venture Partners, Strategic investment from RTX Ventures (Raytheon)',
+        label:    'Series A outcome',
+        headline: '$17.5M Series A — March 2024, total raised: $25M',
+        subline:  'Led by Bessemer Venture Partners, strategic investment from RTX Ventures (Raytheon)',
       },
 
       // Phase 03 dark card — exported as single composite
@@ -362,7 +362,7 @@ export const manufacturingPlatform: CaseStudy = {
        ────────────────────────────────────────────────────── */
     {
       type:    'client-feedback',
-      heading: 'Client Feedback',
+      heading: 'Client feedback',
 
       quotes: [
         '"It was a true pleasure working with Fazlul. His designs are highly professional, expert, and aesthetically sophisticated."',
