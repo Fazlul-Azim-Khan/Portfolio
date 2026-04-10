@@ -502,7 +502,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'aria',
       index:   '(007)',
-      heading: 'ARIA: Giving the Platform a Brain & Soul',
+      heading: 'ARIA: Giving the Platform\na Brain & Soul',
       body:    'Aria become the mind and soul with insights, trends and suggestions. Aria already powered insights in the backend. But to users, it felt like an invisible ghost. We needed to give Aria a face, voice, personality, and safe boundaries.',
       subSections: [
         {

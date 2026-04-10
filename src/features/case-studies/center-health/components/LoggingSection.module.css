@@ -121,7 +121,7 @@
 .log-feature-row {
   display:     flex;
   align-items: flex-start;
-  gap:         var(--gap-24);
+  gap:         40px;
   width:       100%;
 }
 
@@ -283,8 +283,12 @@
    ============================================================ */
 
 @media (min-width: 768px) {
-  .log-row,
-  .log-results {
+  .log-row {
     min-height: var(--screen-block-min-h);
+  }
+
+  .log-results {
+    min-height:      60vh;
+    align-items:     center;
   }
 }

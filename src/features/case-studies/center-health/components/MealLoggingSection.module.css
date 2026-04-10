@@ -280,8 +280,12 @@
    ============================================================ */
 
 @media (min-width: 768px) {
-  .meal-row,
-  .meal-results {
+  .meal-row {
     min-height: var(--screen-block-min-h);
+  }
+
+  .meal-results {
+    min-height:      60vh;
+    align-items:     center;
   }
 }

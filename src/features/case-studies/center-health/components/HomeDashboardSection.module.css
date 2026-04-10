@@ -149,13 +149,6 @@
   flex:           1 0 0;              /* Figma: flex-1 (equal with line) */
 }
 
-.home-what-line {
-  flex:             1 0 0;
-  height:           1px;
-  background-color: var(--color-primary);
-}
-
-
 /* ============================================================
    FEATURE GRID — 3 columns × 2 rows (keeps stars)
    Figma: grid-cols-[repeat(3,1fr)], gap 24px
@@ -341,8 +334,12 @@
    ============================================================ */
 
 @media (min-width: 768px) {
-  .home-row,
-  .home-results {
+  .home-row {
     min-height: var(--screen-block-min-h);
+  }
+
+  .home-results {
+    min-height:      60vh;
+    align-items:     center;
   }
 }

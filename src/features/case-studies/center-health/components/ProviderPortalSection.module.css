@@ -279,8 +279,12 @@
    ============================================================ */
 
 @media (min-width: 768px) {
-  .pps-row,
-  .pps-results {
+  .pps-row {
     min-height: var(--screen-block-min-h);
+  }
+
+  .pps-results {
+    min-height:      60vh;
+    align-items:     center;
   }
 }

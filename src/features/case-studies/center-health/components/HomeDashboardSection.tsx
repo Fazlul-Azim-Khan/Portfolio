@@ -97,15 +97,13 @@ export default function HomeDashboardSection({ section }: HomeDashboardSectionPr
           <div className={styles['home-what-block']}>
 
             <div className={styles['home-what-label-row']}>
-              <h3 className={styles['home-what-label']}>what i designed</h3>
-              <div className={styles['home-what-line']} aria-hidden="true" />
+              <h3 className={styles['home-what-label']}>What I designed</h3>
             </div>
 
             <div className={styles['home-feature-grid']}>
               {section.whatIDesigned.map((item, i) => (
                 <div key={i} className={styles['home-feature-item']}>
                   <div className={styles['home-feature-divider']} aria-hidden="true" />
-                  <p className={styles['home-feature-star']} aria-hidden="true">*</p>
                   <p className={styles['home-feature-title']}>{item}</p>
                 </div>
               ))}

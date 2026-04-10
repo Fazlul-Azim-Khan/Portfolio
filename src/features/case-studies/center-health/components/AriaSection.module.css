@@ -363,8 +363,12 @@
    ============================================================ */
 
 @media (min-width: 768px) {
-  .aria-row,
-  .aria-results {
+  .aria-row {
     min-height: var(--screen-block-min-h);
+  }
+
+  .aria-results {
+    min-height:      60vh;
+    align-items:     center;
   }
 }

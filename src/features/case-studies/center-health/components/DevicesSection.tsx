@@ -81,8 +81,7 @@ export default function DevicesSection({ section }: DevicesSectionProps) {
       <div className={styles['dev-what-block']}>
 
         <div className={styles['dev-what-label-row']}>
-          <h3 className={styles['dev-what-label']}>what i designed</h3>
-          <div className={styles['dev-what-line']} aria-hidden="true" />
+          <h3 className={styles['dev-what-label']}>What I designed</h3>
         </div>
 
         <div className={styles['dev-what-items']}>

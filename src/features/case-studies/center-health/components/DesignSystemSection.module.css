@@ -100,7 +100,6 @@
   align-items: flex-start;
   gap:         48px;
   width:       100%;
-  text-transform: uppercase;
 }
 
 .ds-heading {
@@ -330,8 +329,12 @@
    ============================================================ */
 
 @media (min-width: 768px) {
-  .ds-contents-block,
-  .ds-results {
+  .ds-contents-block {
     min-height: var(--screen-block-min-h);
+  }
+
+  .ds-results {
+    min-height:      60vh;
+    align-items:     center;
   }
 }

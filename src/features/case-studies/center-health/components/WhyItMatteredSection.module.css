@@ -98,7 +98,6 @@
   color:           var(--color-primary);
   margin:          0;
 
-  width:           732px;         /* Figma: w-[732px] — constrained heading width */
   max-width:       100%;
 }
 
@@ -147,7 +146,6 @@
   padding:          var(--padding-64);
   background-color: var(--color-secondary);
   border-radius:    var(--radius-sm);        /* 8px — project-wide single radius */
-  box-shadow:       0 8px 14px -3px rgba(149, 197, 255, 0.14);
 }
 
 /* Person cards stretch to fill the column height equally */

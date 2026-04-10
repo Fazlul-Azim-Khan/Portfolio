@@ -74,9 +74,6 @@ export default function ScopeSection({ section }: ScopeSectionProps) {
                 {/* 1px white top divider */}
                 <div className={styles['scope-divider']} aria-hidden="true" />
 
-                {/* Decorative star bullet — Integral CF 64px */}
-                <p className={styles['scope-star']} aria-hidden="true">*</p>
-
                 {/* Scope item title — Integral CF 32px uppercase */}
                 <p className={styles['scope-item-title']}>{item}</p>
               </div>

@@ -23,6 +23,7 @@
   background-color: #1ab1fe;    /* Center Health brand blue — no shared token */
   border-radius:    var(--radius-sm);  /* 8px — project-wide single radius */
   width:            100%;
+  min-height:       100vh;
 }
 
 
@@ -98,7 +99,7 @@
 .scope-grid {
   display:               grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap:                   10px;
+  gap:                   40px;
   width:                 100%;
 }
 

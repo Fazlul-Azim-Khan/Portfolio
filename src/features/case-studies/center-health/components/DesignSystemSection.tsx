@@ -84,7 +84,6 @@ export default function DesignSystemSection({ section }: DesignSystemSectionProp
               {section.features.map((feature, i) => (
                 <div key={i} className={styles['ds-feature-item']}>
                   <div className={styles['ds-feature-divider']} aria-hidden="true" />
-                  <p className={styles['ds-feature-star']} aria-hidden="true">*</p>
                   <p className={styles['ds-feature-title']}>{feature}</p>
                 </div>
               ))}

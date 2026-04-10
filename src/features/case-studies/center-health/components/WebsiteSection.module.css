@@ -240,8 +240,12 @@
    ============================================================ */
 
 @media (min-width: 768px) {
-  .web-row,
-  .web-results {
+  .web-row {
     min-height: var(--screen-block-min-h);
+  }
+
+  .web-results {
+    min-height:      60vh;
+    align-items:     center;
   }
 }

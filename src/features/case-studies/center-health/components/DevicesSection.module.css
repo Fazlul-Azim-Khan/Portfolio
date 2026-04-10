@@ -128,18 +128,11 @@
   flex:           1 0 0;         /* Figma: flex-1 (equal with line) */
 }
 
-/* White extending line */
-.dev-what-line {
-  flex:             1 0 0;
-  height:           1px;
-  background-color: var(--color-secondary);
-}
-
 /* Items — flex-wrap row, gap 24px (updated from CSS grid) */
 .dev-what-items {
   display:   flex;
   flex-wrap: wrap;
-  gap:       var(--gap-24);
+  gap:       40px;
   width:     100%;
 }
 
