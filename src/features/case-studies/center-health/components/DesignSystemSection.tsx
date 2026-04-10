@@ -59,33 +59,33 @@ interface DesignSystemSectionProps {
 
 export default function DesignSystemSection({ section }: DesignSystemSectionProps) {
   return (
-    <div className={styles.root}>
+    <div className={styles['ds-root']}>
 
       {/* ── Row: index (left) + content (right) ────────────── */}
-      <div className={styles.row}>
+      <div className={styles['ds-row']}>
 
         {/* Index — left column */}
-        <p className={styles.index}>{section.index}</p>
+        <p className={styles['ds-index']}>{section.index}</p>
 
         {/* Content column — heading row + features + demo + results */}
-        <div className={styles.contentCol}>
+        <div className={styles['ds-content-col']}>
 
           {/* ── Contents block (heading + features) — min-h 80vh on desktop/tablet ── */}
-          <div className={styles.contentsBlock}>
+          <div className={styles['ds-contents-block']}>
 
             {/* ── 1. Heading row — heading + sidebar ─────────── */}
-            <div className={styles.headingRow}>
-              <h1 className={styles.heading}>{section.heading}</h1>
-              <p className={styles.sideText}>{section.sideText}</p>
+            <div className={styles['ds-heading-row']}>
+              <h1 className={styles['ds-heading']}>{section.heading}</h1>
+              <p className={styles['ds-side-text']}>{section.sideText}</p>
             </div>
 
             {/* ── 2. Features — 3-col × 2-row grid ──────────── */}
-            <div className={styles.featureGrid}>
+            <div className={styles['ds-feature-grid']}>
               {section.features.map((feature, i) => (
-                <div key={i} className={styles.featureItem}>
-                  <div className={styles.featureDivider} aria-hidden="true" />
-                  <p className={styles.featureStar} aria-hidden="true">*</p>
-                  <p className={styles.featureTitle}>{feature}</p>
+                <div key={i} className={styles['ds-feature-item']}>
+                  <div className={styles['ds-feature-divider']} aria-hidden="true" />
+                  <p className={styles['ds-feature-star']} aria-hidden="true">*</p>
+                  <p className={styles['ds-feature-title']}>{feature}</p>
                 </div>
               ))}
             </div>
@@ -93,11 +93,11 @@ export default function DesignSystemSection({ section }: DesignSystemSectionProp
           </div>
 
           {/* ── 3. Demo card — stacked design system images ── */}
-          <div className={styles.demoCard}>
+          <div className={styles['ds-demo-card']}>
             {section.demoImages.map((img, i) => (
               <div
                 key={i}
-                className={styles.demoImageWrap}
+                className={styles['ds-demo-image-wrap']}
                 style={img.aspect ? { aspectRatio: img.aspect } : undefined}
               >
                 <Image
@@ -105,16 +105,16 @@ export default function DesignSystemSection({ section }: DesignSystemSectionProp
                   alt={img.alt}
                   fill
                   sizes="(max-width: 767px) 100vw, (max-width: 1023px) 100vw, 100vw"
-                  className={styles.demoImage}
+                  className={styles['ds-demo-image']}
                 />
               </div>
             ))}
           </div>
 
           {/* ── 4. Results — label + large heading ─────────── */}
-          <div className={styles.results}>
-            <p className={styles.resultsLabel}>Results</p>
-            <h3 className={styles.resultsHeading}>{section.resultsText}</h3>
+          <div className={styles['ds-results']}>
+            <p className={styles['ds-results-label']}>Results</p>
+            <h3 className={styles['ds-results-heading']}>{section.resultsText}</h3>
           </div>
 
         </div>

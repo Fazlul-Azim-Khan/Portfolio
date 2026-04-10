@@ -2,6 +2,8 @@
  * AriaSection.module.css — Center Health (007)
  * Confirmed from Figma node 1161:6257.
  *
+ * Prefix: aria-
+ *
  * Index-left / content-right row pattern.
  * Content column holds: heading + body (right) + sub-sections + results.
  * Two sub-sections: Chat & Feed (with features) and Notification System.
@@ -14,7 +16,7 @@
    Figma: flex-col, py-96px, border-b, items-start
    ============================================================ */
 
-.root {
+.aria-root {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -31,7 +33,7 @@
    Figma: flex row, gap-48, items-start, w-full
    ============================================================ */
 
-.row {
+.aria-row {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-40);
@@ -45,7 +47,7 @@
    #424242, uppercase, shrink-0
    ============================================================ */
 
-.index {
+.aria-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);        /* 12px */
   font-weight:    var(--weight-regular);
@@ -65,7 +67,7 @@
    Figma: flex-col, flex-1, gap-10px, items-center, justify-center
    ============================================================ */
 
-.contentCol {
+.aria-content-col {
   display:         flex;
   flex-direction:  column;
   align-items:     center;
@@ -83,7 +85,7 @@
    pre-wrap for the line break in "ARIA:\ngiving the platform…"
    ============================================================ */
 
-.heading {
+.aria-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);
   font-weight: var(--weight-regular);
@@ -101,14 +103,14 @@
    Figma: flex row, items-center, justify-end, w-full
    ============================================================ */
 
-.bodyRow {
+.aria-body-row {
   display:         flex;
   align-items:     center;
   justify-content: flex-end;
   width:           100%;
 }
 
-.body {
+.aria-body {
   font-family:  var(--font-body);
   font-size:    var(--text-body);
   font-weight:  var(--weight-regular);
@@ -125,7 +127,7 @@
    Figma: flex-col, gap-64, items-start, w-full
    ============================================================ */
 
-.subSection {
+.aria-sub-section {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -139,7 +141,7 @@
    Figma: flex row, items-start, justify-between, py-64, w-full
    ============================================================ */
 
-.subHeadingRow {
+.aria-sub-heading-row {
   display:         flex;
   align-items:     flex-start;
   justify-content: space-between;
@@ -148,7 +150,7 @@
   width:           100%;
 }
 
-.subHeading {
+.aria-sub-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h3);
   font-weight:    var(--weight-regular);
@@ -159,13 +161,13 @@
 }
 
 /* Left-aligned: flex-1 */
-.subHeadingLeft {
+.aria-sub-heading-left {
   flex: 1 0 0;
   min-width: 0;
 }
 
 /* Right-aligned: fixed width, text-right */
-.subHeadingRight {
+.aria-sub-heading-right {
   text-align: right;
   flex-shrink: 0;
 }
@@ -178,14 +180,14 @@
    No stars in this section.
    ============================================================ */
 
-.featureRow {
+.aria-feature-row {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-40);
   width:       100%;
 }
 
-.featureItem {
+.aria-feature-item {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -194,14 +196,14 @@
   min-width:      0;
 }
 
-.featureDivider {
+.aria-feature-divider {
   width:            100%;
   height:           1px;
   background-color: #e5e5e5;     /* Figma: bg-[#e5e5e5] */
   flex-shrink:      0;
 }
 
-.featureTitle {
+.aria-feature-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);    /* 20px */
   font-weight:    var(--weight-regular);
@@ -217,17 +219,17 @@
    IMAGE — full-width, aspect ratio from content
    ============================================================ */
 
-.imageWrap {
+.aria-image-wrap {
   position: relative;
   width:    100%;
 }
 
-.imageRounded {
+.aria-image-rounded {
   border-radius: var(--radius-sm);
   overflow:      hidden;
 }
 
-.image {
+.aria-image {
   object-fit: cover;
 }
 
@@ -237,14 +239,14 @@
    Figma: flex row, gap 24px
    ============================================================ */
 
-.results {
+.aria-results {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-24);
   width:       100%;
 }
 
-.resultsLabel {
+.aria-results-label {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);        /* 12px — Lead typography */
   font-weight:    var(--weight-regular);
@@ -257,7 +259,7 @@
 }
 
 /* H4 32px — same scale as sections 006/008 */
-.resultsHeading {
+.aria-results-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h3);          /* 28px → 56px fluid */
   font-weight:    var(--weight-regular);
@@ -275,79 +277,79 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  .root {
+  .aria-root {
     padding-top:    var(--padding-40);
     padding-bottom: var(--padding-40);
   }
 
   /* Stack index above content on mobile */
-  .row {
+  .aria-row {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 
-  .index {
+  .aria-index {
     padding-top: 0;
   }
 
-  .contentCol {
+  .aria-content-col {
     gap: var(--gap-24);
   }
 
   /* Body: full-width on mobile */
-  .bodyRow {
+  .aria-body-row {
     justify-content: flex-start;
   }
 
-  .body {
+  .aria-body {
     width: 100%;
   }
 
   /* Sub-section: tighter gap */
-  .subSection {
+  .aria-sub-section {
     gap: var(--gap-40);
   }
 
-  .subHeadingRow {
+  .aria-sub-heading-row {
     padding-top:    var(--gap-40);
     padding-bottom: var(--gap-40);
   }
 
   /* Right-aligned heading: full-width on mobile */
-  .subHeadingRight {
+  .aria-sub-heading-right {
     text-align: left;
     width:      100%;
   }
 
   /* Feature items: stack on mobile */
-  .featureRow {
+  .aria-feature-row {
     flex-direction: column;
     gap:            var(--gap-24);
   }
 
   /* Results: stack vertically */
-  .results {
+  .aria-results {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .contentCol {
+  .aria-content-col {
     width: 100%;
   }
 
-  .body {
+  .aria-body {
     width: 100%;
     max-width: 392px;
   }
 
   /* Feature items: wrap on tablet */
-  .featureRow {
+  .aria-feature-row {
     flex-wrap: wrap;
   }
 
-  .featureItem {
+  .aria-feature-item {
     min-width: 200px;
   }
 }
@@ -361,8 +363,8 @@
    ============================================================ */
 
 @media (min-width: 768px) {
-  .row,
-  .results {
+  .aria-row,
+  .aria-results {
     min-height: var(--screen-block-min-h);
   }
 }

@@ -43,15 +43,15 @@ interface DevicesSectionProps {
 
 export default function DevicesSection({ section }: DevicesSectionProps) {
   return (
-    <div className={styles.card}>
+    <div className={styles['dev-card']}>
 
       {/* ── 1. Index — alone at top ─────────────────────────── */}
       {/*
         Figma: flex-col container, index label only
         Confirmed: Figma node 1172:6232
       */}
-      <div className={styles.indexWrap}>
-        <p className={styles.index}>{section.index}</p>
+      <div className={styles['dev-index-wrap']}>
+        <p className={styles['dev-index']}>{section.index}</p>
       </div>
 
 
@@ -63,10 +63,10 @@ export default function DevicesSection({ section }: DevicesSectionProps) {
         Right:  351px body paragraph, pre-wrap
         Confirmed: Figma node 1172:6235
       */}
-      <div className={styles.headingRow}>
-        <div className={styles.headingSpacer} aria-hidden="true" />
-        <h1 className={styles.heading}>{section.heading}</h1>
-        <p className={styles.bodyText}>{section.body}</p>
+      <div className={styles['dev-heading-row']}>
+        <div className={styles['dev-heading-spacer']} aria-hidden="true" />
+        <h1 className={styles['dev-heading']}>{section.heading}</h1>
+        <p className={styles['dev-body-text']}>{section.body}</p>
       </div>
 
 
@@ -78,18 +78,18 @@ export default function DevicesSection({ section }: DevicesSectionProps) {
         Item: divider (#e5e5e5) + title — no stars
         Confirmed: Figma node 1172:6240
       */}
-      <div className={styles.whatBlock}>
+      <div className={styles['dev-what-block']}>
 
-        <div className={styles.whatLabelRow}>
-          <h3 className={styles.whatLabel}>what i designed</h3>
-          <div className={styles.whatLine} aria-hidden="true" />
+        <div className={styles['dev-what-label-row']}>
+          <h3 className={styles['dev-what-label']}>what i designed</h3>
+          <div className={styles['dev-what-line']} aria-hidden="true" />
         </div>
 
-        <div className={styles.whatItems}>
+        <div className={styles['dev-what-items']}>
           {section.whatIDesigned.map((item, i) => (
-            <div key={i} className={styles.whatItem}>
-              <div className={styles.whatDivider} aria-hidden="true" />
-              <p className={styles.whatItemTitle}>{item}</p>
+            <div key={i} className={styles['dev-what-item']}>
+              <div className={styles['dev-what-divider']} aria-hidden="true" />
+              <p className={styles['dev-what-item-title']}>{item}</p>
             </div>
           ))}
         </div>
@@ -105,7 +105,7 @@ export default function DevicesSection({ section }: DevicesSectionProps) {
       {section.images.map((img, i) => (
         <div
           key={i}
-          className={styles.imageWrap}
+          className={styles['dev-image-wrap']}
           style={{ aspectRatio: img.aspect }}
         >
           <Image
@@ -113,7 +113,7 @@ export default function DevicesSection({ section }: DevicesSectionProps) {
             alt={img.alt}
             fill
             sizes="100vw"
-            className={styles.image}
+            className={styles['dev-image']}
           />
         </div>
       ))}
@@ -125,9 +125,9 @@ export default function DevicesSection({ section }: DevicesSectionProps) {
         "Results" label ABOVE the H3 (not beside it — column layout)
         Confirmed: Figma node 1172:6265
       */}
-      <div className={styles.results}>
-        <p className={styles.resultsLabel}>Results</p>
-        <h3 className={styles.resultsHeading}>{section.resultsText}</h3>
+      <div className={styles['dev-results']}>
+        <p className={styles['dev-results-label']}>Results</p>
+        <h3 className={styles['dev-results-heading']}>{section.resultsText}</h3>
       </div>
 
     </div>

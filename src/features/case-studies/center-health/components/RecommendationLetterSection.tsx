@@ -59,40 +59,40 @@ export default function RecommendationLetterSection({
 
   // ── Render ────────────────────────────────────────────────
   return (
-    <div className={styles.section}>
+    <div className={styles['rec-section']}>
 
       {/* ── Heading ──────────────────────────────────────── */}
-      <div className={styles.headingBlock}>
-        <h1 className={styles.heading}>{section.heading}</h1>
+      <div className={styles['rec-heading-block']}>
+        <h1 className={styles['rec-heading']}>{section.heading}</h1>
       </div>
 
       {/* ── Clickable quote card (blue) ──────────────────── */}
       <button
-        className={styles.card}
+        className={styles['rec-card']}
         onClick={() => setIsOpen(true)}
         aria-label="View recommendation letter PDF"
         type="button"
       >
-        <p className={styles.quoteText}>{section.quote}</p>
-        <p className={styles.quoteHint}>Click to view full letter</p>
+        <p className={styles['rec-quote-text']}>{section.quote}</p>
+        <p className={styles['rec-quote-hint']}>Click to view full letter</p>
       </button>
 
       {/* ── Attribution (right-aligned) ──────────────────── */}
-      <div className={styles.attribution}>
-        <p className={styles.attributionText}>{section.author}</p>
+      <div className={styles['rec-attribution']}>
+        <p className={styles['rec-attribution-text']}>{section.author}</p>
       </div>
 
       {/* ── PDF Modal ──────────────────────────────────────── */}
       {isOpen && (
         <div
-          className={styles.modalOverlay}
+          className={styles['rec-modal-overlay']}
           role="dialog"
           aria-modal="true"
           aria-label="Recommendation letter from Julian Laval"
           onClick={closeModal}
         >
           <div
-            className={styles.modalPanel}
+            className={styles['rec-modal-panel']}
             onClick={(e) => e.stopPropagation()}
           >
 
@@ -102,21 +102,21 @@ export default function RecommendationLetterSection({
               variant="light"
               onClick={closeModal}
               aria-label="Close preview"
-              className={styles.modalClose}
+              className={styles['rec-modal-close']}
             />
 
 
             {/* PDF iframe */}
-            <div className={styles.modalPdfWrap}>
+            <div className={styles['rec-modal-pdf-wrap']}>
               <iframe
-                className={styles.modalPdfIframe}
+                className={styles['rec-modal-pdf-iframe']}
                 src={section.pdfSrc}
                 title="Recommendation letter — Julian Laval, CTO"
               />
             </div>
 
             {/* Caption */}
-            <p className={styles.modalCaption}>
+            <p className={styles['rec-modal-caption']}>
               Recommendation Letter — {section.author}
             </p>
 

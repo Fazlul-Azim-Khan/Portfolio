@@ -61,19 +61,19 @@ interface HomeDashboardSectionProps {
 
 export default function HomeDashboardSection({ section }: HomeDashboardSectionProps) {
   return (
-    <div className={styles.root}>
+    <div className={styles['home-root']}>
 
       {/* ── Row: index (left) + content (right) ────────────── */}
-      <div className={styles.row}>
+      <div className={styles['home-row']}>
 
         {/* Index — left column */}
-        <p className={styles.index}>{section.index}</p>
+        <p className={styles['home-index']}>{section.index}</p>
 
         {/* Content column — heading + body + what + image + results */}
-        <div className={styles.contentCol}>
+        <div className={styles['home-content-col']}>
 
           {/* ── 1. Heading ─────────────────────────────────── */}
-          <h1 className={styles.heading}>{section.heading}</h1>
+          <h1 className={styles['home-heading']}>{section.heading}</h1>
 
 
           {/* ── 2. Body paragraph — right-aligned ──────────── */}
@@ -82,8 +82,8 @@ export default function HomeDashboardSection({ section }: HomeDashboardSectionPr
             Paragraph: w-500px
             Confirmed: Figma node 1242:11660
           */}
-          <div className={styles.bodyRow}>
-            <p className={styles.body}>{section.body}</p>
+          <div className={styles['home-body-row']}>
+            <p className={styles['home-body']}>{section.body}</p>
           </div>
 
 
@@ -94,19 +94,19 @@ export default function HomeDashboardSection({ section }: HomeDashboardSectionPr
             Grid: 3×2 with divider + star + title per cell
             Confirmed: Figma node 1242:11663
           */}
-          <div className={styles.whatBlock}>
+          <div className={styles['home-what-block']}>
 
-            <div className={styles.whatLabelRow}>
-              <h3 className={styles.whatLabel}>what i designed</h3>
-              <div className={styles.whatLine} aria-hidden="true" />
+            <div className={styles['home-what-label-row']}>
+              <h3 className={styles['home-what-label']}>what i designed</h3>
+              <div className={styles['home-what-line']} aria-hidden="true" />
             </div>
 
-            <div className={styles.featureGrid}>
+            <div className={styles['home-feature-grid']}>
               {section.whatIDesigned.map((item, i) => (
-                <div key={i} className={styles.featureItem}>
-                  <div className={styles.featureDivider} aria-hidden="true" />
-                  <p className={styles.featureStar} aria-hidden="true">*</p>
-                  <p className={styles.featureTitle}>{item}</p>
+                <div key={i} className={styles['home-feature-item']}>
+                  <div className={styles['home-feature-divider']} aria-hidden="true" />
+                  <p className={styles['home-feature-star']} aria-hidden="true">*</p>
+                  <p className={styles['home-feature-title']}>{item}</p>
                 </div>
               ))}
             </div>
@@ -124,7 +124,7 @@ export default function HomeDashboardSection({ section }: HomeDashboardSectionPr
         Confirmed: Figma node 1242:11699
       */}
       <div
-        className={styles.imageWrap}
+        className={styles['home-image-wrap']}
         style={{ aspectRatio: section.image.aspect }}
       >
         <Image
@@ -132,7 +132,7 @@ export default function HomeDashboardSection({ section }: HomeDashboardSectionPr
           alt={section.image.alt}
           fill
           sizes="100vw"
-          className={styles.image}
+          className={styles['home-image']}
         />
       </div>
 
@@ -142,9 +142,9 @@ export default function HomeDashboardSection({ section }: HomeDashboardSectionPr
         Figma: flex row, gap 24px
         Confirmed: Figma node 1242:11700
       */}
-      <div className={styles.results}>
-        <p className={styles.resultsLabel}>Results</p>
-        <h3 className={styles.resultsHeading}>{section.resultsText}</h3>
+      <div className={styles['home-results']}>
+        <p className={styles['home-results-label']}>Results</p>
+        <h3 className={styles['home-results-heading']}>{section.resultsText}</h3>
       </div>
 
     </div>

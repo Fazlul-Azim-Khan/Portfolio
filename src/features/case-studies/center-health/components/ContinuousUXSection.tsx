@@ -17,21 +17,21 @@ interface ContinuousUXSectionProps {
 
 export default function ContinuousUXSection({ section }: ContinuousUXSectionProps) {
   return (
-    <div className={styles.root}>
+    <div className={styles['cux-root']}>
 
-      <div className={styles.row}>
+      <div className={styles['cux-row']}>
 
-        <p className={styles.index}>{section.index}</p>
+        <p className={styles['cux-index']}>{section.index}</p>
 
-        <div className={styles.contentCol}>
+        <div className={styles['cux-content-col']}>
 
-          <h1 className={styles.heading}>{section.heading}</h1>
+          <h1 className={styles['cux-heading']}>{section.heading}</h1>
 
-          <div className={styles.featureRow}>
+          <div className={styles['cux-feature-row']}>
             {section.features.map((feat, i) => (
-              <div key={i} className={styles.featureItem}>
-                <div className={styles.featureDivider} aria-hidden="true" />
-                <p className={styles.featureTitle}>{feat}</p>
+              <div key={i} className={styles['cux-feature-item']}>
+                <div className={styles['cux-feature-divider']} aria-hidden="true" />
+                <p className={styles['cux-feature-title']}>{feat}</p>
               </div>
             ))}
           </div>

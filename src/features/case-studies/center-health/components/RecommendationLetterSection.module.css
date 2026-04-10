@@ -8,6 +8,8 @@
  * .attribution — right-aligned, H5 Integral CF, white
  *
  * Modal: reuses MoreWork pattern (overlay + close + iframe)
+ *
+ * Prefix: rec-
  */
 
 
@@ -16,7 +18,7 @@
    Adapted from Axion Ray ClientFeedback section
    ============================================================ */
 
-.section {
+.rec-section {
   display:         flex;
   flex-direction:  column;
   gap:             var(--gap-64);
@@ -34,13 +36,13 @@
    H1 120px Integral CF · white · uppercase
    ============================================================ */
 
-.headingBlock {
+.rec-heading-block {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
 }
 
-.heading {
+.rec-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);              /* 120px */
   font-weight:    var(--weight-regular);
@@ -58,7 +60,7 @@
    Click opens PDF modal.
    ============================================================ */
 
-.card {
+.rec-card {
   background:      #1ab1fe;                /* Center Health brand blue */
   width:           100%;
   min-height:      232px;
@@ -75,18 +77,18 @@
   cursor:          pointer;
 }
 
-.card:hover {
+.rec-card:hover {
   background: #15a3ec;
   transition: background var(--transition-fast);
 }
 
-.card:focus-visible {
+.rec-card:focus-visible {
   outline:        var(--focus-outline-width) solid var(--color-secondary);
   outline-offset: var(--focus-outline-offset);
   border-radius:  var(--radius-sm);
 }
 
-.quoteText {
+.rec-quote-text {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);          /* 20px */
   font-weight:    var(--weight-regular);
@@ -95,7 +97,7 @@
   margin:         0;
 }
 
-.quoteHint {
+.rec-quote-hint {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);        /* 12px */
   font-weight:    var(--weight-regular);
@@ -111,14 +113,14 @@
    ATTRIBUTION — right-aligned below the card
    ============================================================ */
 
-.attribution {
+.rec-attribution {
   display:        flex;
   flex-direction: column;
   align-items:    flex-end;
   width:          100%;
 }
 
-.attributionText {
+.rec-attribution-text {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);          /* 20px */
   font-weight:    var(--weight-regular);
@@ -133,7 +135,7 @@
    MODAL — OVERLAY
    ============================================================ */
 
-.modalOverlay {
+.rec-modal-overlay {
   position:        fixed;
   inset:           0;
   z-index:         var(--z-modal);
@@ -150,7 +152,7 @@
    MODAL — PANEL
    ============================================================ */
 
-.modalPanel {
+.rec-modal-panel {
   position:       relative;
   display:        flex;
   flex-direction: column;
@@ -167,7 +169,7 @@
    Visual/hover/focus styles come from the IconButton component itself.
    ============================================================ */
 
-.modalClose {
+.rec-modal-close {
   position: absolute;
   top:      -56px;
   right:    0;
@@ -178,7 +180,7 @@
    MODAL — PDF VIEWER
    ============================================================ */
 
-.modalPdfWrap {
+.rec-modal-pdf-wrap {
   position:       relative;
   width:          100%;
   height:         85vh;
@@ -187,7 +189,7 @@
   overflow:       hidden;
 }
 
-.modalPdfIframe {
+.rec-modal-pdf-iframe {
   width:  100%;
   height: 100%;
   border: none;
@@ -198,7 +200,7 @@
    MODAL — CAPTION
    ============================================================ */
 
-.modalCaption {
+.rec-modal-caption {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);
   font-weight:    var(--weight-regular);
@@ -216,31 +218,31 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  .section {
+  .rec-section {
     padding:    var(--padding-40) var(--layout-padding-x);
     min-height: unset;
     gap:        var(--gap-40);
   }
 
-  .heading {
+  .rec-heading {
     white-space: normal;
   }
 
-  .card {
+  .rec-card {
     min-height: 140px;
     padding:    24px;
   }
 
-  .attributionText {
+  .rec-attribution-text {
     white-space: normal;
     text-align:  left;
   }
 
-  .modalOverlay {
+  .rec-modal-overlay {
     padding: var(--gap-16);
   }
 
-  .modalPdfWrap {
+  .rec-modal-pdf-wrap {
     height: 75vh;
   }
 }

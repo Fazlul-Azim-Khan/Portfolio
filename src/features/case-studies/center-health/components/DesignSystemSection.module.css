@@ -1,6 +1,7 @@
 /*
  * DesignSystemSection.module.css — Center Health (003)
  * Confirmed from Figma node 1161:5872 (updated layout).
+ * Prefix: ds-
  *
  * Index-left / content-right row pattern.
  * Content column holds: heading row + feature grid + demo card + results.
@@ -12,7 +13,7 @@
    Figma: flex-col, gap-0, py-96px, w-full
    ============================================================ */
 
-.root {
+.ds-root {
   display:        flex;
   flex-direction: column;
   padding-top:    var(--gap-64);
@@ -26,7 +27,7 @@
    Figma: flex row, gap-48, items-start, w-full
    ============================================================ */
 
-.row {
+.ds-row {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-40);
@@ -39,7 +40,7 @@
    Figma: Inter 12px, #424242, uppercase, shrink-0
    ============================================================ */
 
-.index {
+.ds-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);    /* 12px */
   font-weight:    var(--weight-regular);
@@ -61,7 +62,7 @@
    fluidity across sections.
    ============================================================ */
 
-.contentCol {
+.ds-content-col {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -80,7 +81,7 @@
    between heading and features.
    ============================================================ */
 
-.contentsBlock {
+.ds-contents-block {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -94,7 +95,7 @@
    Figma: flex row, gap-48, uppercase, pre-wrap
    ============================================================ */
 
-.headingRow {
+.ds-heading-row {
   display:     flex;
   align-items: flex-start;
   gap:         48px;
@@ -102,7 +103,7 @@
   text-transform: uppercase;
 }
 
-.heading {
+.ds-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);          /* 120px fluid */
   font-weight: var(--weight-regular);
@@ -115,7 +116,7 @@
   white-space:    pre-wrap;
 }
 
-.sideText {
+.ds-side-text {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);    /* 12px */
   font-weight:    var(--weight-regular);
@@ -134,27 +135,27 @@
    Figma: grid-cols-[repeat(3,1fr)], gap 24px
    ============================================================ */
 
-.featureGrid {
+.ds-feature-grid {
   display:               grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap:                   var(--gap-24);
   width:                 100%;
 }
 
-.featureItem {
+.ds-feature-item {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
 }
 
-.featureDivider {
+.ds-feature-divider {
   width:            100%;
   height:           1px;
   background-color: var(--color-tertiary);   /* #ccc */
   flex-shrink:      0;
 }
 
-.featureStar {
+.ds-feature-star {
   font-family:    var(--font-display);
   font-size:      var(--text-h2);           /* 64px — decorative bullet */
   font-weight:    var(--weight-regular);
@@ -165,7 +166,7 @@
   padding-top:    4px;
 }
 
-.featureTitle {
+.ds-feature-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);           /* 20px desktop */
   font-weight:    var(--weight-regular);
@@ -181,7 +182,7 @@
    Figma: bg #fafafa, padding 16px, radius 8px, gap 24px
    ============================================================ */
 
-.demoCard {
+.ds-demo-card {
   display:          flex;
   flex-direction:   column;
   gap:              var(--gap-24);
@@ -192,7 +193,7 @@
 }
 
 /* Each image container — uses aspect-ratio when provided */
-.demoImageWrap {
+.ds-demo-image-wrap {
   position:      relative;
   width:         100%;
   border-radius: var(--radius-sm);
@@ -201,11 +202,11 @@
 }
 
 /* When aspect-ratio is set via inline style, let it drive the height */
-.demoImageWrap[style*="aspect-ratio"] {
+.ds-demo-image-wrap[style*="aspect-ratio"] {
   min-height: unset;
 }
 
-.demoImage {
+.ds-demo-image {
   object-fit: cover;
 }
 
@@ -215,14 +216,14 @@
    Figma: flex row, gap 24px
    ============================================================ */
 
-.results {
+.ds-results {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-24);
   width:       100%;
 }
 
-.resultsLabel {
+.ds-results-label {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);        /* 12px — Lead typography */
   font-weight:    var(--weight-regular);
@@ -234,7 +235,7 @@
   margin:         0;
 }
 
-.resultsHeading {
+.ds-results-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h3);          /* 28px → 56px fluid */
   font-weight:    var(--weight-regular);
@@ -253,66 +254,66 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  .root {
+  .ds-root {
     padding-top:    var(--padding-40);
     padding-bottom: var(--padding-40);
   }
 
   /* Stack index above content on mobile */
-  .row {
+  .ds-row {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 
-  .index {
+  .ds-index {
     padding-top: 0;
   }
 
-  .contentCol {
+  .ds-content-col {
     width: 100%;
     gap:   var(--gap-40);
   }
 
-  .contentsBlock {
+  .ds-contents-block {
     gap: var(--gap-40);
   }
 
   /* Heading row: stack heading above sidebar */
-  .headingRow {
+  .ds-heading-row {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 
-  .sideText {
+  .ds-side-text {
     width: 100%;
   }
 
   /* Features: single column on mobile */
-  .featureGrid {
+  .ds-feature-grid {
     grid-template-columns: 1fr;
   }
 
   /* Results: stack label above heading */
-  .results {
+  .ds-results {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .contentCol {
+  .ds-content-col {
     width: 100%;
   }
 
-  .featureGrid {
+  .ds-feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .headingRow {
+  .ds-heading-row {
     flex-wrap: wrap;
   }
 
-  .sideText {
+  .ds-side-text {
     width: auto;
     min-width: 180px;
   }
@@ -325,12 +326,12 @@
    gets min-height: 80vh so each feels like its own screen.
    Content stays pinned to the top of the block (natural flow).
    Pattern B: section 003 wraps heading + feature grid in
-   .contentsBlock (not .row) because .row owns index+content.
+   .ds-contents-block (not .ds-row) because .ds-row owns index+content.
    ============================================================ */
 
 @media (min-width: 768px) {
-  .contentsBlock,
-  .results {
+  .ds-contents-block,
+  .ds-results {
     min-height: var(--screen-block-min-h);
   }
 }

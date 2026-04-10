@@ -61,45 +61,45 @@ interface OnboardingSectionProps {
 
 export default function OnboardingSection({ section }: OnboardingSectionProps) {
   return (
-    <div className={styles.root}>
+    <div className={styles['onb-root']}>
 
       {/* ── Row: index (left) + content (right) ────────────── */}
-      <div className={styles.row}>
+      <div className={styles['onb-row']}>
 
         {/* Index — left column */}
-        <p className={styles.index}>{section.index}</p>
+        <p className={styles['onb-index']}>{section.index}</p>
 
         {/* Content column — heading + body + what + image + results */}
-        <div className={styles.contentCol}>
+        <div className={styles['onb-content-col']}>
 
           {/* ── 1. Heading ─────────────────────────────────── */}
-          <h1 className={styles.heading}>{section.heading}</h1>
+          <h1 className={styles['onb-heading']}>{section.heading}</h1>
 
 
           {/* ── 2. Body paragraph — right-aligned ──────────── */}
-          <div className={styles.bodyRow}>
-            <div className={styles.bodySpacer} aria-hidden="true" />
-            <div className={styles.bodyRight}>
-              <p className={styles.bodyText}>{section.body}</p>
+          <div className={styles['onb-body-row']}>
+            <div className={styles['onb-body-spacer']} aria-hidden="true" />
+            <div className={styles['onb-body-right']}>
+              <p className={styles['onb-body-text']}>{section.body}</p>
             </div>
           </div>
 
 
           {/* ── 3. What I Designed ─────────────────────────── */}
-          <div className={styles.whatBlock}>
+          <div className={styles['onb-what-block']}>
 
             {/* Label row — heading + extending line */}
-            <div className={styles.whatLabelRow}>
-              <h3 className={styles.whatLabel}>what i designed</h3>
-              <div className={styles.whatLine} aria-hidden="true" />
+            <div className={styles['onb-what-label-row']}>
+              <h3 className={styles['onb-what-label']}>what i designed</h3>
+              <div className={styles['onb-what-line']} aria-hidden="true" />
             </div>
 
             {/* Flex-wrap items — divider + title (no stars) */}
-            <div className={styles.whatItems}>
+            <div className={styles['onb-what-items']}>
               {section.whatIDesigned.map((item, i) => (
-                <div key={i} className={styles.whatItem}>
-                  <div className={styles.whatDivider} aria-hidden="true" />
-                  <p className={styles.whatItemTitle}>{item}</p>
+                <div key={i} className={styles['onb-what-item']}>
+                  <div className={styles['onb-what-divider']} aria-hidden="true" />
+                  <p className={styles['onb-what-item-title']}>{item}</p>
                 </div>
               ))}
             </div>
@@ -112,20 +112,20 @@ export default function OnboardingSection({ section }: OnboardingSectionProps) {
       </div>
 
       {/* ── 4. Full-width image — outside row for full section width ── */}
-      <div className={styles.imageWrap}>
+      <div className={styles['onb-image-wrap']}>
         <Image
           src={section.image.src}
           alt={section.image.alt}
           fill
           sizes="100vw"
-          className={styles.image}
+          className={styles['onb-image']}
         />
       </div>
 
       {/* ── 5. Results — full section width ──────────────── */}
-      <div className={styles.results}>
-        <p className={styles.resultsLabel}>Results</p>
-        <h3 className={styles.resultsHeading}>{section.resultsText}</h3>
+      <div className={styles['onb-results']}>
+        <p className={styles['onb-results-label']}>Results</p>
+        <h3 className={styles['onb-results-heading']}>{section.resultsText}</h3>
       </div>
 
     </div>

@@ -60,19 +60,19 @@ interface AriaSectionProps {
 
 export default function AriaSection({ section }: AriaSectionProps) {
   return (
-    <div className={styles.root}>
+    <div className={styles['aria-root']}>
 
       {/* ── Row: index (left) + content (right) ────────────── */}
-      <div className={styles.row}>
+      <div className={styles['aria-row']}>
 
         {/* Index — left column */}
-        <p className={styles.index}>{section.index}</p>
+        <p className={styles['aria-index']}>{section.index}</p>
 
         {/* Content column */}
-        <div className={styles.contentCol}>
+        <div className={styles['aria-content-col']}>
 
           {/* ── 1. Heading ─────────────────────────────────── */}
-          <h1 className={styles.heading}>{section.heading}</h1>
+          <h1 className={styles['aria-heading']}>{section.heading}</h1>
 
 
           {/* ── 2. Body paragraph — right-aligned ──────────── */}
@@ -81,8 +81,8 @@ export default function AriaSection({ section }: AriaSectionProps) {
             Paragraph: w-392px
             Confirmed: Figma node 1242:11706
           */}
-          <div className={styles.bodyRow}>
-            <p className={styles.body}>{section.body}</p>
+          <div className={styles['aria-body-row']}>
+            <p className={styles['aria-body']}>{section.body}</p>
           </div>
 
 
@@ -92,15 +92,15 @@ export default function AriaSection({ section }: AriaSectionProps) {
 
       {/* ── 3. Sub-sections — full section width ─────────── */}
       {section.subSections.map((sub, i) => (
-        <div key={i} className={styles.subSection}>
+        <div key={i} className={styles['aria-sub-section']}>
 
           {/* Sub-heading row — py-64, justify-between */}
-          <div className={styles.subHeadingRow}>
+          <div className={styles['aria-sub-heading-row']}>
             <h3
-              className={`${styles.subHeading} ${
+              className={`${styles['aria-sub-heading']} ${
                 sub.headingAlign === 'right'
-                  ? styles.subHeadingRight
-                  : styles.subHeadingLeft
+                  ? styles['aria-sub-heading-right']
+                  : styles['aria-sub-heading-left']
               }`}
               style={sub.headingWidth ? { width: sub.headingWidth } : undefined}
             >
@@ -110,11 +110,11 @@ export default function AriaSection({ section }: AriaSectionProps) {
 
           {/* Feature items — only if sub-section has features */}
           {sub.features && sub.features.length > 0 && (
-            <div className={styles.featureRow}>
+            <div className={styles['aria-feature-row']}>
               {sub.features.map((feat, j) => (
-                <div key={j} className={styles.featureItem}>
-                  <div className={styles.featureDivider} aria-hidden="true" />
-                  <p className={styles.featureTitle}>{feat}</p>
+                <div key={j} className={styles['aria-feature-item']}>
+                  <div className={styles['aria-feature-divider']} aria-hidden="true" />
+                  <p className={styles['aria-feature-title']}>{feat}</p>
                 </div>
               ))}
             </div>
@@ -122,7 +122,7 @@ export default function AriaSection({ section }: AriaSectionProps) {
 
           {/* Image — full section width */}
           <div
-            className={`${styles.imageWrap} ${sub.image.rounded ? styles.imageRounded : ''}`}
+            className={`${styles['aria-image-wrap']} ${sub.image.rounded ? styles['aria-image-rounded'] : ''}`}
             style={{ aspectRatio: sub.image.aspect }}
           >
             <Image
@@ -130,7 +130,7 @@ export default function AriaSection({ section }: AriaSectionProps) {
               alt={sub.image.alt}
               fill
               sizes="100vw"
-              className={styles.image}
+              className={styles['aria-image']}
             />
           </div>
 
@@ -143,9 +143,9 @@ export default function AriaSection({ section }: AriaSectionProps) {
         Figma: flex row, gap 24px
         Confirmed: Figma node 1242:11740
       */}
-      <div className={styles.results}>
-        <p className={styles.resultsLabel}>Results</p>
-        <h3 className={styles.resultsHeading}>{section.resultsText}</h3>
+      <div className={styles['aria-results']}>
+        <p className={styles['aria-results-label']}>Results</p>
+        <h3 className={styles['aria-results-heading']}>{section.resultsText}</h3>
       </div>
 
     </div>

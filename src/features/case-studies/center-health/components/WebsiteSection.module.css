@@ -5,6 +5,8 @@
  * Layout: index-left / content-right ROW (gap-40).
  * Content column (gap-64): heading → features → 4 images → results.
  * py-64px, border-b.
+ *
+ * Prefix: web-
  */
 
 
@@ -12,7 +14,7 @@
    ROOT — outer section container
    ============================================================ */
 
-.root {
+.web-root {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -29,7 +31,7 @@
    Figma: flex row, gap-40, items-start
    ============================================================ */
 
-.row {
+.web-row {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-40);
@@ -41,7 +43,7 @@
    INDEX — left column
    ============================================================ */
 
-.index {
+.web-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);
   font-weight:    var(--weight-regular);
@@ -61,7 +63,7 @@
    Figma: flex-1, flex-col, gap-64, items-center, justify-center
    ============================================================ */
 
-.contentCol {
+.web-content-col {
   display:         flex;
   flex-direction:  column;
   align-items:     center;
@@ -78,7 +80,7 @@
    pre-wrap for the "Website:\n…" line break
    ============================================================ */
 
-.heading {
+.web-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);
   font-weight: var(--weight-regular);
@@ -95,14 +97,14 @@
    FEATURE ITEMS — flex row, gap-40
    ============================================================ */
 
-.featureRow {
+.web-feature-row {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-40);
   width:       100%;
 }
 
-.featureItem {
+.web-feature-item {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -111,14 +113,14 @@
   min-width:      0;
 }
 
-.featureDivider {
+.web-feature-divider {
   width:            100%;
   height:           1px;
   background-color: #e5e5e5;
   flex-shrink:      0;
 }
 
-.featureTitle {
+.web-feature-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);
   font-weight:    var(--weight-regular);
@@ -134,17 +136,17 @@
    IMAGES — stacked, full-width with aspect ratios
    ============================================================ */
 
-.imageWrap {
+.web-image-wrap {
   position: relative;
   width:    100%;
   overflow: hidden;
 }
 
-.imageRounded {
+.web-image-rounded {
   border-radius: var(--radius-sm);
 }
 
-.image {
+.web-image {
   object-fit: cover;
 }
 
@@ -153,14 +155,14 @@
    RESULTS — row: label + statement
    ============================================================ */
 
-.results {
+.web-results {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-24);
   width:       100%;
 }
 
-.resultsLabel {
+.web-results-label {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);
   font-weight:    var(--weight-regular);
@@ -172,7 +174,7 @@
   margin:         0;
 }
 
-.resultsHeading {
+.web-results-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h3);          /* 28px → 56px fluid */
   font-weight:    var(--weight-regular);
@@ -190,41 +192,41 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  .root {
+  .web-root {
     padding-top:    var(--padding-40);
     padding-bottom: var(--padding-40);
   }
 
-  .row {
+  .web-row {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 
-  .index {
+  .web-index {
     padding-top: 0;
   }
 
-  .contentCol {
+  .web-content-col {
     gap: var(--gap-40);
   }
 
-  .featureRow {
+  .web-feature-row {
     flex-direction: column;
     gap:            var(--gap-24);
   }
 
-  .results {
+  .web-results {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .featureRow {
+  .web-feature-row {
     flex-wrap: wrap;
   }
 
-  .featureItem {
+  .web-feature-item {
     min-width: 200px;
   }
 }
@@ -238,8 +240,8 @@
    ============================================================ */
 
 @media (min-width: 768px) {
-  .row,
-  .results {
+  .web-row,
+  .web-results {
     min-height: var(--screen-block-min-h);
   }
 }

@@ -5,6 +5,8 @@
  * Navigation card linking to the next case study.
  * Layout: image (1328/710, rounded-8) + text row (gap-16).
  * Text row: index "01" (left) + content column (label + title, gap-11).
+ *
+ * Prefix: ncs-
  */
 
 
@@ -13,7 +15,7 @@
    flex column, gap-16, full width
    ============================================================ */
 
-.root {
+.ncs-root {
   display:           flex;
   flex-direction:    column;
   justify-content:   center;
@@ -29,12 +31,12 @@
   scroll-snap-align: start;
 }
 
-.root:hover .image {
+.ncs-root:hover .ncs-image {
   opacity:    0.88;
   transition: opacity var(--transition-base);
 }
 
-.root:focus-visible {
+.ncs-root:focus-visible {
   outline:        var(--focus-outline-width) solid var(--color-primary);
   outline-offset: var(--focus-outline-offset);
   border-radius:  var(--radius-sm);
@@ -46,7 +48,7 @@
    aspect-ratio 1328/710, rounded-8, overflow hidden
    ============================================================ */
 
-.imageWrap {
+.ncs-image-wrap {
   position:      relative;
   width:         100%;
   aspect-ratio:  1328 / 710;
@@ -56,7 +58,7 @@
   flex-shrink:   0;
 }
 
-.image {
+.ncs-image {
   object-fit:      cover;
   object-position: center;
   transition:      opacity var(--transition-base);
@@ -68,7 +70,7 @@
    flex row, gap-64, items-start, uppercase
    ============================================================ */
 
-.header {
+.ncs-header {
   display:        flex;
   align-items:    flex-start;
   gap:            var(--gap-64);
@@ -82,7 +84,7 @@
    Lead: Inter 12px, line-height 20px, --color-primary
    ============================================================ */
 
-.index {
+.ncs-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);     /* 12px */
   font-weight:    var(--weight-regular);
@@ -100,7 +102,7 @@
    flex column, gap-11px
    ============================================================ */
 
-.content {
+.ncs-content {
   display:        flex;
   flex-direction: column;
   gap:            11px;
@@ -114,7 +116,7 @@
    Lead: Inter 12px, line-height 20px, --color-primary
    ============================================================ */
 
-.label {
+.ncs-label {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);     /* 12px */
   font-weight:    var(--weight-regular);
@@ -130,7 +132,7 @@
    TITLE — H4 32px Integral CF
    ============================================================ */
 
-.title {
+.ncs-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h4);       /* 32px */
   font-weight:    var(--weight-regular);
@@ -146,12 +148,12 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  .root {
+  .ncs-root {
     padding-top:    var(--gap-40);
     padding-bottom: var(--gap-40);
   }
 
-  .header {
+  .ncs-header {
     flex-direction: column;
     gap:            var(--gap-8);
   }

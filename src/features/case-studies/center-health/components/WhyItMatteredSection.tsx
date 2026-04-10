@@ -57,38 +57,38 @@ interface WhyItMatteredSectionProps {
 
 export default function WhyItMatteredSection({ section }: WhyItMatteredSectionProps) {
   return (
-    <section className={styles.section}>
+    <section className={styles['wim-section']}>
 
       {/* ── Top-level row: index (left) + content (right) ── */}
-      <div className={styles.row}>
+      <div className={styles['wim-row']}>
 
         {/* Index — left column */}
-        <p className={styles.index}>{section.index}</p>
+        <p className={styles['wim-index']}>{section.index}</p>
 
         {/* Content column — heading + cards */}
-        <div className={styles.contentCol}>
+        <div className={styles['wim-content-col']}>
 
           {/* Heading — constrained to 732px, centered in column */}
-          <h1 className={styles.heading}>{section.heading}</h1>
+          <h1 className={styles['wim-heading']}>{section.heading}</h1>
 
           {/* Cards row — people (left) + quote (right) */}
-          <div className={styles.cardsRow}>
+          <div className={styles['wim-cards-row']}>
 
             {/* Left — stacked person cards */}
-            <div className={styles.peopleCol}>
+            <div className={styles['wim-people-col']}>
               {section.people.map((person, i) => (
-                <div key={i} className={styles.card}>
-                  <div className={styles.cardDivider} aria-hidden="true" />
-                  <h3 className={styles.cardName}>{person.name}</h3>
-                  <p className={styles.cardDetail}>{person.detail}</p>
+                <div key={i} className={styles['wim-card']}>
+                  <div className={styles['wim-card-divider']} aria-hidden="true" />
+                  <h3 className={styles['wim-card-name']}>{person.name}</h3>
+                  <p className={styles['wim-card-detail']}>{person.detail}</p>
                 </div>
               ))}
             </div>
 
             {/* Right — quote card */}
-            <div className={[styles.card, styles.quoteCard].join(' ')}>
-              <div className={styles.cardDivider} aria-hidden="true" />
-              <p className={styles.quote}>{section.quote}</p>
+            <div className={[styles['wim-card'], styles['wim-quote-card']].join(' ')}>
+              <div className={styles['wim-card-divider']} aria-hidden="true" />
+              <p className={styles['wim-quote']}>{section.quote}</p>
             </div>
 
           </div>

@@ -31,28 +31,28 @@ interface ProviderPortalSectionProps {
 
 export default function ProviderPortalSection({ section }: ProviderPortalSectionProps) {
   return (
-    <div className={styles.root}>
+    <div className={styles['pps-root']}>
 
-      <div className={styles.row}>
+      <div className={styles['pps-row']}>
 
-        <p className={styles.index}>{section.index}</p>
+        <p className={styles['pps-index']}>{section.index}</p>
 
-        <div className={styles.contentCol}>
+        <div className={styles['pps-content-col']}>
 
           {/* ── 1. Heading ─────────────────────────────────── */}
-          <h1 className={styles.heading}>{section.heading}</h1>
+          <h1 className={styles['pps-heading']}>{section.heading}</h1>
 
           {/* ── 2. Body — right-aligned 369px ─────────────── */}
-          <div className={styles.bodyRow}>
-            <p className={styles.body}>{section.body}</p>
+          <div className={styles['pps-body-row']}>
+            <p className={styles['pps-body']}>{section.body}</p>
           </div>
 
           {/* ── 3. Feature items — gap-40 ─────────────────── */}
-          <div className={styles.featureRow}>
+          <div className={styles['pps-feature-row']}>
             {section.features.map((feat, i) => (
-              <div key={i} className={styles.featureItem}>
-                <div className={styles.featureDivider} aria-hidden="true" />
-                <p className={styles.featureTitle}>{feat}</p>
+              <div key={i} className={styles['pps-feature-item']}>
+                <div className={styles['pps-feature-divider']} aria-hidden="true" />
+                <p className={styles['pps-feature-title']}>{feat}</p>
               </div>
             ))}
           </div>
@@ -63,7 +63,7 @@ export default function ProviderPortalSection({ section }: ProviderPortalSection
 
       {/* ── 4. Image — outside row for full section width ──── */}
       <div
-        className={styles.imageWrap}
+        className={styles['pps-image-wrap']}
         style={{ aspectRatio: section.image.aspect }}
       >
         <Image
@@ -71,14 +71,14 @@ export default function ProviderPortalSection({ section }: ProviderPortalSection
           alt={section.image.alt}
           fill
           sizes="100vw"
-          className={styles.image}
+          className={styles['pps-image']}
         />
       </div>
 
       {/* ── 5. Results — full section width ──────────────── */}
-      <div className={styles.results}>
-        <p className={styles.resultsLabel}>Results</p>
-        <h3 className={styles.resultsHeading}>{section.resultsText}</h3>
+      <div className={styles['pps-results']}>
+        <p className={styles['pps-results-label']}>Results</p>
+        <h3 className={styles['pps-results-heading']}>{section.resultsText}</h3>
       </div>
 
     </div>

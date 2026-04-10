@@ -1,6 +1,7 @@
 /*
  * HomeDashboardSection.module.css — Center Health (006)
  * Confirmed from Figma node 1161:6208 (updated layout).
+ * Prefix: home-
  *
  * Index-left / content-right row pattern.
  * Content column holds: heading + body (right-aligned) + whatBlock + image + results.
@@ -13,7 +14,7 @@
    Figma: flex-col, py-96px, border-b, items-end
    ============================================================ */
 
-.root {
+.home-root {
   display:        flex;
   flex-direction: column;
   align-items:    flex-end;            /* floats narrow children to right */
@@ -30,7 +31,7 @@
    Figma: flex row, gap-48, items-start, w-full
    ============================================================ */
 
-.row {
+.home-row {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-40);
@@ -43,7 +44,7 @@
    Figma: Inter 12px, #424242, uppercase, shrink-0
    ============================================================ */
 
-.index {
+.home-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);
   font-weight:    var(--weight-regular);
@@ -63,7 +64,7 @@
    Figma: flex-col, flex-1, gap-64, items-start
    ============================================================ */
 
-.contentCol {
+.home-content-col {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -79,7 +80,7 @@
    Figma: Integral CF, 56px, tracking -0.84px, black, uppercase
    ============================================================ */
 
-.heading {
+.home-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);
   font-weight: var(--weight-regular);
@@ -96,14 +97,14 @@
    Figma: flex row, items-center, justify-end, w-full
    ============================================================ */
 
-.bodyRow {
+.home-body-row {
   display:         flex;
   align-items:     center;
   justify-content: flex-end;
   width:           100%;
 }
 
-.body {
+.home-body {
   font-family:  var(--font-body);
   font-size:    var(--text-body);
   font-weight:  var(--weight-regular);
@@ -120,7 +121,7 @@
    Full-width block
    ============================================================ */
 
-.whatBlock {
+.home-what-block {
   display:        flex;
   flex-direction: column;
   gap:            0;
@@ -128,7 +129,7 @@
 }
 
 /* Label row: "what i designed" (flex-1) + extending black line (flex-1) */
-.whatLabelRow {
+.home-what-label-row {
   display:     flex;
   align-items: center;
   gap:         var(--gap-24);
@@ -136,7 +137,7 @@
   width:       100%;
 }
 
-.whatLabel {
+.home-what-label {
   font-family:    var(--font-display);
   font-size:      var(--text-h4);
   font-weight:    var(--weight-regular);
@@ -148,7 +149,7 @@
   flex:           1 0 0;              /* Figma: flex-1 (equal with line) */
 }
 
-.whatLine {
+.home-what-line {
   flex:             1 0 0;
   height:           1px;
   background-color: var(--color-primary);
@@ -160,27 +161,27 @@
    Figma: grid-cols-[repeat(3,1fr)], gap 24px
    ============================================================ */
 
-.featureGrid {
+.home-feature-grid {
   display:               grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap:                   var(--gap-24);
   width:                 100%;
 }
 
-.featureItem {
+.home-feature-item {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
 }
 
-.featureDivider {
+.home-feature-divider {
   width:            100%;
   height:           1px;
   background-color: var(--color-tertiary);   /* #ccc */
   flex-shrink:      0;
 }
 
-.featureStar {
+.home-feature-star {
   font-family:    var(--font-display);
   font-size:      var(--text-h2);            /* 64px */
   font-weight:    var(--weight-regular);
@@ -191,7 +192,7 @@
   padding-top:    4px;
 }
 
-.featureTitle {
+.home-feature-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);            /* 20px */
   font-weight:    var(--weight-regular);
@@ -207,14 +208,14 @@
    Figma: aspect-[1504/1128], rounded-sm (8px)
    ============================================================ */
 
-.imageWrap {
+.home-image-wrap {
   position:      relative;
   width:         100%;
   border-radius: var(--radius-sm);
   overflow:      hidden;
 }
 
-.image {
+.home-image {
   object-fit: cover;
 }
 
@@ -225,14 +226,14 @@
    Figma: flex row, gap 24px
    ============================================================ */
 
-.results {
+.home-results {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-24);
   width:       100%;
 }
 
-.resultsLabel {
+.home-results-label {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);        /* 12px — Lead typography */
   font-weight:    var(--weight-regular);
@@ -245,7 +246,7 @@
 }
 
 /* H4 32px — smaller scale, different from other sections' H3 56px results */
-.resultsHeading {
+.home-results-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h3);          /* 28px → 56px fluid */
   font-weight:    var(--weight-regular);
@@ -263,70 +264,70 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  .root {
+  .home-root {
     padding-top:    var(--padding-40);
     padding-bottom: var(--padding-40);
     align-items:    flex-start;    /* remove right-alignment on mobile */
   }
 
   /* Stack index above content on mobile */
-  .row {
+  .home-row {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 
-  .index {
+  .home-index {
     padding-top: 0;
   }
 
-  .contentCol {
+  .home-content-col {
     gap: var(--gap-40);
   }
 
   /* Body row: full-width on mobile */
-  .bodyRow {
+  .home-body-row {
     justify-content: flex-start;
   }
 
-  .body {
+  .home-body {
     width: 100%;
   }
 
   /* What label row: auto height, label can wrap */
-  .whatLabelRow {
+  .home-what-label-row {
     height: auto;
     padding-bottom: var(--gap-16);
   }
 
-  .whatLabel {
+  .home-what-label {
     white-space: normal;
   }
 
   /* Grid: single column */
-  .featureGrid {
+  .home-feature-grid {
     grid-template-columns: 1fr;
   }
 
   /* Results: stack vertically */
-  .results {
+  .home-results {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .contentCol {
+  .home-content-col {
     width: 100%;
   }
 
   /* Body: narrower viewport — constrain width */
-  .body {
+  .home-body {
     width: 100%;
     max-width: 500px;
   }
 
   /* Grid: 2 columns on tablet */
-  .featureGrid {
+  .home-feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -340,8 +341,8 @@
    ============================================================ */
 
 @media (min-width: 768px) {
-  .row,
-  .results {
+  .home-row,
+  .home-results {
     min-height: var(--screen-block-min-h);
   }
 }

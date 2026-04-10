@@ -5,6 +5,8 @@
  * Blue brand card (#1ab1fe) with index-left / content-right row.
  * Content column holds heading + 3-column scope grid.
  * All text: white (--color-secondary).
+ *
+ * Prefix: scope-
  */
 
 
@@ -13,7 +15,7 @@
    Figma: bg #1ab1fe, px-16, py-64, radius-16, gap-0
    ============================================================ */
 
-.card {
+.scope-card {
   display:          flex;
   flex-direction:   column;
 
@@ -29,7 +31,7 @@
    Figma: flex row, gap-24, items-start, w-full
    ============================================================ */
 
-.row {
+.scope-row {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-24);
@@ -43,7 +45,7 @@
    Figma: 14px, white, uppercase, shrink-0
    ============================================================ */
 
-.index {
+.scope-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);      /* 14px in Figma — maps to lead */
   font-weight:    var(--weight-regular);
@@ -61,7 +63,7 @@
    Figma: flex-1, flex-col, gap-64, items-start
    ============================================================ */
 
-.contentCol {
+.scope-content-col {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -77,7 +79,7 @@
    Figma: Integral CF, 56px, tracking -0.84px, white uppercase
    ============================================================ */
 
-.heading {
+.scope-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);           /* 120px fluid */
   font-weight: var(--weight-regular);
@@ -93,7 +95,7 @@
    Figma: grid-cols-[repeat(3,1fr)], gap 10px
    ============================================================ */
 
-.grid {
+.scope-grid {
   display:               grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap:                   10px;
@@ -106,21 +108,21 @@
    Each item: 1px white top line, then content column
    ============================================================ */
 
-.item {
+.scope-item {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
   gap:            0;
 }
 
-.divider {
+.scope-divider {
   width:            100%;
   height:           1px;
   background-color: var(--color-secondary);
   flex-shrink:      0;
 }
 
-.star {
+.scope-star {
   font-family:    var(--font-display);
   font-size:      var(--text-h2);           /* 64px desktop — decorative bullet */
   font-weight:    var(--weight-regular);
@@ -131,7 +133,7 @@
   padding-top:    4px;
 }
 
-.itemTitle {
+.scope-item-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h4);           /* 32px desktop */
   font-weight:    var(--weight-regular);
@@ -147,27 +149,27 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  .card {
+  .scope-card {
     padding: var(--gap-40) var(--padding-16);
   }
 
   /* Stack index above content on mobile */
-  .row {
+  .scope-row {
     flex-direction: column;
     gap:            var(--gap-8);
   }
 
-  .contentCol {
+  .scope-content-col {
     gap: var(--gap-40);
   }
 
-  .grid {
+  .scope-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .grid {
+  .scope-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

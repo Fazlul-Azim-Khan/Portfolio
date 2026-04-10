@@ -29,26 +29,26 @@ interface WebsiteSectionProps {
 
 export default function WebsiteSection({ section }: WebsiteSectionProps) {
   return (
-    <div className={styles.root}>
+    <div className={styles['web-root']}>
 
       {/* ── Row: index (left) + content (right) ──────────── */}
-      <div className={styles.row}>
+      <div className={styles['web-row']}>
 
         {/* Index — left column */}
-        <p className={styles.index}>{section.index}</p>
+        <p className={styles['web-index']}>{section.index}</p>
 
         {/* Content column — right side */}
-        <div className={styles.contentCol}>
+        <div className={styles['web-content-col']}>
 
           {/* 1. Heading */}
-          <h1 className={styles.heading}>{section.heading}</h1>
+          <h1 className={styles['web-heading']}>{section.heading}</h1>
 
           {/* 2. Feature items — divider + title */}
-          <div className={styles.featureRow}>
+          <div className={styles['web-feature-row']}>
             {section.features.map((feat, i) => (
-              <div key={i} className={styles.featureItem}>
-                <div className={styles.featureDivider} aria-hidden="true" />
-                <p className={styles.featureTitle}>{feat}</p>
+              <div key={i} className={styles['web-feature-item']}>
+                <div className={styles['web-feature-divider']} aria-hidden="true" />
+                <p className={styles['web-feature-title']}>{feat}</p>
               </div>
             ))}
           </div>
@@ -61,7 +61,7 @@ export default function WebsiteSection({ section }: WebsiteSectionProps) {
       {section.images.map((img, i) => (
         <div
           key={i}
-          className={`${styles.imageWrap} ${img.rounded ? styles.imageRounded : ''}`}
+          className={`${styles['web-image-wrap']} ${img.rounded ? styles['web-image-rounded'] : ''}`}
           style={{ aspectRatio: img.aspect }}
         >
           <Image
@@ -69,15 +69,15 @@ export default function WebsiteSection({ section }: WebsiteSectionProps) {
             alt={img.alt}
             fill
             sizes="100vw"
-            className={styles.image}
+            className={styles['web-image']}
           />
         </div>
       ))}
 
       {/* 4. Results — full section width */}
-      <div className={styles.results}>
-        <p className={styles.resultsLabel}>Results</p>
-        <h3 className={styles.resultsHeading}>{section.resultsText}</h3>
+      <div className={styles['web-results']}>
+        <p className={styles['web-results-label']}>Results</p>
+        <h3 className={styles['web-results-heading']}>{section.resultsText}</h3>
       </div>
 
     </div>

@@ -33,16 +33,16 @@ interface MealLoggingSectionProps {
 
 export default function MealLoggingSection({ section }: MealLoggingSectionProps) {
   return (
-    <div className={styles.root}>
+    <div className={styles['meal-root']}>
 
       {/* ── Row: index (left) + content (right) ────────────── */}
-      <div className={styles.row}>
+      <div className={styles['meal-row']}>
 
         {/* Index — left column */}
-        <p className={styles.index}>{section.index}</p>
+        <p className={styles['meal-index']}>{section.index}</p>
 
         {/* Content column */}
-        <div className={styles.contentCol}>
+        <div className={styles['meal-content-col']}>
 
           {/* ── 1. Heading row — heading + body side-by-side ── */}
           {/*
@@ -51,9 +51,9 @@ export default function MealLoggingSection({ section }: MealLoggingSectionProps)
             Right: body paragraph (310px, pre-wrap)
             Confirmed: Figma node 1242:11770
           */}
-          <div className={styles.headingRow}>
-            <h1 className={styles.heading}>{section.heading}</h1>
-            <p className={styles.body}>{section.body}</p>
+          <div className={styles['meal-heading-row']}>
+            <h1 className={styles['meal-heading']}>{section.heading}</h1>
+            <p className={styles['meal-body']}>{section.body}</p>
           </div>
 
 
@@ -63,11 +63,11 @@ export default function MealLoggingSection({ section }: MealLoggingSectionProps)
             Item: divider (#e5e5e5) + H5 title — no stars
             Confirmed: Figma node 1242:11772
           */}
-          <div className={styles.featureRow}>
+          <div className={styles['meal-feature-row']}>
             {section.features.map((feat, i) => (
-              <div key={i} className={styles.featureItem}>
-                <div className={styles.featureDivider} aria-hidden="true" />
-                <p className={styles.featureTitle}>{feat}</p>
+              <div key={i} className={styles['meal-feature-item']}>
+                <div className={styles['meal-feature-divider']} aria-hidden="true" />
+                <p className={styles['meal-feature-title']}>{feat}</p>
               </div>
             ))}
           </div>
@@ -83,7 +83,7 @@ export default function MealLoggingSection({ section }: MealLoggingSectionProps)
         Confirmed: Figma node 1242:11789
       */}
       <div
-        className={styles.imageWrap}
+        className={styles['meal-image-wrap']}
         style={{ aspectRatio: section.image.aspect }}
       >
         <Image
@@ -91,7 +91,7 @@ export default function MealLoggingSection({ section }: MealLoggingSectionProps)
           alt={section.image.alt}
           fill
           sizes="100vw"
-          className={styles.image}
+          className={styles['meal-image']}
         />
       </div>
 
@@ -101,9 +101,9 @@ export default function MealLoggingSection({ section }: MealLoggingSectionProps)
         Figma: flex row, gap 24px
         Confirmed: Figma node 1242:11790
       */}
-      <div className={styles.results}>
-        <p className={styles.resultsLabel}>Results</p>
-        <h3 className={styles.resultsHeading}>{section.resultsText}</h3>
+      <div className={styles['meal-results']}>
+        <p className={styles['meal-results-label']}>Results</p>
+        <h3 className={styles['meal-results-heading']}>{section.resultsText}</h3>
       </div>
 
     </div>

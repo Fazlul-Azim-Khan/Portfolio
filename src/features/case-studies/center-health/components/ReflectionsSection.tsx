@@ -18,23 +18,23 @@ interface ReflectionsSectionProps {
 
 export default function ReflectionsSection({ section }: ReflectionsSectionProps) {
   return (
-    <div className={styles.root}>
+    <div className={styles['ch-ref-root']}>
 
-      <div className={styles.row}>
+      <div className={styles['ch-ref-row']}>
 
-        <p className={styles.index}>{section.index}</p>
+        <p className={styles['ch-ref-index']}>{section.index}</p>
 
-        <div className={styles.contentCol}>
+        <div className={styles['ch-ref-content-col']}>
 
-          <h1 className={styles.heading}>{section.heading}</h1>
+          <h1 className={styles['ch-ref-heading']}>{section.heading}</h1>
 
-          <div className={styles.grid}>
+          <div className={styles['ch-ref-grid']}>
             {section.reflections.map((item, i) => (
-              <div key={i} className={styles.cell}>
-                <div className={styles.cellDivider} aria-hidden="true" />
-                <div className={styles.card}>
-                  <p className={styles.cardNumber}>{item.number}</p>
-                  <p className={styles.cardText}>{item.text}</p>
+              <div key={i} className={styles['ch-ref-cell']}>
+                <div className={styles['ch-ref-cell-divider']} aria-hidden="true" />
+                <div className={styles['ch-ref-card']}>
+                  <p className={styles['ch-ref-card-number']}>{item.number}</p>
+                  <p className={styles['ch-ref-card-text']}>{item.text}</p>
                 </div>
               </div>
             ))}

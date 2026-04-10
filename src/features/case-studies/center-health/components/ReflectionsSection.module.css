@@ -6,10 +6,12 @@
  * Content column: heading + 3×2 numbered grid.
  * Each cell: divider + card (white bg, rounded-16, p-4, gap-24).
  * py ~77px, white border-b (subtle).
+ *
+ * Prefix: ch-ref-
  */
 
 
-.root {
+.ch-ref-root {
   display:         flex;
   flex-direction:  column;
   align-items:     flex-start;
@@ -22,14 +24,14 @@
 
 /* ── Row — index (left) + content (right) ───────────────── */
 
-.row {
+.ch-ref-row {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-40);
   width:       100%;
 }
 
-.index {
+.ch-ref-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);      /* 12px */
   font-weight:    var(--weight-regular);
@@ -46,7 +48,7 @@
 
 /* ── Content column ─────────────────────────────────────── */
 
-.contentCol {
+.ch-ref-content-col {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -56,7 +58,7 @@
   min-width:      0;
 }
 
-.heading {
+.ch-ref-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);
   font-weight: var(--weight-regular);
@@ -71,7 +73,7 @@
 
 /* ── Reflections grid — 3×2 ─────────────────────────────── */
 
-.grid {
+.ch-ref-grid {
   display:               grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap:                   var(--gap-24);
@@ -79,14 +81,14 @@
 }
 
 /* Each cell: divider + card */
-.cell {
+.ch-ref-cell {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
   justify-content: center;
 }
 
-.cellDivider {
+.ch-ref-cell-divider {
   width:            100%;
   height:           1px;
   background-color: #e5e5e5;
@@ -94,7 +96,7 @@
 }
 
 /* Card: white bg, rounded-16, p-4, gap-24 */
-.card {
+.ch-ref-card {
   display:          flex;
   flex-direction:   column;
   align-items:      flex-start;
@@ -107,7 +109,7 @@
   min-height:       0;
 }
 
-.cardNumber {
+.ch-ref-card-number {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);        /* 20px */
   font-weight:    var(--weight-regular);
@@ -118,7 +120,7 @@
   white-space:    nowrap;
 }
 
-.cardText {
+.ch-ref-card-text {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);        /* 20px */
   font-weight:    var(--weight-regular);
@@ -133,32 +135,32 @@
 /* ── Responsive ─────────────────────────────────────────── */
 
 @media (max-width: 767px) {
-  .root {
+  .ch-ref-root {
     padding-top:    var(--padding-40);
     padding-bottom: var(--padding-40);
   }
 
-  .row {
+  .ch-ref-row {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 
-  .index {
+  .ch-ref-index {
     padding-top: 0;
     width: auto;
   }
 
-  .contentCol {
+  .ch-ref-content-col {
     gap: var(--gap-40);
   }
 
-  .grid {
+  .ch-ref-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .grid {
+  .ch-ref-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

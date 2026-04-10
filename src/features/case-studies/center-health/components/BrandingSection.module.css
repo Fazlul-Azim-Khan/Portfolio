@@ -2,6 +2,8 @@
  * BrandingSection.module.css — Center Health (012)
  * Corrected from Figma node 1237:11424.
  *
+ * Prefix: brand-
+ *
  * Layout: index-left / content-right ROW (gap-24).
  * Content column (gap-64): heading + image.
  * py-64px, border-b.
@@ -12,7 +14,7 @@
    ROOT
    ============================================================ */
 
-.root {
+.brand-root {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -29,7 +31,7 @@
    Figma: flex row, gap-24, items-start
    ============================================================ */
 
-.row {
+.brand-row {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-24);
@@ -41,7 +43,7 @@
    INDEX — left column
    ============================================================ */
 
-.index {
+.brand-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);
   font-weight:    var(--weight-regular);
@@ -60,7 +62,7 @@
    Figma: flex-1, flex-col, gap-64, items-start, justify-center
    ============================================================ */
 
-.contentCol {
+.brand-content-col {
   display:         flex;
   flex-direction:  column;
   align-items:     flex-start;
@@ -75,7 +77,7 @@
    HEADING
    ============================================================ */
 
-.heading {
+.brand-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);
   font-weight: var(--weight-regular);
@@ -91,14 +93,14 @@
    IMAGE
    ============================================================ */
 
-.imageWrap {
+.brand-image-wrap {
   position:      relative;
   width:         100%;
   border-radius: var(--radius-sm);
   overflow:      hidden;
 }
 
-.image {
+.brand-image {
   object-fit: cover;
 }
 
@@ -108,25 +110,25 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  .root {
+  .brand-root {
     padding-top:    var(--padding-40);
     padding-bottom: var(--padding-40);
   }
 
-  .row {
+  .brand-row {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 
-  .index {
+  .brand-index {
     padding-top: 0;
   }
 
-  .contentCol {
+  .brand-content-col {
     gap: var(--gap-40);
   }
 
-  .heading {
+  .brand-heading {
     white-space: normal;
   }
 }

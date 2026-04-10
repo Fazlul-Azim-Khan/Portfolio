@@ -53,32 +53,32 @@ interface ScopeSectionProps {
 
 export default function ScopeSection({ section }: ScopeSectionProps) {
   return (
-    <div className={styles.card}>
+    <div className={styles['scope-card']}>
 
       {/* ── Row: index (left) + content (right) ────────────── */}
-      <div className={styles.row}>
+      <div className={styles['scope-row']}>
 
         {/* Index — left column */}
-        <p className={styles.index}>{section.index}</p>
+        <p className={styles['scope-index']}>{section.index}</p>
 
         {/* Content column — heading + grid */}
-        <div className={styles.contentCol}>
+        <div className={styles['scope-content-col']}>
 
           {/* Heading */}
-          <h1 className={styles.heading}>{section.heading}</h1>
+          <h1 className={styles['scope-heading']}>{section.heading}</h1>
 
           {/* Grid — 3-col scope items */}
-          <div className={styles.grid}>
+          <div className={styles['scope-grid']}>
             {section.items.map((item, i) => (
-              <div key={i} className={styles.item}>
+              <div key={i} className={styles['scope-item']}>
                 {/* 1px white top divider */}
-                <div className={styles.divider} aria-hidden="true" />
+                <div className={styles['scope-divider']} aria-hidden="true" />
 
                 {/* Decorative star bullet — Integral CF 64px */}
-                <p className={styles.star} aria-hidden="true">*</p>
+                <p className={styles['scope-star']} aria-hidden="true">*</p>
 
                 {/* Scope item title — Integral CF 32px uppercase */}
-                <p className={styles.itemTitle}>{item}</p>
+                <p className={styles['scope-item-title']}>{item}</p>
               </div>
             ))}
           </div>

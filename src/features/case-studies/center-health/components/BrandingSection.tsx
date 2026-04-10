@@ -18,22 +18,22 @@ interface BrandingSectionProps {
 
 export default function BrandingSection({ section }: BrandingSectionProps) {
   return (
-    <div className={styles.root}>
+    <div className={styles['brand-root']}>
 
       {/* Row: index (left) + content (right) */}
-      <div className={styles.row}>
+      <div className={styles['brand-row']}>
 
-        <p className={styles.index}>{section.index}</p>
+        <p className={styles['brand-index']}>{section.index}</p>
 
-        <div className={styles.contentCol}>
-          <h1 className={styles.heading}>{section.heading}</h1>
+        <div className={styles['brand-content-col']}>
+          <h1 className={styles['brand-heading']}>{section.heading}</h1>
         </div>
 
       </div>
 
       {/* Image — outside row for full section width */}
       <div
-        className={styles.imageWrap}
+        className={styles['brand-image-wrap']}
         style={{ aspectRatio: section.image.aspect }}
       >
         <Image
@@ -41,7 +41,7 @@ export default function BrandingSection({ section }: BrandingSectionProps) {
           alt={section.image.alt}
           fill
           sizes="100vw"
-          className={styles.image}
+          className={styles['brand-image']}
         />
       </div>
 

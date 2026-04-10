@@ -53,16 +53,16 @@ interface LoggingSectionProps {
 
 export default function LoggingSection({ section }: LoggingSectionProps) {
   return (
-    <div className={styles.root}>
+    <div className={styles['log-root']}>
 
       {/* ── Row: index (left) + content (right) ────────────── */}
-      <div className={styles.row}>
+      <div className={styles['log-row']}>
 
         {/* Index — left column */}
-        <p className={styles.index}>{section.index}</p>
+        <p className={styles['log-index']}>{section.index}</p>
 
         {/* Content column — headingRow + features + image + results */}
-        <div className={styles.contentCol}>
+        <div className={styles['log-content-col']}>
 
           {/* ── 1. Heading row — heading + body side-by-side ── */}
           {/*
@@ -71,9 +71,9 @@ export default function LoggingSection({ section }: LoggingSectionProps) {
             Right: body paragraph (310px, pre-wrap)
             Confirmed: Figma node 1242:11763
           */}
-          <div className={styles.headingRow}>
-            <h1 className={styles.heading}>{section.heading}</h1>
-            <p className={styles.body}>{section.body}</p>
+          <div className={styles['log-heading-row']}>
+            <h1 className={styles['log-heading']}>{section.heading}</h1>
+            <p className={styles['log-body']}>{section.body}</p>
           </div>
 
 
@@ -83,11 +83,11 @@ export default function LoggingSection({ section }: LoggingSectionProps) {
             Item: divider (#e5e5e5) + H5 title — no stars, no bullets
             Confirmed: Figma node 1242:11746
           */}
-          <div className={styles.featureRow}>
+          <div className={styles['log-feature-row']}>
             {section.features.map((feat, i) => (
-              <div key={i} className={styles.featureItem}>
-                <div className={styles.featureDivider} aria-hidden="true" />
-                <p className={styles.featureTitle}>{feat}</p>
+              <div key={i} className={styles['log-feature-item']}>
+                <div className={styles['log-feature-divider']} aria-hidden="true" />
+                <p className={styles['log-feature-title']}>{feat}</p>
               </div>
             ))}
           </div>
@@ -103,7 +103,7 @@ export default function LoggingSection({ section }: LoggingSectionProps) {
         Confirmed: Figma node 1242:11764
       */}
       <div
-        className={styles.imageWrap}
+        className={styles['log-image-wrap']}
         style={{ aspectRatio: section.image.aspect }}
       >
         <Image
@@ -111,7 +111,7 @@ export default function LoggingSection({ section }: LoggingSectionProps) {
           alt={section.image.alt}
           fill
           sizes="100vw"
-          className={styles.image}
+          className={styles['log-image']}
         />
       </div>
 
@@ -121,9 +121,9 @@ export default function LoggingSection({ section }: LoggingSectionProps) {
         Figma: flex row, gap 24px
         Confirmed: Figma node 1242:11765
       */}
-      <div className={styles.results}>
-        <p className={styles.resultsLabel}>Results</p>
-        <h3 className={styles.resultsHeading}>{section.resultsText}</h3>
+      <div className={styles['log-results']}>
+        <p className={styles['log-results-label']}>Results</p>
+        <h3 className={styles['log-results-heading']}>{section.resultsText}</h3>
       </div>
 
     </div>

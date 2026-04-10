@@ -5,6 +5,8 @@
  * Index-left / content-right row (gap-24, differs from typical 48).
  * Content column: heading + body (right) + features (gap-40) + image + results.
  * py-64px, no bottom border.
+ *
+ * Prefix: pps-
  */
 
 
@@ -14,7 +16,7 @@
    No border-bottom on this section.
    ============================================================ */
 
-.root {
+.pps-root {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -30,7 +32,7 @@
    Figma: flex row, gap-24 (not 48!), items-start
    ============================================================ */
 
-.row {
+.pps-row {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-40);
@@ -42,7 +44,7 @@
    INDEX — left column
    ============================================================ */
 
-.index {
+.pps-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);
   font-weight:    var(--weight-regular);
@@ -62,7 +64,7 @@
    Figma: flex-col, flex-1, gap-64, items-center, justify-center
    ============================================================ */
 
-.contentCol {
+.pps-content-col {
   display:         flex;
   flex-direction:  column;
   align-items:     center;
@@ -78,7 +80,7 @@
    HEADING
    ============================================================ */
 
-.heading {
+.pps-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);
   font-weight: var(--weight-regular);
@@ -96,14 +98,14 @@
    Figma: flex row, items-center, justify-end, w-full
    ============================================================ */
 
-.bodyRow {
+.pps-body-row {
   display:         flex;
   align-items:     center;
   justify-content: flex-end;
   width:           100%;
 }
 
-.body {
+.pps-body {
   font-family:  var(--font-body);
   font-size:    var(--text-body);
   font-weight:  var(--weight-regular);
@@ -119,14 +121,14 @@
    FEATURE ITEMS — flex row, gap-40
    ============================================================ */
 
-.featureRow {
+.pps-feature-row {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-40);
   width:       100%;
 }
 
-.featureItem {
+.pps-feature-item {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;
@@ -135,14 +137,14 @@
   min-width:      0;
 }
 
-.featureDivider {
+.pps-feature-divider {
   width:            100%;
   height:           1px;
   background-color: #e5e5e5;
   flex-shrink:      0;
 }
 
-.featureTitle {
+.pps-feature-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);
   font-weight:    var(--weight-regular);
@@ -159,14 +161,14 @@
    Figma: aspect-[1352/909], rounded-sm
    ============================================================ */
 
-.imageWrap {
+.pps-image-wrap {
   position:      relative;
   width:         100%;
   border-radius: var(--radius-sm);
   overflow:      hidden;
 }
 
-.image {
+.pps-image {
   object-fit: cover;
 }
 
@@ -175,14 +177,14 @@
    RESULTS — row: "Results" H5 + H4 statement
    ============================================================ */
 
-.results {
+.pps-results {
   display:     flex;
   align-items: flex-start;
   gap:         var(--gap-24);
   width:       100%;
 }
 
-.resultsLabel {
+.pps-results-label {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);        /* 12px — Lead typography */
   font-weight:    var(--weight-regular);
@@ -194,7 +196,7 @@
   margin:         0;
 }
 
-.resultsHeading {
+.pps-results-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h3);          /* 28px → 56px fluid */
   font-weight:    var(--weight-regular);
@@ -212,58 +214,58 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  .root {
+  .pps-root {
     padding-top:    var(--padding-40);
     padding-bottom: var(--padding-40);
   }
 
-  .row {
+  .pps-row {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 
-  .index {
+  .pps-index {
     padding-top: 0;
   }
 
-  .contentCol {
+  .pps-content-col {
     gap: var(--gap-40);
   }
 
-  .bodyRow {
+  .pps-body-row {
     justify-content: flex-start;
   }
 
-  .body {
+  .pps-body {
     width: 100%;
   }
 
-  .featureRow {
+  .pps-feature-row {
     flex-direction: column;
     gap:            var(--gap-24);
   }
 
-  .results {
+  .pps-results {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .contentCol {
+  .pps-content-col {
     width: 100%;
   }
 
-  .body {
+  .pps-body {
     width: 100%;
     max-width: 369px;
   }
 
-  .featureRow {
+  .pps-feature-row {
     flex-wrap: wrap;
   }
 
-  .featureItem {
+  .pps-feature-item {
     min-width: 200px;
   }
 }
@@ -277,8 +279,8 @@
    ============================================================ */
 
 @media (min-width: 768px) {
-  .row,
-  .results {
+  .pps-row,
+  .pps-results {
     min-height: var(--screen-block-min-h);
   }
 }
