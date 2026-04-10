@@ -5,12 +5,11 @@ import '@/styles/global.css'
 
 /*
  * Outfit — primary typeface for all text
- * Weights: 400 (Regular) for body + lead, 500 (Medium) for headings
- * Variable font — both weights served from a single file
+ * Single weight system: 400 (Regular) for everything
  */
 const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['400'],
   variable: '--font-outfit',
   display: 'swap',
 })

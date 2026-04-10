@@ -63,7 +63,7 @@
 .headerHeading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);      /* 120px fluid */
-  font-weight:    var(--weight-medium);
+  font-weight: var(--weight-regular);
   line-height:    var(--lh-h1);   /* 1 / 100% */
   letter-spacing: var(--tracking-h1);  /* -0.84px */
   color:          var(--color-primary);

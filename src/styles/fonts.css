@@ -2,9 +2,9 @@
  * fonts.css
  * @font-face declarations for self-hosted typefaces
  *
- * Outfit — primary typeface (headings + body + lead)
+ * Outfit — primary typeface (all text)
  * Loaded via next/font/google in app/layout.tsx — no @font-face needed here.
- * Weights used: 400 (Regular), 500 (Medium)
+ * Weight used: 400 (Regular) only — single weight system
  *
  * Integral CF — retired as of font system update
  * Files retained in /public/fonts/ as archive — not loaded.

@@ -77,9 +77,8 @@
   --tracking-h5:   0;
   --tracking-lead: 0;
 
-  /* Font weights — Outfit variable font */
-  --weight-regular: 400;   /* Body, Lead */
-  --weight-medium:  500;   /* Headings H1–H5 */
+  /* Font weights — Outfit, single weight system */
+  --weight-regular: 400;   /* All text — the only weight in the project */
 
 
   /* ============================================================
