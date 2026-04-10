@@ -118,7 +118,7 @@
 
 .bodyText {
   font-family:  var(--font-body);
-  font-size:    14px;               /* Figma: B1 14px */
+  font-size:    var(--text-body);     /* was 14px — Figma: B1 */
   font-weight:  var(--weight-regular);
   line-height:  var(--lh-body);     /* 20px */
   color:        var(--color-primary);

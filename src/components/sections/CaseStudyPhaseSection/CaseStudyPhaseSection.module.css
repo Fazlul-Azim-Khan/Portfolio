@@ -315,7 +315,7 @@
 
 .keyWorkColDesc {
   font-family:    var(--font-body);
-  font-size:      14px;
+  font-size:      var(--text-body);
   font-weight:    var(--weight-regular);
   line-height:    20px;
   color:          var(--color-primary);

@@ -106,7 +106,7 @@
 
 .intro {
   font-family: var(--font-body);
-  font-size:   16px;                              /* Figma: text-[16px] — no --text-16 token */
+  font-size:   var(--text-body);                  /* fluid 13->16px */
   line-height: 1.7;                               /* Figma: leading-[27.2px] / 16px = 1.7 */
   font-weight: var(--weight-regular);
   color:       var(--color-secondary);            /* white */

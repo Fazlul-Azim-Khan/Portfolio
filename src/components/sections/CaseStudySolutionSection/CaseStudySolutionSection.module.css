@@ -89,7 +89,7 @@
 
 .subBody {
   font-family:    var(--font-body);
-  font-size:      16px;                 /* Figma: text-[16px] */
+  font-size:      var(--text-body);     /* fluid 13->16px */
   font-weight:    var(--weight-regular);
   line-height:    27.2px;
   color:          var(--color-primary);
