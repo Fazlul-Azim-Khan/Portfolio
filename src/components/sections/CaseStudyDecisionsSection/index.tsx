@@ -42,7 +42,7 @@ export default function CaseStudyDecisionsSection({ section }: CaseStudyDecision
     <div className={styles.content}>
 
       {/* ── Section heading ──────────────────────────────── */}
-      <h2 className={styles.heading}>{section.heading}</h2>
+      <h1 className={styles.heading}>{section.heading}</h1>
 
       {/* ── Decision rows ─────────────────────────────────── */}
       {section.decisions.map((decision, i) => (

@@ -16,39 +16,26 @@
  *   │  ┌──────────┐  ┌──────────┐  ┌──────────┐              │
  *   │  │  Card 01 │  │  Card 02 │  │  Card 03 │              │
  *   │  └──────────┘  └──────────┘  └──────────┘              │
- *   │  ┌──────────┐  ┌──────────┐  ┌──────────┐              │
- *   │  │  Card 04 │  │  Card 05 │  │  Card 06 │              │
- *   │  └──────────┘  └──────────┘  └──────────┘              │
  *   │  ... 4 rows × 3 columns = 12 items total                 │
  *   └──────────────────────────────────────────────────────────┘
  *
- * Grid: 3 columns
- *   column-gap: --space-gallery-gap-x (40px)
- *   row-gap:    --space-gallery-gap-y (80px)
- *
- * Section:
- *   padding-top:    --space-more-pt (200px)
- *   padding-bottom: --padding-64
- *
- * Card:
- *   aspect-ratio: --aspect-gallery-card (410.667 / 326)
- *   radius default: --radius-sm (8px)
- *   radius large:   --radius-sm (8px)   ← project-wide single radius
- *
- * Interaction:
- *   Clicking a card opens a full-screen modal.
- *   Modal closes on: Escape key · overlay click · ✕ button.
- *   Body scroll is locked while modal is open.
+ * Modal:
+ *   Opens on card click.
+ *   Supports multiple images per item — prev/next navigation.
+ *   Nav CTAs use IconButton component (44 × 44px, light variant).
+ *   Close uses IconButton (X icon, light variant).
+ *   Keyboard: Escape → close, Arrow keys → prev/next.
  *
  * Content: src/features/landing/content.ts
- * Client Component — modal state requires client-side JS.
- * The <section> wrapper and scroll ref are owned by LandingPage.
+ * Client Component — modal + navigation state requires client-side JS.
  */
 
 import { useState, useEffect, useCallback } from 'react'
 import Image                                from 'next/image'
 import { gallery }                          from '../content'
 import type { GalleryItem }                 from '../content'
+import IconButton                           from '@/components/ui/IconButton'
+import { ArrowLeft, ArrowRight, X }         from '@/components/icons'
 import styles                               from './MoreWork.module.css'
 
 
@@ -59,30 +46,53 @@ import styles                               from './MoreWork.module.css'
 export default function MoreWork() {
 
   // ── Modal state ───────────────────────────────────────────
-  const [activeItem, setActiveItem] = useState<GalleryItem | null>(null)
+  const [activeItem,       setActiveItem]       = useState<GalleryItem | null>(null)
+  const [activeImageIndex, setActiveImageIndex] = useState<number>(0)
+
+  // ── Derived helpers ───────────────────────────────────────
+  const imageCount  = activeItem?.images.length ?? 0
+  const hasMultiple = imageCount > 1
+  const isFirst     = activeImageIndex === 0
+  const isLast      = activeImageIndex === imageCount - 1
+
+  // ── Open modal ────────────────────────────────────────────
+  const openModal = useCallback((item: GalleryItem) => {
+    setActiveItem(item)
+    setActiveImageIndex(0)
+  }, [])
+
+  // ── Close modal ───────────────────────────────────────────
+  const closeModal = useCallback(() => {
+    setActiveItem(null)
+    setActiveImageIndex(0)
+  }, [])
+
+  // ── Image navigation ──────────────────────────────────────
+  const goToPrev = useCallback(() => {
+    setActiveImageIndex((i) => Math.max(0, i - 1))
+  }, [])
+
+  const goToNext = useCallback(() => {
+    setActiveImageIndex((i) => Math.min(imageCount - 1, i + 1))
+  }, [imageCount])
 
   // ── Body scroll lock ──────────────────────────────────────
-  // Lock scroll when a modal is open; restore on close/unmount
   useEffect(() => {
-    if (activeItem) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
+    document.body.style.overflow = activeItem ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [activeItem])
 
-  // ── Escape key handler ────────────────────────────────────
-  const closeModal = useCallback(() => setActiveItem(null), [])
-
+  // ── Keyboard handler ──────────────────────────────────────
   useEffect(() => {
     if (!activeItem) return
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeModal()
+      if (e.key === 'Escape')      closeModal()
+      if (e.key === 'ArrowLeft')   goToPrev()
+      if (e.key === 'ArrowRight')  goToNext()
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [activeItem, closeModal])
+  }, [activeItem, closeModal, goToPrev, goToNext])
 
 
   // ── Render ────────────────────────────────────────────────
@@ -90,19 +100,14 @@ export default function MoreWork() {
     <div className={styles.root} aria-label="More Works">
 
       {/* ── Section header row ───────────────────────────── */}
-      {/*
-        Two-zone flex row (no count on right — confirmed Figma node 1021:6995):
-          Left   — index "(003)"              Inter 12px uppercase, --color-tertiary
-          Centre — "More glimpse of works"    Integral CF 56px H3, --color-primary
-      */}
       <div className={styles.header}>
         <p className={styles.headerIndex}>
           {gallery.meta.index}
         </p>
         <div className={styles.headerContent}>
-          <h2 className={styles.headerHeading}>
+          <h1 className={styles.headerHeading}>
             {gallery.meta.heading}
-          </h2>
+          </h1>
           <p className={styles.headerSubheading}>
             {gallery.meta.subheading}
           </p>
@@ -113,12 +118,6 @@ export default function MoreWork() {
       <hr className={styles.divider} aria-hidden="true" />
 
       {/* ── Gallery grid ─────────────────────────────────── */}
-      {/*
-        3 columns × 4 rows = 12 items
-        column-gap: --space-gallery-gap-x (40px)
-        row-gap:    --space-gallery-gap-y (80px)
-        Each card is a <button> — opens modal on click.
-      */}
       <div className={styles.grid} role="list">
         {gallery.items.map((item) => (
           <button
@@ -128,35 +127,35 @@ export default function MoreWork() {
               item.radiusVariant === 'large' ? styles.cardLarge : '',
             ].join(' ').trim()}
             style={item.backgroundColor ? { backgroundColor: item.backgroundColor } : undefined}
-            onClick={() => setActiveItem(item)}
+            onClick={() => openModal(item)}
             aria-label={`View preview: ${item.title}`}
             role="listitem"
             type="button"
           >
-            {/* Image container — aspect ratio clipped */}
+            {/* Image container — aspect ratio clipped — shows first image */}
             <div className={styles.cardImageWrap}>
               <Image
-                src={item.image}
+                src={item.images[0]}
                 alt={item.title}
                 fill
                 sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                 className={styles.cardImage}
               />
+              {/* Multi-image badge */}
+              {item.images.length > 1 && (
+                <span className={styles.cardBadge} aria-hidden="true">
+                  {item.images.length}
+                </span>
+              )}
             </div>
 
-            {/* Card title — Integral CF 20px H5 */}
+            {/* Card title */}
             <p className={styles.cardTitle}>{item.title}</p>
           </button>
         ))}
       </div>
 
       {/* ── Modal ────────────────────────────────────────── */}
-      {/*
-        Overlay: full-viewport, z-index: --z-modal (200)
-        Clicking overlay or pressing Escape closes the modal.
-        Clicking the inner content panel stops propagation.
-        No scroll inside the modal.
-      */}
       {activeItem && (
         <div
           className={styles.modalOverlay}
@@ -170,31 +169,56 @@ export default function MoreWork() {
             onClick={(e) => e.stopPropagation()}
           >
 
-            {/* Close button */}
-            <button
-              className={styles.modalClose}
-              onClick={closeModal}
-              aria-label="Close preview"
-              type="button"
-            >
-              ✕
-            </button>
-
-            {/* Full image — object-fit: contain shows full image without crop */}
-            <div className={styles.modalImageWrap}>
-              <Image
-                src={activeItem.image}
-                alt={activeItem.title}
-                fill
-                sizes="100vw"
-                className={styles.modalImage}
+            {/* ── Modal top bar: caption + close ─────────── */}
+            <div className={styles.modalTopBar}>
+              <p className={styles.modalCaption}>
+                {activeItem.title}
+              </p>
+              <IconButton
+                icon={<X size={20} />}
+                variant="light"
+                onClick={closeModal}
+                aria-label="Close preview"
               />
             </div>
 
-            {/* Caption */}
-            <p className={styles.modalCaption}>
-              {activeItem.title}
-            </p>
+            {/* ── Image ──────────────────────────────────── */}
+            <div className={styles.modalImageWrap}>
+              <Image
+                key={activeImageIndex}         /* force re-render on index change */
+                src={activeItem.images[activeImageIndex]}
+                alt={`${activeItem.title} — image ${activeImageIndex + 1} of ${imageCount}`}
+                fill
+                sizes="100vw"
+                className={styles.modalImage}
+                priority
+              />
+            </div>
+
+            {/* ── Modal bottom bar: prev · counter · next ── */}
+            {hasMultiple && (
+              <div className={styles.modalNav}>
+                <IconButton
+                  icon={<ArrowLeft size={20} />}
+                  variant="light"
+                  onClick={goToPrev}
+                  disabled={isFirst}
+                  aria-label="Previous image"
+                />
+
+                <p className={styles.modalCounter} aria-live="polite">
+                  {activeImageIndex + 1} / {imageCount}
+                </p>
+
+                <IconButton
+                  icon={<ArrowRight size={20} />}
+                  variant="light"
+                  onClick={goToNext}
+                  disabled={isLast}
+                  aria-label="Next image"
+                />
+              </div>
+            )}
 
           </div>
         </div>

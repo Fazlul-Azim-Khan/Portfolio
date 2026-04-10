@@ -45,7 +45,7 @@ export default function CaseStudySolutionSection({ section }: CaseStudySolutionS
 
       {/* ── Section heading + top divider ────────────────── */}
       <div className={styles.headingBlock}>
-        <h2 className={styles.heading}>{section.heading}</h2>
+        <h1 className={styles.heading}>{section.heading}</h1>
         <div className={styles.divider} aria-hidden="true" />
       </div>
 

@@ -61,7 +61,7 @@ export default function RecommendationLetterSection({
 
       {/* ── Heading ──────────────────────────────────────── */}
       <div className={styles.headingBlock}>
-        <h2 className={styles.heading}>{section.heading}</h2>
+        <h1 className={styles.heading}>{section.heading}</h1>
       </div>
 
       {/* ── Clickable quote card (blue) ──────────────────── */}

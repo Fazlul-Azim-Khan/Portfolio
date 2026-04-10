@@ -65,7 +65,7 @@ export default function ScopeSection({ section }: ScopeSectionProps) {
         <div className={styles.contentCol}>
 
           {/* Heading */}
-          <h2 className={styles.heading}>{section.heading}</h2>
+          <h1 className={styles.heading}>{section.heading}</h1>
 
           {/* Grid — 3-col scope items */}
           <div className={styles.grid}>

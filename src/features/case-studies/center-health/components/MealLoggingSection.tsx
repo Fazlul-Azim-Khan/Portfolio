@@ -52,7 +52,7 @@ export default function MealLoggingSection({ section }: MealLoggingSectionProps)
             Confirmed: Figma node 1242:11770
           */}
           <div className={styles.headingRow}>
-            <h2 className={styles.heading}>{section.heading}</h2>
+            <h1 className={styles.heading}>{section.heading}</h1>
             <p className={styles.body}>{section.body}</p>
           </div>
 

@@ -26,7 +26,7 @@ export default function ReflectionsSection({ section }: ReflectionsSectionProps)
 
         <div className={styles.contentCol}>
 
-          <h2 className={styles.heading}>{section.heading}</h2>
+          <h1 className={styles.heading}>{section.heading}</h1>
 
           <div className={styles.grid}>
             {section.reflections.map((item, i) => (

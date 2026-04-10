@@ -81,13 +81,13 @@ export default function CaseStudyPhaseSection({ section }: CaseStudyPhaseSection
       */}
       {hasHeadingRow ? (
         <div className={styles.headingRow}>
-          <h2 className={styles.heading}>{section.heading}</h2>
+          <h1 className={styles.heading}>{section.heading}</h1>
           <p className={styles.headingRowBody}>{section.body}</p>
         </div>
       ) : (
         <>
           {/* ── Phase 01/02: heading alone ──────────────── */}
-          <h2 className={styles.heading}>{section.heading}</h2>
+          <h1 className={styles.heading}>{section.heading}</h1>
 
           {/* ── Phase 01: body right-aligned 540px block ── */}
           {/*

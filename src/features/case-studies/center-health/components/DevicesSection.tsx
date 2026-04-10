@@ -65,7 +65,7 @@ export default function DevicesSection({ section }: DevicesSectionProps) {
       */}
       <div className={styles.headingRow}>
         <div className={styles.headingSpacer} aria-hidden="true" />
-        <h2 className={styles.heading}>{section.heading}</h2>
+        <h1 className={styles.heading}>{section.heading}</h1>
         <p className={styles.bodyText}>{section.body}</p>
       </div>
 

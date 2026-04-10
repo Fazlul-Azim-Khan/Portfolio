@@ -71,7 +71,7 @@ export default function CaseStudyResearchSection({ section }: Props) {
             Right: intro paragraph (16px Inter)
             ──────────────────────────────────────────────────── */}
         <div className={styles.introRow}>
-          <h2 className={styles.heading}>{section.heading}</h2>
+          <h1 className={styles.heading}>{section.heading}</h1>
           <p  className={styles.intro}>{section.intro}</p>
         </div>
 

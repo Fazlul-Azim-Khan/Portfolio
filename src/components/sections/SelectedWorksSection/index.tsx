@@ -48,7 +48,7 @@ export default function SelectedWorksSection() {
       */}
       <div className={styles.header}>
         <p className={styles.headerIndex}>{selectedWorksMeta.index}</p>
-        <h2 className={styles.headerHeading}>{selectedWorksMeta.heading}</h2>
+        <h1 className={styles.headerHeading}>{selectedWorksMeta.heading}</h1>
         <p className={styles.headerCount}>{selectedWorksMeta.count}</p>
       </div>
 

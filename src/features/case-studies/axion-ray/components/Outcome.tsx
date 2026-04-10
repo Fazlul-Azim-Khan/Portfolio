@@ -58,7 +58,7 @@ export default function Outcome({ section }: OutcomeProps) {
         Confirmed: Figma node 982:5774 (heading) + 982:5778 (descriptor)
       */}
       <div className={styles.headerRow}>
-        <h2 className={styles.heading}>{section.heading}</h2>
+        <h1 className={styles.heading}>{section.heading}</h1>
         <p className={styles.descriptor}>{section.descriptor}</p>
       </div>
 

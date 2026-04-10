@@ -75,7 +75,7 @@ export default function DesignSystemSection({ section }: DesignSystemSectionProp
 
             {/* ── 1. Heading row — heading + sidebar ─────────── */}
             <div className={styles.headingRow}>
-              <h2 className={styles.heading}>{section.heading}</h2>
+              <h1 className={styles.heading}>{section.heading}</h1>
               <p className={styles.sideText}>{section.sideText}</p>
             </div>
 

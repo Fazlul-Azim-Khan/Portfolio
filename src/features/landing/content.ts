@@ -129,10 +129,21 @@ export const selectedWorks = {
 export type GalleryRadiusVariant = 'default' | 'large'
 
 export interface GalleryItem {
-  id:              string
-  title:           string
-  image:           string
-  radiusVariant:   GalleryRadiusVariant
+  id:               string
+  title:            string
+  /**
+   * Array of image paths for this work item.
+   * Add more paths to the array as you add images to the project folder.
+   *
+   * Recommended folder pattern per item:
+   *   public/images/gallery/{id}/01.png
+   *   public/images/gallery/{id}/02.png
+   *   ...
+   *
+   * Modal will show prev/next navigation when images.length > 1.
+   */
+  images:           string[]
+  radiusVariant:    GalleryRadiusVariant
   backgroundColor?: string
 }
 
@@ -144,21 +155,81 @@ export const gallery = {
   },
   items: [
     // Row 1
-    { id: 'bm-solutions-btl-rates',        title: 'BM Solutions BTL Rates',         image: '/images/gallery/bm-solutions-btl-rates.png',         radiusVariant: 'default' as GalleryRadiusVariant },
-    { id: 'training-courses-platform',     title: 'Training Courses Platform',      image: '/images/gallery/training-courses-platform.jpg',      radiusVariant: 'default' as GalleryRadiusVariant },
-    { id: 'mnmridez-chauffeur-service',    title: 'MnMridez Chauffeur Service',     image: '/images/gallery/mnmridez-chauffeur-service.png',     radiusVariant: 'default' as GalleryRadiusVariant },
+    {
+      id:           'bm-solutions-btl-rates',
+      title:        'BM Solutions BTL Rates',
+      images:       ['/images/gallery/bm-solutions-btl-rates.png'],
+      radiusVariant: 'default' as GalleryRadiusVariant,
+    },
+    {
+      id:           'training-courses-platform',
+      title:        'Training Courses Platform',
+      images:       ['/images/gallery/training-courses-platform.jpg'],
+      radiusVariant: 'default' as GalleryRadiusVariant,
+    },
+    {
+      id:           'mnmridez-chauffeur-service',
+      title:        'MnMridez Chauffeur Service',
+      images:       ['/images/gallery/mnmridez-chauffeur-service.png'],
+      radiusVariant: 'default' as GalleryRadiusVariant,
+    },
     // Row 2
-    { id: 'task-manager-app',              title: 'Task Manager App',               image: '/images/gallery/task-manager-app.png',               radiusVariant: 'default' as GalleryRadiusVariant },
-    { id: 'sales-tracking-app',            title: 'Sales Tracking App',             image: '/images/gallery/sales-tracking-app.png',             radiusVariant: 'default' as GalleryRadiusVariant },
-    { id: 'video-call-app',               title: 'Video Call App',                 image: '/images/gallery/video-call-app.png',                 radiusVariant: 'default' as GalleryRadiusVariant },
+    {
+      id:           'task-manager-app',
+      title:        'Task Manager App',
+      images:       ['/images/gallery/task-manager-app.png'],
+      radiusVariant: 'default' as GalleryRadiusVariant,
+    },
+    {
+      id:           'sales-tracking-app',
+      title:        'Sales Tracking App',
+      images:       ['/images/gallery/sales-tracking-app.png'],
+      radiusVariant: 'default' as GalleryRadiusVariant,
+    },
+    {
+      id:           'video-call-app',
+      title:        'Video Call App',
+      images:       ['/images/gallery/video-call-app.png'],
+      radiusVariant: 'default' as GalleryRadiusVariant,
+    },
     // Row 3
-    { id: 'nrb-banking-app',              title: 'NRB Banking App',                image: '/images/gallery/nrb-banking-app.png',                radiusVariant: 'default' as GalleryRadiusVariant },
-    { id: 'groceries-mobile-app',         title: 'Groceries Mobile App',           image: '/images/gallery/groceries-mobile-app.png',           radiusVariant: 'large'   as GalleryRadiusVariant },
-    { id: 'soda-finder-app',             title: 'Soda Finder App',                image: '/images/gallery/soda-finder-app.png',                radiusVariant: 'default' as GalleryRadiusVariant },
+    {
+      id:           'nrb-banking-app',
+      title:        'NRB Banking App',
+      images:       ['/images/gallery/nrb-banking-app.png'],
+      radiusVariant: 'default' as GalleryRadiusVariant,
+    },
+    {
+      id:           'groceries-mobile-app',
+      title:        'Groceries Mobile App',
+      images:       ['/images/gallery/groceries-mobile-app.png'],
+      radiusVariant: 'large' as GalleryRadiusVariant,
+    },
+    {
+      id:           'soda-finder-app',
+      title:        'Soda Finder App',
+      images:       ['/images/gallery/soda-finder-app.png'],
+      radiusVariant: 'default' as GalleryRadiusVariant,
+    },
     // Row 4
-    { id: 'yourself-online-dashboard',    title: 'Yourself.online Dashboard',      image: '/images/gallery/yourself-online-dashboard.png',      radiusVariant: 'default' as GalleryRadiusVariant },
-    { id: 'click-on-offers-dashboard',    title: 'Click On Offers Dashboard',      image: '/images/gallery/click-on-offers-dashboard.png',      radiusVariant: 'default' as GalleryRadiusVariant },
-    { id: 'karaoke-singing-app',         title: 'Karaoke Singing App',            image: '/images/gallery/karaoke-singing-app.png',            radiusVariant: 'large'   as GalleryRadiusVariant },
+    {
+      id:           'yourself-online-dashboard',
+      title:        'Yourself.online Dashboard',
+      images:       ['/images/gallery/yourself-online-dashboard.png'],
+      radiusVariant: 'default' as GalleryRadiusVariant,
+    },
+    {
+      id:           'click-on-offers-dashboard',
+      title:        'Click On Offers Dashboard',
+      images:       ['/images/gallery/click-on-offers-dashboard.png'],
+      radiusVariant: 'default' as GalleryRadiusVariant,
+    },
+    {
+      id:           'karaoke-singing-app',
+      title:        'Karaoke Singing App',
+      images:       ['/images/gallery/karaoke-singing-app.png'],
+      radiusVariant: 'large' as GalleryRadiusVariant,
+    },
   ] as GalleryItem[],
 } as const
 

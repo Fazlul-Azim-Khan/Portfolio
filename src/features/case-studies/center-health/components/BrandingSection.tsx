@@ -26,7 +26,7 @@ export default function BrandingSection({ section }: BrandingSectionProps) {
         <p className={styles.index}>{section.index}</p>
 
         <div className={styles.contentCol}>
-          <h2 className={styles.heading}>{section.heading}</h2>
+          <h1 className={styles.heading}>{section.heading}</h1>
         </div>
 
       </div>

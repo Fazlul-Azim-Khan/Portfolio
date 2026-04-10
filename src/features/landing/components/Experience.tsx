@@ -59,9 +59,9 @@ export default function Experience() {
         Confirmed: Figma node 1036:7650
         Content is mixed-case in content.ts — uppercase applied via CSS.
       */}
-      <h2 className={styles.heading}>
+      <h1 className={styles.heading}>
         {experience.meta.heading}
-      </h2>
+      </h1>
 
       {/* ── Experience list ───────────────────────────────── */}
       {/*

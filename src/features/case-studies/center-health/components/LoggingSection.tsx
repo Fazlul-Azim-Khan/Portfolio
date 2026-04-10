@@ -72,7 +72,7 @@ export default function LoggingSection({ section }: LoggingSectionProps) {
             Confirmed: Figma node 1242:11763
           */}
           <div className={styles.headingRow}>
-            <h2 className={styles.heading}>{section.heading}</h2>
+            <h1 className={styles.heading}>{section.heading}</h1>
             <p className={styles.body}>{section.body}</p>
           </div>
 

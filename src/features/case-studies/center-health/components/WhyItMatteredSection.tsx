@@ -69,7 +69,7 @@ export default function WhyItMatteredSection({ section }: WhyItMatteredSectionPr
         <div className={styles.contentCol}>
 
           {/* Heading — constrained to 732px, centered in column */}
-          <h2 className={styles.heading}>{section.heading}</h2>
+          <h1 className={styles.heading}>{section.heading}</h1>
 
           {/* Cards row — people (left) + quote (right) */}
           <div className={styles.cardsRow}>

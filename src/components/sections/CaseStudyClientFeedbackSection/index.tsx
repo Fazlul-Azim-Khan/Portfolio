@@ -51,7 +51,7 @@ export default function CaseStudyClientFeedbackSection({
         Confirmed: Figma node 1005:6255
       */}
       <div className={styles.headingBlock}>
-        <h2 className={styles.heading}>{section.heading}</h2>
+        <h1 className={styles.heading}>{section.heading}</h1>
       </div>
 
       {/* ── Quote cards ──────────────────────────────────── */}

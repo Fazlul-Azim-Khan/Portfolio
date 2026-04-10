@@ -60,7 +60,7 @@ export default function ExperienceSection() {
         Integral CF 56px H3, --color-secondary (white), tracking -0.84px
         No index label — confirmed: Figma node 1036:7716 shows heading only
       */}
-      <h2 className={styles.heading}>{experienceMeta.heading}</h2>
+      <h1 className={styles.heading}>{experienceMeta.heading}</h1>
 
       {/* ── Work history list ──────────────────────────────── */}
       {/*

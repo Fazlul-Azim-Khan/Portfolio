@@ -51,9 +51,9 @@ export default function SelectedWorks() {
         <p className={styles.headerIndex}>
           {selectedWorks.meta.index}
         </p>
-        <h2 className={styles.headerHeading}>
+        <h1 className={styles.headerHeading}>
           {selectedWorks.meta.heading}
-        </h2>
+        </h1>
         <p className={styles.headerCount}>
           {selectedWorks.meta.count}
         </p>

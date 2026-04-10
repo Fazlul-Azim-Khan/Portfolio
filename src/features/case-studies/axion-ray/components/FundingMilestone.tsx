@@ -74,7 +74,7 @@ export default function FundingMilestone({ section }: FundingMilestoneProps) {
           Confirmed: Figma node 981:7629 header row
         */}
         <div className={styles.headerRow}>
-          <h2 className={styles.heading}>{section.heading}</h2>
+          <h1 className={styles.heading}>{section.heading}</h1>
           <p className={styles.body}>{section.body}</p>
         </div>
 

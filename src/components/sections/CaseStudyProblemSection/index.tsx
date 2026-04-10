@@ -38,7 +38,7 @@ export default function CaseStudyProblemSection({ section }: CaseStudyProblemSec
     <div className={styles.content}>
 
       {/* ── Heading ──────────────────────────────────────── */}
-      <h2 className={styles.heading}>{section.heading}</h2>
+      <h1 className={styles.heading}>{section.heading}</h1>
 
       {/* ── Divider ──────────────────────────────────────── */}
       <div className={styles.divider} aria-hidden="true" />

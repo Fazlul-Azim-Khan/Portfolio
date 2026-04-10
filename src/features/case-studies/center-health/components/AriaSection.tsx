@@ -72,7 +72,7 @@ export default function AriaSection({ section }: AriaSectionProps) {
         <div className={styles.contentCol}>
 
           {/* ── 1. Heading ─────────────────────────────────── */}
-          <h2 className={styles.heading}>{section.heading}</h2>
+          <h1 className={styles.heading}>{section.heading}</h1>
 
 
           {/* ── 2. Body paragraph — right-aligned ──────────── */}

@@ -55,7 +55,7 @@ export default function LanguagesSection() {
         Integral CF 56px H3, --color-primary, tracking -0.84px
         Confirmed: Figma node 1036:7193
       */}
-      <h2 className={styles.heading}>{languagesMeta.heading}</h2>
+      <h1 className={styles.heading}>{languagesMeta.heading}</h1>
 
       {/* ── Languages row ──────────────────────────────────── */}
       {/*

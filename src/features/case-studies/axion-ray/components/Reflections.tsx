@@ -45,7 +45,7 @@ export default function Reflections({ section }: ReflectionsProps) {
         H3 Integral CF, tracking-h3, uppercase.
         Note: Figma source reads "Tow" (typo) — corrected to "two" in content.ts.
       */}
-      <h2 className={styles.heading}>{section.heading}</h2>
+      <h1 className={styles.heading}>{section.heading}</h1>
 
       {/* ── Insight columns ──────────────────────────────── */}
       {/*
