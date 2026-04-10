@@ -210,10 +210,10 @@ export default function NextCaseStudyHero({
    * Sits at the end of the page like any other section.
    * ──────────────────────────────────────────────── */
   return (
-    <section className={styles.section}>
-      <p className={styles.label}>{label}</p>
+    <section className={styles['next-section']}>
+      <p className={styles['next-label']}>{label}</p>
 
-      <Link href={href} className={styles.heroLink}>
+      <Link href={href} className={styles['next-hero-link']}>
         <CaseStudyHero hero={hero} />
       </Link>
     </section>

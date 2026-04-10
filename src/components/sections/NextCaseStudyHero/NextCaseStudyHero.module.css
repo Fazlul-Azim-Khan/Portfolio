@@ -12,7 +12,7 @@
    SECTION WRAPPER
    ============================================================ */
 
-.section {
+.next-section {
   display:        flex;
   flex-direction: column;
   width:          100%;
@@ -22,10 +22,10 @@
 
 
 /* ============================================================
-   LABEL — "Next Case Study"
+   LABEL — "Next case study"
    ============================================================ */
 
-.label {
+.next-label {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);
   font-weight:    var(--weight-regular);
@@ -42,7 +42,7 @@
    HERO LINK — wraps CaseStudyHero
    ============================================================ */
 
-.heroLink {
+.next-hero-link {
   display:         block;
   width:           100%;
   text-decoration: none;
@@ -51,11 +51,11 @@
   transition:      opacity 300ms ease;
 }
 
-.heroLink:hover {
+.next-hero-link:hover {
   opacity: 0.94;
 }
 
-.heroLink:focus-visible {
+.next-hero-link:focus-visible {
   outline:        var(--focus-outline-width) solid var(--color-primary);
   outline-offset: var(--focus-outline-offset);
   border-radius:  var(--radius-sm);
@@ -67,12 +67,12 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  .section {
+  .next-section {
     padding-top:    var(--gap-40);
     padding-bottom: var(--gap-40);
   }
 
-  .label {
+  .next-label {
     padding-bottom: var(--gap-24);
   }
 }
