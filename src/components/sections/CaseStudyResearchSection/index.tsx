@@ -81,7 +81,7 @@ export default function CaseStudyResearchSection({ section }: Props) {
             Heading row: "PERSONALITY TRAITS" (56px) + sub-label right
             Chip grid:   wrapping flex, gap 24px
             ──────────────────────────────────────────────────── */}
-        <div className={styles.chipSection}>
+        <div className={`${styles.chipSection} ${styles.panel}`}>
 
           <div className={styles.chipSectionHead}>
             {/* Confirmed: Figma node 1005:6089 — fontSize 56, Integral CF */}
@@ -120,7 +120,7 @@ export default function CaseStudyResearchSection({ section }: Props) {
             Heading row: "CHALLENGES & PAINS" (56px) + sub-label right
             Chip grid:   wrapping flex, gap 32px (→ --gap-40 nearest token)
             ──────────────────────────────────────────────────── */}
-        <div className={styles.borderedSection}>
+        <div className={`${styles.borderedSection} ${styles.panel}`}>
 
           <div className={styles.chipSectionHead}>
             {/* Confirmed: Figma node 1005:6118 — fontSize 56, Integral CF */}
@@ -143,42 +143,47 @@ export default function CaseStudyResearchSection({ section }: Props) {
         <hr className={styles.divider} aria-hidden="true" />
 
 
-        {/* ── 5. Existing Systems Causes ───────────────────────
-            Figma 1005:6151 "HorizontalBorder": padding 40px top/bottom
-            Heading: "EXISTING SYSTEMS CAUSES:" (56px) — no sub-label
-            Chip row: flex-row, gap 32px (→ --gap-40 nearest token)
-            Confirmed: Figma node 1005:6156 — fontSize 56, Integral CF
+        {/* ── 5 & 6. Existing Systems + Have to Bring ──────────
+            Combined 80vh panel — two borderedSections sharing one
+            viewport-height breathing block. No divider between them,
+            no trailing divider after the second (per Scope :002).
             ──────────────────────────────────────────────────── */}
-        <div className={styles.borderedSection}>
-          <p className={styles.chipSectionHeading}>Existing Systems Causes:</p>
-          {/* Existing Causes: gap-32px — Figma 1005:6157 gap-[0px_32px] */}
-          <div className={styles.chipGridLarge}>
-            {section.existingCauses.map((item) => (
-              <span key={item} className={styles.chip}>{item}</span>
-            ))}
+        <div className={styles.panel}>
+
+          {/* ── 5. Existing Systems Causes ───────────────────────
+              Figma 1005:6151 "HorizontalBorder": padding 40px top/bottom
+              Heading: "EXISTING SYSTEMS CAUSES:" (56px) — no sub-label
+              Chip row: flex-row, gap 32px (→ --gap-40 nearest token)
+              Confirmed: Figma node 1005:6156 — fontSize 56, Integral CF
+              ──────────────────────────────────────────────────── */}
+          <div className={styles.borderedSection}>
+            <p className={styles.chipSectionHeading}>Existing Systems Causes:</p>
+            {/* Existing Causes: gap-32px — Figma 1005:6157 gap-[0px_32px] */}
+            <div className={styles.chipGridLarge}>
+              {section.existingCauses.map((item) => (
+                <span key={item} className={styles.chip}>{item}</span>
+              ))}
+            </div>
           </div>
-        </div>
 
 
-        {/* ── 6. Target Emotions ───────────────────────────────
-            Figma 1005:6166: padding 40px top/bottom
-            Heading: "HAVE TO BRING IN THESE EMOTIONS:" (56px, wraps 2 lines)
-            Chip row: flex-row, gap 32px (→ --gap-40 nearest token)
-            Confirmed: Figma node 1005:6171 — fontSize 56, Integral CF
-            ──────────────────────────────────────────────────── */}
-        <div className={styles.borderedSection}>
-          <p className={styles.chipSectionHeading}>Have to Bring In These Emotions:</p>
-          {/* Target Emotions: gap-32px — Figma 1005:6172 gap-[0px_32px] */}
-          <div className={styles.chipGridLarge}>
-            {section.targetEmotions.map((item) => (
-              <span key={item} className={styles.chip}>{item}</span>
-            ))}
+          {/* ── 6. Target Emotions ───────────────────────────────
+              Figma 1005:6166: padding 40px top/bottom
+              Heading: "HAVE TO BRING IN THESE EMOTIONS:" (56px, wraps 2 lines)
+              Chip row: flex-row, gap 32px (→ --gap-40 nearest token)
+              Confirmed: Figma node 1005:6171 — fontSize 56, Integral CF
+              ──────────────────────────────────────────────────── */}
+          <div className={styles.borderedSection}>
+            <p className={styles.chipSectionHeading}>Have to Bring In These Emotions:</p>
+            {/* Target Emotions: gap-32px — Figma 1005:6172 gap-[0px_32px] */}
+            <div className={styles.chipGridLarge}>
+              {section.targetEmotions.map((item) => (
+                <span key={item} className={styles.chip}>{item}</span>
+              ))}
+            </div>
           </div>
+
         </div>
-
-
-        {/* Divider — Figma node 1014:6847 (bottom closure) */}
-        <hr className={styles.divider} aria-hidden="true" />
 
 
       </div>

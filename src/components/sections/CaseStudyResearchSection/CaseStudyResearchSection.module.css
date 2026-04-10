@@ -260,6 +260,22 @@
 
 
 /* ============================================================
+   PANEL — 80vh breathing block
+   Wraps Personality Traits, Challenges & Pains, and the combined
+   Existing Systems + Have to Bring group. Content vertically centered
+   so each block reads as its own viewport panel on desktop/laptop.
+   Mobile reverts to natural flow.
+   ============================================================ */
+
+.panel {
+  min-height:      var(--screen-block-min-h);   /* 80vh */
+  display:         flex;
+  flex-direction:  column;
+  justify-content: center;
+}
+
+
+/* ============================================================
    DIVIDER — 1px horizontal rule
    Confirmed: Figma nodes 1014:6851, 1014:6849 — bg-[var(--tirtiary,#ccc)]
    ============================================================ */
@@ -316,6 +332,11 @@
   .chipGrid,
   .chipGridLarge {
     gap: var(--gap-16);
+  }
+
+  .panel {
+    min-height:      auto;       /* No forced viewport height on mobile */
+    justify-content: flex-start;
   }
 
   .chip {
