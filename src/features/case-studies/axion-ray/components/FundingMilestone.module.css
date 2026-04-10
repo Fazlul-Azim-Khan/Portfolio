@@ -15,7 +15,7 @@
   display flex, gap --gap-40 (matches CaseStudySectionWrapper col-gap)
   Confirmed: Figma node 981:7629 outer frame
 */
-.card {
+.funding-card {
   display:          flex;
   gap:              var(--gap-40);
   background:       var(--color-primary);
@@ -30,7 +30,7 @@
   Matches --case-section-index-w (38.64px)
   Inter 12px, white, uppercase — same as CaseStudySectionWrapper
 */
-.index {
+.funding-index {
   width:          var(--case-section-index-w);
   flex-shrink:    0;
   font-family:    var(--font-body);
@@ -49,7 +49,7 @@
   flex-col, gap-32px
   Confirmed: Figma itemSpacing 32px
 */
-.content {
+.funding-content {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-32);
@@ -64,7 +64,7 @@
   padding-12px, gap-10px, flex row, items-center
   Confirmed: Figma node 981:7629 chip
 */
-.chip {
+.funding-chip {
   display:       flex;
   align-items:   center;
   gap:           10px;
@@ -75,7 +75,7 @@
 }
 
 /* Chip star icon — Integral CF 32px white */
-.chipIcon {
+.funding-chip-icon {
   font-family:    var(--font-display);
   font-size:      var(--text-h4);  /* 32px */
   line-height:    var(--lh-heading);
@@ -84,7 +84,7 @@
 }
 
 /* Chip text label — Inter 12px white uppercase */
-.chipLabel {
+.funding-chip-label {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);
   line-height:    var(--lh-body);
@@ -99,14 +99,14 @@
   flex row, gap-24px
   Confirmed: Figma heading row layout
 */
-.headerRow {
+.funding-header-row {
   display:     flex;
   gap:         var(--gap-24);
   align-items: flex-start;
 }
 
 /* Heading — Integral CF H3 56px white, tracking -0.84px */
-.heading {
+.funding-heading {
   flex:           1;
   font-family:    var(--font-display);
   font-size:      var(--text-h1);
@@ -120,7 +120,7 @@
    Note: 16px is confirmed from Figma — intentional exception to --text-body (14px)
    w-400px constrained via max-width
 */
-.body {
+.funding-body {
   max-width:   400px;
   font-family: var(--font-body);
   font-size:   var(--text-body);  /* fluid 13->16px, reaches 16px at top of scale */
@@ -135,7 +135,7 @@
   Full-width, aspect ~1217/1005, rounded-8px, position relative
   Confirmed: Figma node 981:7629 image block
 */
-.imageWrap {
+.funding-image-wrap {
   position:      relative;
   width:         100%;
   aspect-ratio:  1217 / 1005;
@@ -143,7 +143,7 @@
   overflow:      hidden;
 }
 
-.image {
+.funding-image {
   object-fit: cover;
 }
 
@@ -151,22 +151,22 @@
 /* ── Responsive ─────────────────────────────────────────────── */
 
 @media (max-width: 1024px) {
-  .headerRow {
+  .funding-header-row {
     flex-direction: column;
   }
 
-  .body {
+  .funding-body {
     max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
-  .card {
+  .funding-card {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 
-  .index {
+  .funding-index {
     width: auto;
   }
 }

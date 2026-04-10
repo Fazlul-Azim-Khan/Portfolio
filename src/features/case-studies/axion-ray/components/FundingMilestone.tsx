@@ -48,22 +48,22 @@ interface FundingMilestoneProps {
 
 export default function FundingMilestone({ section }: FundingMilestoneProps) {
   return (
-    <div className={styles.card}>
+    <div className={styles['funding-card']}>
 
       {/* ── Index column — matches CaseStudySectionWrapper width ── */}
-      <p className={styles.index}>{section.index}</p>
+      <p className={styles['funding-index']}>{section.index}</p>
 
       {/* ── Content column ──────────────────────────────────────── */}
-      <div className={styles.content}>
+      <div className={styles['funding-content']}>
 
         {/* ── Chip ──────────────────────────────────────────────── */}
         {/*
           Dark bg, white 1px border, rounded-8px, padding-12px, gap-10px
           Confirmed: Figma node 981:7629 chip row
         */}
-        <div className={styles.chip}>
-          <span className={styles.chipIcon} aria-hidden="true">{section.chipIcon}</span>
-          <span className={styles.chipLabel}>{section.chip}</span>
+        <div className={styles['funding-chip']}>
+          <span className={styles['funding-chip-icon']} aria-hidden="true">{section.chipIcon}</span>
+          <span className={styles['funding-chip-label']}>{section.chip}</span>
         </div>
 
         {/* ── Header row — heading + body side by side ─────────── */}
@@ -73,9 +73,9 @@ export default function FundingMilestone({ section }: FundingMilestoneProps) {
           Body: w-400px, Inter 16px white, line-height 1.7
           Confirmed: Figma node 981:7629 header row
         */}
-        <div className={styles.headerRow}>
-          <h1 className={styles.heading}>{section.heading}</h1>
-          <p className={styles.body}>{section.body}</p>
+        <div className={styles['funding-header-row']}>
+          <h1 className={styles['funding-heading']}>{section.heading}</h1>
+          <p className={styles['funding-body']}>{section.body}</p>
         </div>
 
         {/* ── Image — full-width, rounded ───────────────────────── */}
@@ -84,13 +84,13 @@ export default function FundingMilestone({ section }: FundingMilestoneProps) {
           Confirmed: Figma node 981:7629 image block
           ⚠️  Image file must be present at path defined in content file
         */}
-        <div className={styles.imageWrap}>
+        <div className={styles['funding-image-wrap']}>
           <Image
             src={section.image}
             alt="U.S. Air Force SBIR Contract — Axion Ray milestone"
             fill
             sizes="100vw"
-            className={styles.image}
+            className={styles['funding-image']}
           />
         </div>
 

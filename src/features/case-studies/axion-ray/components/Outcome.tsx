@@ -50,11 +50,11 @@ interface OutcomeProps {
 
 export default function Outcome({ section }: OutcomeProps) {
   return (
-    <div className={styles.root}>
+    <div className={styles['outcome-root']}>
 
       {/* ── Header row — heading only, full-width flex ───── */}
-      <div className={styles.headerRow}>
-        <h1 className={styles.heading}>{section.heading}</h1>
+      <div className={styles['outcome-header-row']}>
+        <h1 className={styles['outcome-heading']}>{section.heading}</h1>
       </div>
 
       {/* ── Metrics grid — 4 dark cards ────────────────────── */}
@@ -64,11 +64,11 @@ export default function Outcome({ section }: OutcomeProps) {
         Value: H3 Integral CF white | Label: H5 Integral CF tertiary
         Confirmed: Figma nodes 982:5781–982:5800
       */}
-      <div className={styles.metricsGrid}>
+      <div className={styles['outcome-metrics-grid']}>
         {section.metrics.map((metric) => (
-          <div key={metric.value} className={styles.metricCard}>
-            <p className={styles.metricValue}>{metric.value}</p>
-            <p className={styles.metricLabel}>{metric.label}</p>
+          <div key={metric.value} className={styles['outcome-metric-card']}>
+            <p className={styles['outcome-metric-value']}>{metric.value}</p>
+            <p className={styles['outcome-metric-label']}>{metric.label}</p>
           </div>
         ))}
       </div>
@@ -79,8 +79,8 @@ export default function Outcome({ section }: OutcomeProps) {
         Integral CF H4 32px white uppercase
         Confirmed: Figma node 982:5802
       */}
-      <div className={styles.impactBlock}>
-        <p className={styles.impactText}>{section.impactStatement}</p>
+      <div className={styles['outcome-impact-block']}>
+        <p className={styles['outcome-impact-text']}>{section.impactStatement}</p>
       </div>
 
       {/* ── Skills section ─────────────────────────────────── */}
@@ -91,12 +91,12 @@ export default function Outcome({ section }: OutcomeProps) {
         Chip text: Inter 12px uppercase black
         Confirmed: Figma nodes 982:5805–982:5833
       */}
-      <div className={styles.skillsSection}>
-        <p className={styles.skillsLabel}>Skills Applied</p>
-        <div className={styles.skillsChips}>
+      <div className={styles['outcome-skills-section']}>
+        <p className={styles['outcome-skills-label']}>Skills Applied</p>
+        <div className={styles['outcome-skills-chips']}>
           {section.skills.map((skill) => (
-            <div key={skill} className={styles.chip}>
-              <span className={styles.chipLabel}>{skill}</span>
+            <div key={skill} className={styles['outcome-chip']}>
+              <span className={styles['outcome-chip-label']}>{skill}</span>
             </div>
           ))}
         </div>
@@ -107,7 +107,7 @@ export default function Outcome({ section }: OutcomeProps) {
         Inter 12px uppercase black
         Confirmed: Figma node 982:5833
       */}
-      <p className={styles.ndaNote}>{section.ndaNote}</p>
+      <p className={styles['outcome-nda-note']}>{section.ndaNote}</p>
 
     </div>
   )

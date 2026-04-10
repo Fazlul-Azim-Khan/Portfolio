@@ -6,7 +6,7 @@
  * Token-only values.
  */
 
-.root {
+.reflections-root {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-64);   /* Figma content col: gap-[var(--gap/64)] — was gap-40 */
@@ -15,7 +15,7 @@
 
 /* ── Heading ──────────────────────────────────────────────── */
 
-.heading {
+.reflections-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);
   line-height:    var(--lh-h1);
@@ -28,17 +28,17 @@
 /*
   Note: No section-level divider — Figma has no divider between
   the heading and the insight row. Each insight column has its own
-  top rule line (.insightDivider) confirmed at node 1014:6716.
+  top rule line (.reflections-insight-divider) confirmed at node 1014:6716.
 */
 
-.insightsRow {
+.reflections-insights-row {
   display: flex;
   gap:     var(--gap-40);
   width:   100%;
 }
 
 /* Individual insight column */
-.insight {
+.reflections-insight {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-24);   /* Figma node 1014:6717: gap-[var(--gap/24)] — was gap-12 */
@@ -49,7 +49,7 @@
 /* Number — "01", "02", "03"
    Confirmed: Figma node 1014:6718 — Integral CF Regular 20px, --color-primary
    Was: --font-body / --text-lead / --color-text-muted — all wrong */
-.number {
+.reflections-number {
   font-family:    var(--font-display);   /* Integral CF — was --font-body */
   font-size:      var(--text-h5);        /* 20px — was --text-lead (12px) */
   font-weight:    var(--weight-regular);
@@ -61,7 +61,7 @@
 
 /* Top rule line — sits ABOVE the number at the top of each insight column
    Confirmed: Figma node 1014:6716 — bg-[#e5e5e5] h-px (= --color-divider) */
-.insightDivider {
+.reflections-insight-divider {
   width:       100%;
   height:      1px;
   background:  var(--color-divider);
@@ -69,7 +69,7 @@
 }
 
 /* Insight title */
-.title {
+.reflections-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);
   line-height:    var(--lh-heading);
@@ -79,7 +79,7 @@
 }
 
 /* Body paragraph */
-.body {
+.reflections-body {
   font-family: var(--font-body);
   font-size:   var(--text-body);
   line-height: var(--lh-body);
@@ -90,7 +90,7 @@
 /* ── Responsive ───────────────────────────────────────────── */
 
 @media (max-width: 768px) {
-  .insightsRow {
+  .reflections-insights-row {
     flex-direction: column;
     gap:            var(--gap-40);
   }

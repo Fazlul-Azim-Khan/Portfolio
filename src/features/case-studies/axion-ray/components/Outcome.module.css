@@ -10,7 +10,7 @@
 /*
   Confirmed: Figma node 982:5751 gap-[var(--gap/64,64px)]
 */
-.root {
+.outcome-root {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-64);
@@ -23,14 +23,14 @@
   flex row, gap-32px
   Confirmed: Figma node 1021:6865
 */
-.headerRow {
+.outcome-header-row {
   display:     flex;
   gap:         var(--gap-32);
   align-items: flex-start;
 }
 
 /* Heading — full-width, flex-filled */
-.heading {
+.outcome-heading {
   flex:           1;
   min-width:      0;
   font-family:    var(--font-display);
@@ -48,7 +48,7 @@
   CSS grid, 4 equal columns, gap-24px
   Confirmed: Figma node 982:5780 grid-cols-[repeat(4,minmax(0,1fr))] gap-[24px]
 */
-.metricsGrid {
+.outcome-metrics-grid {
   display:               grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap:                   var(--gap-24);
@@ -60,7 +60,7 @@
   bg --color-primary, rounded-8px, padding-32px, flex-col, gap-8px, items-center
   Confirmed: Figma nodes 982:5781, 5786, 5791, 5796
 */
-.metricCard {
+.outcome-metric-card {
   background:     var(--color-primary);
   border-radius:  var(--radius-sm);
   padding:        var(--padding-32);
@@ -71,7 +71,7 @@
 }
 
 /* Metric value — Integral CF H3 56px white, tracking -0.84px */
-.metricValue {
+.outcome-metric-value {
   font-family:    var(--font-display);
   font-size:      var(--text-h3);
   line-height:    var(--lh-heading);
@@ -86,7 +86,7 @@
   Confirmed: Figma nodes 982:5785, 5790, 5795, 5800 text-[20px] tracking-0
   Uses --color-tertiary (= Figma var(--tirtiary, #ccc))
 */
-.metricLabel {
+.outcome-metric-label {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);
   line-height:    var(--lh-heading);
@@ -103,7 +103,7 @@
   bg --color-primary, rounded-8px, padding-40px, items-center justify-center
   Confirmed: Figma node 982:5802 p-[40px]
 */
-.impactBlock {
+.outcome-impact-block {
   background:      var(--color-primary);
   border-radius:   var(--radius-sm);
   padding:         var(--padding-40);
@@ -117,7 +117,7 @@
 /*
   Confirmed: Figma node 982:5804 text-[32px] text-[color:var(--secondary,white)]
 */
-.impactText {
+.outcome-impact-text {
   font-family:    var(--font-display);
   font-size:      var(--text-h4);
   line-height:    var(--lh-heading);
@@ -132,7 +132,7 @@
   flex-col, gap-16px
   Confirmed: Figma node 982:5805
 */
-.skillsSection {
+.outcome-skills-section {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-16);
@@ -144,7 +144,7 @@
   Confirmed: Figma node 982:5806 text-[14px] tracking-[0.7px]
   Note: Figma source uses Plus Jakarta Sans — substituted with Inter per project font system
 */
-.skillsLabel {
+.outcome-skills-label {
   font-family:    var(--font-body);
   font-size:      var(--text-body);
   line-height:    var(--lh-body);
@@ -157,7 +157,7 @@
 /* Chip row — flex-wrap, column-gap 12px only
    Confirmed: Figma node 982:5807 gap-[0px_12px]
 */
-.skillsChips {
+.outcome-skills-chips {
   display:        flex;
   flex-wrap:      wrap;
   column-gap:     var(--gap-12);
@@ -169,7 +169,7 @@
   white bg, black 1px border, rounded-8px, padding-12px
   Confirmed: Figma nodes 1021:6866 etc.
 */
-.chip {
+.outcome-chip {
   background:     var(--color-secondary);
   border:         1px solid var(--color-primary);
   border-radius:  var(--radius-sm);
@@ -180,7 +180,7 @@
 }
 
 /* Chip text — Inter 12px uppercase black */
-.chipLabel {
+.outcome-chip-label {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);
   line-height:    var(--lh-body);
@@ -195,7 +195,7 @@
   Inter 12px uppercase black
   Confirmed: Figma node 982:5833
 */
-.ndaNote {
+.outcome-nda-note {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);
   line-height:    var(--lh-body);
@@ -208,17 +208,17 @@
 /* ── Responsive ─────────────────────────────────────────────── */
 
 @media (max-width: 1024px) {
-  .metricsGrid {
+  .outcome-metrics-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 480px) {
-  .metricsGrid {
+  .outcome-metrics-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .metricValue {
+  .outcome-metric-value {
     font-size: var(--text-h4);
   }
 }
