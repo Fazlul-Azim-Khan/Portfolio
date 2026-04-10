@@ -163,14 +163,14 @@ export default function AxionRayCaseStudyPage() {
 
       {/* Body — inside Container */}
       <Container as="main">
-        <div className={styles.body}>
+        <div className={styles['csp-body']}>
 
           {/* Hero — title + meta sidebar + full-width image */}
           <CaseStudyHero hero={axionRay.hero} />
 
           {/* All sections, including the terminal NextCaseStudy */}
           {axionRay.sections.map((section, i) => (
-            <div key={i} className={styles.sectionItem}>
+            <div key={i} className={styles['csp-section-item']}>
               {renderSection(section, i)}
             </div>
           ))}

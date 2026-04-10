@@ -1,9 +1,11 @@
 /*
  * CaseStudyPage.module.css
  * Body layout for the Center Health case study page.
+ *
+ * Prefix: csp-
  */
 
-.body {
+.csp-body {
   display:          flex;
   flex-direction:   column;
   gap:              var(--case-section-gap);   /* 200px */
@@ -16,6 +18,6 @@
  * Needed because align-items: center on parent would otherwise
  * shrink items without explicit width constraints.
  */
-.sectionItem {
+.csp-section-item {
   width: 100%;
 }

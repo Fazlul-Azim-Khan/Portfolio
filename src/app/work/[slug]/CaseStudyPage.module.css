@@ -3,11 +3,13 @@
  * Body layout for case study pages
  * Confirmed from Figma node 977:5838
  *
+ * Prefix: csp-
+ *
  * gap-[200px] between all major sections
  * (--case-section-gap token = 200px)
  */
 
-.body {
+.csp-body {
   display:        flex;
   flex-direction: column;
   gap:            var(--case-section-gap);   /* 200px */
@@ -22,6 +24,6 @@
  * children (e.g. the scroll-driven research section) collapse to 0 width.
  * This class forces all section wrappers to full width.
  */
-.sectionItem {
+.csp-section-item {
   width: 100%;
 }
