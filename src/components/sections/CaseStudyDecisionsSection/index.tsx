@@ -39,30 +39,30 @@ interface CaseStudyDecisionsSectionProps {
 
 export default function CaseStudyDecisionsSection({ section }: CaseStudyDecisionsSectionProps) {
   return (
-    <div className={styles.content}>
+    <div className={styles['decisions-content']}>
 
       {/* ── Section heading ──────────────────────────────── */}
-      <h1 className={styles.heading}>{section.heading}</h1>
+      <h1 className={styles['decisions-heading']}>{section.heading}</h1>
 
       {/* ── Decision rows ─────────────────────────────────── */}
       {section.decisions.map((decision, i) => (
         <div key={i}>
 
           {/* Divider above each decision */}
-          <div className={styles.divider} aria-hidden="true" />
+          <div className={styles['decisions-divider']} aria-hidden="true" />
 
           {/* Decision block — 80vh panel (all three decisions per :003 scope) */}
-          <div className={`${styles.decisionBlock} ${styles.decisionBlockPanel}`}>
+          <div className={`${styles['decisions-block']} ${styles['decisions-block-panel']}`}>
 
             {/* Title row with inline line — h-[111px] */}
             {/*
               Alternates: title left + line right / line left + title right
               Confirmed: Figma nodes 1005:6341, 1005:6357, 1005:6373
             */}
-            <div className={styles.titleRow} data-align={i % 2 === 0 ? 'left' : 'right'}>
-              {i % 2 !== 0 && <div className={styles.titleLine} aria-hidden="true" />}
-              <h3 className={styles.decisionTitle}>{decision.title}</h3>
-              {i % 2 === 0 && <div className={styles.titleLine} aria-hidden="true" />}
+            <div className={styles['decisions-title-row']} data-align={i % 2 === 0 ? 'left' : 'right'}>
+              {i % 2 !== 0 && <div className={styles['decisions-title-line']} aria-hidden="true" />}
+              <h3 className={styles['decisions-title']}>{decision.title}</h3>
+              {i % 2 === 0 && <div className={styles['decisions-title-line']} aria-hidden="true" />}
             </div>
 
             {/* CHOSE / WHY / TRADEOFF — 3 equal columns */}
@@ -70,24 +70,24 @@ export default function CaseStudyDecisionsSection({ section }: CaseStudyDecision
               gap-[12px] — Figma nodes 1005:6346/6362/6378
               Decision 01 uses items-center (Figma 1005:6346), others items-start
             */}
-            <div className={styles.triCol} data-first={i === 0 ? 'true' : undefined}>
+            <div className={styles['decisions-tri-col']} data-first={i === 0 ? 'true' : undefined}>
 
-              <div className={styles.triColItem}>
-                <div className={styles.triDivider} aria-hidden="true" />
-                <p className={styles.triLabel}>Chose</p>
-                <p className={styles.triBody}>{decision.chose}</p>
+              <div className={styles['decisions-tri-item']}>
+                <div className={styles['decisions-tri-divider']} aria-hidden="true" />
+                <p className={styles['decisions-tri-label']}>Chose</p>
+                <p className={styles['decisions-tri-body']}>{decision.chose}</p>
               </div>
 
-              <div className={styles.triColItem}>
-                <div className={styles.triDivider} aria-hidden="true" />
-                <p className={styles.triLabel}>Why</p>
-                <p className={styles.triBody}>{decision.why}</p>
+              <div className={styles['decisions-tri-item']}>
+                <div className={styles['decisions-tri-divider']} aria-hidden="true" />
+                <p className={styles['decisions-tri-label']}>Why</p>
+                <p className={styles['decisions-tri-body']}>{decision.why}</p>
               </div>
 
-              <div className={styles.triColItem}>
-                <div className={styles.triDivider} aria-hidden="true" />
-                <p className={styles.triLabel}>Tradeoff</p>
-                <p className={styles.triBody}>{decision.tradeoff}</p>
+              <div className={styles['decisions-tri-item']}>
+                <div className={styles['decisions-tri-divider']} aria-hidden="true" />
+                <p className={styles['decisions-tri-label']}>Tradeoff</p>
+                <p className={styles['decisions-tri-body']}>{decision.tradeoff}</p>
               </div>
 
             </div>

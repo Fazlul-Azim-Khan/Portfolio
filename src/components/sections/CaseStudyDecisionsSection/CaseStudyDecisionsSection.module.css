@@ -14,7 +14,7 @@
    gap-[64px] — Figma node 1005:6339
    ============================================================ */
 
-.content {
+.decisions-content {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-64);
@@ -26,7 +26,7 @@
    SECTION HEADING — H3
    ============================================================ */
 
-.heading {
+.decisions-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);        /* 120px fluid */
   font-weight: var(--weight-regular);
@@ -42,7 +42,7 @@
    --color-tertiary — Figma: bg-[var(--tirtiary,#ccc)]
    ============================================================ */
 
-.divider {
+.decisions-divider {
   width:      100%;
   height:     1px;
   background: var(--color-tertiary);
@@ -54,7 +54,7 @@
    DECISION BLOCK — full decision unit h-[400px]
    ============================================================ */
 
-.decisionBlock {
+.decisions-block {
   display:        flex;
   flex-direction: column;
   height:         400px;   /* Figma: h-[400px] */
@@ -64,14 +64,14 @@
 /* 80vh breathing panel — applied to all decision cards in the
    Key Design Decisions section (:003 scope). Overrides the fixed
    400px height. Mobile resets to auto. */
-.decisionBlockPanel {
+.decisions-block-panel {
   height:     auto;
   min-height: var(--screen-block-min-h);   /* 80vh */
 }
 
 /* Inside the panel, the tri-column fills all remaining height after
    the title row, and aligns items to center within that space. */
-.decisionBlockPanel .triCol {
+.decisions-block-panel .decisions-tri-col {
   flex:        1 0 0;
   align-items: stretch;
 }
@@ -82,14 +82,14 @@
    Title + horizontal line; alternates left/right
    ============================================================ */
 
-.titleRow {
+.decisions-title-row {
   display:     flex;
   align-items: center;
   min-height:  111px;   /* Figma: h-[111px] — min so H2 text can grow */
   gap:         0;
 }
 
-.decisionTitle {
+.decisions-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h2);       /* 36px → 64px fluid */
   font-weight:    var(--weight-regular);
@@ -104,7 +104,7 @@
 }
 
 /* Horizontal line — fills remaining space of title row */
-.titleLine {
+.decisions-title-line {
   flex:       1 0 0;
   height:     1px;
   background: var(--color-primary);
@@ -116,10 +116,10 @@
    gap-[12px] — Figma nodes 1005:6346/6362/6378
    Decision 01: items-center — Figma 1005:6346
    Decision 02+: items-start — Figma 1005:6362/6378
-   Controlled via data-index on .triCol
+   Controlled via data-index on .decisions-tri-col
    ============================================================ */
 
-.triCol {
+.decisions-tri-col {
   display:     flex;
   gap:         var(--gap-12);
   align-items: flex-start;   /* default: decisions 02, 03 */
@@ -127,11 +127,11 @@
 }
 
 /* First decision: vertically center the tri-columns */
-.triCol[data-first="true"] {
+.decisions-tri-col[data-first="true"] {
   align-items: center;
 }
 
-.triColItem {
+.decisions-tri-item {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-24);   /* Figma: gap-[var(--gap/24,24px)] */
@@ -140,14 +140,14 @@
 }
 
 /* Top divider of each tri column — bg-[#e5e5e5] */
-.triDivider {
+.decisions-tri-divider {
   width:      100%;
   height:     1px;
   background: var(--color-divider);   /* #e5e5e5 */
   flex-shrink: 0;
 }
 
-.triLabel {
+.decisions-tri-label {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);      /* 20px */
   font-weight:    var(--weight-regular);
@@ -156,7 +156,7 @@
   margin:         0;
 }
 
-.triBody {
+.decisions-tri-body {
   font-family:    var(--font-body);
   font-size:      var(--text-body);    /* 14px */
   font-weight:    var(--weight-regular);
@@ -173,18 +173,18 @@
 
 @media (max-width: 767px) {
   /* Remove fixed 400px height — let content breathe */
-  .decisionBlock {
+  .decisions-block {
     height: auto;
   }
 
   /* Panel variant: also reset min-height on mobile — no forced viewport block */
-  .decisionBlockPanel {
+  .decisions-block-panel {
     min-height:      auto;
     justify-content: flex-start;
   }
 
   /* Remove fixed 111px title row height — let text wrap */
-  .titleRow {
+  .decisions-title-row {
     height:         auto;
     min-height:     unset;
     flex-wrap:      wrap;
@@ -193,43 +193,43 @@
   }
 
   /* Title fills full width when line is hidden; scale H2 down on mobile */
-  .decisionTitle {
+  .decisions-title {
     max-width:  100%;
     flex-shrink: 1;
     font-size:  var(--text-h4);   /* clamp 20px → 32px on mobile */
   }
 
   /* Hide decorative horizontal line — no room on narrow screens */
-  .titleLine {
+  .decisions-title-line {
     display: none;
   }
 
   /* Stack CHOSE / WHY / TRADEOFF vertically */
-  .triCol {
+  .decisions-tri-col {
     flex-direction: column;
     gap:            var(--gap-24);
   }
 
   /* Remove center alignment — no longer meaningful when stacked */
-  .triCol[data-first="true"] {
+  .decisions-tri-col[data-first="true"] {
     align-items: flex-start;
   }
 
   /* Reset panel variant's cross-axis centering on mobile too —
      stacked column layout wants items-start */
-  .decisionBlockPanel .triCol {
+  .decisions-block-panel .decisions-tri-col {
     align-items: flex-start;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   /* Tablet: remove fixed heights but keep 3-col layout */
-  .decisionBlock {
+  .decisions-block {
     height:     auto;
     min-height: 300px;
   }
 
-  .titleRow {
+  .decisions-title-row {
     height:     auto;
     min-height: 80px;
   }
