@@ -84,10 +84,7 @@ export default function CaseStudyResearchSection({ section }: Props) {
         <div className={`${styles.chipSection} ${styles.panel}`}>
 
           <div className={styles.chipSectionHead}>
-            {/* Confirmed: Figma node 1005:6089 — fontSize 56, Integral CF */}
             <p className={styles.chipSectionHeading}>Personality Traits</p>
-            {/* Confirmed: Figma node 1005:6093 — fontSize 12, Inter, uppercase */}
-            <p className={styles.chipSectionSub}>What Emotions Do They Exhibit?</p>
           </div>
 
           {/* Personality Traits: gap-24px — Figma 1005:6096 */}
@@ -123,10 +120,7 @@ export default function CaseStudyResearchSection({ section }: Props) {
         <div className={`${styles.borderedSection} ${styles.panel}`}>
 
           <div className={styles.chipSectionHead}>
-            {/* Confirmed: Figma node 1005:6118 — fontSize 56, Integral CF */}
             <p className={styles.chipSectionHeading}>Challenges &amp; Pains</p>
-            {/* Confirmed: Figma node 1005:6122 — fontSize 12, Inter, uppercase */}
-            <p className={styles.chipSectionSub}>What Are We Trying To Solve?</p>
           </div>
 
           {/* Challenges & Pains: gap-32px — Figma 1005:6123 gap-[32px] */}

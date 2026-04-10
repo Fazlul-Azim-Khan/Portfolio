@@ -68,10 +68,8 @@ export interface FundingMilestoneSection {
 export interface OutcomeSection {
   type:  'outcome'
   index: string
-  /** Large heading — Integral CF H3, uppercase */
+  /** Large heading — full-width, flex-filled */
   heading: string
-  /** Descriptor text right of heading — Inter 14px, w-268px */
-  descriptor: string
   /** Four metric cards — value (H3) + label (H5 tertiary) */
   metrics: Array<{
     value: string  // e.g. '$7.5M', 'SBIR'
@@ -302,9 +300,7 @@ export const axionRay: AxionRayCaseStudy = {
       index:   '(004)',
       heading: 'Solution Structure',
 
-      dataSourcesTitle: 'Five data sources.\nOne intelligence layer.',
-      dataSourcesBody:
-        'The platform ingests reliability signals from across the manufacturing operation simultaneously.',
+      dataSourcesTitle: 'Five data sources. One intelligence layer.',
 
       dataSources: [
         {
@@ -341,9 +337,6 @@ export const axionRay: AxionRayCaseStudy = {
       ],
 
       dataFlowTitle: 'Data Flow',
-      dataFlowBody:
-        'AI can monitor fragmented reliability signals continuously and surface anomalies ' +
-        'to engineers before they become crises.',
 
       pipeline: [
         { name: 'Manufacturing Data Sources' },
@@ -515,9 +508,6 @@ export const axionRay: AxionRayCaseStudy = {
       type:    'outcome',
       index:   '(009)',
       heading: 'Outcome: A Platform Engineers Trust. A Product Investors Backed.',
-      descriptor:
-        'From whiteboard concept to $25M-funded enterprise platform — ' +
-        'I was part of it from the first screen.',
 
       metrics: [
         { value: '$7.5M',  label: 'Seed Round' },

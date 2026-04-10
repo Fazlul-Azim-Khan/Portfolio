@@ -52,14 +52,9 @@ export default function Outcome({ section }: OutcomeProps) {
   return (
     <div className={styles.root}>
 
-      {/* ── Header row — heading + descriptor ──────────────── */}
-      {/*
-        flex row, gap-32px
-        Confirmed: Figma node 982:5774 (heading) + 982:5778 (descriptor)
-      */}
+      {/* ── Header row — heading only, full-width flex ───── */}
       <div className={styles.headerRow}>
         <h1 className={styles.heading}>{section.heading}</h1>
-        <p className={styles.descriptor}>{section.descriptor}</p>
       </div>
 
       {/* ── Metrics grid — 4 dark cards ────────────────────── */}

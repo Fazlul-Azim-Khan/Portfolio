@@ -57,12 +57,7 @@ export default function CaseStudySolutionSection({ section }: CaseStudySolutionS
       <div className={`${styles.subSection} ${styles.panel}`}>
 
         <div className={styles.subHeader}>
-          <h3 className={styles.subTitle}>
-            {section.dataSourcesTitle.split('\n').map((line, i) => (
-              <span key={i}>{line}{i < section.dataSourcesTitle.split('\n').length - 1 && <br />}</span>
-            ))}
-          </h3>
-          <p className={styles.subBody}>{section.dataSourcesBody}</p>
+          <h3 className={styles.subTitle}>{section.dataSourcesTitle}</h3>
         </div>
 
         {/* 5-column data source grid */}
@@ -130,7 +125,6 @@ export default function CaseStudySolutionSection({ section }: CaseStudySolutionS
 
         <div className={styles.subHeader}>
           <h3 className={styles.subTitle}>{section.dataFlowTitle}</h3>
-          <p className={styles.subBody}>{section.dataFlowBody}</p>
         </div>
 
         {/* Pipeline */}

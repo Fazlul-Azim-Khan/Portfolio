@@ -182,12 +182,10 @@ export interface CaseStudySolutionSection {
   index:             string
   heading:           string
   dataSourcesTitle:  string
-  dataSourcesBody:   string
   dataSources:       CaseStudyDataSource[]
   flowTitle:         string
   flowSteps:         CaseStudyFlowStep[]
   dataFlowTitle:     string
-  dataFlowBody:      string
   pipeline:          CaseStudyPipelineNode[]
 }
 

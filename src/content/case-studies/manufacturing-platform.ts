@@ -174,9 +174,7 @@ export const manufacturingPlatform: CaseStudy = {
       index:   '(004)',
       heading: 'Solution Structure',
 
-      dataSourcesTitle: 'Five data sources.\nOne intelligence layer.',
-      dataSourcesBody:
-        'The platform ingests reliability signals from across the manufacturing operation simultaneously.',
+      dataSourcesTitle: 'Five data sources. One intelligence layer.',
 
       dataSources: [
         {
@@ -213,9 +211,6 @@ export const manufacturingPlatform: CaseStudy = {
       ],
 
       dataFlowTitle: 'Data Flow',
-      dataFlowBody:
-        'AI can monitor fragmented reliability signals continuously and surface anomalies ' +
-        'to engineers before they become crises.',
 
       pipeline: [
         { name: 'Manufacturing Data Sources' },

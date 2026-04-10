@@ -97,21 +97,8 @@
   letter-spacing: var(--tracking-h4);
   color:          var(--color-primary);
   margin:         0;
-  width:          445px;
-  max-width:      50%;
+  flex:           1 0 0;
 }
-
-.subBody {
-  font-family:    var(--font-body);
-  font-size:      var(--text-body);     /* fluid 13->16px */
-  font-weight:    var(--weight-regular);
-  line-height:    27.2px;
-  color:          var(--color-primary);
-  margin:         0;
-  width:          400px;
-  max-width:      45%;
-}
-
 
 /* ============================================================
    DATA SOURCES GRID — 5 equal columns, h-[106px]
@@ -305,19 +292,13 @@
   /* subTitle: reduce from H4 on mobile */
   .subTitle {
     font-size: var(--text-h5);   /* 32px → 20px */
-    width:     100%;
-    max-width: 100%;
   }
 
-  /* Sub-header: stack title + body vertically */
+  /* Sub-header: stack title vertically (no body to stack with, kept for
+     future-proofing / consistency) */
   .subHeader {
     flex-direction: column;
     gap:            var(--gap-24);
-  }
-
-  .subBody {
-    width:     100%;
-    max-width: 100%;
   }
 
   /* ── DATA SOURCES: single-column stack ─────────────── */
@@ -397,15 +378,6 @@
 
   .sourceItem {
     flex: 1 1 calc(33% - var(--gap-40) / 3);
-  }
-
-  /* Sub-header: reduce max-widths on tablet */
-  .subTitle {
-    max-width: 45%;
-  }
-
-  .subBody {
-    max-width: 50%;
   }
 
   /* Pipeline: remove fixed height on tablet */

@@ -29,7 +29,7 @@
   align-items: flex-start;
 }
 
-/* Heading — Integral CF H3 56px, tracking -0.84px, uppercase */
+/* Heading — full-width, flex-filled */
 .heading {
   flex:           1;
   min-width:      0;
@@ -41,18 +41,6 @@
   margin:         0;
 }
 
-/* Descriptor — Inter 14px, fixed 268px width
-   Confirmed: Figma node 982:5778 w-[268px]
-*/
-.descriptor {
-  width:       268px;
-  flex-shrink: 0;
-  font-family: var(--font-body);
-  font-size:   var(--text-body);
-  line-height: var(--lh-body);
-  color:       var(--color-primary);
-  margin:      0;
-}
 
 
 /* ── Metrics grid — 4 equal dark cards ─────────────────────── */
@@ -220,14 +208,6 @@
 /* ── Responsive ─────────────────────────────────────────────── */
 
 @media (max-width: 1024px) {
-  .headerRow {
-    flex-direction: column;
-  }
-
-  .descriptor {
-    width: 100%;
-  }
-
   .metricsGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
