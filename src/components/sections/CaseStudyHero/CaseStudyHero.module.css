@@ -95,14 +95,13 @@
 
 /* ============================================================
    TITLE
-   Integral CF, 120px, letter-spacing -1.8px
-   Confirmed: Figma node 977:5890
+   Outfit Medium, 120px, letter-spacing -1.8px
    ============================================================ */
 
 .title {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);              /* 120px */
-  font-weight:    var(--weight-regular);
+  font-weight:    var(--weight-medium);
   line-height:    var(--lh-h1);                /* 120px */
   letter-spacing: var(--tracking-case-hero);   /* -1.8px */
   color:          var(--color-primary);

@@ -128,7 +128,7 @@ export const manufacturingPlatform: CaseStudy = {
 
       decisions: [
         {
-          title: 'Interpretability over abstraction',
+          title: 'Interpretability Over Abstraction',
           chose:
             'Every anomaly card shows WHY the AI flagged it, WHAT signals contributed, ' +
             'and HOW confident the model is — rather than just surfacing an alert.',
@@ -140,7 +140,7 @@ export const manufacturingPlatform: CaseStudy = {
             'disclosure: summary view for scanning, expanded view for investigation.',
         },
         {
-          title: 'Layered drill-down over single-screen density',
+          title: 'Layered Drill-Down Over Single-Screen Density',
           chose:
             'Every anomaly card shows WHY the AI flagged it, WHAT signals contributed, ' +
             'and HOW confident the model is — rather than just surfacing an alert.',
@@ -152,7 +152,7 @@ export const manufacturingPlatform: CaseStudy = {
             'disclosure: summary view for scanning, expanded view for investigation.',
         },
         {
-          title: 'Consistent visual encoding over per-chart flexibility',
+          title: 'Consistent Visual Encoding Over Per-Chart Flexibility',
           chose:
             'A unified chart grammar where the same visual treatment — colour, density, axis scale ' +
             '— means the same thing across all five data source types.',
@@ -232,7 +232,7 @@ export const manufacturingPlatform: CaseStudy = {
       type:    'phase',
       index:   '(005)',
       chip:    'Phase 01 · Pre-Seed · 2021',
-      heading: 'Building the foundation. Sole designer. Zero to investor-ready.',
+      heading: 'Building the Foundation. Sole Designer. Zero to Investor-Ready.',
 
       body:
         "When I joined, the company had a thesis, a technical team, and an urgent need: build " +
@@ -267,7 +267,7 @@ export const manufacturingPlatform: CaseStudy = {
       type:    'phase',
       index:   '(006)',
       chip:    'Phase 02 · Seed Stage · 2021 – 2022',
-      heading: "Designing for engineers who don't trust what they can't audit.",
+      heading: "Designing for Engineers Who Don't Trust What They Can't Audit.",
 
       featureCards: [
         {
@@ -321,7 +321,7 @@ export const manufacturingPlatform: CaseStudy = {
       type:    'phase',
       index:   '(007)',
       chip:    'Phase 03 · Post Series A · 2022',
-      heading: 'From sole designer to scaling an enterprise platform.',
+      heading: 'From Sole Designer to Scaling an Enterprise Platform.',
 
       body:
         'Following Series A funding, the product team expanded. I transitioned from ' +

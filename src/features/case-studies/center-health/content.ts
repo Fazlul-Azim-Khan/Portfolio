@@ -334,7 +334,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'why-it-mattered',
       index:   '(001)',
-      heading: 'Why this product mattered',
+      heading: 'Why This Product Mattered',
       people: [
         { name: 'Julian (CTO)', detail: 'Longtime Type 1 diabetic' },
         { name: 'Ali (CEO)',    detail: 'Father had Type 1' },
@@ -372,7 +372,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:     'design-system',
       index:    '(003)',
-      heading:  'Design system: the invisible infrastructure',
+      heading:  'Design System: The Invisible Infrastructure',
       sideText: 'Three platforms.\nMultiple feature teams.\nWe needed coherence.',
       features: [
         'Tokenized foundation: color, spacing, typography, Shadow.',
@@ -739,7 +739,7 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'recommendation-letter',
       index:   '(016)',
-      heading: 'Recommendation letter',
+      heading: 'Recommendation Letter',
       author:  'CTO: Julian Laval',
       quote:   'Faz played a leading role in shaping the next iteration of our products — from UX research and design systems to branding and cross-platform implementation.',
       pdfSrc:  '/images/works/center-health/recommendation-letter.pdf',
@@ -755,7 +755,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:  'next-case-study',
       index: '01',
       label: 'Axion Ray',
-      title: 'AI-powered manufacturing reliability platform',
+      title: 'AI-Powered Manufacturing Reliability Platform',
       image: '/images/works/manufacturing-platform/mockup.jpg',
       href:  '/work/manufacturing-platform',
     },

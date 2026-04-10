@@ -255,7 +255,7 @@ export const axionRay: AxionRayCaseStudy = {
 
       decisions: [
         {
-          title: 'Interpretability over abstraction',
+          title: 'Interpretability Over Abstraction',
           chose:
             'Every anomaly card shows WHY the AI flagged it, WHAT signals contributed, ' +
             'and HOW confident the model is — rather than just surfacing an alert.',
@@ -267,7 +267,7 @@ export const axionRay: AxionRayCaseStudy = {
             'disclosure: summary view for scanning, expanded view for investigation.',
         },
         {
-          title: 'Layered drill-down over single-screen density',
+          title: 'Layered Drill-Down Over Single-Screen Density',
           chose:
             'Every anomaly card shows WHY the AI flagged it, WHAT signals contributed, ' +
             'and HOW confident the model is — rather than just surfacing an alert.',
@@ -279,7 +279,7 @@ export const axionRay: AxionRayCaseStudy = {
             'disclosure: summary view for scanning, expanded view for investigation.',
         },
         {
-          title: 'Consistent visual encoding over per-chart flexibility',
+          title: 'Consistent Visual Encoding Over Per-Chart Flexibility',
           chose:
             'A unified chart grammar where the same visual treatment — colour, density, axis scale ' +
             '— means the same thing across all five data source types.',
@@ -361,7 +361,7 @@ export const axionRay: AxionRayCaseStudy = {
       type:    'phase',
       index:   '(005)',
       chip:    'Phase 01 · Pre-Seed · 2021',
-      heading: 'Building the foundation. Sole designer. Zero to investor-ready.',
+      heading: 'Building the Foundation. Sole Designer. Zero to Investor-Ready.',
 
       body:
         'When I joined, the company had a thesis, a technical team, and an urgent need: build ' +
@@ -395,7 +395,7 @@ export const axionRay: AxionRayCaseStudy = {
       type:    'phase',
       index:   '(006)',
       chip:    'Phase 02 · Seed Stage · 2021 – 2022',
-      heading: "Designing for engineers who don't trust what they can't audit.",
+      heading: "Designing for Engineers Who Don't Trust What They Can't Audit.",
 
       featureCards: [
         {
@@ -448,7 +448,7 @@ export const axionRay: AxionRayCaseStudy = {
       index:    '(007)',
       chipIcon: '*',
       chip:     'Milestone · U.S. Air Force SBIR Contract',
-      heading:  'Defense-grade reliability intelligence.',
+      heading:  'Defense-Grade Reliability Intelligence.',
       body:
         'During the Series A stage, the platform secured a U.S. Air Force SBIR contract. ' +
         'This validated both the AI technology and the product\'s operational readiness. ' +
@@ -466,7 +466,7 @@ export const axionRay: AxionRayCaseStudy = {
       type:    'phase',
       index:   '(008)',
       chip:    'Phase 03 · Post Series A · 2022',
-      heading: 'From sole designer to scaling an enterprise platform.',
+      heading: 'From Sole Designer to Scaling an Enterprise Platform.',
 
       body:
         'Following Series A funding, the product team expanded. I transitioned from ' +
@@ -514,7 +514,7 @@ export const axionRay: AxionRayCaseStudy = {
     {
       type:    'outcome',
       index:   '(009)',
-      heading: 'Outcome: A platform engineers trust. A product investors backed.',
+      heading: 'Outcome: A Platform Engineers Trust. A Product Investors Backed.',
       descriptor:
         'From whiteboard concept to $25M-funded enterprise platform — ' +
         'I was part of it from the first screen.',
@@ -552,24 +552,24 @@ export const axionRay: AxionRayCaseStudy = {
       type:    'reflections',
       index:   '(010)',
       // ⚠️ Figma reads "TOW" — confirm if intentional typo before correcting
-      heading: 'Reflections of two years. Three funding stages.',
+      heading: 'Reflections of Two Years. Three Funding Stages.',
 
       insights: [
         {
           number: '01',
-          title:  'Domain depth improves design decisions.',
+          title:  'Domain Depth Improves Design Decisions.',
           body:
             'Understanding reliability engineering workflows changed how interfaces were structured.',
         },
         {
           number: '02',
-          title:  'AI interfaces require transparency.',
+          title:  'AI Interfaces Require Transparency.',
           body:
             'Confidence indicators and interpretability are essential for user trust.',
         },
         {
           number: '03',
-          title:  'Design systems are infrastructure.',
+          title:  'Design Systems Are Infrastructure.',
           body:
             'Consistent visual encoding is essential for complex analytical products.',
         },
@@ -606,7 +606,7 @@ export const axionRay: AxionRayCaseStudy = {
       label:    'Next Case Study',
       index:    '02',
       title:    'Center Health',
-      subtitle: 'AI-powered diabetes management platform',
+      subtitle: 'AI-Powered Diabetes Management Platform',
       href:     '/work/center-health',
       image:    '/images/works/center-health/mockup.jpg',
     } satisfies NextCaseStudySection,
