@@ -157,11 +157,6 @@
    ============================================================ */
 
 @media (max-width: 767px) {
-  /* Scale section heading down */
-  .heading {
-    font-size: var(--text-h4);   /* 120px fluid */
-  }
-
   /* Remove fixed 400px height — let content breathe */
   .decisionBlock {
     height: auto;

@@ -295,10 +295,6 @@
     gap:            var(--gap-24);
   }
 
-  .heading {
-    font-size: var(--text-h4);                    /* 120px fluid */
-  }
-
   .chipSectionHeading {
     font-size: var(--text-h4);                    /* 32px on mobile */
   }

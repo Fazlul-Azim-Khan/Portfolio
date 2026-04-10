@@ -169,8 +169,4 @@
   .index {
     width: auto;
   }
-
-  .heading {
-    font-size: var(--text-h4);  /* 120px fluid */
-  }
 }

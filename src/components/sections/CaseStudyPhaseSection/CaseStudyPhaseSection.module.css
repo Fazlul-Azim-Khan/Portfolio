@@ -461,12 +461,6 @@
 
   /* ── Phase chip: already full-width, no change needed ── */
 
-  /* ── Heading: H3 (56px) → H4 (32px) on mobile ───────── */
-  /* Applies to 005 standalone heading, 006 standalone heading */
-  .heading {
-    font-size: var(--text-h4);   /* 120px fluid */
-  }
-
   /* ── Phase 01 body: remove right-alignment + fixed width ── */
   /* Desktop: items-end + w-540px creates a right-anchored block */
   .bodyWrap {

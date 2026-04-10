@@ -282,11 +282,6 @@
     gap: var(--gap-64);
   }
 
-  /* Scale section heading down */
-  .heading {
-    font-size: var(--text-h4);   /* 120px fluid */
-  }
-
   /* subTitle: reduce from H4 on mobile */
   .subTitle {
     font-size: var(--text-h5);   /* 32px → 20px */
