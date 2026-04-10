@@ -229,7 +229,7 @@ Violating any of these rules counts as a regression.
 - **Outfit is the only font used in this project.** Display and body, everywhere.
 - Never reference Inter, Integral CF, or any other font family in CSS, `fonts.css`, or component files.
 - If you find a stale Inter/Integral CF reference, it must be removed (only in the files where you are already making an approved change — do not do a blanket sweep without explicit instruction).
-- Two weights only: `--weight-regular` (400) and `--weight-medium` (500).
+- **One weight only: `--weight-regular` (400).** Everything in the project — headings, body, labels, titles, hero, case studies — uses `--weight-regular`. Never `--weight-medium`, never `--weight-bold`. This is a hard rule.
 
 ### Section headings = H1
 
@@ -237,11 +237,10 @@ Violating any of these rules counts as a regression.
 - A page intentionally has multiple `<h1>`s — each section is its own screen in the step-scroll system.
 - H1 visual specs (all required together):
   - `font-size: var(--text-h1)` — fluid 48px → 120px via `clamp(3rem, 1.853rem + 4.706vw, 7.5rem)`
-  - `font-weight: var(--weight-medium)`
+  - `font-weight: var(--weight-regular)`
   - `line-height: var(--lh-h1)` — `1`
   - `letter-spacing: var(--tracking-h1)` — `-1.5px`
 - **No section heading may use `--text-h2` or `--text-h3`.** Those tokens still exist for sub-headings and card titles, not section headings.
-- `--weight-regular` is not valid for section headings. Always `--weight-medium`.
 
 ### Header row pattern
 
@@ -253,7 +252,7 @@ Every section header is a two-part flex row:
 ```
 
 - Container: `display: flex; flex-direction: row; gap: var(--gap-16); align-items: flex-start;`
-- `headerIndex`: **Outfit** 12px, `text-transform: uppercase`, `--weight-regular`, `padding-top: 4px` for optical baseline alignment with the large H1
+- `headerIndex`: **Outfit** 12px, `text-transform: uppercase`, `font-weight: var(--weight-regular)`, `padding-top: 4px` for optical baseline alignment with the large H1
 - `<h1>`: receives `flex: 1` so it can wrap properly next to the index
 - Indexes are defined in `content.ts` under `meta.index` as strings like `'(001)'`, `'(002)'`, `'(003)'`
 - Current landing indexes: Hero none, SelectedWorks `(001)`, MoreWork `(002)`, Experience `(004)`, Languages `(005)`, Contact `(006)`
@@ -261,13 +260,13 @@ Every section header is a two-part flex row:
 ### Hero bio = H5
 
 - `Hero .bio` is H5, not a lead paragraph.
-- Specs: `font-size: var(--text-h5)`, `font-weight: var(--weight-medium)`, `line-height: var(--lh-heading)`, `letter-spacing: var(--tracking-h5)`
+- Specs: `font-size: var(--text-h5)`, `font-weight: var(--weight-regular)`, `line-height: var(--lh-heading)`, `letter-spacing: var(--tracking-h5)`
 - **No `text-transform: uppercase`** on the bio.
 
 ### Card + case study title weight
 
-- `WorkCard .title` and `CaseStudyHero .title` both use `--weight-medium` (matches the section H1 style family).
-- Never `--weight-regular` on these.
+- `WorkCard .title` and `CaseStudyHero .title` both use `--weight-regular` — same as everything else in the project.
+- Never `--weight-medium` on these.
 
 ### Outfit is case-sensitive — Title Case content is required
 
