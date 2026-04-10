@@ -46,50 +46,27 @@ export default function CaseStudyDecisionsSection({ section }: CaseStudyDecision
 
       {/* ── Decision rows ─────────────────────────────────── */}
       {section.decisions.map((decision, i) => (
-        <div key={i}>
+        <div key={i} className={`${styles['decisions-block']} ${styles['decisions-block-panel']}`}>
 
-          {/* Divider above each decision */}
-          <div className={styles['decisions-divider']} aria-hidden="true" />
+          {/* Decision title */}
+          <h3 className={styles['decisions-title']}>{decision.title}</h3>
 
-          {/* Decision block — 80vh panel (all three decisions per :003 scope) */}
-          <div className={`${styles['decisions-block']} ${styles['decisions-block-panel']}`}>
+          {/* CHOSE / WHY / TRADEOFF — 3 equal columns */}
+          <div className={styles['decisions-tri-col']} data-first={i === 0 ? 'true' : undefined}>
 
-            {/* Title row with inline line — h-[111px] */}
-            {/*
-              Alternates: title left + line right / line left + title right
-              Confirmed: Figma nodes 1005:6341, 1005:6357, 1005:6373
-            */}
-            <div className={styles['decisions-title-row']} data-align={i % 2 === 0 ? 'left' : 'right'}>
-              {i % 2 !== 0 && <div className={styles['decisions-title-line']} aria-hidden="true" />}
-              <h3 className={styles['decisions-title']}>{decision.title}</h3>
-              {i % 2 === 0 && <div className={styles['decisions-title-line']} aria-hidden="true" />}
+            <div className={styles['decisions-tri-item']}>
+              <p className={styles['decisions-tri-label']}>Chose</p>
+              <p className={styles['decisions-tri-body']}>{decision.chose}</p>
             </div>
 
-            {/* CHOSE / WHY / TRADEOFF — 3 equal columns */}
-            {/*
-              gap-[12px] — Figma nodes 1005:6346/6362/6378
-              Decision 01 uses items-center (Figma 1005:6346), others items-start
-            */}
-            <div className={styles['decisions-tri-col']} data-first={i === 0 ? 'true' : undefined}>
+            <div className={styles['decisions-tri-item']}>
+              <p className={styles['decisions-tri-label']}>Why</p>
+              <p className={styles['decisions-tri-body']}>{decision.why}</p>
+            </div>
 
-              <div className={styles['decisions-tri-item']}>
-                <div className={styles['decisions-tri-divider']} aria-hidden="true" />
-                <p className={styles['decisions-tri-label']}>Chose</p>
-                <p className={styles['decisions-tri-body']}>{decision.chose}</p>
-              </div>
-
-              <div className={styles['decisions-tri-item']}>
-                <div className={styles['decisions-tri-divider']} aria-hidden="true" />
-                <p className={styles['decisions-tri-label']}>Why</p>
-                <p className={styles['decisions-tri-body']}>{decision.why}</p>
-              </div>
-
-              <div className={styles['decisions-tri-item']}>
-                <div className={styles['decisions-tri-divider']} aria-hidden="true" />
-                <p className={styles['decisions-tri-label']}>Tradeoff</p>
-                <p className={styles['decisions-tri-body']}>{decision.tradeoff}</p>
-              </div>
-
+            <div className={styles['decisions-tri-item']}>
+              <p className={styles['decisions-tri-label']}>Tradeoff</p>
+              <p className={styles['decisions-tri-body']}>{decision.tradeoff}</p>
             </div>
 
           </div>

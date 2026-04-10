@@ -87,6 +87,15 @@
   margin:      0;
 }
 
+/* ── 100vh centered — desktop/tablet ─────────────────────── */
+
+@media (min-width: 768px) {
+  .reflections-root {
+    min-height:      100vh;
+    justify-content: center;
+  }
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 
 @media (max-width: 768px) {

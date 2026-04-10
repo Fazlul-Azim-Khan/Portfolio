@@ -241,14 +241,7 @@ function renderSection(section: CenterHealthSectionData, i: number) {
       )
 
     case 'next-case-study':
-      /*
-        NextCaseStudySection — navigation card to next project.
-        Cover image (1328/710) + index/label/title row.
-        Confirmed: Figma node 1242:11481
-      */
-      return (
-        <NextCaseStudySection key={i} section={section} />
-      )
+      return null
 
     default:
       return null

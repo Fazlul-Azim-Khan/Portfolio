@@ -136,13 +136,7 @@ function renderSection(section: AxionRaySectionData, i: number) {
       )
 
     case 'next-case-study':
-      /*
-        NextCaseStudy is a terminal section — no index column.
-        It is a Client Component that handles router navigation.
-      */
-      return (
-        <NextCaseStudy key={i} section={section} />
-      )
+      return null
 
     default:
       return null

@@ -43,11 +43,8 @@ export default function CaseStudySolutionSection({ section }: CaseStudySolutionS
   return (
     <div className={styles['solution-content']}>
 
-      {/* ── Section heading + top divider ────────────────── */}
-      <div className={styles['solution-heading-block']}>
-        <h1 className={styles['solution-heading']}>{section.heading}</h1>
-        <div className={styles['solution-divider']} aria-hidden="true" />
-      </div>
+      {/* ── Section heading ────────────────────────────────── */}
+      <h1 className={styles['solution-heading']}>{section.heading}</h1>
 
       {/* ── Data sources sub-section ─────────────────────── */}
       {/*
@@ -76,9 +73,6 @@ export default function CaseStudySolutionSection({ section }: CaseStudySolutionS
         </div>
 
       </div>
-
-      {/* ── Divider ──────────────────────────────────────── */}
-      <div className={styles['solution-divider']} aria-hidden="true" />
 
       {/* ── End-to-end flow ──────────────────────────────── */}
       {/*
@@ -112,9 +106,6 @@ export default function CaseStudySolutionSection({ section }: CaseStudySolutionS
         </div>
 
       </div>
-
-      {/* ── Divider ──────────────────────────────────────── */}
-      <div className={styles['solution-divider']} aria-hidden="true" />
 
       {/* ── Data flow pipeline ───────────────────────────── */}
       {/*
