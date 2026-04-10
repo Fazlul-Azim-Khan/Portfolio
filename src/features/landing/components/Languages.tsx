@@ -50,9 +50,6 @@ export default function Languages() {
         ))}
       </div>
 
-      {/* ── Bottom divider ────────────────────────────────── */}
-      <hr className={styles['lp-lang-divider']} aria-hidden="true" />
-
     </div>
   )
 }

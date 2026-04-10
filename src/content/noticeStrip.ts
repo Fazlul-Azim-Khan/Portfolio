@@ -15,5 +15,5 @@
 
 export const noticeStrip = {
   // Verbatim from Figma node 1021:6894 — do not alter spacing or punctuation
-  text: 'BERLIN  ·  CHANCENKARTE  ·  No Sponsorship Needed  ·  Full time Work Availibility',
+  text: 'GERMANY  ·  Chancenkarte  ·  No Sponsorship Needed  ·  Full time Work Availibility',
 } as const

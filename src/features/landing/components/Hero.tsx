@@ -39,19 +39,6 @@ export default function Hero() {
 
       <div className={styles['lp-hero-grid']}>
 
-        {/* ── TOP LEFT: Decorative arrow ──────────────────── */}
-        {/*
-          The ↗ glyph is rendered at 200px and flipped vertically
-          with scaleY(-1) so it appears as ↘.
-          Confirmed: Figma uses -scale-y-100 on this element.
-          aria-hidden — purely decorative, no semantic meaning.
-        */}
-        <div className={styles['lp-hero-arrow-cell']} aria-hidden="true">
-          <span className={styles['lp-hero-arrow']}>
-            {hero.decorativeArrow}
-          </span>
-        </div>
-
         {/* ── TOP RIGHT: Bio + Specialty chips ────────────── */}
         <div className={styles['lp-hero-bio-cell']}>
 

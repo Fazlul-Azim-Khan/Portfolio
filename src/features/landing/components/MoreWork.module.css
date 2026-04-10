@@ -75,10 +75,11 @@
   padding-top:    4px;                 /* optical alignment with heading cap-height */
 }
 
-/* HEADER CONTENT — right column: heading + subheading stacked */
+/* HEADER CONTENT — right column: heading + subheading in a row */
 .more-work-header-content {
   display:        flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items:    flex-start;
   gap:            var(--gap-16);
   flex:           1;
 }
