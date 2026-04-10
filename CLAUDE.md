@@ -118,25 +118,29 @@ All CSS Module class names follow this structure:
 
 **Section prefix table:**
 
-| Component | Prefix |
-|---|---|
-| CaseStudyDecisionsSection | `decisions` |
-| CaseStudySolutionSection | `solution` |
-| CaseStudyResearchSection | `research` |
-| CaseStudyPhaseSection | `phase` |
-| CaseStudyProblemSection | `problem` |
-| FundingMilestone | `funding` |
-| OutcomeSection | `outcome` |
-| ReflectionsSection | `reflections` |
-| CaseStudyClientFeedbackSection | `feedback` |
-| NextCaseStudyHero | `next` |
-| CaseStudySectionWrapper | `wrapper` |
-| Landing Hero | `hero` |
-| Selected Works | `works` |
-| Gallery | `gallery` |
-| Experience | `experience` |
-| Contact | `contact` |
-| Footer | `footer` |
+Entries marked ✅ are confirmed in code. Entries marked 🔲 are planned but not yet implemented.
+
+| Component | Prefix | Status |
+|---|---|---|
+| CaseStudyHero | `case-hero` | ✅ |
+| CaseStudyProblemSection | `problem` | ✅ |
+| CaseStudyResearchSection | `research` | ✅ |
+| CaseStudyDecisionsSection | `decisions` | ✅ |
+| CaseStudySolutionSection | `solution` | ✅ |
+| CaseStudyPhaseSection | `phase` | ✅ |
+| CaseStudyClientFeedbackSection | `feedback` | ✅ |
+| CaseStudySectionWrapper | `section` | ✅ |
+| NextCaseStudyHero | `next` | ✅ |
+| HeroSection | `hero` | ✅ |
+| SelectedWorksSection | `works` | ✅ |
+| ExperienceSection | `exp` | ✅ |
+| LanguagesSection | `lang` | ✅ |
+| FundingMilestone | `funding` | 🔲 |
+| OutcomeSection | `outcome` | 🔲 |
+| ReflectionsSection | `reflections` | 🔲 |
+| GallerySection | `gallery` | 🔲 |
+| ContactSection | `contact` | 🔲 |
+| FooterSection | `footer` | 🔲 |
 
 **Shared element vocabulary** (same word = same meaning across all sections):
 
