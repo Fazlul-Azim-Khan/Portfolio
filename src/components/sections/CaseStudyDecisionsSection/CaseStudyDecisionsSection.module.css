@@ -71,6 +71,18 @@
   justify-content: center;
 }
 
+/* Inside the panel, the tri-column must not consume all remaining
+   vertical space — otherwise justify-content: center on the parent
+   has no slack to distribute and the content sticks to the top.
+   Overrides the base .triCol { flex: 1 0 0 } so the titleRow +
+   tri-column group takes its natural height and is centered by
+   the parent. Also normalizes cross-axis alignment across all
+   decisions (the base rule only centers the first one). */
+.decisionBlockPanel .triCol {
+  flex:        0 0 auto;
+  align-items: center;
+}
+
 
 /* ============================================================
    TITLE ROW — h-[111px], flex items-center
@@ -206,6 +218,12 @@
 
   /* Remove center alignment — no longer meaningful when stacked */
   .triCol[data-first="true"] {
+    align-items: flex-start;
+  }
+
+  /* Reset panel variant's cross-axis centering on mobile too —
+     stacked column layout wants items-start */
+  .decisionBlockPanel .triCol {
     align-items: flex-start;
   }
 }
