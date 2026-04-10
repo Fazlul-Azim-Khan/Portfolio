@@ -13,7 +13,7 @@
    Default: light background (no wrapper styling beyond flex)
    ============================================================ */
 
-.wrapper {
+.section-wrapper {
   display:   flex;
   gap:       var(--case-section-col-gap);   /* 40px */
   width:     100%;
@@ -27,7 +27,7 @@
    Confirmed: Figma node 978:6038
    ============================================================ */
 
-.dark {
+.section-wrapper-dark {
   background:    var(--color-primary);
   padding:       var(--padding-64) var(--layout-padding-x);  /* 64px 16px */
   border-radius: var(--radius-sm);                           /* 8px */
@@ -40,13 +40,13 @@
    Confirmed: Figma node 978:6023
    ============================================================ */
 
-.indexCol {
+.section-index-col {
   flex-shrink: 0;
   width:       var(--case-section-index-w);   /* 38.64px */
   padding-top: 8px;
 }
 
-.index {
+.section-index {
   display:        block;
   font-family:    var(--font-body);
   font-size:      var(--text-body);     /* 14px — Figma uses DM Sans opsz-14, Inter is equivalent */
@@ -58,7 +58,7 @@
 }
 
 /* Dark variant — index text becomes white */
-.dark .index {
+.section-wrapper-dark .section-index {
   color: var(--color-secondary);
 }
 
@@ -68,7 +68,7 @@
    flex-1, min-width 0 to allow proper flex shrink
    ============================================================ */
 
-.content {
+.section-content {
   flex:      1 0 0;
   min-width: 0;
 }
@@ -80,12 +80,12 @@
 
 @media (max-width: 767px) {
   /* Collapse 2-col (index + content) to single column on mobile */
-  .wrapper {
+  .section-wrapper {
     flex-direction: column;
     gap:            var(--gap-16);
   }
 
-  .indexCol {
+  .section-index-col {
     width:       auto;
     padding-top: 0;
   }

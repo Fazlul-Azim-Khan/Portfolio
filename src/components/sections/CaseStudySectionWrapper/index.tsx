@@ -50,8 +50,8 @@ export default function CaseStudySectionWrapper({
 }: CaseStudySectionWrapperProps) {
 
   const wrapClass = [
-    styles.wrapper,
-    dark ? styles.dark : undefined,
+    styles['section-wrapper'],
+    dark ? styles['section-wrapper-dark'] : undefined,
     className,
   ].filter(Boolean).join(' ')
 
@@ -64,14 +64,14 @@ export default function CaseStudySectionWrapper({
         Index text: Inter 14px uppercase (Figma uses DM Sans with opsz 14,
         visually equivalent to Inter Regular 14px)
       */}
-      <div className={styles.indexCol}>
-        <span className={styles.index} aria-label={`Section ${index}`}>
+      <div className={styles['section-index-col']}>
+        <span className={styles['section-index']} aria-label={`Section ${index}`}>
           {index}
         </span>
       </div>
 
       {/* ── Content column ───────────────────────────────── */}
-      <div className={styles.content}>
+      <div className={styles['section-content']}>
         {children}
       </div>
 
