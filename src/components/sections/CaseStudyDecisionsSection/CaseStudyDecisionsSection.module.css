@@ -61,6 +61,16 @@
   width:          100%;
 }
 
+/* 80vh breathing panel — applied to specific decisions that should
+   occupy a full viewport-height block (e.g. Interpretability Over
+   Abstraction). Overrides the fixed 400px height and vertically
+   centers the title + tri-column group. Mobile resets to auto. */
+.decisionBlockPanel {
+  height:          auto;
+  min-height:      var(--screen-block-min-h);   /* 80vh */
+  justify-content: center;
+}
+
 
 /* ============================================================
    TITLE ROW — h-[111px], flex items-center
@@ -160,6 +170,12 @@
   /* Remove fixed 400px height — let content breathe */
   .decisionBlock {
     height: auto;
+  }
+
+  /* Panel variant: also reset min-height on mobile — no forced viewport block */
+  .decisionBlockPanel {
+    min-height:      auto;
+    justify-content: flex-start;
   }
 
   /* Remove fixed 111px title row height — let text wrap */
