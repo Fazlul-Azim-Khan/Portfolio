@@ -53,7 +53,7 @@ export default function Container({
   className,
 }: ContainerProps) {
 
-  const combinedClass = [styles.container, className]
+  const combinedClass = [styles['shared-container'], className]
     .filter(Boolean)
     .join(' ')
 

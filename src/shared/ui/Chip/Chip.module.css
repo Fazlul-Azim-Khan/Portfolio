@@ -2,6 +2,8 @@
  * Chip.module.css
  * Specs confirmed from Figma nodes 848:87, 1002:5922–5937
  *
+ * Prefix: chip-
+ *
  * Confirmed values:
  *   background:    white           → --color-secondary
  *   border:        1px solid black → 1px solid --color-primary
@@ -15,7 +17,7 @@
  *   color:         black           → --color-primary
  *
  * Single visual variant only — no filled or ghost chip in Figma.
- * Interactive state (hover invert) applied via .interactive modifier.
+ * Interactive state (hover invert) applied via .chip-interactive modifier.
  */
 
 
@@ -23,7 +25,7 @@
    BASE
    ============================================================ */
 
-.chip {
+.chip-root {
   display:          inline-flex;
   align-items:      center;
   justify-content:  center;
@@ -53,19 +55,19 @@
    Hover inverts colors (white bg → black bg, black text → white text).
    ============================================================ */
 
-.interactive {
+.chip-interactive {
   cursor: pointer;
   transition:
     background-color var(--transition-base),
     color            var(--transition-base);
 }
 
-.interactive:hover {
+.chip-interactive:hover {
   background-color: var(--color-primary);
   color:            var(--color-secondary);
 }
 
-.interactive:focus-visible {
+.chip-interactive:focus-visible {
   outline:        var(--focus-outline-width) solid var(--color-primary);
   outline-offset: var(--focus-outline-offset);
 }

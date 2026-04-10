@@ -2,6 +2,9 @@
  * Container.module.css
  * Specs confirmed from Figma node 1021:6891 — "Body" wrapper
  *
+ * Prefix: shared-container
+ * (distinct from components/layout/Container's .layout-container)
+ *
  * Confirmed values:
  *   max-width:    1920px  → --layout-max-width
  *   padding-x:      16px  → --layout-padding-x
@@ -14,7 +17,7 @@
  * Everything from Hero downward lives inside it.
  */
 
-.container {
+.shared-container {
   display:        flex;
   flex-direction: column;
   align-items:    flex-start;

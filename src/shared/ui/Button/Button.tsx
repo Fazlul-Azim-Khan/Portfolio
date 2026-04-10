@@ -26,6 +26,13 @@ import styles from './Button.module.css'
 
 export type ButtonVariant = 'primary' | 'outlined' | 'ghost'
 
+// Explicit map so dynamic variant lookup stays type-safe after rename
+const variantClass: Record<ButtonVariant, string> = {
+  primary:  styles['btn-primary'],
+  outlined: styles['btn-outlined'],
+  ghost:    styles['btn-ghost'],
+}
+
 
 /* ============================================================
    PROPS
@@ -60,7 +67,7 @@ export default function Button({
   'aria-label': ariaLabel,
 }: ButtonProps) {
 
-  const combinedClass = [styles.button, styles[variant], className]
+  const combinedClass = [styles['btn-root'], variantClass[variant], className]
     .filter(Boolean)
     .join(' ')
 
