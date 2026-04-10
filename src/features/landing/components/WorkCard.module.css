@@ -82,7 +82,7 @@
 
 /* ============================================================
    INDEX — "01" / "02" / "03"
-   Inter 12px uppercase, --color-tertiary
+   Inter 12px uppercase, --color-primary
    ============================================================ */
 
 .index {
@@ -92,7 +92,7 @@
   line-height:    var(--lh-body);      /* 20px */
   letter-spacing: var(--tracking-lead);
   text-transform: uppercase;
-  color:          var(--color-tertiary);
+  color:          var(--color-primary);
   flex-shrink:    0;
   margin:         0;
 }
@@ -109,8 +109,8 @@
   flex:           1;
 }
 
-/* CLIENT — "Under NDA" / "Center Health" / "Arrival OS"
-   Inter 12px uppercase, --color-tertiary */
+/* CLIENT — "Axion Ray" / "Center Health"
+   Inter 12px uppercase, --color-primary */
 .client {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);    /* 12px */
@@ -118,7 +118,7 @@
   line-height:    var(--lh-body);      /* 20px */
   letter-spacing: var(--tracking-lead);
   text-transform: uppercase;
-  color:          var(--color-tertiary);
+  color:          var(--color-primary);
   margin:         0;
 }
 

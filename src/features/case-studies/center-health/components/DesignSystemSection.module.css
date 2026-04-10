@@ -46,7 +46,7 @@
   line-height:    var(--lh-body);
   letter-spacing: var(--tracking-lead);
   text-transform: uppercase;
-  color:          var(--color-text-muted);
+  color:          var(--color-primary);
   white-space:    nowrap;
   margin:         0;
   padding-top:    6px;   /* optical cap-height alignment with 56px heading */
