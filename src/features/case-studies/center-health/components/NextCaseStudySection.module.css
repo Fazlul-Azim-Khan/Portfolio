@@ -145,12 +145,6 @@
    RESPONSIVE
    ============================================================ */
 
-@media (max-width: 1023px) {
-  .title {
-    font-size: 24px;
-  }
-}
-
 @media (max-width: 767px) {
   .root {
     padding-top:    var(--gap-40);
@@ -160,9 +154,5 @@
   .header {
     flex-direction: column;
     gap:            var(--gap-8);
-  }
-
-  .title {
-    font-size: 20px;
   }
 }
