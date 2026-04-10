@@ -135,9 +135,9 @@ Entries marked ✅ are confirmed in code. Entries marked 🔲 are planned but no
 | SelectedWorksSection | `works` | ✅ |
 | ExperienceSection | `exp` | ✅ |
 | LanguagesSection | `lang` | ✅ |
-| FundingMilestone | `funding` | 🔲 |
-| OutcomeSection | `outcome` | 🔲 |
-| ReflectionsSection | `reflections` | 🔲 |
+| FundingMilestone | `funding` | ✅ |
+| OutcomeSection | `outcome` | ✅ |
+| ReflectionsSection | `reflections` | ✅ |
 | GallerySection | `gallery` | 🔲 |
 | ContactSection | `contact` | 🔲 |
 | FooterSection | `footer` | 🔲 |
