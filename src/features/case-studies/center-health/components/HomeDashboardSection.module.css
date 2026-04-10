@@ -142,7 +142,7 @@
   font-size:      var(--text-h4);
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
-  letter-spacing: var(--tracking-h4);
+  letter-spacing: var(--tracking-h3);
   text-transform: uppercase;
   color:          var(--color-primary);
   white-space:    nowrap;
@@ -249,10 +249,10 @@
 /* H4 32px — smaller scale, different from other sections' H3 56px results */
 .resultsHeading {
   font-family:    var(--font-display);
-  font-size:      var(--text-h4);          /* 20px → 32px fluid */
+  font-size:      var(--text-h3);          /* 28px → 56px fluid */
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
-  letter-spacing: var(--tracking-h4);
+  letter-spacing: var(--tracking-h3);
   text-transform: uppercase;
   color:          var(--color-primary);
   flex:           1 0 0;
