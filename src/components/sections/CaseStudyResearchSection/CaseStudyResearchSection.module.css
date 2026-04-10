@@ -19,7 +19,7 @@
    Figma 978:6038: flex-row, gap-32px, padding 64px/16px, bg primary, radius 16px
    ============================================================ */
 
-.root {
+.research-root {
   display:        flex;
   flex-direction: row;
   gap:            var(--gap-32);                  /* Figma: gap-[32px] */
@@ -35,13 +35,13 @@
    38.64px wide — Figma node 978:6039
    ============================================================ */
 
-.indexCol {
+.research-index-col {
   width:       var(--case-section-index-w);       /* 38.64px */
   flex-shrink: 0;
   padding-top: 8px;                               /* Figma: pt-[8px] */
 }
 
-.index {
+.research-index {
   font-family:    var(--font-body);
   font-size:      var(--text-lead);               /* 12px */
   font-weight:    var(--weight-regular);
@@ -57,7 +57,7 @@
    Figma 1005:5988: flex-col, gap-32px
    ============================================================ */
 
-.content {
+.research-content {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-32);                  /* Figma: gap-[32px] */
@@ -71,7 +71,7 @@
    Figma 978:6042: flex-row, itemSpacing 20px
    ============================================================ */
 
-.introRow {
+.research-intro-row {
   display:        flex;
   flex-direction: row;
   gap:            var(--gap-20);                  /* Figma: gap-[20px] */
@@ -85,7 +85,7 @@
    Confirmed: Figma node 978:6044
    ============================================================ */
 
-.heading {
+.research-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h1);                 /* 120px fluid */
   font-weight: var(--weight-regular);
@@ -104,7 +104,7 @@
    Note: 16px is not in the type scale token — used inline (same pattern as FundingMilestone body)
    ============================================================ */
 
-.intro {
+.research-intro {
   font-family: var(--font-body);
   font-size:   var(--text-body);                  /* fluid 13->16px */
   line-height: 1.7;                               /* Figma: leading-[27.2px] / 16px = 1.7 */
@@ -121,7 +121,7 @@
    Figma 1005:6085: flex-col, gap-32px
    ============================================================ */
 
-.chipSection {
+.research-traits-block {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-32);                  /* Figma: gap-[32px] */
@@ -134,7 +134,7 @@
    Confirmed: Figma HorizontalBorder nodes pt-[40px] pb-[41px]
    ============================================================ */
 
-.borderedSection {
+.research-bordered-block {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-32);                  /* Figma: gap-[32px] */
@@ -150,7 +150,7 @@
    Both share this layout — heading grows, sub-label stays right
    ============================================================ */
 
-.chipSectionHead {
+.research-block-head {
   display:        flex;
   flex-direction: row;
   gap:            var(--gap-64);
@@ -163,7 +163,7 @@
    Integral CF, 56px, white, uppercase
    Confirmed: Figma nodes 1005:6089, 1005:6118, 1005:6156, 1005:6171
 */
-.chipSectionHeading {
+.research-block-heading {
   font-family:    var(--font-display);
   font-size:      var(--text-h3);                 /* 56px */
   font-weight:    var(--weight-regular);
@@ -178,7 +178,7 @@
    Inter, 12px, white, uppercase
    Confirmed: Figma nodes 1005:6093, 1005:6122
 */
-.chipSectionSub {
+.research-block-sub {
   font-family: var(--font-body);
   font-size:   var(--text-lead);                  /* 12px */
   font-weight: var(--weight-regular);
@@ -195,7 +195,7 @@
    gap-24px — Figma 1005:6096: gap-[var(--gap/24,24px)]
    ============================================================ */
 
-.chipGrid {
+.research-chip-grid {
   display:   flex;
   flex-wrap: wrap;
   gap:       var(--gap-24);                       /* Figma: gap-[24px] */
@@ -208,7 +208,7 @@
    Figma 1005:6157/6172 use gap-[0px_32px] (col only) but 32px used for wrapping clarity
    ============================================================ */
 
-.chipGridLarge {
+.research-chip-grid-large {
   display:   flex;
   flex-wrap: wrap;
   gap:       var(--gap-32);                       /* Figma: 32px */
@@ -218,7 +218,7 @@
 /* Individual chip — white card, black Integral CF 20px text
    Confirmed: all chip frames — padding 16px, bg white, radius 8px
 */
-.chip {
+.research-chip {
   display:        inline-flex;
   align-items:    center;
   padding:        var(--padding-16);              /* 16px all sides */
@@ -239,7 +239,7 @@
    Integral CF 20px white — NOT uppercase (mixed case in Figma)
    ============================================================ */
 
-.conclusions {
+.research-conclusions {
   display:        flex;
   flex-direction: row;
   gap:            var(--gap-64);
@@ -248,7 +248,7 @@
   align-items:    flex-start;
 }
 
-.conclusionCol {
+.research-conclusion-col {
   flex:        1 0 0;
   font-family: var(--font-display);
   font-size:   var(--text-h5);                    /* 20px */
@@ -267,7 +267,7 @@
    Mobile reverts to natural flow.
    ============================================================ */
 
-.panel {
+.research-panel {
   min-height:      var(--screen-block-min-h);   /* 80vh */
   display:         flex;
   flex-direction:  column;
@@ -280,7 +280,7 @@
    Confirmed: Figma nodes 1014:6851, 1014:6849 — bg-[var(--tirtiary,#ccc)]
    ============================================================ */
 
-.divider {
+.research-divider {
   width:      100%;
   height:     1px;
   background: var(--color-divider-dark);          /* #cccccc */
@@ -295,51 +295,51 @@
 
 @media (max-width: 767px) {
 
-  .root {
+  .research-root {
     flex-direction: column;
     gap:            var(--gap-24);
     padding:        var(--padding-40) var(--layout-padding-x);
     border-radius:  var(--radius-sm);
   }
 
-  .indexCol {
+  .research-index-col {
     width:       auto;
     padding-top: 0;
   }
 
-  .introRow {
+  .research-intro-row {
     flex-direction: column;
     gap:            var(--gap-24);
   }
 
-  .chipSectionHeading {
+  .research-block-heading {
     font-size: var(--text-h4);                    /* 32px on mobile */
   }
 
-  .chipSectionHead {
+  .research-block-head {
     flex-direction: column;
     gap:            var(--gap-16);
     align-items:    flex-start;
   }
 
-  .conclusions {
+  .research-conclusions {
     flex-direction: column;
     gap:            var(--gap-24);
     padding-top:    var(--padding-40);
     padding-bottom: var(--padding-40);
   }
 
-  .chipGrid,
-  .chipGridLarge {
+  .research-chip-grid,
+  .research-chip-grid-large {
     gap: var(--gap-16);
   }
 
-  .panel {
+  .research-panel {
     min-height:      auto;       /* No forced viewport height on mobile */
     justify-content: flex-start;
   }
 
-  .chip {
+  .research-chip {
     font-size: var(--text-lead);                  /* scale down on mobile */
     padding:   var(--padding-12) var(--padding-16);
   }
