@@ -22,8 +22,8 @@ export const centerHealth: CaseStudy = {
     imageAspect: '1328 / 710',
     meta: {
       role:   'Product UI/UX Designer',
-      stage:  'Pre-Seed → Seed → Series A',
-      year:   '2021 – 2022',
+      stage:  'Redesign & Scale — Strip App to Full Health Ecosystem',
+      year:   '2021 – 2023',
       sector: 'Clinical Healthcare · AI Health Management',
       note:   'Forbes 30 Under 30 - Consumer Technology (2021)',
       chips:  ['Case Study', 'Enterprise AI', 'Clinical Healthcare'],

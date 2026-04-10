@@ -35,8 +35,7 @@ export const manufacturingPlatform: CaseStudy = {
       stage:  'Pre-Seed → Seed → Series A',
       year:   '2021 – 2022',
       sector: 'Industrial AI · Predictive Reliability',
-      note:   'Company name withheld under NDA',
-      chips:  ['Case Study', 'Enterprise AI', 'Confidential'],
+      chips:  ['Case Study', 'Enterprise AI', 'Industrial AI'],
     },
   },
 
