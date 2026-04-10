@@ -5,20 +5,26 @@
  * Card layout — light background, inside content container.
  * No dark bleed. No CaseStudySectionWrapper (no index column).
  *
+ * NOTE: NextCaseStudy.tsx currently delegates to the shared
+ * NextCaseStudyHero component. These classes are defined for
+ * future use if a custom implementation is built.
+ *
+ * Prefix: next-cs-  (distinct from NextCaseStudyHero's next- prefix)
+ *
  * Figma:
- *   root:           flex-col gap-16 items-start w-full
- *   image:          aspect-[1328/710] rounded-[8px] w-full
- *   projectHeader:  flex gap-64 items-start uppercase w-full
- *   index:          Lead 12px Inter shrink-0
- *   sectionHeader:  flex-col gap-[11px] flex-1
- *   projectName:    Lead 12px Inter uppercase
- *   projectTitle:   H4 32px Integral CF
+ *   next-cs-card:           flex-col gap-16 items-start w-full
+ *   next-cs-image:          aspect-[1328/710] rounded-[8px] w-full
+ *   next-cs-project-header: flex gap-64 items-start uppercase w-full
+ *   next-cs-index:          Lead 12px Inter shrink-0
+ *   next-cs-section-header: flex-col gap-[11px] flex-1
+ *   next-cs-project-name:   Lead 12px Inter uppercase
+ *   next-cs-project-title:  H4 32px Integral CF
  */
 
 
 /* ── Card — the clickable link ───────────────────────────── */
 
-.card {
+.next-cs-card {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-16);
@@ -28,14 +34,14 @@
   color:          inherit;
 }
 
-.card:hover .imageWrapper {
+.next-cs-card:hover .next-cs-image-wrapper {
   opacity: 0.9;
 }
 
 
 /* ── Image wrapper — aspect-[1328/710], radius-8 ─────────── */
 
-.imageWrapper {
+.next-cs-image-wrapper {
   position:     relative;
   width:        100%;
   aspect-ratio: 1328 / 710;
@@ -46,7 +52,7 @@
   transition: opacity var(--transition-base);
 }
 
-.image {
+.next-cs-image {
   object-fit: cover;
 }
 
@@ -57,7 +63,7 @@
   flex, gap-64, items-start, uppercase
 */
 
-.projectHeader {
+.next-cs-project-header {
   display:       flex;
   gap:           var(--gap-64);
   align-items:   flex-start;
@@ -68,7 +74,7 @@
 
 /* ── Index — "02" ────────────────────────────────────────── */
 
-.index {
+.next-cs-index {
   font-family:  var(--font-body);
   font-size:    var(--text-lead);     /* 12px fixed */
   font-weight:  var(--weight-regular);
@@ -86,7 +92,7 @@
   flex-col, gap-[11px] (using --gap-12 as nearest token), flex-1
 */
 
-.sectionHeader {
+.next-cs-section-header {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-12);    /* Figma: 11px — nearest token */
@@ -101,7 +107,7 @@
   Inter 12px, lead style, uppercase
 */
 
-.projectName {
+.next-cs-project-name {
   font-family:  var(--font-body);
   font-size:    var(--text-lead);     /* 12px */
   font-weight:  var(--weight-regular);
@@ -118,7 +124,7 @@
   Integral CF, 32px, H4 style, #0a0a0a
 */
 
-.projectTitle {
+.next-cs-project-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h4);       /* clamp 20→32px */
   font-weight:    var(--weight-regular);
@@ -133,7 +139,7 @@
 /* ── Responsive ──────────────────────────────────────────── */
 
 @media (max-width: 767px) {
-  .projectHeader {
+  .next-cs-project-header {
     gap: var(--gap-24);   /* compress gap-64 on small screens */
   }
 }
