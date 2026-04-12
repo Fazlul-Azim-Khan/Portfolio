@@ -1,0 +1,78 @@
+/*
+ * Constraints.module.css
+ * ADM-specific — Constraints & Givens section.
+ *
+ * Follows the same visual rhythm as the Reflections section:
+ * heading + list of items with divider lines.
+ * Token-only values.
+ */
+
+.constraints-root {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-64);
+  width:          100%;
+}
+
+/* ── Heading ──────────────────────────────────────────────── */
+
+.constraints-heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h3);
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+/* ── Constraints list ─────────────────────────────────────── */
+
+.constraints-list {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-40);
+  width:          100%;
+}
+
+/* Individual constraint item */
+.constraints-item {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-16);
+}
+
+/* Top rule line — same as reflections-insight-divider */
+.constraints-divider {
+  width:       100%;
+  height:      1px;
+  background:  var(--color-divider);
+  flex-shrink: 0;
+}
+
+/* Title — Integral CF H5 20px */
+.constraints-title {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+/* Body paragraph — Inter 14px */
+.constraints-body {
+  font-family: var(--font-body);
+  font-size:   var(--text-body);
+  line-height: var(--lh-body);
+  color:       var(--color-primary);
+  margin:      0;
+}
+
+/* ── 100vh centered — desktop/tablet ─────────────────────── */
+
+@media (min-width: 768px) {
+  .constraints-root {
+    min-height:      100vh;
+    justify-content: center;
+  }
+}

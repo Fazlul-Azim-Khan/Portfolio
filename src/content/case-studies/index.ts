@@ -13,11 +13,13 @@
  */
 
 import type { CaseStudy }           from '@/types'
+import { erpAdmin }                 from './erp-admin'
 import { manufacturingPlatform }    from './manufacturing-platform'
 import { centerHealth }             from './center-health'
 
 
 export const caseStudies: Record<string, CaseStudy> = {
+  'erp-admin':              erpAdmin,
   'manufacturing-platform': manufacturingPlatform,
   'center-health':          centerHealth,
 

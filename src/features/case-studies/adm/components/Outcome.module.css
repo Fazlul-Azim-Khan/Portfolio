@@ -1,0 +1,146 @@
+/*
+ * Outcome.module.css
+ * ADM-specific — Outcome section.
+ *
+ * Adapted from Axion Ray Outcome pattern:
+ * - Replaces metric cards with primary outcome + process outcomes list
+ * - Keeps impact statement dark card + skills chips
+ * Token-only values.
+ */
+
+.outcome-root {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-64);
+  width:          100%;
+}
+
+
+/* ── Header row ───────────────────────────────────────────── */
+
+.outcome-header-row {
+  display:     flex;
+  gap:         var(--gap-32);
+  align-items: flex-start;
+}
+
+.outcome-heading {
+  flex:           1;
+  min-width:      0;
+  font-family:    var(--font-display);
+  font-size:      var(--text-h1);
+  line-height:    var(--lh-h1);
+  letter-spacing: var(--tracking-h1);
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+
+/* ── Primary outcome — large body text ────────────────────── */
+
+.outcome-primary {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h4);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h4);
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+
+/* ── Process outcomes list ────────────────────────────────── */
+
+.outcome-process-list {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-24);
+  width:          100%;
+}
+
+.outcome-process-item {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-16);
+}
+
+.outcome-process-divider {
+  width:       100%;
+  height:      1px;
+  background:  var(--color-divider);
+  flex-shrink: 0;
+}
+
+.outcome-process-text {
+  font-family: var(--font-body);
+  font-size:   var(--text-body);
+  line-height: var(--lh-body);
+  color:       var(--color-primary);
+  margin:      0;
+}
+
+
+/* ── Impact statement — dark card ────────────────────────── */
+
+.outcome-impact-block {
+  background:      var(--color-primary);
+  border-radius:   var(--radius-sm);
+  padding:         var(--padding-40);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           100%;
+}
+
+.outcome-impact-text {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h4);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h4);
+  color:          var(--color-secondary);
+  margin:         0;
+}
+
+
+/* ── Skills section ───────────────────────────────────────── */
+
+.outcome-skills-section {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-16);
+}
+
+.outcome-skills-label {
+  font-family:    var(--font-body);
+  font-size:      var(--text-body);
+  line-height:    var(--lh-body);
+  letter-spacing: 0.7px;
+  color:          var(--color-primary);
+  text-transform: uppercase;
+  margin:         0;
+}
+
+.outcome-skills-chips {
+  display:     flex;
+  flex-wrap:   wrap;
+  column-gap:  var(--gap-12);
+  row-gap:     var(--gap-8);
+}
+
+.outcome-chip {
+  background:      var(--color-secondary);
+  border:          1px solid var(--color-primary);
+  border-radius:   var(--radius-sm);
+  padding:         var(--padding-12);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+}
+
+.outcome-chip-label {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);
+  line-height:    var(--lh-body);
+  color:          var(--color-primary);
+  text-transform: uppercase;
+  white-space:    nowrap;
+}

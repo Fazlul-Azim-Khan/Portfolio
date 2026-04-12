@@ -24,7 +24,8 @@ import type { Metadata } from 'next'
 
 // ── Feature page components ───────────────────────────────────────────────────
 // Each feature owns its full render — NavBar, NoticeStrip, Container, sections.
-import AxionRayCaseStudyPage    from '@/features/case-studies/axion-ray/CaseStudyPage'
+import ADMCaseStudyPage          from '@/features/case-studies/adm/CaseStudyPage'
+import AxionRayCaseStudyPage     from '@/features/case-studies/axion-ray/CaseStudyPage'
 import CenterHealthCaseStudyPage from '@/features/case-studies/center-health/CaseStudyPage'
 
 // ── Legacy content registry — used for generateStaticParams + generateMetadata
@@ -73,6 +74,10 @@ export default function CaseStudyPage({ params }: Props) {
   // ── Feature dispatch ─────────────────────────────────────
   // Each known slug delegates to its feature's full-page component.
   // The feature component owns NavBar + NoticeStrip + Container + sections.
+
+  if (params.slug === 'erp-admin') {
+    return <ADMCaseStudyPage />
+  }
 
   if (params.slug === 'manufacturing-platform') {
     return <AxionRayCaseStudyPage />
