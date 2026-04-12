@@ -91,12 +91,20 @@ export const selectedWorks = {
   meta: {
     index:   '(002)',
     heading: 'Selected works',
-    count:   '2 case studies',
+    count:   '3 case studies',
   },
   items: [
     {
-      id:     'manufacturing-platform',
+      id:     'erp-admin',
       index:  '01',
+      client: 'Nipro–GMI',
+      title:  'ERP system administration for a 32-SBU enterprise',
+      slug:   'erp-admin',
+      mockup: '/images/works/adm/mockup.jpg',
+    },
+    {
+      id:     'manufacturing-platform',
+      index:  '02',
       client: 'Axion Ray',
       title:  'AI-powered manufacturing reliability platform',
       slug:   'manufacturing-platform',
@@ -104,7 +112,7 @@ export const selectedWorks = {
     },
     {
       id:     'center-health',
-      index:  '02',
+      index:  '03',
       client: 'Center Health',
       title:  'AI-powered diabetes management platform',
       slug:   'center-health',
