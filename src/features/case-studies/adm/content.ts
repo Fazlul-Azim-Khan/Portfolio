@@ -142,10 +142,10 @@ export interface ADMPrototypingPhase {
 }
 
 export interface ADMPrototypingSection {
-  type:   'prototyping'
-  index:  string
+  type:    'prototyping'
+  index:   string
   heading: string
-  intro:   string
+  intro?:  string   // optional — omit to render heading + grid only
   phases:  ADMPrototypingPhase[]
 }
 
@@ -739,13 +739,6 @@ export const adm: ADMCaseStudy = {
       type:    'prototyping',
       index:   '(007)',
       heading: 'Continuous prototyping',
-
-      intro:
-        'The design methodology was not a linear handoff from research to wireframes to final UI. ' +
-        'It was a continuous prototyping cycle that ran in parallel with development — each sprint ' +
-        'producing updated interactive prototypes that were presented directly to stakeholders for ' +
-        'evaluation, feedback collection, and iteration. This process was the backbone of how both ' +
-        'the ADM and Sales modules evolved from requirements to production-ready designs.',
 
       phases: [
         {

@@ -43,8 +43,10 @@ export default function ContinuousPrototyping({ section }: ContinuousPrototyping
       {/* ── Heading ──────────────────────────────────────── */}
       <h1 className={styles['proto-heading']}>{section.heading}</h1>
 
-      {/* ── Intro paragraph ─────────────────────────────── */}
-      <p className={styles['proto-intro']}>{section.intro}</p>
+      {/* ── Intro paragraph (optional) ──────────────────── */}
+      {section.intro && (
+        <p className={styles['proto-intro']}>{section.intro}</p>
+      )}
 
       {/* ── 3-column grid ────────────────────────────────── */}
       <div className={styles['proto-grid']}>
