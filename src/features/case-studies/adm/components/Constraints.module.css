@@ -2,8 +2,8 @@
  * Constraints.module.css
  * ADM-specific — Constraints & Givens section.
  *
- * Follows the same visual rhythm as the Reflections section:
- * heading + list of items with divider lines.
+ * 3-column subheader grid layout — same visual pattern as Reflections.
+ * 6 items → 2 rows × 3 columns.
  * Token-only values.
  */
 
@@ -25,23 +25,24 @@
   margin:         0;
 }
 
-/* ── Constraints list ─────────────────────────────────────── */
+/* ── 3-column grid ────────────────────────────────────────── */
 
-.constraints-list {
-  display:        flex;
-  flex-direction: column;
-  gap:            var(--gap-40);
-  width:          100%;
+.constraints-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   var(--gap-40);
+  width:                 100%;
 }
 
-/* Individual constraint item */
+/* Individual constraint cell */
 .constraints-item {
   display:        flex;
   flex-direction: column;
-  gap:            var(--gap-16);
+  gap:            var(--gap-24);
+  min-width:      0;
 }
 
-/* Top rule line — same as reflections-insight-divider */
+/* Top rule line */
 .constraints-divider {
   width:       100%;
   height:      1px;
@@ -49,7 +50,18 @@
   flex-shrink: 0;
 }
 
-/* Title — Integral CF H5 20px */
+/* Number — "01" … "06" — Integral CF H5 */
+.constraints-number {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+/* Title — Integral CF H5 */
 .constraints-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);
@@ -59,7 +71,7 @@
   margin:         0;
 }
 
-/* Body paragraph — Inter 14px */
+/* Body paragraph — Inter body */
 .constraints-body {
   font-family: var(--font-body);
   font-size:   var(--text-body);
@@ -68,11 +80,17 @@
   margin:      0;
 }
 
-/* ── 100vh centered — desktop/tablet ─────────────────────── */
+/* ── Responsive ───────────────────────────────────────────── */
 
-@media (min-width: 768px) {
-  .constraints-root {
-    min-height:      100vh;
-    justify-content: center;
+@media (max-width: 1024px) {
+  .constraints-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .constraints-grid {
+    grid-template-columns: 1fr;
+    gap:                   var(--gap-32);
   }
 }

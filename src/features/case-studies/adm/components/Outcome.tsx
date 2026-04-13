@@ -8,16 +8,24 @@
  *   ─────────────────────────────────────────
  *   Primary outcome statement (large text)
  *   ─────────────────────────────────────────
- *   Delivery milestones (items with dividers)
+ *   "Delivery Milestones" label
+ *   3-column grid — each cell:
+ *     ─────────
+ *     01
+ *     Milestone title
+ *     Body
  *   ─────────────────────────────────────────
- *   Process outcomes (items with dividers)
+ *   "Process outcomes" label
+ *   3-column grid — each cell:
+ *     ─────────
+ *     01
+ *     Body text
  *   ─────────────────────────────────────────
  *   Impact statement (dark card)
  *   ─────────────────────────────────────────
  *   Skills chips
  *
- * Expanded from original: now includes delivery milestones
- * block between primary outcome and process outcomes.
+ * 3-column grid sections follow the Reflections pattern.
  * Server Component — no client-side interaction.
  */
 
@@ -50,30 +58,39 @@ export default function Outcome({ section }: OutcomeProps) {
       {/* ── Primary outcome ──────────────────────────────── */}
       <p className={styles['outcome-primary']}>{section.primaryOutcome}</p>
 
-      {/* ── Delivery milestones ──────────────────────────── */}
+      {/* ── Delivery milestones — 3-column grid ──────────── */}
       {section.deliveryMilestones && section.deliveryMilestones.length > 0 && (
-        <div className={styles['outcome-milestones']}>
-          <p className={styles['outcome-milestones-label']}>Delivery Milestones</p>
-          <div className={styles['outcome-milestones-list']}>
+        <div className={styles['outcome-block']}>
+          <p className={styles['outcome-block-label']}>Delivery Milestones</p>
+          <div className={styles['outcome-grid']}>
             {section.deliveryMilestones.map((milestone, i) => (
-              <div key={i} className={styles['outcome-milestone-item']}>
-                <div className={styles['outcome-milestone-divider']} aria-hidden="true" />
-                <p className={styles['outcome-milestone-title']}>{milestone.title}</p>
-                <p className={styles['outcome-milestone-body']}>{milestone.body}</p>
+              <div key={i} className={styles['outcome-grid-item']}>
+                <div className={styles['outcome-item-divider']} aria-hidden="true" />
+                <p className={styles['outcome-item-number']}>
+                  {String(i + 1).padStart(2, '0')}
+                </p>
+                <p className={styles['outcome-item-title']}>{milestone.title}</p>
+                <p className={styles['outcome-item-body']}>{milestone.body}</p>
               </div>
             ))}
           </div>
         </div>
       )}
 
-      {/* ── Process outcomes ─────────────────────────────── */}
-      <div className={styles['outcome-process-list']}>
-        {section.processOutcomes.map((outcome, i) => (
-          <div key={i} className={styles['outcome-process-item']}>
-            <div className={styles['outcome-process-divider']} aria-hidden="true" />
-            <p className={styles['outcome-process-text']}>{outcome}</p>
-          </div>
-        ))}
+      {/* ── Process outcomes — 3-column grid ─────────────── */}
+      <div className={styles['outcome-block']}>
+        <p className={styles['outcome-block-label']}>Process outcomes</p>
+        <div className={styles['outcome-grid']}>
+          {section.processOutcomes.map((outcome, i) => (
+            <div key={i} className={styles['outcome-grid-item']}>
+              <div className={styles['outcome-item-divider']} aria-hidden="true" />
+              <p className={styles['outcome-item-number']}>
+                {String(i + 1).padStart(2, '0')}
+              </p>
+              <p className={styles['outcome-item-body']}>{outcome}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* ── Impact statement — dark card ───────────────────── */}

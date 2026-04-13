@@ -2,8 +2,8 @@
  * ContinuousPrototyping.module.css
  * ADM-specific — Continuous Prototyping methodology section.
  *
- * Same visual rhythm as Constraints.module.css:
- * heading + intro + list of items with divider lines.
+ * 3-column subheader grid layout — same visual pattern as Reflections.
+ * 6 phases → 2 rows × 3 columns.
  * Token-only values.
  */
 
@@ -36,20 +36,21 @@
   max-width:   var(--text-measure);
 }
 
-/* ── Phases list ──────────────────────────────────────────── */
+/* ── 3-column grid ────────────────────────────────────────── */
 
-.proto-phases {
-  display:        flex;
-  flex-direction: column;
-  gap:            var(--gap-40);
-  width:          100%;
+.proto-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   var(--gap-40);
+  width:                 100%;
 }
 
-/* Individual phase item */
-.proto-phase {
+/* Individual phase cell */
+.proto-item {
   display:        flex;
   flex-direction: column;
-  gap:            var(--gap-16);
+  gap:            var(--gap-24);
+  min-width:      0;
 }
 
 /* Top rule line */
@@ -60,8 +61,19 @@
   flex-shrink: 0;
 }
 
-/* Title — Integral CF H5 20px */
-.proto-phase-title {
+/* Number — "01" … "06" — Integral CF H5 */
+.proto-number {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+/* Title — Integral CF H5 */
+.proto-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);
   line-height:    var(--lh-heading);
@@ -70,11 +82,26 @@
   margin:         0;
 }
 
-/* Body paragraph — Inter 14px */
-.proto-phase-body {
+/* Body paragraph — Inter body */
+.proto-body {
   font-family: var(--font-body);
   font-size:   var(--text-body);
   line-height: var(--lh-body);
   color:       var(--color-primary);
   margin:      0;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .proto-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .proto-grid {
+    grid-template-columns: 1fr;
+    gap:                   var(--gap-32);
+  }
 }

@@ -2,8 +2,8 @@
  * Outcome.module.css
  * ADM-specific — Outcome & Delivery section.
  *
- * Expanded from original: now includes delivery milestones block
- * between primary outcome and process outcomes.
+ * Delivery Milestones and Process Outcomes use the 3-column
+ * subheader grid pattern matching Reflections.
  * Token-only values.
  */
 
@@ -47,16 +47,17 @@
 }
 
 
-/* ── Delivery milestones ──────────────────────────────────── */
+/* ── Named block — label + grid ──────────────────────────── */
 
-.outcome-milestones {
+.outcome-block {
   display:        flex;
   flex-direction: column;
-  gap:            var(--gap-32);
+  gap:            var(--gap-40);
   width:          100%;
 }
 
-.outcome-milestones-label {
+/* Block label — Integral CF H3 */
+.outcome-block-label {
   font-family:    var(--font-display);
   font-size:      var(--text-h3);
   line-height:    var(--lh-heading);
@@ -65,27 +66,45 @@
   margin:         0;
 }
 
-.outcome-milestones-list {
+
+/* ── 3-column grid — Reflections pattern ─────────────────── */
+
+.outcome-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   var(--gap-40);
+  width:                 100%;
+}
+
+/* Individual grid cell */
+.outcome-grid-item {
   display:        flex;
   flex-direction: column;
   gap:            var(--gap-24);
-  width:          100%;
+  min-width:      0;
 }
 
-.outcome-milestone-item {
-  display:        flex;
-  flex-direction: column;
-  gap:            var(--gap-16);
-}
-
-.outcome-milestone-divider {
+/* Top rule line */
+.outcome-item-divider {
   width:       100%;
   height:      1px;
   background:  var(--color-divider);
   flex-shrink: 0;
 }
 
-.outcome-milestone-title {
+/* Number — "01" … — Integral CF H5 */
+.outcome-item-number {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+/* Item title — Integral CF H5 */
+.outcome-item-title {
   font-family:    var(--font-display);
   font-size:      var(--text-h5);
   line-height:    var(--lh-heading);
@@ -94,38 +113,8 @@
   margin:         0;
 }
 
-.outcome-milestone-body {
-  font-family: var(--font-body);
-  font-size:   var(--text-body);
-  line-height: var(--lh-body);
-  color:       var(--color-primary);
-  margin:      0;
-}
-
-
-/* ── Process outcomes list ────────────────────────────────── */
-
-.outcome-process-list {
-  display:        flex;
-  flex-direction: column;
-  gap:            var(--gap-24);
-  width:          100%;
-}
-
-.outcome-process-item {
-  display:        flex;
-  flex-direction: column;
-  gap:            var(--gap-16);
-}
-
-.outcome-process-divider {
-  width:       100%;
-  height:      1px;
-  background:  var(--color-divider);
-  flex-shrink: 0;
-}
-
-.outcome-process-text {
+/* Item body — Inter body */
+.outcome-item-body {
   font-family: var(--font-body);
   font-size:   var(--text-body);
   line-height: var(--lh-body);
@@ -198,4 +187,20 @@
   color:          var(--color-primary);
   text-transform: uppercase;
   white-space:    nowrap;
+}
+
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .outcome-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .outcome-grid {
+    grid-template-columns: 1fr;
+    gap:                   var(--gap-32);
+  }
 }

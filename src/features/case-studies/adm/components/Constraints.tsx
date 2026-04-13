@@ -1,17 +1,20 @@
 /*
- * Constraints.tsx — (002)
+ * Constraints.tsx — (003)
  * ADM-specific section: Constraints & Givens
  *
  * Layout (inside CaseStudySectionWrapper):
  *
  *   H1 heading
- *   ─────────────────────────────────────────
- *   Constraint 1 title + body
- *   ─────────────────────────────────────────
- *   Constraint 2 title + body
- *   …
+ *   ─────────────────────────────────────────────────────────
+ *   3-column grid — each cell:
+ *     ─────────
+ *     01
+ *     Title
+ *     Body paragraph
  *
- * Each constraint: divider line + title (H5 Integral CF) + body (Inter 14px).
+ * 6 constraints → 2 rows × 3 columns.
+ * Same visual pattern as Reflections section.
+ * Numbers auto-generated from array index.
  * Server Component — no client-side interaction.
  */
 
@@ -39,15 +42,20 @@ export default function Constraints({ section }: ConstraintsProps) {
       {/* ── Heading ──────────────────────────────────────── */}
       <h1 className={styles['constraints-heading']}>{section.heading}</h1>
 
-      {/* ── Constraints list ─────────────────────────────── */}
-      <div className={styles['constraints-list']}>
-        {section.constraints.map((constraint) => (
+      {/* ── 3-column grid ────────────────────────────────── */}
+      <div className={styles['constraints-grid']}>
+        {section.constraints.map((constraint, i) => (
           <div key={constraint.title} className={styles['constraints-item']}>
 
             {/* Top rule line */}
             <div className={styles['constraints-divider']} aria-hidden="true" />
 
-            {/* Title — bold constraint name */}
+            {/* Number — auto-generated */}
+            <p className={styles['constraints-number']}>
+              {String(i + 1).padStart(2, '0')}
+            </p>
+
+            {/* Title */}
             <p className={styles['constraints-title']}>{constraint.title}</p>
 
             {/* Body paragraph */}

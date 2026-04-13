@@ -6,14 +6,16 @@
  *
  *   H1 heading
  *   Intro paragraph
- *   ─────────────────────────────────────────
- *   Phase 1: title + body
- *   ─────────────────────────────────────────
- *   Phase 2: title + body
- *   …
+ *   ─────────────────────────────────────────────────────────
+ *   3-column grid — each cell:
+ *     ─────────
+ *     01
+ *     Phase title
+ *     Body paragraph
  *
- * Each phase: divider line + title (H5 Integral CF) + body (Inter 14px).
- * Same visual rhythm as Constraints section.
+ * 6 phases → 2 rows × 3 columns.
+ * Same visual pattern as Reflections section.
+ * Numbers auto-generated from array index.
  * Server Component — no client-side interaction.
  */
 
@@ -44,19 +46,24 @@ export default function ContinuousPrototyping({ section }: ContinuousPrototyping
       {/* ── Intro paragraph ─────────────────────────────── */}
       <p className={styles['proto-intro']}>{section.intro}</p>
 
-      {/* ── Phases list ──────────────────────────────────── */}
-      <div className={styles['proto-phases']}>
-        {section.phases.map((phase) => (
-          <div key={phase.title} className={styles['proto-phase']}>
+      {/* ── 3-column grid ────────────────────────────────── */}
+      <div className={styles['proto-grid']}>
+        {section.phases.map((phase, i) => (
+          <div key={phase.title} className={styles['proto-item']}>
 
             {/* Top rule line */}
             <div className={styles['proto-divider']} aria-hidden="true" />
 
-            {/* Title — phase name */}
-            <p className={styles['proto-phase-title']}>{phase.title}</p>
+            {/* Number — auto-generated */}
+            <p className={styles['proto-number']}>
+              {String(i + 1).padStart(2, '0')}
+            </p>
+
+            {/* Title */}
+            <p className={styles['proto-title']}>{phase.title}</p>
 
             {/* Body paragraph */}
-            <p className={styles['proto-phase-body']}>{phase.body}</p>
+            <p className={styles['proto-body']}>{phase.body}</p>
 
           </div>
         ))}
