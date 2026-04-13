@@ -35,13 +35,17 @@ type SelectedWorksContent = {
   items: readonly WorkCardItem[]
 }
 
-type Props = { content: SelectedWorksContent }
+type Props = {
+  content:       SelectedWorksContent
+  /** base path for case study links — defaults to '/work' */
+  workBasePath?: string
+}
 
 /* ============================================================
    COMPONENT
    ============================================================ */
 
-export default function SelectedWorks({ content }: Props) {
+export default function SelectedWorks({ content, workBasePath = '/work' }: Props) {
   const selectedWorks = content
   return (
     <div className={styles['lp-works-root']} aria-label="Selected Works">
@@ -69,6 +73,7 @@ export default function SelectedWorks({ content }: Props) {
             key={work.id}
             work={work}
             priority={i === 0}
+            workBasePath={workBasePath}
           />
         ))}
       </div>

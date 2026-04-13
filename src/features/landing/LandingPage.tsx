@@ -51,8 +51,10 @@ export default function LandingPage() {
 
   // ── Locale ────────────────────────────────────────────────
   // Detects /de/* routes and selects the matching content file.
-  const pathname = usePathname()
-  const c = pathname.startsWith('/de') ? contentDE : contentEN
+  const pathname  = usePathname()
+  const isDE      = pathname.startsWith('/de')
+  const c         = isDE ? contentDE : contentEN
+  const workBasePath = isDE ? '/de/work' : '/work'
 
   // ── Section refs ──────────────────────────────────────────
   // One ref per scroll-snappable section.
@@ -88,7 +90,7 @@ export default function LandingPage() {
 
         {/* (002) Selected Works */}
         <section ref={selectedWorksRef} className={styles['lp-section']}>
-          <SelectedWorks content={c.selectedWorks} />
+          <SelectedWorks content={c.selectedWorks} workBasePath={workBasePath} />
         </section>
 
         {/* (003) More Work */}

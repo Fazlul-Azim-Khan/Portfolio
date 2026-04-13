@@ -40,9 +40,11 @@ export interface WorkCardItem {
 }
 
 interface WorkCardProps {
-  work:      WorkCardItem
+  work:          WorkCardItem
   /** true for the first card — marks image as LCP candidate */
-  priority?: boolean
+  priority?:     boolean
+  /** base path for the case study link — defaults to '/work' */
+  workBasePath?: string
 }
 
 
@@ -50,10 +52,10 @@ interface WorkCardProps {
    COMPONENT
    ============================================================ */
 
-export default function WorkCard({ work, priority = false }: WorkCardProps) {
+export default function WorkCard({ work, priority = false, workBasePath = '/work' }: WorkCardProps) {
   return (
     <Link
-      href={`/work/${work.slug}`}
+      href={`${workBasePath}/${work.slug}`}
       className={styles['wc-card']}
       aria-label={`View case study: ${work.title}`}
     >
