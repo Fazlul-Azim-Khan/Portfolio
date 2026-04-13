@@ -14,7 +14,7 @@ import type { NavCTA } from '@/types'
    ============================================================ */
 
 export const navBrand = {
-  label: 'FAZ',
+  label: 'faz',
   href:  '/',
 } as const
 

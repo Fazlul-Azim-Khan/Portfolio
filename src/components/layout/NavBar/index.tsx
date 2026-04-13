@@ -19,10 +19,11 @@
 
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Button from '@/components/ui/Button'
-import { navBrand, navLanguages, navCTAs } from '@/content/nav'
+import { navBrand, navCTAs } from '@/content/nav'
 import styles from './NavBar.module.css'
 
 
@@ -32,6 +33,19 @@ import styles from './NavBar.module.css'
 
 export default function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Derive locale and locale-swap hrefs from the current pathname
+  const { isDE, enHref, deHref } = useMemo(() => {
+    const de = pathname.startsWith('/de')
+    // Strip /de prefix to get the English equivalent path
+    const stripped = de ? (pathname.replace(/^\/de/, '') || '/') : pathname
+    return {
+      isDE:   de,
+      enHref: stripped,
+      deHref: de ? pathname : `/de${pathname === '/' ? '' : pathname}`,
+    }
+  }, [pathname])
 
   const toggleDrawer = useCallback(() => {
     setDrawerOpen((prev) => !prev)
@@ -64,20 +78,28 @@ export default function NavBar() {
             className={styles['nav-lang-switcher']}
             aria-label="Language selection"
           >
-            {navLanguages.map((lang) => (
-              <button
-                key={lang.code}
-                type="button"
-                className={[
-                  styles['nav-lang-item'],
-                  lang.active ? styles['nav-lang-active'] : styles['nav-lang-inactive'],
-                ].join(' ')}
-                aria-current={lang.active ? 'true' : undefined}
-                aria-label={`Switch to ${lang.label}`}
-              >
-                {lang.label}
-              </button>
-            ))}
+            <Link
+              href={enHref}
+              className={[
+                styles['nav-lang-item'],
+                !isDE ? styles['nav-lang-active'] : styles['nav-lang-inactive'],
+              ].join(' ')}
+              aria-current={!isDE ? 'true' : undefined}
+              aria-label="Switch to English"
+            >
+              EN
+            </Link>
+            <Link
+              href={deHref}
+              className={[
+                styles['nav-lang-item'],
+                isDE ? styles['nav-lang-active'] : styles['nav-lang-inactive'],
+              ].join(' ')}
+              aria-current={isDE ? 'true' : undefined}
+              aria-label="Zu Deutsch wechseln"
+            >
+              DE
+            </Link>
           </nav>
 
         </div>
