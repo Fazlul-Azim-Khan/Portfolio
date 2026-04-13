@@ -64,9 +64,9 @@ export default function NavBar() {
         {/* ── Left group: Logo + Language switcher ───────── */}
         <div className={styles['nav-left-group']}>
 
-          {/* Logo */}
+          {/* Logo — locale-aware: stays on /de when in German */}
           <Link
-            href={navBrand.href}
+            href={isDE ? '/de' : '/'}
             className={styles['nav-logo']}
             aria-label="Fazlul Azim Khan — home"
           >
