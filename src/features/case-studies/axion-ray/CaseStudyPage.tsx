@@ -167,7 +167,7 @@ export default function AxionRayCaseStudyPage({ locale = 'en' }: Props) {
         <div className={styles['csp-body']}>
 
           {/* Hero — title + meta sidebar + full-width image */}
-          <CaseStudyHero hero={axionRay.hero} backHref={locale === 'de' ? '/de/#works' : '/#works'} />
+          <CaseStudyHero hero={axionRay.hero} backHref={locale === 'de' ? '/de/#works' : '/#works'} locale={locale} />
 
           {/* All sections, including the terminal NextCaseStudy */}
           {axionRay.sections.map((section, i) => (

@@ -155,7 +155,7 @@ export default function ADMCaseStudyPage({ locale = 'en' }: Props) {
         <div className={styles['csp-body']}>
 
           {/* Hero — title + meta sidebar + full-width image */}
-          <CaseStudyHero hero={adm.hero} backHref={locale === 'de' ? '/de/#works' : '/#works'} />
+          <CaseStudyHero hero={adm.hero} backHref={locale === 'de' ? '/de/#works' : '/#works'} locale={locale} />
 
           {/* All sections, including the terminal NextCaseStudy */}
           {adm.sections.map((section, i) => (

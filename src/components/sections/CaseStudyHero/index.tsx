@@ -34,10 +34,36 @@ import styles  from './CaseStudyHero.module.css'
    PROPS
    ============================================================ */
 
+interface MetaLabels {
+  role:   string
+  stage:  string
+  year:   string
+  sector: string
+  note:   string
+}
+
+const EN_LABELS: MetaLabels = {
+  role:   'Role',
+  stage:  'Stage',
+  year:   'Year',
+  sector: 'Sector',
+  note:   'Note',
+}
+
+const DE_LABELS: MetaLabels = {
+  role:   'Rolle',
+  stage:  'Phase',
+  year:   'Jahr',
+  sector: 'Branche',
+  note:   'Hinweis',
+}
+
 interface CaseStudyHeroProps {
-  hero:      CaseStudyHeroData
+  hero:        CaseStudyHeroData
   /** href for the "← Work" back link — defaults to '/#works' */
-  backHref?: string
+  backHref?:   string
+  /** 'de' renders German sidebar labels — defaults to English */
+  locale?:     'en' | 'de'
 }
 
 
@@ -45,8 +71,9 @@ interface CaseStudyHeroProps {
    COMPONENT
    ============================================================ */
 
-export default function CaseStudyHero({ hero, backHref = '/#works' }: CaseStudyHeroProps) {
+export default function CaseStudyHero({ hero, backHref = '/#works', locale = 'en' }: CaseStudyHeroProps) {
   const { title, heroImage, imageAspect, aiWatermark, meta } = hero
+  const L = locale === 'de' ? DE_LABELS : EN_LABELS
 
   return (
     <div className={styles['case-hero-root']}>
@@ -92,11 +119,11 @@ export default function CaseStudyHero({ hero, backHref = '/#works' }: CaseStudyH
 
           {/* Key-value rows — Role, Stage, Year, Sector, Note */}
           {([
-            { label: 'Role',   value: meta.role },
-            { label: 'Stage',  value: meta.stage },
-            { label: 'Year',   value: meta.year },
-            { label: 'Sector', value: meta.sector },
-            ...(meta.note ? [{ label: 'Note', value: meta.note }] : []),
+            { label: L.role,   value: meta.role },
+            { label: L.stage,  value: meta.stage },
+            { label: L.year,   value: meta.year },
+            { label: L.sector, value: meta.sector },
+            ...(meta.note ? [{ label: L.note, value: meta.note }] : []),
           ] as { label: string; value: string }[]).map((row) => (
             <div key={row.label} className={styles['case-hero-meta-row']}>
               <p className={styles['case-hero-meta-label']}>{row.label}</p>

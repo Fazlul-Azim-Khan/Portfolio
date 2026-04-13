@@ -272,7 +272,7 @@ export default function CenterHealthCaseStudyPage({ locale = 'en' }: Props) {
         <div className={styles['csp-body']}>
 
           {/* Hero — title + meta sidebar + full-width image */}
-          <CaseStudyHero hero={centerHealth.hero} backHref={locale === 'de' ? '/de/#works' : '/#works'} />
+          <CaseStudyHero hero={centerHealth.hero} backHref={locale === 'de' ? '/de/#works' : '/#works'} locale={locale} />
 
           {/* All sections, including the terminal NextCaseStudy */}
           {centerHealth.sections.map((section, i) => (
