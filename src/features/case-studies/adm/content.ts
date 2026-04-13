@@ -37,9 +37,20 @@
 
 import type {
   CaseStudyHeroData,
-  CaseStudyProblemSection,
   CaseStudyDecisionsSection,
 } from '@/types'
+
+
+/* ── Problem ─────────────────────────────────────────────── */
+
+export interface ADMProblemSection {
+  type:   'problem'
+  index:  string
+  heading: string
+  quote:  string
+  /** Body broken into subheader + paragraph blocks */
+  body:   ADMIntroBlock[]
+}
 
 
 /* ── Shared intro block ──────────────────────────────────── */
@@ -193,7 +204,7 @@ export interface ADMNextCaseStudySection {
 /* ── Union ───────────────────────────────────────────────── */
 
 export type ADMSectionData =
-  | CaseStudyProblemSection
+  | ADMProblemSection
   | ADMResearchSection
   | ADMConstraintsSection
   | CaseStudyDecisionsSection
@@ -255,25 +266,42 @@ export const adm: ADMCaseStudy = {
         'disconnected spreadsheets. Every permission change, every approval, every configuration ' +
         'update — manual. An enterprise cannot scale on institutional memory alone. "',
 
-      body:
-        'The Nipro–GMI joint enterprise — spanning 32 Strategic Business Units across Bangladesh ' +
-        'and Japan — operated its core administrative and sales functions through paper-based ' +
-        'bureaucracy. User access was provisioned through informal chains of command. Role permissions ' +
-        'existed as verbal agreements. Approval workflows lived in physical ledgers. Finance directors ' +
-        'duplicated data across disconnected spreadsheets. Tax department processes required multi-step ' +
-        'manual verification with no audit trail. Sales operations — medical representative tracking, ' +
-        'consignment management, customer debt — ran through fragmented manual systems across 20 ' +
-        'distribution depots.\n\n' +
-        'The organization needed two foundational business modules: a System Administration module ' +
-        '(ADM) to govern user access, roles, permissions, configuration, and audit trails across all ' +
-        '32 SBUs; and a Sales module to digitize the entire sales operations pipeline — from medical ' +
-        'representative field tracking to hospital and pharmacy distribution, consignment management, ' +
-        'and B2B/B2C debt reconciliation.\n\n' +
-        'Both modules had to serve dual purposes: as the operational backbone for Nipro–GMI\'s ' +
-        'immediate needs, and as a scalable ERP product that could be commercialized to other ' +
-        'organizations. Every design decision had to work for the current 32-SBU structure while ' +
-        'remaining abstractly configurable for unknown future clients.',
-    } satisfies CaseStudyProblemSection,
+      body: [
+        {
+          subheader: 'A 32-SBU enterprise on paper',
+          body:
+            'The Nipro–GMI joint enterprise — spanning 32 Strategic Business Units across Bangladesh ' +
+            'and Japan — operated its core administrative and sales functions through paper-based ' +
+            'bureaucracy. User access was provisioned through informal chains of command. Role ' +
+            'permissions existed as verbal agreements. Approval workflows lived in physical ledgers.',
+        },
+        {
+          subheader: 'Fragmented operations at scale',
+          body:
+            'Finance directors duplicated data across disconnected spreadsheets. Tax department ' +
+            'processes required multi-step manual verification with no audit trail. Sales operations — ' +
+            'medical representative tracking, consignment management, customer debt — ran through ' +
+            'fragmented manual systems across 20 distribution depots.',
+        },
+        {
+          subheader: 'Two foundational modules required',
+          body:
+            'The organization needed two foundational business modules: a System Administration ' +
+            'module (ADM) to govern user access, roles, permissions, configuration, and audit trails ' +
+            'across all 32 SBUs; and a Sales module to digitize the entire sales operations pipeline — ' +
+            'from medical representative field tracking to hospital and pharmacy distribution, ' +
+            'consignment management, and B2B/B2C debt reconciliation.',
+        },
+        {
+          subheader: 'Built for now and for scale',
+          body:
+            'Both modules had to serve dual purposes: as the operational backbone for Nipro–GMI\'s ' +
+            'immediate needs, and as a scalable ERP product that could be commercialized to other ' +
+            'organizations. Every design decision had to work for the current 32-SBU structure while ' +
+            'remaining abstractly configurable for unknown future clients.',
+        },
+      ],
+    } satisfies ADMProblemSection,
 
 
     /* ── (002) User Research — dark card ───────────────────

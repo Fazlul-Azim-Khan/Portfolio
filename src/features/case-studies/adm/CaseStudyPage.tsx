@@ -35,10 +35,10 @@ import Container   from '@/shared/ui/Container/Container'
 // ── Shared section components (common types) ──────────────────────────────────
 import CaseStudyHero             from '@/components/sections/CaseStudyHero'
 import CaseStudySectionWrapper   from '@/components/sections/CaseStudySectionWrapper'
-import CaseStudyProblemSection   from '@/components/sections/CaseStudyProblemSection'
 import CaseStudyDecisionsSection from '@/components/sections/CaseStudyDecisionsSection'
 
 // ── Feature-local section components (ADM-specific types) ─────────────────────
+import Problem               from './components/Problem'
 import Research              from './components/Research'
 import Constraints           from './components/Constraints'
 import Execution             from './components/Execution'
@@ -66,7 +66,7 @@ function renderSection(section: ADMSectionData, i: number) {
     case 'problem':
       return (
         <CaseStudySectionWrapper key={i} index={section.index}>
-          <CaseStudyProblemSection section={section} />
+          <Problem section={section} />
         </CaseStudySectionWrapper>
       )
 

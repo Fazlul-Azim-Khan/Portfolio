@@ -1,0 +1,117 @@
+/*
+ * Problem.module.css
+ * ADM-specific — The Problem section (001).
+ *
+ * Matches shared CaseStudyProblemSection layout (191px top padding,
+ * bottom border, H3 quote) but replaces the right-aligned body string
+ * with subheader + paragraph blocks.
+ * Token-only values except for Figma-confirmed fixed values.
+ */
+
+
+/* ============================================================
+   ROOT WRAPPER
+   Matches shared problem-content: pt-191px, pb-42px, bottom border
+   ============================================================ */
+
+.problem-root {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-64);
+
+  padding-top:    191px;   /* Figma: pt-[191px] — matches shared component */
+  padding-bottom: 42px;    /* Figma: pb-[42px] */
+
+  border-bottom:  1px solid var(--color-secondary);
+  width:          100%;
+}
+
+
+/* ============================================================
+   HEADING — H1, Integral CF, fluid 120px
+   ============================================================ */
+
+.problem-heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h1);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-h1);
+  letter-spacing: var(--tracking-h1);
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   QUOTE — H3, Integral CF, 56px
+   ============================================================ */
+
+.problem-quote {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h3);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h3);
+  color:          var(--color-primary);
+  margin:         0;
+  width:          100%;
+}
+
+
+/* ============================================================
+   BODY BLOCKS — subheader + paragraph stack
+   ============================================================ */
+
+.problem-body-blocks {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-32);
+  width:          100%;
+}
+
+/* Individual block */
+.problem-body-block {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-16);
+}
+
+/* Divider above each block */
+.problem-body-divider {
+  width:       100%;
+  height:      1px;
+  background:  var(--color-divider);
+  flex-shrink: 0;
+}
+
+/* Subheader — Integral CF H5 */
+.problem-body-subheader {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+/* Body paragraph — Inter body */
+.problem-body-text {
+  font-family: var(--font-body);
+  font-size:   var(--text-body);
+  line-height: var(--lh-body);
+  color:       var(--color-primary);
+  margin:      0;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .problem-root {
+    padding-top: var(--padding-40);
+    gap:         var(--gap-40);
+  }
+}
