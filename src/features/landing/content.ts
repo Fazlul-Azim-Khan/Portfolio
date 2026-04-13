@@ -95,16 +95,8 @@ export const selectedWorks = {
   },
   items: [
     {
-      id:     'erp-admin',
-      index:  '01',
-      client: 'Nipro–GMI',
-      title:  'ERP system administration for a 32-SBU enterprise',
-      slug:   'erp-admin',
-      mockup: '/images/works/adm/mockup.jpg',
-    },
-    {
       id:     'manufacturing-platform',
-      index:  '02',
+      index:  '01',
       client: 'Axion Ray',
       title:  'AI-powered manufacturing reliability platform',
       slug:   'manufacturing-platform',
@@ -112,11 +104,19 @@ export const selectedWorks = {
     },
     {
       id:     'center-health',
-      index:  '03',
+      index:  '02',
       client: 'Center Health',
       title:  'AI-powered diabetes management platform',
       slug:   'center-health',
       mockup: '/images/works/center-health/mockup.jpg',
+    },
+    {
+      id:     'erp-admin',
+      index:  '03',
+      client: 'Nipro–GMI',
+      title:  'ERP system administration for a 32-SBU enterprise',
+      slug:   'erp-admin',
+      mockup: '/images/works/adm/mockup.jpg',
     },
     // {
     //   id:     'arrival-os',
