@@ -1,6 +1,6 @@
 /*
- * Outcome.tsx — (005)
- * ADM-specific section: Outcome
+ * Outcome.tsx — (008)
+ * ADM-specific section: Outcome & Delivery
  *
  * Layout (inside CaseStudySectionWrapper):
  *
@@ -8,14 +8,16 @@
  *   ─────────────────────────────────────────
  *   Primary outcome statement (large text)
  *   ─────────────────────────────────────────
- *   Process outcomes (list items with dividers)
+ *   Delivery milestones (items with dividers)
+ *   ─────────────────────────────────────────
+ *   Process outcomes (items with dividers)
  *   ─────────────────────────────────────────
  *   Impact statement (dark card)
  *   ─────────────────────────────────────────
  *   Skills chips
  *
- * Follows the Axion Ray Outcome visual pattern but adapted
- * for qualitative outcomes (no metric cards).
+ * Expanded from original: now includes delivery milestones
+ * block between primary outcome and process outcomes.
  * Server Component — no client-side interaction.
  */
 
@@ -47,6 +49,22 @@ export default function Outcome({ section }: OutcomeProps) {
 
       {/* ── Primary outcome ──────────────────────────────── */}
       <p className={styles['outcome-primary']}>{section.primaryOutcome}</p>
+
+      {/* ── Delivery milestones ──────────────────────────── */}
+      {section.deliveryMilestones && section.deliveryMilestones.length > 0 && (
+        <div className={styles['outcome-milestones']}>
+          <p className={styles['outcome-milestones-label']}>Delivery Milestones</p>
+          <div className={styles['outcome-milestones-list']}>
+            {section.deliveryMilestones.map((milestone, i) => (
+              <div key={i} className={styles['outcome-milestone-item']}>
+                <div className={styles['outcome-milestone-divider']} aria-hidden="true" />
+                <p className={styles['outcome-milestone-title']}>{milestone.title}</p>
+                <p className={styles['outcome-milestone-body']}>{milestone.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* ── Process outcomes ─────────────────────────────── */}
       <div className={styles['outcome-process-list']}>

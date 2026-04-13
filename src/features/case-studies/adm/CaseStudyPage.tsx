@@ -3,18 +3,23 @@
  *
  * Full composition for the ADM (System Administration) case study.
  *
- * Section order (8 sections):
- *   Hero · Problem (001) · Constraints (002) · DesignDecisions (003)
- *   Execution (004) · Outcome (005) · Reflections (006) · NextCaseStudy
+ * Expanded section order (11 sections):
+ *   Hero · Problem (001) · Research (002) · Constraints (003)
+ *   DesignDecisions (004) · Execution/ADM (005) · SalesModule (006)
+ *   ContinuousPrototyping (007) · Outcome (008) · Reflections (009)
+ *   NextCaseStudy
  *
- * Common sections (001, 003) delegate to:
+ * Common sections (001, 004) delegate to:
  *   @/components/sections/  (shared, confirmed implementations)
  *
  * ADM-specific sections delegate to feature-local components:
- *   ./components/Constraints
- *   ./components/Execution
- *   ./components/Outcome
- *   ./components/Reflections
+ *   ./components/Research          (002) — dark card, self-contained
+ *   ./components/Constraints       (003)
+ *   ./components/Execution         (005)
+ *   ./components/SalesModule       (006)
+ *   ./components/ContinuousPrototyping (007)
+ *   ./components/Outcome           (008)
+ *   ./components/Reflections       (009)
  *   ./components/NextCaseStudy
  *
  * Server Component — no scroll snapping on case study.
@@ -34,11 +39,14 @@ import CaseStudyProblemSection   from '@/components/sections/CaseStudyProblemSec
 import CaseStudyDecisionsSection from '@/components/sections/CaseStudyDecisionsSection'
 
 // ── Feature-local section components (ADM-specific types) ─────────────────────
-import Constraints  from './components/Constraints'
-import Execution    from './components/Execution'
-import Outcome      from './components/Outcome'
-import Reflections  from './components/Reflections'
-import NextCaseStudy from './components/NextCaseStudy'
+import Research              from './components/Research'
+import Constraints           from './components/Constraints'
+import Execution             from './components/Execution'
+import SalesModule           from './components/SalesModule'
+import ContinuousPrototyping from './components/ContinuousPrototyping'
+import Outcome               from './components/Outcome'
+import Reflections           from './components/Reflections'
+import NextCaseStudy         from './components/NextCaseStudy'
 
 // ── Content ───────────────────────────────────────────────────────────────────
 import { adm }              from './content'
@@ -62,6 +70,10 @@ function renderSection(section: ADMSectionData, i: number) {
         </CaseStudySectionWrapper>
       )
 
+    /* Research — self-contained dark card (bypasses SectionWrapper) */
+    case 'research':
+      return <Research key={i} section={section} />
+
     case 'constraints':
       return (
         <CaseStudySectionWrapper key={i} index={section.index}>
@@ -80,6 +92,20 @@ function renderSection(section: ADMSectionData, i: number) {
       return (
         <CaseStudySectionWrapper key={i} index={section.index}>
           <Execution section={section} />
+        </CaseStudySectionWrapper>
+      )
+
+    case 'sales-module':
+      return (
+        <CaseStudySectionWrapper key={i} index={section.index}>
+          <SalesModule section={section} />
+        </CaseStudySectionWrapper>
+      )
+
+    case 'prototyping':
+      return (
+        <CaseStudySectionWrapper key={i} index={section.index}>
+          <ContinuousPrototyping section={section} />
         </CaseStudySectionWrapper>
       )
 

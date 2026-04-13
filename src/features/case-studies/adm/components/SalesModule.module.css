@@ -1,0 +1,113 @@
+/*
+ * SalesModule.module.css
+ * ADM-specific — Sales Module System Design section.
+ *
+ * Same visual pattern as Execution.module.css (clusters with dividers)
+ * plus an intro paragraph block.
+ * Token-only values.
+ */
+
+.sales-root {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-64);
+  width:          100%;
+}
+
+/* ── Heading ──────────────────────────────────────────────── */
+
+.sales-heading {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h1);
+  line-height:    var(--lh-h1);
+  letter-spacing: var(--tracking-h1);
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+/* ── Intro paragraph ─────────────────────────────────────── */
+
+.sales-intro {
+  font-family: var(--font-body);
+  font-size:   var(--text-body);
+  line-height: var(--lh-body);
+  color:       var(--color-primary);
+  margin:      0;
+  max-width:   var(--text-measure);
+}
+
+/* ── Clusters list ────────────────────────────────────────── */
+
+.sales-clusters {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-64);
+  width:          100%;
+}
+
+/* Individual pattern cluster */
+.sales-cluster {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-16);
+}
+
+/* Top rule line */
+.sales-divider {
+  width:       100%;
+  height:      1px;
+  background:  var(--color-divider);
+  flex-shrink: 0;
+}
+
+/* Cluster title — Integral CF H5 20px */
+.sales-cluster-title {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h5);
+  line-height:    var(--lh-heading);
+  letter-spacing: var(--tracking-h5);
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+/* Cluster description — Inter 14px */
+.sales-cluster-desc {
+  font-family: var(--font-body);
+  font-size:   var(--text-body);
+  line-height: var(--lh-body);
+  color:       var(--color-primary);
+  margin:      0;
+}
+
+
+/* ── Image grid ───────────────────────────────────────────── */
+
+.sales-images {
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap:                   var(--gap-24);
+  width:                 100%;
+  margin-top:            var(--gap-8);
+}
+
+.sales-image-wrapper {
+  position:      relative;
+  width:         100%;
+  aspect-ratio:  16 / 10;
+  border-radius: var(--radius-sm);
+  overflow:      hidden;
+  background:    var(--color-notice-bg);
+}
+
+.sales-image {
+  object-fit: cover;
+}
+
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .sales-images {
+    grid-template-columns: 1fr;
+  }
+}

@@ -4,9 +4,11 @@
  * Single source of truth for the ADM (System Administration) case study.
  * Slug: erp-admin  |  Client: Nipro–GMI (names cleared for public use)
  *
- * Section order:
- *   Hero · Problem (001) · Constraints (002) · DesignDecisions (003)
- *   Execution (004) · Outcome (005) · Reflections (006) · NextCaseStudy
+ * Expanded section order (11 sections):
+ *   Hero · Problem (001) · Research (002) · Constraints (003)
+ *   DesignDecisions (004) · Execution/ADM (005) · SalesModule (006)
+ *   ContinuousPrototyping (007) · Outcome (008) · Reflections (009)
+ *   NextCaseStudy
  *
  * Image paths — ⚠️ placeholder paths, files not yet exported:
  *   public/images/works/adm/hero.jpg
@@ -17,6 +19,10 @@
  *   public/images/works/adm/multi-entity-01.jpg
  *   public/images/works/adm/system-ops-01.jpg
  *   public/images/works/adm/user-lifecycle-01.jpg
+ *   public/images/works/adm/sales-rep-tracking-01.jpg
+ *   public/images/works/adm/sales-consignment-01.jpg
+ *   public/images/works/adm/sales-debt-01.jpg
+ *   public/images/works/adm/sales-distribution-01.jpg
  *
  * To update content: edit strings in this file only.
  * To change layout: edit the section components.
@@ -36,6 +42,28 @@ import type {
 } from '@/types'
 
 
+/* ── Research ───────────────────────────────────────────── */
+/*
+ * Dark-card section following the Axion Ray visual pattern.
+ * Self-contained — bypasses CaseStudySectionWrapper.
+ * Block structure:
+ *   Intro → Stakeholder Groups → Conclusions → Pain Points
+ *   → Workflow Observations → Design Implications
+ */
+
+export interface ADMResearchSection {
+  type:                  'research'
+  index:                 string
+  heading:               string
+  intro:                 string
+  stakeholderGroups:     string[]
+  painPoints:            string[]
+  workflowObservations:  string[]
+  designImplications:    string[]
+  conclusions:           [string, string, string]
+}
+
+
 /* ── Constraints ─────────────────────────────────────────── */
 
 export interface ADMConstraint {
@@ -53,7 +81,7 @@ export interface ADMConstraintsSection {
 }
 
 
-/* ── Execution ───────────────────────────────────────────── */
+/* ── Execution (ADM System Design) ───────────────────────── */
 
 export interface ADMExecutionCluster {
   /** Pattern cluster title — e.g. "Configuration hierarchy" */
@@ -72,20 +100,54 @@ export interface ADMExecutionSection {
 }
 
 
+/* ── Sales Module ───────────────────────────────────────── */
+
+export interface ADMSalesModuleSection {
+  type:     'sales-module'
+  index:    string
+  heading:  string
+  intro:    string
+  clusters: ADMExecutionCluster[]
+}
+
+
+/* ── Continuous Prototyping ──────────────────────────────── */
+
+export interface ADMPrototypingPhase {
+  title: string
+  body:  string
+}
+
+export interface ADMPrototypingSection {
+  type:   'prototyping'
+  index:  string
+  heading: string
+  intro:   string
+  phases:  ADMPrototypingPhase[]
+}
+
+
 /* ── Outcome ─────────────────────────────────────────────── */
 
+export interface ADMDeliveryMilestone {
+  title: string
+  body:  string
+}
+
 export interface ADMOutcomeSection {
-  type:             'outcome'
-  index:            string
-  heading:          string
+  type:                'outcome'
+  index:               string
+  heading:             string
   /** Primary outcome statement — the big line */
-  primaryOutcome:   string
+  primaryOutcome:      string
+  /** Delivery milestones — the success story */
+  deliveryMilestones:  ADMDeliveryMilestone[]
   /** Process outcomes — bullet-style supporting statements */
-  processOutcomes:  string[]
+  processOutcomes:     string[]
   /** Impact statement — dark card, uppercase display */
-  impactStatement:  string
+  impactStatement:     string
   /** Skill chip labels */
-  skills:           string[]
+  skills:              string[]
 }
 
 
@@ -120,9 +182,12 @@ export interface ADMNextCaseStudySection {
 
 export type ADMSectionData =
   | CaseStudyProblemSection
+  | ADMResearchSection
   | ADMConstraintsSection
   | CaseStudyDecisionsSection
   | ADMExecutionSection
+  | ADMSalesModuleSection
+  | ADMPrototypingSection
   | ADMOutcomeSection
   | ADMReflectionsSection
   | ADMNextCaseStudySection
@@ -151,14 +216,14 @@ export const adm: ADMCaseStudy = {
      ─────────────────────────────────────────────────────────── */
 
   hero: {
-    title:     'ERP system administration for a 32-SBU enterprise',
+    title:     'Designing two business modules for a 32-SBU enterprise ERP',
     heroImage: '/images/works/adm/hero.jpg',
     meta: {
       role:   'Product UI/UX Designer',
       stage:  'Production',
       year:   '2019 – 2020',
-      sector: 'Enterprise ERP · System Administration',
-      chips:  ['Case study', 'Enterprise ERP', 'B2B Product'],
+      sector: 'Enterprise ERP · Administration & Sales Operations',
+      chips:  ['Case study', 'Enterprise ERP', 'B2B Product', 'Two Modules'],
     },
   },
 
@@ -166,6 +231,7 @@ export const adm: ADMCaseStudy = {
   sections: [
 
     /* ── (001) The Problem ─────────────────────────────────
+       Paper bureaucracy → digital governance framing.
        ─────────────────────────────────────────────────────── */
     {
       type:    'problem',
@@ -173,30 +239,124 @@ export const adm: ADMCaseStudy = {
       heading: 'The Problem',
 
       quote:
-        '" An ERP system that governs 32 business units cannot afford a learning curve. ' +
-        'Every hour an admin spends figuring out the interface is an hour the entire organization waits. "',
+        '" Thirty-two business units running on paper workflows, verbal role assignments, and ' +
+        'disconnected spreadsheets. Every permission change, every approval, every configuration ' +
+        'update — manual. An enterprise cannot scale on institutional memory alone. "',
 
       body:
-        'User access. Role-based permissions. Approval workflows. System configuration. ' +
-        'Notification routing. Audit trails. In a multi-entity conglomerate, these aren\'t ' +
-        'settings — they\'re the operational backbone. When they break or confuse, every downstream ' +
-        'module stalls. The Nipro–GMI joint enterprise needed a System Administration module that ' +
-        'operations managers across 32 Strategic Business Units could configure without engineering ' +
-        'support, without breaking data isolation between entities, and without training on a new ' +
-        'interaction paradigm. The platform was designed with dual intent: as the internal governance ' +
-        'layer for Nipro–GMI operations across Bangladesh and Japan, and as a scalable ERP product ' +
-        'that could be commercialized to other organizations. Every design decision had to serve both ' +
-        'purposes — immediately usable for the current organization, abstractly configurable for ' +
-        'unknown future clients.',
+        'The Nipro–GMI joint enterprise — spanning 32 Strategic Business Units across Bangladesh ' +
+        'and Japan — operated its core administrative and sales functions through paper-based ' +
+        'bureaucracy. User access was provisioned through informal chains of command. Role permissions ' +
+        'existed as verbal agreements. Approval workflows lived in physical ledgers. Finance directors ' +
+        'duplicated data across disconnected spreadsheets. Tax department processes required multi-step ' +
+        'manual verification with no audit trail. Sales operations — medical representative tracking, ' +
+        'consignment management, customer debt — ran through fragmented manual systems across 20 ' +
+        'distribution depots.\n\n' +
+        'The organization needed two foundational business modules: a System Administration module ' +
+        '(ADM) to govern user access, roles, permissions, configuration, and audit trails across all ' +
+        '32 SBUs; and a Sales module to digitize the entire sales operations pipeline — from medical ' +
+        'representative field tracking to hospital and pharmacy distribution, consignment management, ' +
+        'and B2B/B2C debt reconciliation.\n\n' +
+        'Both modules had to serve dual purposes: as the operational backbone for Nipro–GMI\'s ' +
+        'immediate needs, and as a scalable ERP product that could be commercialized to other ' +
+        'organizations. Every design decision had to work for the current 32-SBU structure while ' +
+        'remaining abstractly configurable for unknown future clients.',
     } satisfies CaseStudyProblemSection,
 
 
-    /* ── (002) Constraints & Givens ────────────────────────
+    /* ── (002) User Research — dark card ───────────────────
+       Follows Axion Ray visual pattern (self-contained dark card).
+       Bypasses CaseStudySectionWrapper.
+       ─────────────────────────────────────────────────────── */
+    {
+      type:    'research',
+      index:   '(002)',
+      heading: 'User Research',
+
+      intro:
+        'Over the course of six months, our design process was rooted in direct stakeholder ' +
+        'immersion across Nipro–GMI\'s 32 Strategic Business Units. Rather than designing from ' +
+        'documentation or assumptions, we embedded ourselves in the operational reality — visiting ' +
+        'SBU directors, observing paper-based workflows firsthand, and conducting iterative prototype ' +
+        'presentations to collect structured feedback from the people who would use the system daily. ' +
+        'Each department had evolved its own operational variations within the same corporate ' +
+        'framework. Understanding these variations — and the institutional memory encoded in ' +
+        'physical document flows — was essential before any interface could be designed.',
+
+      stakeholderGroups: [
+        'Finance Department Directors',
+        'Tax Department Heads',
+        'Debt Department Directors',
+        'Managing Directors',
+        'SBU Operations Managers',
+        'Day-to-Day Employees',
+        'Solution Architects',
+        'Development Team Leads',
+        'Medical Representatives',
+        'Sales Field Agents',
+      ],
+
+      conclusions: [
+        'Stakeholders across finance, tax, and debt departments operated almost entirely through ' +
+        'paper-based workflows. Digitizing these processes required understanding not just what ' +
+        'they did, but how institutional memory was encoded in physical document flows that had ' +
+        'evolved over years of organizational growth.',
+
+        'Decision-makers needed to evaluate system behavior through interactive demonstrations — ' +
+        'static documentation, wireframes, or specification documents were insufficient for ' +
+        'stakeholders who had never used a digital governance system and could not extrapolate ' +
+        'from abstract representations.',
+
+        'Each SBU had evolved its own operational variations within the same corporate framework. ' +
+        'The system had to accommodate these variations while maintaining a unified administration ' +
+        'layer — configuration flexibility without configuration chaos.',
+      ],
+
+      painPoints: [
+        'Paper-based bureaucracy across all departments',
+        'No centralized user access management',
+        'Manual approval workflows prone to delays',
+        'Inconsistent processes across 32 SBUs',
+        'No audit trail for configuration changes',
+        'Role assignments managed through verbal agreements',
+        'Cross-entity data isolation enforced manually',
+        'No standardized notification routing',
+        'Document-heavy onboarding for new employees',
+        'Department-specific workarounds for shared processes',
+        'Sales tracking through fragmented manual systems',
+        'No visibility into field representative activities',
+        'Consignment and debt records maintained in physical ledgers',
+        'Multi-step manual verification with no error detection',
+      ],
+
+      workflowObservations: [
+        'Directors maintained physical ledgers for tracking approvals and configuration changes',
+        'Tax department workflows required multi-step manual verification across departments',
+        'Finance teams duplicated data entry across disconnected spreadsheets with no sync',
+        'New employee access provisioned through informal verbal chains of command',
+        'No visibility into which SBU had granted what access to whom',
+        'Sales representatives reported activities through paper forms collected weekly',
+        'Consignment tracking relied on manual reconciliation between depot and field records',
+      ],
+
+      designImplications: [
+        'Every configuration screen must be self-explanatory — no training assumption',
+        'Approval workflows must mirror existing paper chains digitally',
+        'Data isolation between SBUs must be system-enforced, not trust-based',
+        'Audit trail must be automatic, not dependent on manual logging',
+        'Role-permission mapping must be visible and editable by non-technical admins',
+        'Sales tracking must provide real-time visibility replacing weekly paper reports',
+        'System must accommodate SBU-specific workflow variations within a unified framework',
+      ],
+    } satisfies ADMResearchSection,
+
+
+    /* ── (003) Constraints & Givens ────────────────────────
        ADM-specific section type.
        ─────────────────────────────────────────────────────── */
     {
       type:    'constraints',
-      index:   '(002)',
+      index:   '(003)',
       heading: 'Constraints & givens',
 
       constraints: [
@@ -246,12 +406,12 @@ export const adm: ADMCaseStudy = {
     } satisfies ADMConstraintsSection,
 
 
-    /* ── (003) Key Design Decisions ────────────────────────
+    /* ── (004) Key Design Decisions ────────────────────────
        Uses shared CaseStudyDecisionsSection type.
        ─────────────────────────────────────────────────────── */
     {
       type:    'decisions',
-      index:   '(003)',
+      index:   '(004)',
       heading: 'Key design decisions',
 
       decisions: [
@@ -333,20 +493,22 @@ export const adm: ADMCaseStudy = {
     } satisfies CaseStudyDecisionsSection,
 
 
-    /* ── (004) Execution — System design ───────────────────
+    /* ── (005) System Design — ADM Module ─────────────────
        ADM-specific section type — pattern clusters with images.
        ─────────────────────────────────────────────────────── */
     {
       type:    'execution',
-      index:   '(004)',
-      heading: 'System design',
+      index:   '(005)',
+      heading: 'System design — ADM Module',
 
       clusters: [
         {
           title:       'Configuration hierarchy',
           description:
             'System-level, SBU-level, and user-level preference cascade. Settings panels with ' +
-            'structured overrides — showing where a value is inherited from versus locally configured.',
+            'structured overrides — showing where a value is inherited from versus locally configured. ' +
+            'The hierarchy ensured that organization-wide defaults could be established at the top level ' +
+            'while allowing individual SBUs to override specific configurations without affecting others.',
           images: [
             '/images/works/adm/config-hierarchy-01.jpg',
             '/images/works/adm/config-hierarchy-02.jpg',
@@ -357,7 +519,9 @@ export const adm: ADMCaseStudy = {
           description:
             'Role management with navigation-level permissions, feature toggles per module and ' +
             'submodule, and approval thread configuration. Roles tied to navigations with inheritance ' +
-            'patterns that surface effective permissions clearly.',
+            'patterns that surface effective permissions clearly. Non-technical administrators could ' +
+            'see exactly what each role grants — which modules, which features, which data scopes — ' +
+            'without needing to trace through nested permission trees.',
           images: [
             '/images/works/adm/access-governance-01.jpg',
             '/images/works/adm/access-governance-02.jpg',
@@ -368,7 +532,9 @@ export const adm: ADMCaseStudy = {
           description:
             'SBU configuration panels for 32 business units. Data isolation controls, cross-entity ' +
             'reference management, and organization-wide system code maintenance with merge, status ' +
-            'change, and CRUD operations.',
+            'change, and CRUD operations. Each SBU could operate independently while sharing common ' +
+            'master data — product codes, employee records, organizational hierarchies — through ' +
+            'controlled cross-referencing.',
           images: [
             '/images/works/adm/multi-entity-01.jpg',
           ],
@@ -378,7 +544,8 @@ export const adm: ADMCaseStudy = {
           description:
             'Audit trail configuration — data, login, activity, session. Backup and restore workflows ' +
             'with scheduled and quick backup, restore with rollback. Notification management — push, SMS, ' +
-            'and email templates with configurable hash variables.',
+            'and email templates with configurable hash variables. Every action in the system was logged ' +
+            'automatically, replacing the manual audit processes that previously relied on physical ledgers.',
           images: [
             '/images/works/adm/system-ops-01.jpg',
           ],
@@ -388,26 +555,238 @@ export const adm: ADMCaseStudy = {
           description:
             'Self-registration flow with diverging paths for employee versus non-employee users. ' +
             'Approval workflows for user requests. First-login profile setup. IP/MAC-based security ' +
-            'validation. Multi-role and multi-SBU user support.',
+            'validation. Multi-role and multi-SBU user support — replacing the verbal chain-of-command ' +
+            'provisioning with a structured, auditable access request pipeline.',
           images: [
             '/images/works/adm/user-lifecycle-01.jpg',
           ],
+        },
+        {
+          title:       'Submodule architecture',
+          description:
+            'The ADM module was designed as a composition of independent submodules — each functioning ' +
+            'as a self-contained unit that could be developed, tested, and released independently. ' +
+            'Submodules included: User Management, Role & Permission Management, SBU Configuration, ' +
+            'System Code Management, Notification Management, Audit Trail, Backup & Restore, and ' +
+            'Approval Workflow Engine. This architecture allowed parallel development tracks and ' +
+            'incremental feature releases through the sidebar navigation.',
         },
       ],
     } satisfies ADMExecutionSection,
 
 
-    /* ── (005) Outcome ─────────────────────────────────────
-       ADM-specific section type.
+    /* ── (006) System Design — Sales Module ───────────────
+       ADM-specific sales module section.
+       ─────────────────────────────────────────────────────── */
+    {
+      type:    'sales-module',
+      index:   '(006)',
+      heading: 'System design — Sales Module',
+
+      intro:
+        'The second business module covered the entire sales operations pipeline of Nipro JMI ' +
+        'Pharma — one of Bangladesh\'s largest pharmaceutical and medical device enterprises with ' +
+        '20 distribution depots, 8,000+ employees, and a nationwide network of medical ' +
+        'representatives, hospital agents, and pharmacy distribution channels. The Sales module ' +
+        'had to digitize every aspect of the company\'s B2B and B2C sales operations: from field ' +
+        'representative tracking and doctor-visit scheduling to consignment management, depot ' +
+        'distribution logistics, and customer debt reconciliation. Where the ADM module governed ' +
+        'who could access what, the Sales module governed what the business actually did.',
+
+      clusters: [
+        {
+          title:       'Medical representative tracking',
+          description:
+            'Field-level activity tracking for medical representatives conducting doctor visits, ' +
+            'hospital presentations, and pharmacy outreach. The system replaced paper-based weekly ' +
+            'activity reports with real-time digital tracking — visit logs, call reports, sample ' +
+            'distribution records, and territory coverage mapping. Representatives could log activities ' +
+            'in the field while managers gained immediate visibility into team performance across ' +
+            'territories and product lines.',
+          images: [
+            '/images/works/adm/sales-rep-tracking-01.jpg',
+          ],
+        },
+        {
+          title:       'Consignment & distribution management',
+          description:
+            'End-to-end tracking of product consignments across 20 distribution depots. The system ' +
+            'managed the full lifecycle: depot inventory levels, dispatch to field agents, delivery ' +
+            'confirmation, and return processing. Previously, consignment reconciliation between depot ' +
+            'records and field reports was done manually — a process prone to discrepancies that could ' +
+            'take weeks to resolve. The digital system provided real-time reconciliation and automated ' +
+            'discrepancy flagging.',
+          images: [
+            '/images/works/adm/sales-consignment-01.jpg',
+          ],
+        },
+        {
+          title:       'Customer debt management',
+          description:
+            'B2B and B2C debt tracking and reconciliation. Hospitals, clinics, pharmacies, and ' +
+            'institutional buyers operated on credit terms with varying payment schedules. The Sales ' +
+            'module centralized all outstanding debt records, automated payment reminders, and provided ' +
+            'aging analysis dashboards. Finance teams could track debt by customer, territory, product ' +
+            'line, and depot — replacing the fragmented physical ledger system that previously required ' +
+            'manual cross-referencing across departments.',
+          images: [
+            '/images/works/adm/sales-debt-01.jpg',
+          ],
+        },
+        {
+          title:       'Hospital & pharmacy distribution network',
+          description:
+            'Management of the distribution pipeline to hospitals, famous pharmacies, and retail ' +
+            'outlets. The module tracked order placement, fulfillment status, delivery scheduling, ' +
+            'and return handling. Sales agents visiting doctors and pharmacies could place orders ' +
+            'directly through the system, with automatic routing to the nearest depot for fulfillment. ' +
+            'This replaced the manual order-relay chain that previously passed through multiple ' +
+            'intermediaries before reaching the distribution center.',
+          images: [
+            '/images/works/adm/sales-distribution-01.jpg',
+          ],
+        },
+        {
+          title:       'Sales analytics & territory management',
+          description:
+            'Performance dashboards aggregating data across territories, product lines, and ' +
+            'representative activities. Territory assignment and rebalancing tools allowed managers ' +
+            'to optimize coverage based on actual sales data rather than historical assumptions. ' +
+            'The analytics layer surfaced patterns that were previously invisible — which products ' +
+            'performed in which territories, which representatives drove the highest conversion rates, ' +
+            'and where distribution bottlenecks occurred.',
+        },
+      ],
+    } satisfies ADMSalesModuleSection,
+
+
+    /* ── (007) Continuous Prototyping ─────────────────────
+       Iterative methodology section.
+       ─────────────────────────────────────────────────────── */
+    {
+      type:    'prototyping',
+      index:   '(007)',
+      heading: 'Continuous prototyping',
+
+      intro:
+        'The design methodology was not a linear handoff from research to wireframes to final UI. ' +
+        'It was a continuous prototyping cycle that ran in parallel with development — each sprint ' +
+        'producing updated interactive prototypes that were presented directly to stakeholders for ' +
+        'evaluation, feedback collection, and iteration. This process was the backbone of how both ' +
+        'the ADM and Sales modules evolved from requirements to production-ready designs.',
+
+      phases: [
+        {
+          title: 'Prototype construction',
+          body:
+            'Each feature set began with an interactive prototype built in Figma — not static ' +
+            'wireframes, but manually linked, state-accurate prototypes that simulated the actual ' +
+            'user experience. Every screen, every state transition, every form behavior was ' +
+            'prototyped at a fidelity level where stakeholders could interact with it as if it ' +
+            'were a working system. This was critical because the target users had no prior ' +
+            'experience with digital governance tools and could not evaluate from abstractions.',
+        },
+        {
+          title: 'Stakeholder presentation & feedback collection',
+          body:
+            'Updated prototypes were presented in regular meetings with SBU directors, finance ' +
+            'heads, tax department leads, managing directors, and operational staff. These were ' +
+            'not passive walkthroughs — stakeholders interacted with the prototype, tested it ' +
+            'against their actual workflows, and provided structured feedback. Directors from ' +
+            'finance, tax, and debt departments would validate whether the system matched their ' +
+            'real operational processes. Day-to-day employees would confirm whether the interaction ' +
+            'patterns aligned with how they actually worked.',
+        },
+        {
+          title: 'Iteration & refinement',
+          body:
+            'Feedback was synthesized, prioritized, and incorporated into the next prototype ' +
+            'iteration. Requirements evolved sprint-to-sprint as stakeholders gained clarity on ' +
+            'what the digital system could offer. Some features were simplified after stakeholder ' +
+            'testing revealed unnecessary complexity. Others were expanded when real-world ' +
+            'workflow requirements surfaced that weren\'t captured in initial specifications. ' +
+            'The prototype served as the living contract between business needs and design execution.',
+        },
+        {
+          title: 'Submodule lock & developer handoff',
+          body:
+            'Once a submodule\'s prototype passed stakeholder validation — confirmed functional, ' +
+            'confirmed aligned with real workflows, confirmed covering all edge cases identified ' +
+            'during testing — it was locked. Locked submodules were handed to the development team ' +
+            'with the interactive prototype serving as the definitive implementation reference. ' +
+            'Developers built directly from the prototype without interpretation, and the solution ' +
+            'architect ensured technical feasibility alignment throughout.',
+        },
+        {
+          title: 'Integration & validation',
+          body:
+            'As developers completed each submodule, it was integrated into the live system. ' +
+            'The team validated the implementation against the locked prototype — checking that ' +
+            'every interaction, every state, every data flow matched the design specification. ' +
+            'When a submodule passed integration validation, it was a milestone celebrated by ' +
+            'the entire team — a tangible marker of progress in a complex, multi-month effort.',
+        },
+        {
+          title: 'Pattern acceleration',
+          body:
+            'As the ADM module\'s submodules were locked and developed, the established patterns ' +
+            'accelerated the Sales module design. Layout blocks, navigation structures, table ' +
+            'patterns, form behaviors, and action bar placements were already proven. The Sales ' +
+            'module\'s design phase progressed significantly faster — approximately half the time — ' +
+            'because the interaction vocabulary was already established and validated through the ' +
+            'ADM module\'s continuous prototyping cycle.',
+        },
+      ],
+    } satisfies ADMPrototypingSection,
+
+
+    /* ── (008) Outcome & Delivery ─────────────────────────
+       Expanded with delivery milestones.
        ─────────────────────────────────────────────────────── */
     {
       type:    'outcome',
-      index:   '(005)',
-      heading: 'Outcome',
+      index:   '(008)',
+      heading: 'Outcome & delivery',
 
       primaryOutcome:
         'The Admin module moved to production serving 32 Strategic Business Units across the ' +
-        'Nipro–GMI ecosystem in Bangladesh and Japan.',
+        'Nipro–GMI ecosystem in Bangladesh and Japan. The Sales module reached design completion, ' +
+        'with all submodules locked and handed to the development team.',
+
+      deliveryMilestones: [
+        {
+          title: 'ADM submodules locked & built',
+          body:
+            'All 8 ADM submodules — User Management, Role & Permission Management, SBU Configuration, ' +
+            'System Code Management, Notification Management, Audit Trail, Backup & Restore, and ' +
+            'Approval Workflow Engine — were individually locked through the continuous prototyping cycle, ' +
+            'built by the development team, and integrated into the live system.',
+        },
+        {
+          title: 'ADM module in production',
+          body:
+            'The complete ADM module was deployed to production, serving operations managers, finance ' +
+            'directors, and administrators across all 32 SBUs. The system replaced paper-based access ' +
+            'governance, manual audit trails, and verbal permission chains with a structured digital ' +
+            'governance layer.',
+        },
+        {
+          title: 'Sales module design completed',
+          body:
+            'The Sales module — covering medical representative tracking, consignment management, ' +
+            'customer debt management, distribution network operations, and sales analytics — reached ' +
+            'full design completion. All submodules were locked and handed to the development team for ' +
+            'implementation, with the interactive prototype serving as the definitive build reference.',
+        },
+        {
+          title: 'Pattern library validated at scale',
+          body:
+            'The modular design patterns established during the ADM module were validated when the ' +
+            'Sales module design progressed in approximately half the time. Every layout block, navigation ' +
+            'pattern, table behavior, and form interaction from the ADM module was directly reused — ' +
+            'proving the design system\'s scalability across fundamentally different business domains.',
+        },
+      ],
 
       processOutcomes: [
         'Implementation stayed aligned with the original architecture — no structural deviations despite ' +
@@ -420,17 +799,13 @@ export const adm: ADMCaseStudy = {
         'Features were locked and released incrementally through the sidebar navigation structure, validated ' +
         'step by step with stakeholders from Nipro, GMI, and departmental leads.',
 
-        'The modular design system proved its value when the Sales module reached design completion in ' +
-        'approximately half the time because all interaction patterns, layout blocks, and navigation ' +
-        'structures were already established.',
-
         'The platform\'s product-grade architecture was maintained throughout: the ERP was positioned for ' +
         'B2B commercialization beyond the initial Nipro–GMI deployment.',
       ],
 
       impactStatement:
-        'Designed the governance layer of a 6-module ERP — from concept to production — serving 32 ' +
-        'business units across two countries, built to ship as a product.',
+        'Designed the governance and sales layers of a multi-module ERP — from concept to production — ' +
+        'serving 32 business units across two countries, with 8,000+ end users, built to ship as a product.',
 
       skills: [
         'Enterprise product design',
@@ -438,30 +813,34 @@ export const adm: ADMCaseStudy = {
         'ERP system configuration UX',
         'Role-based access control design',
         'Multi-tenant administration design',
+        'Sales operations system design',
+        'Field force management UX',
         'Cross-border stakeholder collaboration',
         'Design system (manual component reuse)',
-        'Interactive prototyping',
+        'Continuous interactive prototyping',
+        'Submodule architecture design',
       ],
     } satisfies ADMOutcomeSection,
 
 
-    /* ── (006) Reflections ─────────────────────────────────
+    /* ── (009) Reflections ─────────────────────────────────
        ADM-specific section type (same shape as Axion Ray).
        ─────────────────────────────────────────────────────── */
     {
       type:    'reflections',
-      index:   '(006)',
-      heading: 'Reflections of six months. One shipped module.',
+      index:   '(009)',
+      heading: 'Reflections of six months. Two modules. One shipped.',
 
       insights: [
         {
           number: '01',
-          title:  'User research would have strengthened the navigation hierarchy.',
+          title:  'Field research transformed the quality of design decisions.',
           body:
-            'If I were designing this system today, I would push for a research phase with actual SBU ' +
-            'administrators to validate the navigation hierarchy against their real workflows — specifically ' +
-            'whether the module-to-submodule-to-feature-to-settings hierarchy matched their mental model or ' +
-            'created unnecessary nesting.',
+            'Visiting SBU directors, sitting with finance teams, observing paper workflows firsthand — ' +
+            'this immersion was the single highest-value activity in the project. Every interface that was ' +
+            'validated through stakeholder prototype testing shipped without major revision. The ones ' +
+            'designed from specifications alone required the most iteration. If I were starting this ' +
+            'project today, I would push for even deeper embedded research in the first two weeks.',
         },
         {
           number: '02',
@@ -470,15 +849,17 @@ export const adm: ADMCaseStudy = {
             'Maintaining consistency across the full system without a component library or variant system ' +
             'was achievable but labor-intensive. When the second designer joined mid-project, alignment ' +
             'required manual knowledge transfer. Investing earlier in a documented pattern library would ' +
-            'have made the handoff smoother.',
+            'have made the handoff smoother and the Sales module design even faster.',
         },
         {
           number: '03',
-          title:  'Framework constraints can be design accelerators.',
+          title:  'Framework constraints became design accelerators.',
           body:
             'Designing within the Apache ERP framework\'s existing component library initially felt like ' +
             'a limitation. In practice, it became a design accelerator — the constraint forced consistency, ' +
-            'reduced implementation risk, and aligned design decisions with engineering reality from day one.',
+            'reduced implementation risk, and aligned design decisions with engineering reality from day one. ' +
+            'The Sales module\'s accelerated design timeline was direct proof: established patterns ' +
+            'eliminated the need to reinvent interaction models for each new business domain.',
         },
       ],
     } satisfies ADMReflectionsSection,
