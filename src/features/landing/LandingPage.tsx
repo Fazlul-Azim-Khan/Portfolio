@@ -18,6 +18,7 @@
  */
 
 import { useRef, useMemo }     from 'react'
+import { usePathname }         from 'next/navigation'
 import { useSectionScroll }    from '@/shared/hooks/useSectionScroll'
 import Container               from '@/shared/ui/Container/Container'
 
@@ -33,6 +34,12 @@ import Experience    from './components/Experience'
 import Languages     from './components/Languages'
 import Contact       from './components/Contact'
 
+// ── Locale-aware content ────────────────────────────────────────────────────
+// Both content files are imported; the right one is selected at runtime based
+// on pathname. content.de.ts re-exports English until translations are provided.
+import * as contentEN from './content'
+import * as contentDE from './content.de'
+
 import styles from './LandingPage.module.css'
 
 
@@ -41,6 +48,11 @@ import styles from './LandingPage.module.css'
    ============================================================ */
 
 export default function LandingPage() {
+
+  // ── Locale ────────────────────────────────────────────────
+  // Detects /de/* routes and selects the matching content file.
+  const pathname = usePathname()
+  const c = pathname.startsWith('/de') ? contentDE : contentEN
 
   // ── Section refs ──────────────────────────────────────────
   // One ref per scroll-snappable section.
@@ -71,32 +83,32 @@ export default function LandingPage() {
 
         {/* (001) Hero */}
         <section ref={heroRef} className={styles['lp-section']}>
-          <Hero />
+          <Hero content={c.hero} />
         </section>
 
         {/* (002) Selected Works */}
         <section ref={selectedWorksRef} className={styles['lp-section']}>
-          <SelectedWorks />
+          <SelectedWorks content={c.selectedWorks} />
         </section>
 
         {/* (003) More Work */}
         <section ref={moreWorkRef} className={styles['lp-section']}>
-          <MoreWork />
+          <MoreWork content={c.gallery} />
         </section>
 
         {/* (004) Experience */}
         <section ref={experienceRef} className={styles['lp-section']}>
-          <Experience />
+          <Experience content={c.experience} />
         </section>
 
         {/* (005) Languages */}
         <section ref={languagesRef} className={styles['lp-section']}>
-          <Languages />
+          <Languages content={c.languages} />
         </section>
 
         {/* (006) Contact + Footer */}
         <section ref={contactRef} className={styles['lp-section']}>
-          <Contact />
+          <Contact content={c.contact} brandLabel={c.nav.brand.label} />
         </section>
 
       </Container>

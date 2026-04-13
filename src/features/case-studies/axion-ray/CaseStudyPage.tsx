@@ -49,7 +49,8 @@ import Reflections      from './components/Reflections'
 import NextCaseStudy    from './components/NextCaseStudy'
 
 // ── Content ───────────────────────────────────────────────────────────────────
-import { axionRay }              from './content'
+import { axionRay as axionRayEN } from './content'
+import { axionRay as axionRayDE } from './content.de'
 import type { AxionRaySectionData } from './content'
 
 import styles from './CaseStudyPage.module.css'
@@ -148,7 +149,11 @@ function renderSection(section: AxionRaySectionData, i: number) {
    PAGE COMPONENT
    ============================================================ */
 
-export default function AxionRayCaseStudyPage() {
+type Props = { locale?: 'en' | 'de' }
+
+export default function AxionRayCaseStudyPage({ locale = 'en' }: Props) {
+  const axionRay = locale === 'de' ? axionRayDE : axionRayEN
+
   return (
     <>
       {/* Full-bleed — outside Container */}

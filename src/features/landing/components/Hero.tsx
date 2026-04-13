@@ -25,15 +25,17 @@
  */
 
 import Chip         from '@/shared/ui/Chip/Chip'
-import { hero }     from '../content'
+import type { hero as HeroContent } from '../content'
 import styles       from './Hero.module.css'
 
+type Props = { content: typeof HeroContent }
 
 /* ============================================================
    COMPONENT
    ============================================================ */
 
-export default function Hero() {
+export default function Hero({ content }: Props) {
+  const hero = content
   return (
     <div className={styles['lp-hero']} aria-label="Hero">
 

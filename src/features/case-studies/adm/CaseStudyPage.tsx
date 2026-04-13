@@ -49,7 +49,8 @@ import Reflections           from './components/Reflections'
 import NextCaseStudy         from './components/NextCaseStudy'
 
 // ── Content ───────────────────────────────────────────────────────────────────
-import { adm }              from './content'
+import { adm as admEN }        from './content'
+import { adm as admDE }        from './content.de'
 import type { ADMSectionData } from './content'
 
 import styles from './CaseStudyPage.module.css'
@@ -136,7 +137,11 @@ function renderSection(section: ADMSectionData, i: number) {
    PAGE COMPONENT
    ============================================================ */
 
-export default function ADMCaseStudyPage() {
+type Props = { locale?: 'en' | 'de' }
+
+export default function ADMCaseStudyPage({ locale = 'en' }: Props) {
+  const adm = locale === 'de' ? admDE : admEN
+
   return (
     <>
       {/* Full-bleed — outside Container */}

@@ -65,15 +65,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function DECaseStudyPage({ params }: Props) {
 
   if (params.slug === 'erp-admin') {
-    return <ADMCaseStudyPage />
+    return <ADMCaseStudyPage locale="de" />
   }
 
   if (params.slug === 'manufacturing-platform') {
-    return <AxionRayCaseStudyPage />
+    return <AxionRayCaseStudyPage locale="de" />
   }
 
   if (params.slug === 'center-health') {
-    return <CenterHealthCaseStudyPage />
+    return <CenterHealthCaseStudyPage locale="de" />
   }
 
   notFound()

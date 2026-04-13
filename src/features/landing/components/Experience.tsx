@@ -23,15 +23,17 @@
  * Content: src/features/landing/content.ts
  */
 
-import { experience } from '../content'
+import type { experience as ExperienceContent } from '../content'
 import styles         from './Experience.module.css'
 
+type Props = { content: typeof ExperienceContent }
 
 /* ============================================================
    COMPONENT
    ============================================================ */
 
-export default function Experience() {
+export default function Experience({ content }: Props) {
+  const experience = content
   return (
     <div className={styles['lp-exp-root']} aria-label="Experience">
 

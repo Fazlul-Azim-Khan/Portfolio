@@ -32,8 +32,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Image                                from 'next/image'
-import { gallery }                          from '../content'
-import type { GalleryItem }                 from '../content'
+import type { gallery as GalleryContent, GalleryItem } from '../content'
 import IconButton                           from '@/components/ui/IconButton'
 import { ArrowLeft, ArrowRight, X }         from '@/components/icons'
 import styles                               from './MoreWork.module.css'
@@ -43,7 +42,10 @@ import styles                               from './MoreWork.module.css'
    COMPONENT
    ============================================================ */
 
-export default function MoreWork() {
+type Props = { content: typeof GalleryContent }
+
+export default function MoreWork({ content }: Props) {
+  const gallery = content
 
   // ── Modal state ───────────────────────────────────────────
   const [activeItem,       setActiveItem]       = useState<GalleryItem | null>(null)

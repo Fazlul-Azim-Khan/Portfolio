@@ -30,15 +30,20 @@
  * Content: src/features/landing/content.ts
  */
 
-import { contact, nav } from '../content'
+import type { contact as ContactContent } from '../content'
 import styles           from './Contact.module.css'
 
+type Props = {
+  content:    typeof ContactContent
+  brandLabel: string
+}
 
 /* ============================================================
    COMPONENT
    ============================================================ */
 
-export default function Contact() {
+export default function Contact({ content, brandLabel }: Props) {
+  const contact = content
   return (
     <div className={styles['contact-root']} aria-label="Contact">
 
@@ -69,7 +74,7 @@ export default function Contact() {
       <footer className={styles['contact-footer']}>
 
         <p className={styles['contact-brand']}>
-          {nav.brand.label}
+          {brandLabel}
         </p>
 
         <p className={styles['contact-copyright']}>

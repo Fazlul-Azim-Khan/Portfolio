@@ -76,15 +76,15 @@ export default function CaseStudyPage({ params }: Props) {
   // The feature component owns NavBar + NoticeStrip + Container + sections.
 
   if (params.slug === 'erp-admin') {
-    return <ADMCaseStudyPage />
+    return <ADMCaseStudyPage locale="en" />
   }
 
   if (params.slug === 'manufacturing-platform') {
-    return <AxionRayCaseStudyPage />
+    return <AxionRayCaseStudyPage locale="en" />
   }
 
   if (params.slug === 'center-health') {
-    return <CenterHealthCaseStudyPage />
+    return <CenterHealthCaseStudyPage locale="en" />
   }
 
   // ── Unknown slug — 404 ───────────────────────────────────

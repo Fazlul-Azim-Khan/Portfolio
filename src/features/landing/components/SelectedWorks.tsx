@@ -27,15 +27,17 @@
  */
 
 import WorkCard                   from './WorkCard'
-import { selectedWorks }          from '../content'
+import type { selectedWorks as SelectedWorksContent } from '../content'
 import styles                     from './SelectedWorks.module.css'
 
+type Props = { content: typeof SelectedWorksContent }
 
 /* ============================================================
    COMPONENT
    ============================================================ */
 
-export default function SelectedWorks() {
+export default function SelectedWorks({ content }: Props) {
+  const selectedWorks = content
   return (
     <div className={styles['lp-works-root']} aria-label="Selected Works">
 

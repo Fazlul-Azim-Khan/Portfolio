@@ -20,15 +20,17 @@
  * Content: src/features/landing/content.ts
  */
 
-import { languages } from '../content'
+import type { languages as LanguagesContent } from '../content'
 import styles        from './Languages.module.css'
 
+type Props = { content: typeof LanguagesContent }
 
 /* ============================================================
    COMPONENT
    ============================================================ */
 
-export default function Languages() {
+export default function Languages({ content }: Props) {
+  const languages = content
   return (
     <div className={styles['lp-lang-root']} aria-label="Languages">
 

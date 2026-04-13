@@ -47,8 +47,9 @@ import RecommendationLetterSection     from './components/RecommendationLetterSe
 import NextCaseStudySection            from './components/NextCaseStudySection'
 
 // ── Content ───────────────────────────────────────────────────────────────────
-import { centerHealth }               from './content'
-import type { CenterHealthSectionData } from './content'
+import { centerHealth as centerHealthEN } from './content'
+import { centerHealth as centerHealthDE } from './content.de'
+import type { CenterHealthSectionData }   from './content'
 
 import styles from './CaseStudyPage.module.css'
 
@@ -253,7 +254,11 @@ function renderSection(section: CenterHealthSectionData, i: number) {
    PAGE COMPONENT
    ============================================================ */
 
-export default function CenterHealthCaseStudyPage() {
+type Props = { locale?: 'en' | 'de' }
+
+export default function CenterHealthCaseStudyPage({ locale = 'en' }: Props) {
+  const centerHealth = locale === 'de' ? centerHealthDE : centerHealthEN
+
   return (
     <>
       {/* Full-bleed — outside Container */}
