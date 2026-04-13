@@ -42,8 +42,16 @@ export default function SalesModule({ section }: SalesModuleProps) {
       {/* ── Heading ──────────────────────────────────────── */}
       <h1 className={styles['sales-heading']}>{section.heading}</h1>
 
-      {/* ── Intro paragraph ─────────────────────────────── */}
-      <p className={styles['sales-intro']}>{section.intro}</p>
+      {/* ── Intro — subheader + body blocks ─────────────── */}
+      <div className={styles['sales-intro-blocks']}>
+        {section.intro.map((block, i) => (
+          <div key={i} className={styles['sales-intro-block']}>
+            <div className={styles['sales-intro-divider']} aria-hidden="true" />
+            <p className={styles['sales-intro-subheader']}>{block.subheader}</p>
+            <p className={styles['sales-intro-body']}>{block.body}</p>
+          </div>
+        ))}
+      </div>
 
       {/* ── Pattern clusters ─────────────────────────────── */}
       <div className={styles['sales-clusters']}>

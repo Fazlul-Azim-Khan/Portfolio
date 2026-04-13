@@ -59,10 +59,18 @@ export default function Research({ section }: ResearchProps) {
       <div className={styles['research-content']}>
 
 
-        {/* ── 1. Intro row — heading + paragraph ──────────────── */}
+        {/* ── 1. Intro row — heading left + subheader blocks right ── */}
         <div className={styles['research-intro-row']}>
           <h1 className={styles['research-heading']}>{section.heading}</h1>
-          <p  className={styles['research-intro']}>{section.intro}</p>
+          <div className={styles['research-intro-blocks']}>
+            {section.intro.map((block, i) => (
+              <div key={i} className={styles['research-intro-block']}>
+                <div className={styles['research-intro-divider']} aria-hidden="true" />
+                <p className={styles['research-intro-subheader']}>{block.subheader}</p>
+                <p className={styles['research-intro-body']}>{block.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
 

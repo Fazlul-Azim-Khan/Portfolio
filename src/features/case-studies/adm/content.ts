@@ -42,12 +42,24 @@ import type {
 } from '@/types'
 
 
+/* ── Shared intro block ──────────────────────────────────── */
+/*
+ * Used by Research and SalesModule sections.
+ * Each block renders as: subheader (Integral CF H5) + body paragraph.
+ */
+
+export interface ADMIntroBlock {
+  subheader: string
+  body:      string
+}
+
+
 /* ── Research ───────────────────────────────────────────── */
 /*
  * Dark-card section following the Axion Ray visual pattern.
  * Self-contained — bypasses CaseStudySectionWrapper.
  * Block structure:
- *   Intro → Stakeholder Groups → Conclusions → Pain Points
+ *   Intro blocks → Stakeholder Groups → Conclusions → Pain Points
  *   → Workflow Observations → Design Implications
  */
 
@@ -55,7 +67,7 @@ export interface ADMResearchSection {
   type:                  'research'
   index:                 string
   heading:               string
-  intro:                 string
+  intro:                 ADMIntroBlock[]
   stakeholderGroups:     string[]
   painPoints:            string[]
   workflowObservations:  string[]
@@ -106,7 +118,7 @@ export interface ADMSalesModuleSection {
   type:     'sales-module'
   index:    string
   heading:  string
-  intro:    string
+  intro:    ADMIntroBlock[]
   clusters: ADMExecutionCluster[]
 }
 
@@ -273,15 +285,31 @@ export const adm: ADMCaseStudy = {
       index:   '(002)',
       heading: 'User Research',
 
-      intro:
-        'Over the course of six months, our design process was rooted in direct stakeholder ' +
-        'immersion across Nipro–GMI\'s 32 Strategic Business Units. Rather than designing from ' +
-        'documentation or assumptions, we embedded ourselves in the operational reality — visiting ' +
-        'SBU directors, observing paper-based workflows firsthand, and conducting iterative prototype ' +
-        'presentations to collect structured feedback from the people who would use the system daily. ' +
-        'Each department had evolved its own operational variations within the same corporate ' +
-        'framework. Understanding these variations — and the institutional memory encoded in ' +
-        'physical document flows — was essential before any interface could be designed.',
+      intro: [
+        {
+          subheader: 'Embedded field research',
+          body:
+            'Over six months, our design process was grounded in direct stakeholder immersion ' +
+            'across Nipro–GMI\'s 32 Strategic Business Units. Rather than designing from ' +
+            'documentation or assumptions, we embedded ourselves in operational reality — visiting ' +
+            'SBU directors, sitting with their teams, and observing paper-based workflows firsthand.',
+        },
+        {
+          subheader: 'Iterative prototype presentations',
+          body:
+            'Each field visit was paired with structured feedback collection through interactive ' +
+            'prototype demonstrations. Stakeholders engaged with the prototypes as working systems, ' +
+            'testing their assumptions against the designs and surfacing requirements that would ' +
+            'never have emerged from specifications alone.',
+        },
+        {
+          subheader: 'Institutional memory in paper flows',
+          body:
+            'Each department had evolved its own operational variations within the same corporate ' +
+            'framework. Understanding these variations — and the institutional memory encoded in ' +
+            'physical document flows — was essential before any interface could be designed.',
+        },
+      ],
 
       stakeholderGroups: [
         'Finance Department Directors',
@@ -583,15 +611,31 @@ export const adm: ADMCaseStudy = {
       index:   '(006)',
       heading: 'System design — Sales Module',
 
-      intro:
-        'The second business module covered the entire sales operations pipeline of Nipro JMI ' +
-        'Pharma — one of Bangladesh\'s largest pharmaceutical and medical device enterprises with ' +
-        '20 distribution depots, 8,000+ employees, and a nationwide network of medical ' +
-        'representatives, hospital agents, and pharmacy distribution channels. The Sales module ' +
-        'had to digitize every aspect of the company\'s B2B and B2C sales operations: from field ' +
-        'representative tracking and doctor-visit scheduling to consignment management, depot ' +
-        'distribution logistics, and customer debt reconciliation. Where the ADM module governed ' +
-        'who could access what, the Sales module governed what the business actually did.',
+      intro: [
+        {
+          subheader: 'Nipro JMI Pharma at scale',
+          body:
+            'The second business module covered the entire sales operations pipeline of Nipro JMI ' +
+            'Pharma — one of Bangladesh\'s largest pharmaceutical and medical device enterprises, ' +
+            'with 20 distribution depots, 8,000+ employees, and a nationwide network of medical ' +
+            'representatives, hospital agents, and pharmacy distribution channels.',
+        },
+        {
+          subheader: 'Digitizing B2B and B2C operations',
+          body:
+            'The Sales module had to digitize every aspect of the company\'s sales operations: ' +
+            'from field representative tracking and doctor-visit scheduling to consignment management, ' +
+            'depot distribution logistics, and customer debt reconciliation across hospitals, clinics, ' +
+            'and pharmacy retail networks.',
+        },
+        {
+          subheader: 'Administration governs access. Sales governs action.',
+          body:
+            'Where the ADM module established who could access what — roles, permissions, ' +
+            'configurations — the Sales module governed what the business actually did. Every sale, ' +
+            'every delivery, every customer relationship passed through this system.',
+        },
+      ],
 
       clusters: [
         {
