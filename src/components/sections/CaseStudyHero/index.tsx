@@ -35,7 +35,9 @@ import styles  from './CaseStudyHero.module.css'
    ============================================================ */
 
 interface CaseStudyHeroProps {
-  hero: CaseStudyHeroData
+  hero:      CaseStudyHeroData
+  /** href for the "← Work" back link — defaults to '/#works' */
+  backHref?: string
 }
 
 
@@ -43,14 +45,14 @@ interface CaseStudyHeroProps {
    COMPONENT
    ============================================================ */
 
-export default function CaseStudyHero({ hero }: CaseStudyHeroProps) {
+export default function CaseStudyHero({ hero, backHref = '/#works' }: CaseStudyHeroProps) {
   const { title, heroImage, imageAspect, aiWatermark, meta } = hero
 
   return (
     <div className={styles['case-hero-root']}>
 
       {/* ── Back link — above hero row ────────────────────── */}
-      <Link href="/#works" className={styles['case-hero-back']} aria-label="Back to selected works">
+      <Link href={backHref} className={styles['case-hero-back']} aria-label="Back to selected works">
         ← Work
       </Link>
 

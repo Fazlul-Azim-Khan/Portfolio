@@ -47,9 +47,11 @@ import RecommendationLetterSection     from './components/RecommendationLetterSe
 import NextCaseStudySection            from './components/NextCaseStudySection'
 
 // ── Content ───────────────────────────────────────────────────────────────────
-import { centerHealth as centerHealthEN } from './content'
-import { centerHealth as centerHealthDE } from './content.de'
-import type { CenterHealthSectionData }   from './content'
+import { centerHealth as centerHealthEN }  from './content'
+import { centerHealth as centerHealthDE }  from './content.de'
+import type { CenterHealthSectionData }    from './content'
+import { noticeStrip as noticeStripEN }    from '@/features/landing/content'
+import { noticeStrip as noticeStripDE }    from '@/features/landing/content.de'
 
 import styles from './CaseStudyPage.module.css'
 
@@ -263,14 +265,14 @@ export default function CenterHealthCaseStudyPage({ locale = 'en' }: Props) {
     <>
       {/* Full-bleed — outside Container */}
       <NavBar />
-      <NoticeStrip />
+      <NoticeStrip text={locale === 'de' ? noticeStripDE.text : noticeStripEN.text} />
 
       {/* Body — inside Container */}
       <Container as="main">
         <div className={styles['csp-body']}>
 
           {/* Hero — title + meta sidebar + full-width image */}
-          <CaseStudyHero hero={centerHealth.hero} />
+          <CaseStudyHero hero={centerHealth.hero} backHref={locale === 'de' ? '/de/#works' : '/#works'} />
 
           {/* All sections, including the terminal NextCaseStudy */}
           {centerHealth.sections.map((section, i) => (

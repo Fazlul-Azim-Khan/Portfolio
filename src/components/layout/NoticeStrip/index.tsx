@@ -26,6 +26,8 @@ import styles from './NoticeStrip.module.css'
    ============================================================ */
 
 interface NoticeStripProps {
+  /** Override the strip text — pass locale-specific copy when needed */
+  text?:      string
   marquee?:   boolean    // reserved — not yet implemented
   className?: string
 }
@@ -36,6 +38,7 @@ interface NoticeStripProps {
    ============================================================ */
 
 export default function NoticeStrip({
+  text      = noticeStrip.text,
   marquee   = false,
   className,
 }: NoticeStripProps) {
@@ -53,7 +56,7 @@ export default function NoticeStrip({
       aria-label="Availability notice"
     >
       <p className={styles['notice-text']}>
-        {noticeStrip.text}
+        {text}
       </p>
     </div>
   )

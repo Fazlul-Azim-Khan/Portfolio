@@ -78,7 +78,7 @@ export default function LandingPage() {
 
       {/* ── Full-bleed — outside Container ───────────────── */}
       <NavBar />
-      <NoticeStrip />
+      <NoticeStrip text={c.noticeStrip.text} />
 
       {/* ── Body content ─────────────────────────────────── */}
       <Container as="main">

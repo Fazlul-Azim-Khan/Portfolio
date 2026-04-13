@@ -49,9 +49,11 @@ import Reflections      from './components/Reflections'
 import NextCaseStudy    from './components/NextCaseStudy'
 
 // ── Content ───────────────────────────────────────────────────────────────────
-import { axionRay as axionRayEN } from './content'
-import { axionRay as axionRayDE } from './content.de'
-import type { AxionRaySectionData } from './content'
+import { axionRay as axionRayEN }                from './content'
+import { axionRay as axionRayDE }                from './content.de'
+import type { AxionRaySectionData }              from './content'
+import { noticeStrip as noticeStripEN }          from '@/features/landing/content'
+import { noticeStrip as noticeStripDE }          from '@/features/landing/content.de'
 
 import styles from './CaseStudyPage.module.css'
 
@@ -158,14 +160,14 @@ export default function AxionRayCaseStudyPage({ locale = 'en' }: Props) {
     <>
       {/* Full-bleed — outside Container */}
       <NavBar />
-      <NoticeStrip />
+      <NoticeStrip text={locale === 'de' ? noticeStripDE.text : noticeStripEN.text} />
 
       {/* Body — inside Container */}
       <Container as="main">
         <div className={styles['csp-body']}>
 
           {/* Hero — title + meta sidebar + full-width image */}
-          <CaseStudyHero hero={axionRay.hero} />
+          <CaseStudyHero hero={axionRay.hero} backHref={locale === 'de' ? '/de/#works' : '/#works'} />
 
           {/* All sections, including the terminal NextCaseStudy */}
           {axionRay.sections.map((section, i) => (

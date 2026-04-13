@@ -49,9 +49,11 @@ import Reflections           from './components/Reflections'
 import NextCaseStudy         from './components/NextCaseStudy'
 
 // ── Content ───────────────────────────────────────────────────────────────────
-import { adm as admEN }        from './content'
-import { adm as admDE }        from './content.de'
-import type { ADMSectionData } from './content'
+import { adm as admEN }                from './content'
+import { adm as admDE }                from './content.de'
+import type { ADMSectionData }         from './content'
+import { noticeStrip as noticeStripEN } from '@/features/landing/content'
+import { noticeStrip as noticeStripDE } from '@/features/landing/content.de'
 
 import styles from './CaseStudyPage.module.css'
 
@@ -146,14 +148,14 @@ export default function ADMCaseStudyPage({ locale = 'en' }: Props) {
     <>
       {/* Full-bleed — outside Container */}
       <NavBar />
-      <NoticeStrip />
+      <NoticeStrip text={locale === 'de' ? noticeStripDE.text : noticeStripEN.text} />
 
       {/* Body — inside Container */}
       <Container as="main">
         <div className={styles['csp-body']}>
 
           {/* Hero — title + meta sidebar + full-width image */}
-          <CaseStudyHero hero={adm.hero} />
+          <CaseStudyHero hero={adm.hero} backHref={locale === 'de' ? '/de/#works' : '/#works'} />
 
           {/* All sections, including the terminal NextCaseStudy */}
           {adm.sections.map((section, i) => (
