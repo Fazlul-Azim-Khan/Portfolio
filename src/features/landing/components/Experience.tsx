@@ -23,10 +23,22 @@
  * Content: src/features/landing/content.ts
  */
 
-import type { experience as ExperienceContent } from '../content'
-import styles         from './Experience.module.css'
+import styles from './Experience.module.css'
 
-type Props = { content: typeof ExperienceContent }
+type ExperienceEntry = {
+  id:       string
+  company:  string
+  location: string
+  role:     string
+  period:   string
+}
+
+type ExperienceContent = {
+  meta:    { index: string; heading: string }
+  entries: ExperienceEntry[]
+}
+
+type Props = { content: ExperienceContent }
 
 /* ============================================================
    COMPONENT

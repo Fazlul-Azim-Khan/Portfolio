@@ -20,10 +20,16 @@
  * Content: src/features/landing/content.ts
  */
 
-import type { languages as LanguagesContent } from '../content'
-import styles        from './Languages.module.css'
+import styles from './Languages.module.css'
 
-type Props = { content: typeof LanguagesContent }
+type LanguageItem = { language: string; proficiency: string }
+
+type LanguagesContent = {
+  meta:  { index: string; heading: string }
+  items: readonly LanguageItem[]
+}
+
+type Props = { content: LanguagesContent }
 
 /* ============================================================
    COMPONENT

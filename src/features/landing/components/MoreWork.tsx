@@ -32,17 +32,21 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Image                                from 'next/image'
-import type { gallery as GalleryContent, GalleryItem } from '../content'
+import type { GalleryItem }                 from '../content'
 import IconButton                           from '@/components/ui/IconButton'
 import { ArrowLeft, ArrowRight, X }         from '@/components/icons'
 import styles                               from './MoreWork.module.css'
 
+type GalleryContent = {
+  meta:  { index: string; heading: string; subheading: string }
+  items: GalleryItem[]
+}
 
 /* ============================================================
    COMPONENT
    ============================================================ */
 
-type Props = { content: typeof GalleryContent }
+type Props = { content: GalleryContent }
 
 export default function MoreWork({ content }: Props) {
   const gallery = content

@@ -24,11 +24,22 @@
  * The scroll ref is owned by LandingPage, not this component.
  */
 
-import Chip         from '@/shared/ui/Chip/Chip'
-import type { hero as HeroContent } from '../content'
-import styles       from './Hero.module.css'
+import Chip    from '@/shared/ui/Chip/Chip'
+import styles  from './Hero.module.css'
 
-type Props = { content: typeof HeroContent }
+type HeroContent = {
+  decorativeArrow: string
+  name:            string
+  headline: {
+    line1: string
+    line2: { ampersand: string; rest: string }
+  }
+  subline: string
+  bio:     string
+  chips:   readonly string[]
+}
+
+type Props = { content: HeroContent }
 
 /* ============================================================
    COMPONENT

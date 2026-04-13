@@ -30,11 +30,15 @@
  * Content: src/features/landing/content.ts
  */
 
-import type { contact as ContactContent } from '../content'
-import styles           from './Contact.module.css'
+import styles from './Contact.module.css'
+
+type ContactContent = {
+  meta:  { index: string; heading: string }
+  email: string
+}
 
 type Props = {
-  content:    typeof ContactContent
+  content:    ContactContent
   brandLabel: string
 }
 

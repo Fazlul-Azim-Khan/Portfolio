@@ -26,11 +26,16 @@
  * The <section> wrapper and scroll ref are owned by LandingPage.
  */
 
-import WorkCard                   from './WorkCard'
-import type { selectedWorks as SelectedWorksContent } from '../content'
-import styles                     from './SelectedWorks.module.css'
+import WorkCard             from './WorkCard'
+import type { WorkCardItem } from './WorkCard'
+import styles               from './SelectedWorks.module.css'
 
-type Props = { content: typeof SelectedWorksContent }
+type SelectedWorksContent = {
+  meta:  { index: string; heading: string; count: string }
+  items: readonly WorkCardItem[]
+}
+
+type Props = { content: SelectedWorksContent }
 
 /* ============================================================
    COMPONENT
