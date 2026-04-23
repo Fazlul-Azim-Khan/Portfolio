@@ -17,7 +17,7 @@ import type { GalleryItem, ExperienceEntry } from './content'
 // ─── NOTICE STRIP ────────────────────────────────────────────────────────────
 
 export const noticeStrip = {
-  text: 'DEUTSCHLAND  ·  Vollzeit verfügbar',
+  text: 'Deutschland  ·  Vollzeit verfügbar',
 } as const
 
 

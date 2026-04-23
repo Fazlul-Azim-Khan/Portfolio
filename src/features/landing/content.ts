@@ -17,7 +17,7 @@
 // "Availibility" matches Figma source spelling exactly — update when confirmed
 
 export const noticeStrip = {
-  text: 'GERMANY  ·  Available Full-Time',
+  text: 'Germany  ·  Available Full-Time',
 } as const
 
 
