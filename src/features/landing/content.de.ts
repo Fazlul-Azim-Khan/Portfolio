@@ -17,7 +17,7 @@ import type { GalleryItem, ExperienceEntry } from './content'
 // ─── NOTICE STRIP ────────────────────────────────────────────────────────────
 
 export const noticeStrip = {
-  text: 'DEUTSCHLAND  ·  CHANCENKARTE  ·  Keine Sponsorship nötig  ·  Vollzeit verfügbar',
+  text: 'DEUTSCHLAND  ·  Vollzeit verfügbar',
 } as const
 
 
