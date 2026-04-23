@@ -109,7 +109,7 @@
   align-items:    flex-start;
   align-self:     flex-start;
   justify-self:   stretch;
-  padding-left:   var(--layout-padding-x);   /* 16px — aligns with Container rhythm */
+  padding-left:   var(--padding-64);   /* 64px — max padding token */
   /* max-width: 636px removed — cell now stretches to container right edge */
 }
 
