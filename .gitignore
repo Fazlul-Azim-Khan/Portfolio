@@ -42,7 +42,8 @@ firebase-debug.*.log
 .firebaserc.local
 
 # IDE / editor
-.vscode/
+.vscode/*
+!.vscode/settings.json
 .idea/
 *.swp
 *.swo
