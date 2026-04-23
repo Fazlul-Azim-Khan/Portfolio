@@ -109,7 +109,8 @@
   align-items:    flex-start;
   align-self:     flex-start;
   justify-self:   stretch;
-  max-width:      636px;   /* Figma node 966:7525 — aspect-[636/309] */
+  padding-left:   var(--layout-padding-x);   /* 16px — aligns with Container rhythm */
+  /* max-width: 636px removed — cell now stretches to container right edge */
 }
 
 /* Bio paragraph — H5 style (14px→20px fluid, Outfit Regular) */
@@ -235,9 +236,9 @@
 
   /* Bio cell: now spans full width in row 1 */
   .lp-hero-bio-cell {
-    grid-column: 1;
-    grid-row:    1;
-    max-width:   100%;
+    grid-column:  1;
+    grid-row:     1;
+    padding-left: 0;   /* reset — container padding handles spacing on mobile */
   }
 
   /* Headline cell: spans full width in row 2 */
