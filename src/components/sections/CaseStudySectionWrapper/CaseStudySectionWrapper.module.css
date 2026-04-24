@@ -28,7 +28,8 @@
    ============================================================ */
 
 .section-wrapper-dark {
-  background:    var(--color-primary);
+  background:    var(--color-emphasis-bg);
+  box-shadow:    var(--emphasis-ring);                       /* invisible in light, 1px inset in dark */
   padding:       var(--padding-64) var(--layout-padding-x);  /* 64px 16px */
   border-radius: var(--radius-sm);                           /* 8px */
 }
@@ -59,7 +60,7 @@
 
 /* Dark variant — index text becomes white */
 .section-wrapper-dark .section-index {
-  color: var(--color-secondary);
+  color: var(--color-emphasis-ink);
 }
 
 

@@ -33,7 +33,8 @@
   gap:            var(--gap-64);          /* 64px — between heading and list */
 
   padding:        var(--padding-64);      /* 64px all sides — confirmed */
-  background:     var(--color-primary);   /* #0a0a0a — dark bg */
+  background:     var(--color-emphasis-bg);   /* #0a0a0a — dark bg */
+  box-shadow:     var(--emphasis-ring);    /* invisible in light, 1px inset in dark */
   border-radius:  var(--radius-sm);       /* 8px — dark card corners */
 
   width: 100%;
@@ -57,7 +58,7 @@
   font-weight: var(--weight-regular);
   line-height:    var(--lh-h1);      /* 1 */
   letter-spacing: var(--tracking-h1);     /* -0.84px */
-  color:          var(--color-secondary); /* white */
+  color:          var(--color-emphasis-ink); /* white */
   margin:         0;
 
   /* Integral CF is an all-caps font — no text-transform needed */
@@ -113,7 +114,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);      /* 1 */
   letter-spacing: var(--tracking-h5);     /* 0 */
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
 
   /* Constrain left column to prevent it from consuming all space */
   flex:           0 0 50%;
@@ -149,7 +150,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);      /* 1 */
   letter-spacing: var(--tracking-h5);     /* 0 */
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
 }
 
 
@@ -164,7 +165,7 @@
   line-height:    var(--lh-body);         /* 20px */
   letter-spacing: var(--tracking-lead);   /* 0 */
   text-transform: uppercase;
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
 }
 
 

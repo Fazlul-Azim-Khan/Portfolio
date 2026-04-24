@@ -163,7 +163,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);     /* 1 */
   letter-spacing: var(--tracking-h4);   /* 0 */
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   margin:         0;
 }
 
@@ -187,7 +187,7 @@
   font-size:    var(--text-lead);        /* 12px */
   font-weight:  var(--weight-regular);
   line-height:  var(--lh-body);          /* 20px */
-  color:        var(--color-secondary);
+  color:        var(--color-emphasis-ink);
 }
 
 .phase-feature-card-bullet::before {
@@ -199,7 +199,7 @@
   width:            3px;
   height:           3px;
   border-radius:    50%;                 /* Figma: Background circle, cornerRadius ~41M (pill) */
-  background-color: var(--color-secondary);
+  background-color: var(--color-emphasis-ink);
 }
 
 /* Closing description — 14px Inter, white
@@ -210,7 +210,7 @@
   font-size:    var(--text-body);        /* 14px */
   font-weight:  var(--weight-regular);
   line-height:  var(--lh-body);          /* 20px */
-  color:        var(--color-secondary);
+  color:        var(--color-emphasis-ink);
   margin:       0;
 }
 
@@ -259,7 +259,7 @@
   justify-content: center;
   align-items:    flex-start;
   padding:        var(--padding-64) var(--padding-16);   /* py-64 px-16 */
-  background:     var(--color-primary);
+  background:     var(--color-emphasis-bg);
   border-radius:  var(--radius-sm);    /* 8px */
 }
 
@@ -268,7 +268,7 @@
   font-size:      var(--text-h5);      /* 20px */
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   margin:         0;
 }
 
@@ -337,7 +337,7 @@
   flex-direction: column;
   gap:            10px;                  /* Figma: itemSpacing 10 */
   padding:        8px;                   /* Figma: padding 8px all sides */
-  background:     var(--color-primary);
+  background:     var(--color-emphasis-bg);
   border-radius:  var(--radius-sm);      /* 8px */
   width:          100%;
 }
@@ -360,7 +360,7 @@
   height:        100vh;                 /* Full viewport height — one panel per scroll moment */
   overflow:      hidden;
   border-radius: var(--radius-sm);
-  background:    var(--color-primary);
+  background:    var(--color-emphasis-bg);
 }
 
 /* Row 2 — geo map, full-width
@@ -371,7 +371,7 @@
   width:            100%;
   overflow:         hidden;
   border-radius:    var(--radius-sm);
-  background-color: var(--color-primary);
+  background-color: var(--color-emphasis-bg);
 }
 
 /* Responsive — panels already stacked, reduce height slightly on mobile */
@@ -393,7 +393,7 @@
   flex-direction: column;
   gap:            var(--gap-16);
   padding:        var(--padding-64);
-  background:     var(--color-primary);
+  background:     var(--color-emphasis-bg);
   border-radius:  var(--radius-sm);    /* 8px */
   width:          100%;
 }
@@ -413,7 +413,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h3);    /* -0.84px */
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   margin:         0;
 }
 
@@ -429,7 +429,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h4);
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   margin:         0;
 }
 
@@ -443,7 +443,7 @@
   width:            100%;
   border-radius:    var(--radius-sm);
   overflow:         hidden;
-  background-color: var(--color-primary);
+  background-color: var(--color-emphasis-bg);
 }
 
 .phase-image {

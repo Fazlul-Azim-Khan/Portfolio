@@ -63,8 +63,8 @@
 }
 
 .chip-interactive:hover {
-  background-color: var(--color-primary);
-  color:            var(--color-secondary);
+  background-color: var(--color-emphasis-bg);
+  color:            var(--color-emphasis-ink);
 }
 
 .chip-interactive:focus-visible {

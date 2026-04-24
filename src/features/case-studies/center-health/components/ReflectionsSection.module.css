@@ -102,7 +102,7 @@
   align-items:      flex-start;
   gap:              var(--gap-24);
   padding:          4px;
-  background-color: var(--color-secondary);   /* white */
+  background-color: var(--color-secondary);   /* white card on page — themes */
   border-radius:    var(--radius-sm);        /* 8px — project-wide single radius */
   width:            100%;
   flex:             1 0 0;

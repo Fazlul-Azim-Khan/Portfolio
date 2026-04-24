@@ -47,8 +47,9 @@
 
 /* Dark — near-black background (Experience section) */
 .sw-dark {
-  background-color: var(--color-primary);
-  color:            var(--color-secondary);
+  background-color: var(--color-emphasis-bg);
+  color:            var(--color-emphasis-ink);
+  box-shadow:       var(--emphasis-ring);   /* invisible in light, 1px inset in dark */
 }
 
 

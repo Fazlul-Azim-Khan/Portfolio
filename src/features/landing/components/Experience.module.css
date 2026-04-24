@@ -26,8 +26,9 @@
    ============================================================ */
 
 .lp-exp-root {
-  background:     var(--color-primary);   /* #0a0a0a — dark treatment */
-  color:          var(--color-secondary); /* white — default for all text */
+  background:     var(--color-emphasis-bg);   /* #0a0a0a — dark treatment */
+  color:          var(--color-emphasis-ink); /* white — default for all text */
+  box-shadow:     var(--emphasis-ring);       /* invisible in light, 1px inset in dark */
 
   /* Break out of Container's horizontal padding */
   margin-left:  calc(-1 * var(--layout-padding-x));  /* -16px */
@@ -67,7 +68,7 @@
   line-height:    var(--lh-body);
   letter-spacing: var(--tracking-lead);
   text-transform: uppercase;
-  color:          var(--color-secondary);  /* white on dark bg */
+  color:          var(--color-emphasis-ink);  /* white on dark bg */
   flex-shrink:    0;
   margin:         0;
   padding-top:    4px;
@@ -85,7 +86,7 @@
   font-weight: var(--weight-regular);
   line-height:    var(--lh-h1);
   letter-spacing: var(--tracking-h1);  /* -1.5px */
-  color:          var(--color-secondary);  /* white */
+  color:          var(--color-emphasis-ink);  /* white */
   margin:         0;
   flex:           1;
 }
@@ -141,7 +142,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);    /* 1 / 100% */
   letter-spacing: var(--tracking-h5);  /* 0 */
-  color:          var(--color-secondary);  /* white */
+  color:          var(--color-emphasis-ink);  /* white */
   margin:         0;
 }
 /* Grid handles column width — no manual flex sizing needed */
@@ -176,7 +177,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);    /* 1 / 100% */
   letter-spacing: var(--tracking-h5);  /* 0 */
-  color:          var(--color-secondary);  /* white */
+  color:          var(--color-emphasis-ink);  /* white */
   margin:         0;
 }
 

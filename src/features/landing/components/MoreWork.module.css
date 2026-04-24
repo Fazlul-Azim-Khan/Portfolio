@@ -242,7 +242,7 @@
   border-radius:    var(--radius-sm);
 
   background:       rgba(10, 10, 10, 0.64);
-  color:            var(--color-secondary);
+  color:            var(--color-emphasis-ink);
 
   font-family:      var(--font-body);
   font-size:        var(--text-lead);    /* 12px */
@@ -343,7 +343,7 @@
   line-height:    var(--lh-body);
   letter-spacing: var(--tracking-lead);
   text-transform: uppercase;
-  color:          var(--color-secondary);  /* white on dark overlay */
+  color:          var(--color-emphasis-ink);  /* white on dark overlay */
   margin:         0;
   min-width:      48px;
   text-align:     center;
@@ -361,7 +361,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h5);
-  color:          var(--color-secondary);  /* white */
+  color:          var(--color-emphasis-ink);  /* white */
   margin:         0;
   flex:           1;
 }

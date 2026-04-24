@@ -44,7 +44,7 @@
   line-height:    var(--lh-body);
   letter-spacing: var(--tracking-lead);
   text-transform: uppercase;
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   white-space:    nowrap;
   margin:         0;
 }
@@ -76,7 +76,7 @@
   font-weight: var(--weight-regular);
   line-height:    var(--lh-h1);
   letter-spacing: var(--tracking-h1);      /* -0.84px */
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   flex:           1 0 0;
   min-width:      0;
   margin:         0;
@@ -87,7 +87,7 @@
   font-size:    var(--text-body);     /* was 14px — Figma B1 */
   font-weight:  var(--weight-regular);
   line-height:  var(--lh-body);     /* 20px */
-  color:        var(--color-secondary);
+  color:        var(--color-emphasis-ink);
   width:        351px;
   flex-shrink:  0;
   margin:       0;
@@ -122,7 +122,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h3);
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   white-space:    nowrap;
   margin:         0;
   flex:           1 0 0;         /* Figma: flex-1 (equal with line) */
@@ -160,7 +160,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h5);
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   margin:         0;
 }
 
@@ -202,7 +202,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-body);
   letter-spacing: var(--tracking-lead);
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   margin:         0;
 }
 
@@ -212,7 +212,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
   letter-spacing: var(--tracking-h3);
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   margin:         0;
   white-space:    pre-wrap;
   width:          100%;

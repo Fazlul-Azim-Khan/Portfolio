@@ -56,8 +56,8 @@
    ============================================================ */
 
 .icon-btn-primary {
-  background-color: var(--color-primary);
-  color:            var(--color-secondary);
+  background-color: var(--color-emphasis-bg);
+  color:            var(--color-emphasis-ink);
   border:           none;
 }
 
@@ -82,8 +82,8 @@
 }
 
 .icon-btn-outlined:hover:not(:disabled) {
-  background-color: var(--color-primary);
-  color:            var(--color-secondary);
+  background-color: var(--color-emphasis-bg);
+  color:            var(--color-emphasis-ink);
 }
 
 .icon-btn-outlined:active:not(:disabled) {
@@ -119,13 +119,13 @@
 
 .icon-btn-light {
   background-color: transparent;
-  color:            var(--color-secondary);   /* white */
-  border:           1px solid var(--color-secondary);
+  color:            var(--color-emphasis-ink);   /* white */
+  border:           1px solid var(--color-emphasis-ink);
 }
 
 .icon-btn-light:hover:not(:disabled) {
-  background-color: var(--color-secondary);  /* white fill on hover */
-  color:            var(--color-primary);    /* black icon on hover */
+  background-color: var(--color-emphasis-ink);  /* white fill on hover */
+  color:            var(--color-emphasis-bg);   /* black icon on hover — fixed identity */
 }
 
 .icon-btn-light:active:not(:disabled) {
@@ -133,5 +133,5 @@
 }
 
 .icon-btn-light:focus-visible {
-  outline-color: var(--color-secondary);     /* white focus ring on dark bg */
+  outline-color: var(--color-emphasis-ink);     /* white focus ring on dark bg */
 }

@@ -210,7 +210,7 @@
   min-width:      0;
   height:         100%;
   padding:        14px 20px;           /* Figma: first node px-[20px] py-[14px]; detail nodes p-[16px] */
-  background:     var(--color-primary);
+  background:     var(--color-emphasis-bg);
   border-radius:  var(--radius-sm);    /* 8px */
 }
 
@@ -225,7 +225,7 @@
   font-size:      var(--text-h5);      /* 20px */
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   margin:         0;
 }
 
@@ -234,7 +234,7 @@
   font-size:      var(--text-body);    /* 14px */
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-body);
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   margin:         0;
   white-space:    nowrap;
 }

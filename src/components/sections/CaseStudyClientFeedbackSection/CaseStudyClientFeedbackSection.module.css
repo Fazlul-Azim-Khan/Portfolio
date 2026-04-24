@@ -15,7 +15,8 @@
   flex-direction: column;
   gap:            var(--gap-64);
   padding:        var(--padding-64);
-  background:     var(--color-primary);
+  background:     var(--color-emphasis-bg);
+  box-shadow:     var(--emphasis-ring);   /* invisible in light, 1px inset in dark */
   border-radius:  var(--radius-sm);   /* 8px — Figma node 1005:6253: rounded-[var(--border--radius/8)] */
   min-height:     800px;
   justify-content: center;
@@ -40,7 +41,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-h1);                /* 120px */
   letter-spacing: var(--tracking-case-hero);   /* -1.8px */
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   margin:         0;
   white-space:    nowrap;
 }
@@ -98,7 +99,7 @@
   font-size:      var(--text-h5);          /* 20px */
   font-weight:    var(--weight-regular);   /* Figma: Integral CF Regular (400) — was 700 */
   line-height:    var(--lh-heading);
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   margin:         0;
   white-space:    nowrap;
 }

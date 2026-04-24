@@ -24,7 +24,8 @@
   flex-direction: row;
   gap:            var(--gap-32);                  /* Figma: gap-[32px] */
   padding:        var(--padding-64) var(--layout-padding-x);
-  background:     var(--color-primary);
+  background:     var(--color-emphasis-bg);
+  box-shadow:     var(--emphasis-ring);            /* invisible in light, 1px inset in dark */
   border-radius:  var(--radius-sm);               /* 8px */
   width:          100%;
 }
@@ -47,7 +48,7 @@
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-body);
   text-transform: uppercase;
-  color:          var(--color-secondary);         /* Figma: var(--secondary, white) */
+  color:          var(--color-emphasis-ink);         /* Figma: var(--secondary, white) */
   margin:         0;
 }
 
@@ -91,7 +92,7 @@
   font-weight: var(--weight-regular);
   line-height:    var(--lh-h1);
   letter-spacing: var(--tracking-h1);             /* -0.84px */
-  color:          var(--color-secondary);         /* white */
+  color:          var(--color-emphasis-ink);         /* white */
   margin:         0;
   flex:           1 0 0;
 }
@@ -109,7 +110,7 @@
   font-size:   var(--text-body);                  /* fluid 13->16px */
   line-height: 1.7;                               /* Figma: leading-[27.2px] / 16px = 1.7 */
   font-weight: var(--weight-regular);
-  color:       var(--color-secondary);            /* white */
+  color:       var(--color-emphasis-ink);            /* white */
   margin:      0;
   flex:        1 0 0;
   max-width:   var(--text-measure);               /* Paragraph measure — 500px */
@@ -168,7 +169,7 @@
   font-size:      var(--text-h3);                 /* 56px */
   font-weight:    var(--weight-regular);
   line-height:    var(--lh-heading);
-  color:          var(--color-secondary);
+  color:          var(--color-emphasis-ink);
   margin:         0;
   flex:           1 0 0;
 }
@@ -184,7 +185,7 @@
   font-weight: var(--weight-regular);
   line-height: var(--lh-body);
   text-transform: uppercase;
-  color:       var(--color-secondary);
+  color:       var(--color-emphasis-ink);
   margin:      0;
   flex-shrink: 0;
 }
@@ -254,7 +255,7 @@
   font-size:   var(--text-h5);                    /* 20px */
   font-weight: var(--weight-regular);
   line-height: var(--lh-heading);
-  color:       var(--color-secondary);
+  color:       var(--color-emphasis-ink);
   margin:      0;
 }
 
