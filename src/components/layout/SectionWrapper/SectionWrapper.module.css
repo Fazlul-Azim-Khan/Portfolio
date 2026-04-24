@@ -39,10 +39,10 @@
    BACKGROUND VARIANTS
    ============================================================ */
 
-/* Light — white background (default) */
+/* Light — white background (default) — theme-aware */
 .sw-light {
-  background-color: var(--color-secondary);
-  color:            var(--color-primary);
+  background-color: var(--color-bg);
+  color:            var(--color-ink);
 }
 
 /* Dark — near-black background (Experience section) */

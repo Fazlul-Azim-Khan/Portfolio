@@ -28,6 +28,15 @@
   --color-text-muted:     #424242;  /* Secondary body text (e.g. language proficiency) */
   --color-surface-dark:   #141414;  /* Card / surface on dark backgrounds */
 
+  /* Theme-aware aliases — swap under dark mode.
+     Use these for page canvas, primary ink, and elevated panel surfaces.
+     --color-primary / --color-secondary stay fixed so dark-island sections
+     (Contact, Experience, case-study dark sections) retain their identity
+     in both themes. */
+  --color-bg:             #ffffff;  /* Page canvas (light default) */
+  --color-ink:            #0a0a0a;  /* Primary text on page (light default) */
+  --color-surface-muted:  #e5e5e5;  /* Elevated panel behind content (light default) */
+
 
   /* ============================================================
      TYPOGRAPHY — FONT FAMILIES
@@ -222,6 +231,35 @@
   --transition-slow:    400ms ease;
   --transition-spring:  400ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
+}
+
+
+/* ============================================================
+   DARK THEME
+   Triggered by system preference OR explicit [data-theme="dark"].
+   Only the five tokens below change; --color-primary / --color-secondary /
+   --color-tertiary / --color-divider-dark / --color-notice-bg / --color-surface-dark
+   retain their light-mode identity so dark-island sections
+   (Contact, Experience, case-study dark sections) stay dark-on-dark
+   rather than flipping with the page.
+   ============================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg:             #141414;
+    --color-ink:            #f5f5f5;
+    --color-surface-muted:  #1c1c1c;
+    --color-divider:        #2a2a2a;
+    --color-text-muted:     #a3a3a3;
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-bg:             #141414;
+  --color-ink:            #f5f5f5;
+  --color-surface-muted:  #1c1c1c;
+  --color-divider:        #2a2a2a;
+  --color-text-muted:     #a3a3a3;
 }
 
 

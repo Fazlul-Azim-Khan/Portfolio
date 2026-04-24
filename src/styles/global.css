@@ -27,8 +27,8 @@ body {
   font-family: var(--font-body);
   font-size: var(--text-body);
   font-weight: var(--weight-regular);
-  color: var(--color-primary);
-  background-color: var(--color-secondary);
+  color: var(--color-ink);
+  background-color: var(--color-bg);
   line-height: var(--lh-body);
 }
 
@@ -68,7 +68,7 @@ p {
    ============================================================ */
 
 :focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-ink);
   outline-offset: 2px;
 }
 
@@ -86,7 +86,7 @@ p {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-secondary);
+  background: var(--color-bg);
 }
 
 ::-webkit-scrollbar-thumb {

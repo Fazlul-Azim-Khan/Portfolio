@@ -186,7 +186,7 @@
   flex-direction:   column;
   gap:              var(--gap-24);
   padding:          var(--padding-16);
-  background-color: #fafafa;
+  background-color: var(--color-surface-muted);
   border-radius:    var(--radius-sm);
   width:            100%;
 }

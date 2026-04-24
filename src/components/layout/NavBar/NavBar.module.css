@@ -45,7 +45,7 @@
   padding-top:      var(--nav-padding-top);
   padding-left:     var(--nav-padding-x);
   padding-right:    var(--nav-padding-x);
-  background-color: var(--color-secondary);
+  background-color: var(--color-bg);
 }
 
 
