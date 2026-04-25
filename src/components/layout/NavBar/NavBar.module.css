@@ -67,14 +67,12 @@
 
 /* ============================================================
    LEFT GROUP
-   Wraps Logo + Language switcher so they stay adjacent.
-   Figma: logo container ~318px, lang sits immediately after it.
+   Wraps the logo. Language switcher moved to the right group.
    ============================================================ */
 
 .nav-left-group {
   display:     flex;
   align-items: center;
-  gap:         var(--gap-8);
   flex-shrink: 0;
 }
 
@@ -166,16 +164,32 @@
 
 
 /* ============================================================
-   CTA GROUP
-   Confirmed: flex, gap-19px, justify-end
-   Node: I966:7519;958:5735
+   RIGHT GROUP
+   Holds (in order): Language switcher · Theme toggle · Secondary
+   CTAs (CV + LinkedIn) · Primary CTA (Contact me).
+   24px gap between each top-level group; secondary CTAs share a
+   tighter inner gap.
    ============================================================ */
 
-.nav-cta-group {
+.nav-right-group {
   display:         flex;
   align-items:     center;
   justify-content: flex-end;
-  gap:             var(--nav-items-gap);
+  gap:             var(--gap-24);
+}
+
+/* CV + LinkedIn — sub-group with tighter gap */
+.nav-secondary-ctas {
+  display:     flex;
+  align-items: center;
+  gap:         var(--gap-12);
+}
+
+/* Theme toggle wrapper — needed because the toggle component is its
+   own root; this wrapper carries the desktop-only display rule. */
+.nav-theme-desktop {
+  display:     flex;
+  align-items: center;
 }
 
 
@@ -293,8 +307,15 @@
     padding-right: var(--layout-padding-x);
   }
 
-  /* Hide desktop CTA buttons */
-  .nav-cta-group {
+  /* Tighter inter-group gap on mobile (only Lang + Contact me visible) */
+  .nav-right-group {
+    gap: var(--gap-12);
+  }
+
+  /* Hide secondary CTAs (CV + LinkedIn) and the theme toggle on mobile —
+     they live inside the drawer instead. */
+  .nav-secondary-ctas,
+  .nav-theme-desktop {
     display: none;
   }
 

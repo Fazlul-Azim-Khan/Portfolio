@@ -48,6 +48,12 @@ export default function NavBar() {
     }
   }, [pathname])
 
+  // Split CTAs by variant for layout grouping:
+  //   secondary  = outlined buttons (CV, LinkedIn) — sub-grouped on desktop, drawer on mobile
+  //   primary    = primary-brand button (Contact me) — visible in top bar on every size
+  const secondaryCTAs = navCTAs.filter((cta) => cta.variant === 'outlined')
+  const primaryCTA    = navCTAs.find((cta) => cta.variant === 'primary-brand')
+
   const toggleDrawer = useCallback(() => {
     setDrawerOpen((prev) => !prev)
   }, [])
@@ -62,9 +68,8 @@ export default function NavBar() {
       {/* ── Contents row ────────────────────────────────────── */}
       <div className={styles['nav-contents']}>
 
-        {/* ── Left group: Logo + Language switcher ───────── */}
+        {/* ── Left group: Logo ─────────────────────────────── */}
         <div className={styles['nav-left-group']}>
-
           {/* Logo — locale-aware: stays on /de when in German */}
           <Link
             href={isDE ? '/de' : '/'}
@@ -73,8 +78,12 @@ export default function NavBar() {
           >
             {navBrand.label}
           </Link>
+        </div>
 
-          {/* Language switcher */}
+        {/* ── Right group: Lang | Theme | [CV + LinkedIn] | Contact me ─ */}
+        <div className={styles['nav-right-group']} aria-label="Actions">
+
+          {/* Language switcher — visible on all sizes */}
           <nav
             className={styles['nav-lang-switcher']}
             aria-label="Language selection"
@@ -103,21 +112,38 @@ export default function NavBar() {
             </Link>
           </nav>
 
-        </div>
+          {/* Theme toggle — desktop only (in drawer on mobile) */}
+          <div className={styles['nav-theme-desktop']}>
+            <ThemeToggle />
+          </div>
 
-        {/* CTA buttons + theme toggle — visible on desktop, hidden on mobile */}
-        <div className={styles['nav-cta-group']} aria-label="Actions">
-          <ThemeToggle />
-          {navCTAs.map((cta) => (
+          {/* Secondary CTAs (CV + LinkedIn) — desktop only */}
+          {secondaryCTAs.length > 0 && (
+            <div className={styles['nav-secondary-ctas']}>
+              {secondaryCTAs.map((cta) => (
+                <Button
+                  key={cta.label}
+                  label={cta.label}
+                  variant={cta.variant}
+                  href={cta.href}
+                  target={cta.href.startsWith('http') ? '_blank' : undefined}
+                  download={cta.download}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Primary CTA (Contact me) — visible on all sizes */}
+          {primaryCTA && (
             <Button
-              key={cta.label}
-              label={cta.label}
-              variant={cta.variant}
-              href={cta.href}
-              target={cta.href.startsWith('http') ? '_blank' : undefined}
-              download={cta.download}
+              label={primaryCTA.label}
+              variant={primaryCTA.variant}
+              href={primaryCTA.href}
+              target={primaryCTA.href.startsWith('http') ? '_blank' : undefined}
+              download={primaryCTA.download}
             />
-          ))}
+          )}
+
         </div>
 
         {/* Hamburger button — visible on mobile only */}
@@ -141,6 +167,9 @@ export default function NavBar() {
       <div className={styles['nav-border']} role="presentation" aria-hidden="true" />
 
       {/* ── Mobile drawer ──────────────────────────────────── */}
+      {/* Holds the items hidden from the mobile top bar:
+          theme toggle + secondary CTAs (CV + LinkedIn).
+          Lang switcher and Contact me stay visible in the top bar. */}
       <nav
         id="mobile-nav-drawer"
         className={[styles['nav-drawer'], drawerOpen ? styles['nav-drawer-open'] : ''].join(' ')}
@@ -150,7 +179,7 @@ export default function NavBar() {
           <div className={styles['nav-drawer-toggle-row']}>
             <ThemeToggle />
           </div>
-          {navCTAs.map((cta) => (
+          {secondaryCTAs.map((cta) => (
             <Button
               key={cta.label}
               label={cta.label}
