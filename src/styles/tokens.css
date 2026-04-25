@@ -252,15 +252,18 @@
    --color-primary / --color-secondary flip (ink ↔ paper).
    --color-bg / --color-ink derive from primary/secondary, so they flip
    automatically — no explicit override needed.
+   --color-emphasis-bg flips too: dark islands sit ABOVE the page tone
+   in dark mode (elevated card feel) and BELOW in light mode (recessed
+   feel). Hierarchy: page → island → surface-muted → divider.
    --color-tertiary / --color-divider-dark / --color-notice-bg /
-   --color-surface-dark / --color-emphasis-bg / --color-emphasis-ink
-   retain their identity (dark-island treatment stays fixed in both themes).
+   --color-surface-dark / --color-emphasis-ink retain their identity.
    ============================================================ */
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --color-primary:        #f5f5f5;
-    --color-secondary:      #141414;
+    --color-secondary:      #0a0a0a;
+    --color-emphasis-bg:    #141414;
     --color-surface-muted:  #1c1c1c;
     --color-divider:        #2a2a2a;
     --color-text-muted:     #a3a3a3;
@@ -270,7 +273,8 @@
 
 :root[data-theme="dark"] {
   --color-primary:        #f5f5f5;
-  --color-secondary:      #141414;
+  --color-secondary:      #0a0a0a;
+  --color-emphasis-bg:    #141414;
   --color-surface-muted:  #1c1c1c;
   --color-divider:        #2a2a2a;
   --color-text-muted:     #a3a3a3;

@@ -63,7 +63,7 @@
   aspect-ratio:  1328 / 710;
   border-radius: var(--radius-sm);        /* 8px */
   overflow:      hidden;
-  background:    var(--color-divider);    /* placeholder bg while image loads */
+  background:    var(--color-bg);    /* placeholder bg while image loads — matches page */
   flex-shrink:   0;
 }
 
