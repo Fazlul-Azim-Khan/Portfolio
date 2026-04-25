@@ -40,7 +40,7 @@ export const nav = {
   ctas: [
     { label: 'Lebenslauf ↓', href: '/cv.pdf',                                        variant: 'outlined' as const },
     { label: 'LinkedIn ↗',   href: 'https://www.linkedin.com/in/fazlul-azim-khan/', variant: 'outlined' as const },
-    { label: 'Kontakt →',    href: '#contact',                                       variant: 'primary'  as const },
+    { label: 'Kontakt →',    href: '#contact',                                       variant: 'primary-brand' as const },
   ],
 } as const
 

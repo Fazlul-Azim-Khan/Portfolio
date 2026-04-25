@@ -172,7 +172,7 @@
 
 .outcome-chip {
   background:      var(--color-secondary);
-  border:          1px solid var(--color-primary);
+  border:          0.5px solid var(--color-divider-dark);
   border-radius:   var(--radius-sm);
   padding:         var(--padding-12);
   display:         flex;

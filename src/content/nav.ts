@@ -51,6 +51,6 @@ export const navCTAs: NavCTA[] = [
   {
     label:   'Contact me →',
     href:    '#contact',
-    variant: 'primary',
+    variant: 'primary-brand',
   },
 ]

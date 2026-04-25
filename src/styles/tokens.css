@@ -39,6 +39,10 @@
   --color-emphasis-bg:    #0a0a0a;  /* Always dark — section/card emphasis */
   --color-emphasis-ink:   #ffffff;  /* Always light — text or contrast surface inside emphasis */
 
+  /* Brand accent — used by primary-brand button variant (Contact me CTA).
+     Fixed in both themes; pairs with --color-emphasis-ink for text. */
+  --color-brand:          #7c3aed;  /* Violet 600 */
+
   /* Theme-aware aliases — semantic readability.
      Resolve via --color-primary / --color-secondary so they flip with theme. */
   --color-bg:             var(--color-secondary);  /* Page canvas */

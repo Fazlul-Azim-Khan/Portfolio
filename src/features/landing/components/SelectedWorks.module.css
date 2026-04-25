@@ -29,6 +29,13 @@
   padding-top:    var(--padding-64);
   padding-bottom: var(--padding-64);
 
+  /* Dark-island treatment — section reads as a dark surface in both themes.
+     Scope override: --color-primary inside this section resolves to the
+     fixed-light ink so headings, indices, and titles remain readable on
+     the dark bg without each child rule needing to flip its color token. */
+  background:        var(--color-emphasis-bg);
+  --color-primary:   var(--color-emphasis-ink);
+
   width: 100%;
 }
 

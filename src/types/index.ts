@@ -15,7 +15,7 @@
    Declared first — referenced by interfaces below
    ============================================================ */
 
-export type ButtonVariant = 'primary' | 'outlined' | 'ghost'
+export type ButtonVariant = 'primary' | 'primary-brand' | 'outlined' | 'ghost'
 export type ButtonSize    = 'default'
 export type ChipVariant   = 'default'
 export type DividerVariant = 'light' | 'dark'

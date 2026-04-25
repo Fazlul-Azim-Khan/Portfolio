@@ -34,9 +34,10 @@ interface ButtonProps {
 
 // Explicit map so dynamic variant lookup stays type-safe after rename
 const variantClass: Record<ButtonVariant, string> = {
-  primary:  styles['btn-primary'],
-  outlined: styles['btn-outlined'],
-  ghost:    styles['btn-ghost'],
+  primary:           styles['btn-primary'],
+  'primary-brand':   styles['btn-primary-brand'],
+  outlined:          styles['btn-outlined'],
+  ghost:             styles['btn-ghost'],
 }
 
 
