@@ -165,17 +165,25 @@
 
 /* ============================================================
    RIGHT GROUP
-   Holds (in order): Language switcher · Theme toggle · Secondary
-   CTAs (CV + LinkedIn) · Primary CTA (Contact me).
-   24px gap between each top-level group; secondary CTAs share a
-   tighter inner gap.
+   Three top-level groups, 48px apart:
+     1. Lang switcher + Theme toggle  (.nav-lang-theme-group)
+     2. CV + LinkedIn                  (.nav-secondary-ctas)
+     3. Contact me                     (Button.btn-primary-brand)
+   Each sub-group has its own internal gap.
    ============================================================ */
 
 .nav-right-group {
   display:         flex;
   align-items:     center;
   justify-content: flex-end;
-  gap:             var(--gap-24);
+  gap:             var(--gap-48);
+}
+
+/* Lang + Theme — sub-group with tighter gap */
+.nav-lang-theme-group {
+  display:     flex;
+  align-items: center;
+  gap:         var(--gap-12);
 }
 
 /* CV + LinkedIn — sub-group with tighter gap */

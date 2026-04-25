@@ -80,41 +80,46 @@ export default function NavBar() {
           </Link>
         </div>
 
-        {/* ── Right group: Lang | Theme | [CV + LinkedIn] | Contact me ─ */}
+        {/* ── Right group: [Lang + Theme] | [CV + LinkedIn] | Contact me ─ */}
         <div className={styles['nav-right-group']} aria-label="Actions">
 
-          {/* Language switcher — visible on all sizes */}
-          <nav
-            className={styles['nav-lang-switcher']}
-            aria-label="Language selection"
-          >
-            <Link
-              href={enHref}
-              className={[
-                styles['nav-lang-item'],
-                !isDE ? styles['nav-lang-active'] : styles['nav-lang-inactive'],
-              ].join(' ')}
-              aria-current={!isDE ? 'true' : undefined}
-              aria-label="Switch to English"
-            >
-              EN
-            </Link>
-            <Link
-              href={deHref}
-              className={[
-                styles['nav-lang-item'],
-                isDE ? styles['nav-lang-active'] : styles['nav-lang-inactive'],
-              ].join(' ')}
-              aria-current={isDE ? 'true' : undefined}
-              aria-label="Zu Deutsch wechseln"
-            >
-              DE
-            </Link>
-          </nav>
+          {/* Lang + Theme sub-group */}
+          <div className={styles['nav-lang-theme-group']}>
 
-          {/* Theme toggle — desktop only (in drawer on mobile) */}
-          <div className={styles['nav-theme-desktop']}>
-            <ThemeToggle />
+            {/* Language switcher — visible on all sizes */}
+            <nav
+              className={styles['nav-lang-switcher']}
+              aria-label="Language selection"
+            >
+              <Link
+                href={enHref}
+                className={[
+                  styles['nav-lang-item'],
+                  !isDE ? styles['nav-lang-active'] : styles['nav-lang-inactive'],
+                ].join(' ')}
+                aria-current={!isDE ? 'true' : undefined}
+                aria-label="Switch to English"
+              >
+                EN
+              </Link>
+              <Link
+                href={deHref}
+                className={[
+                  styles['nav-lang-item'],
+                  isDE ? styles['nav-lang-active'] : styles['nav-lang-inactive'],
+                ].join(' ')}
+                aria-current={isDE ? 'true' : undefined}
+                aria-label="Zu Deutsch wechseln"
+              >
+                DE
+              </Link>
+            </nav>
+
+            {/* Theme toggle — desktop only (in drawer on mobile) */}
+            <div className={styles['nav-theme-desktop']}>
+              <ThemeToggle />
+            </div>
+
           </div>
 
           {/* Secondary CTAs (CV + LinkedIn) — desktop only */}
