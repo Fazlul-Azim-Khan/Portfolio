@@ -29,14 +29,23 @@
   padding-top:    var(--padding-64);
   padding-bottom: var(--padding-64);
 
-  /* Dark-island treatment — section reads as a dark surface in both themes.
-     Scope override: --color-primary inside this section resolves to the
-     fixed-light ink so headings, indices, and titles remain readable on
-     the dark bg without each child rule needing to flip its color token. */
+  width: 100%;
+}
+
+/* Dark mode only — Selected Works becomes a dark-island treatment.
+   In light mode the section uses the page bg (no override).
+   Scope override: --color-primary inside this section resolves to the
+   fixed-light ink so headings, indices, and titles remain readable on
+   the dark bg without each child rule needing to flip its color token. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .lp-works-root {
+    background:        var(--color-emphasis-bg);
+    --color-primary:   var(--color-emphasis-ink);
+  }
+}
+:root[data-theme="dark"] .lp-works-root {
   background:        var(--color-emphasis-bg);
   --color-primary:   var(--color-emphasis-ink);
-
-  width: 100%;
 }
 
 
