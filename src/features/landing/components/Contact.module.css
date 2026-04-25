@@ -30,6 +30,7 @@
   background:     var(--color-emphasis-bg);    /* #0a0a0a — dark treatment */
   color:          var(--color-emphasis-ink);  /* white — default for all text */
   box-shadow:     var(--emphasis-ring);        /* invisible in light, 1px inset in dark */
+  border-radius:  var(--radius-sm);            /* 8px — consistent with other dark-island roots */
 
   /* Break out of Container's horizontal padding */
   margin-left:  calc(-1 * var(--layout-padding-x));  /* -16px */

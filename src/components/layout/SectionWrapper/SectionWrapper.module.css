@@ -50,6 +50,7 @@
   background-color: var(--color-emphasis-bg);
   color:            var(--color-emphasis-ink);
   box-shadow:       var(--emphasis-ring);   /* invisible in light, 1px inset in dark */
+  border-radius:    var(--radius-sm);       /* 8px — consistent with other dark-island roots */
 }
 
 
