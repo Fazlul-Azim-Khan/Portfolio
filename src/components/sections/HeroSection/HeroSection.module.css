@@ -14,15 +14,15 @@
  *   [row 2 / col 1-2] .hero-headline-cell — name + headline + subline
  *
  * Hero wrapper:
- *   height:   ~900px   →  --hero-min-height
+ *   height:   100vh on web   →  --hero-min-height
  *   behavior: vertically centers the grid within that height
  */
 
 
 /* ============================================================
    HERO WRAPPER
-   Full-width, min-height ~900px, centers grid vertically
-   Confirmed: h-[902.958px] items-start justify-center (Figma node 966:7520)
+   Full-width, min-height 100vh on web, centers grid vertically.
+   (Originally h-[902.958px] in Figma node 966:7520 — superseded.)
    ============================================================ */
 
 .hero-section {

@@ -172,7 +172,7 @@
      ============================================================ */
 
   --button-height:         44px;   /* Confirmed: Figma node 941:6022 / I966:7519;953:11714 */
-  --hero-min-height:      900px;   /* Hero section height — Figma: h-[902.958px], rounded */
+  --hero-min-height:      100vh;   /* Hero fills the viewport on web (Figma h-[902.958px] superseded). Mobile overrides to content-driven via min-height: unset in Hero.module.css. */
   --hero-arrow-size:      200px;   /* Decorative ↗ character font-size — Figma: text-[200px] */
   --hero-arrow-tracking:   -3px;   /* Decorative ↗ letter-spacing — Figma: tracking-[-3px] */
 

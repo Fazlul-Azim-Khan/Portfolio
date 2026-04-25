@@ -36,7 +36,7 @@
   align-items:     flex-start;
 
   width:       100%;
-  min-height:  var(--hero-min-height);   /* 900px */
+  min-height:  var(--hero-min-height);   /* 100vh on web; unset on mobile */
   position:    relative;
   flex-shrink: 0;
 }
