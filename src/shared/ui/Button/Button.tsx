@@ -24,7 +24,7 @@ import styles from './Button.module.css'
    TYPES
    ============================================================ */
 
-export type ButtonVariant = 'primary' | 'outlined' | 'ghost'
+export type ButtonVariant = 'primary' | 'primary-brand' | 'outlined' | 'ghost'
 
 // Explicit map so dynamic variant lookup stays type-safe after rename
 const variantClass: Record<ButtonVariant, string> = {

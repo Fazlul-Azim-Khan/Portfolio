@@ -1,0 +1,71 @@
+/*
+ * ThemeToggle.module.css
+ * Two-segment outlined toggle — same visual identity as the CTA Button
+ * (outlined variant) and the language switcher.
+ *
+ * Layout: inline-flex container with a 0.5px outline, 8px radius, 44px
+ * height. Two child <button> segments separated by a 0.5px vertical line
+ * using --color-divider-dark (matches the segmented control elsewhere).
+ *
+ * Active / inactive coloring mirrors the language switcher:
+ *   active   = --color-primary (themes)
+ *   inactive = --color-tertiary (fixed mid-grey)
+ */
+
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+
+.toggle-root {
+  display:        inline-flex;
+  align-items:    center;
+  height:         var(--button-height);
+  border:         0.5px solid var(--color-divider-dark);
+  border-radius:  var(--radius-sm);
+  background:     transparent;
+  flex-shrink:    0;
+  overflow:       hidden;   /* clips any segment hover bg to the rounded corners */
+}
+
+
+/* ============================================================
+   SEGMENT
+   ============================================================ */
+
+.toggle-item {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+
+  height:          100%;
+  padding:         0 var(--gap-16);   /* 16px — matches Button horizontal padding */
+
+  background:      transparent;
+  border:          none;
+  cursor:          pointer;
+
+  transition:      color var(--transition-base);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.toggle-item:not(:last-child) {
+  border-right: 0.5px solid var(--color-divider-dark);
+}
+
+.toggle-item-active {
+  color: var(--color-primary);
+}
+
+.toggle-item-inactive {
+  color: var(--color-tertiary);
+}
+
+.toggle-item-inactive:hover {
+  color: var(--color-primary);
+}
+
+.toggle-item:focus-visible {
+  outline:        2px solid var(--color-primary);
+  outline-offset: 2px;
+}

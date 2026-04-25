@@ -23,6 +23,7 @@ import { useState, useCallback, useMemo } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Button from '@/components/ui/Button'
+import ThemeToggle from '@/shared/theme/ThemeToggle'
 import { navBrand, navCTAs } from '@/content/nav'
 import styles from './NavBar.module.css'
 
@@ -104,8 +105,9 @@ export default function NavBar() {
 
         </div>
 
-        {/* CTA buttons — visible on desktop, hidden on mobile */}
+        {/* CTA buttons + theme toggle — visible on desktop, hidden on mobile */}
         <div className={styles['nav-cta-group']} aria-label="Actions">
+          <ThemeToggle />
           {navCTAs.map((cta) => (
             <Button
               key={cta.label}
@@ -145,6 +147,9 @@ export default function NavBar() {
         aria-label="Mobile navigation"
       >
         <div className={styles['nav-drawer-content']}>
+          <div className={styles['nav-drawer-toggle-row']}>
+            <ThemeToggle />
+          </div>
           {navCTAs.map((cta) => (
             <Button
               key={cta.label}

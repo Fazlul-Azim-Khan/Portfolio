@@ -39,6 +39,16 @@ export const metadata: Metadata = {
   },
 }
 
+/*
+ * Pre-hydration theme script.
+ * Runs before React mounts so the html element receives data-theme
+ * synchronously — prevents the brief light-mode flash on first paint
+ * when the user has chosen dark, or vice versa. Only sets data-theme
+ * when an explicit choice exists in localStorage; otherwise the CSS
+ * @media (prefers-color-scheme: dark) rule handles the system default.
+ */
+const themeInitScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}})();`
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -46,6 +56,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={outfit.variable}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         <Providers>{children}</Providers>
       </body>

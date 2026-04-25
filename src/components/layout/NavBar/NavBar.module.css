@@ -114,26 +114,40 @@
    ============================================================ */
 
 .nav-lang-switcher {
-  display:     flex;
-  align-items: center;
-  gap:         var(--gap-8);
-  flex-shrink: 0;
+  display:        inline-flex;
+  align-items:    center;
+  height:         var(--button-height);
+  border:         0.5px solid var(--color-divider-dark);
+  border-radius:  var(--radius-sm);
+  background:     transparent;
+  flex-shrink:    0;
+  overflow:       hidden;   /* clips segment hover bg to rounded corners */
 }
 
 .nav-lang-item {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  height:          100%;
+  padding:         0 var(--gap-16);   /* 16px — matches Button */
+
   font-family:     var(--font-body);
   font-size:       var(--text-lead);
   font-weight:     var(--weight-regular);
   line-height:     var(--lh-body);
+  letter-spacing:  var(--tracking-lead);
   text-transform:  uppercase;
   white-space:     nowrap;
   text-decoration: none;
   cursor:          pointer;
-  background:      none;
+  background:      transparent;
   border:          none;
-  padding:         0;
 
-  transition: opacity var(--transition-fast);
+  transition: color var(--transition-base);
+}
+
+.nav-lang-item:not(:last-child) {
+  border-right: 0.5px solid var(--color-divider-dark);
 }
 
 /* Active language — --color-primary (confirmed: EN is active) */
@@ -242,7 +256,7 @@
 }
 
 .nav-drawer.nav-drawer-open {
-  max-height:     300px;       /* enough room for 3 buttons */
+  max-height:     360px;       /* 3 CTAs + theme toggle row + padding */
 }
 
 .nav-drawer-content {
@@ -256,6 +270,15 @@
 .nav-drawer-button {
   width: 100%;
   justify-content: center;
+}
+
+/* Wrapper for the theme toggle inside the drawer — keeps the toggle
+   at its natural inline-flex size (left-aligned) instead of stretching
+   to the drawer's full width. */
+.nav-drawer-toggle-row {
+  display:         flex;
+  align-items:     center;
+  justify-content: flex-start;
 }
 
 
