@@ -1,4 +1,11 @@
 {
+  "//": "VS Code's built-in git extension is disabled for this workspace. Its background git status/fetch/refresh calls were creating .git/index.lock and .git/HEAD.lock faster than the Claude sandbox could clean them up, blocking every commit from the sandbox. Use the terminal for git in this repo. Re-enable git.enabled if you want VS Code's SCM sidebar back.",
+  "git.enabled": false,
   "git.autofetch": false,
-  "git.autorefresh": false
+  "git.autorefresh": false,
+  "git.fetchOnPull": false,
+  "git.detectSubmodules": false,
+  "git.scanRepositories": [],
+  "git.enableSmartCommit": false,
+  "scm.autoReveal": false
 }
