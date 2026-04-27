@@ -11,6 +11,7 @@
 
 import type { CenterHealthReflectionsSection } from '../content'
 import styles from './ReflectionsSection.module.css'
+import SectionProblem from './SectionProblem'
 
 interface ReflectionsSectionProps {
   section: CenterHealthReflectionsSection
@@ -27,6 +28,9 @@ export default function ReflectionsSection({ section }: ReflectionsSectionProps)
         <div className={styles['ch-ref-content-col']}>
 
           <h1 className={styles['ch-ref-heading']}>{section.heading}</h1>
+
+          {/* System Challenge — meta layer framing the whole case study */}
+          <SectionProblem text={section.systemChallenge} label="System Challenge" />
 
           <div className={styles['ch-ref-grid']}>
             {section.reflections.map((item, i) => (

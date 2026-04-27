@@ -14,6 +14,7 @@
 import Image from 'next/image'
 import type { CenterHealthProviderPortalSection } from '../content'
 import styles from './ProviderPortalSection.module.css'
+import SectionProblem from './SectionProblem'
 
 
 /* ============================================================
@@ -41,6 +42,9 @@ export default function ProviderPortalSection({ section }: ProviderPortalSection
 
           {/* ── 1. Heading ─────────────────────────────────── */}
           <h1 className={styles['pps-heading']}>{section.heading}</h1>
+
+          {/* Problem block — frames the section's tension */}
+          <SectionProblem text={section.problem} />
 
           {/* ── 2. Body — right-aligned 369px ─────────────── */}
           <div className={styles['pps-body-row']}>

@@ -43,6 +43,7 @@
 import Image from 'next/image'
 import type { CenterHealthAriaSection } from '../content'
 import styles from './AriaSection.module.css'
+import SectionProblem from './SectionProblem'
 
 
 /* ============================================================
@@ -74,6 +75,8 @@ export default function AriaSection({ section }: AriaSectionProps) {
           {/* ── 1. Heading ─────────────────────────────────── */}
           <h1 className={styles['aria-heading']}>{section.heading}</h1>
 
+          {/* Problem block — frames the section's tension */}
+          <SectionProblem text={section.problem} />
 
           {/* ── 2. Body paragraph — right-aligned ──────────── */}
           {/*

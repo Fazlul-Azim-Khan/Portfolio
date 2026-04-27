@@ -12,6 +12,7 @@
 import Image from 'next/image'
 import type { CenterHealthWebsiteSection } from '../content'
 import styles from './WebsiteSection.module.css'
+import SectionProblem from './SectionProblem'
 
 
 /* ============================================================
@@ -42,6 +43,9 @@ export default function WebsiteSection({ section }: WebsiteSectionProps) {
 
           {/* 1. Heading */}
           <h1 className={styles['web-heading']}>{section.heading}</h1>
+
+          {/* Problem block — frames the section's tension */}
+          <SectionProblem text={section.problem} />
 
           {/* 2. Feature items — divider + title */}
           <div className={styles['web-feature-row']}>

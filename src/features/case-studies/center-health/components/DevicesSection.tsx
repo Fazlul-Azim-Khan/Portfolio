@@ -26,6 +26,7 @@
 import Image from 'next/image'
 import type { CenterHealthDevicesSection } from '../content'
 import styles from './DevicesSection.module.css'
+import SectionProblem from './SectionProblem'
 
 
 /* ============================================================
@@ -68,6 +69,10 @@ export default function DevicesSection({ section }: DevicesSectionProps) {
         <h1 className={styles['dev-heading']}>{section.heading}</h1>
         <p className={styles['dev-body-text']}>{section.body}</p>
       </div>
+
+
+      {/* Problem block — frames the section's tension */}
+      <SectionProblem text={section.problem} />
 
 
       {/* ── 3. What I Designed ─────────────────────────────── */}

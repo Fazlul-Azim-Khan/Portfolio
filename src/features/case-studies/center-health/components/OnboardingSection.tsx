@@ -44,6 +44,7 @@
 import Image from 'next/image'
 import type { CenterHealthOnboardingSection } from '../content'
 import styles from './OnboardingSection.module.css'
+import SectionProblem from './SectionProblem'
 
 
 /* ============================================================
@@ -75,6 +76,8 @@ export default function OnboardingSection({ section }: OnboardingSectionProps) {
           {/* ── 1. Heading ─────────────────────────────────── */}
           <h1 className={styles['onb-heading']}>{section.heading}</h1>
 
+          {/* Problem block — frames the section's tension */}
+          <SectionProblem text={section.problem} />
 
           {/* ── 2. Body paragraph — right-aligned ──────────── */}
           <div className={styles['onb-body-row']}>

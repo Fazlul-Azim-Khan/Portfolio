@@ -40,6 +40,7 @@
 
 import type { CenterHealthWhyItMatteredSection } from '../content'
 import styles from './WhyItMatteredSection.module.css'
+import SectionProblem from './SectionProblem'
 
 
 /* ============================================================
@@ -70,6 +71,9 @@ export default function WhyItMatteredSection({ section }: WhyItMatteredSectionPr
 
           {/* Heading — constrained to 732px, centered in column */}
           <h1 className={styles['wim-heading']}>{section.heading}</h1>
+
+          {/* Problem block — frames the section's tension */}
+          <SectionProblem text={section.problem} />
 
           {/* Cards row — people (left) + quote (right) */}
           <div className={styles['wim-cards-row']}>

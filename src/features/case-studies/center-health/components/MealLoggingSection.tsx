@@ -16,6 +16,7 @@
 import Image from 'next/image'
 import type { CenterHealthMealLoggingSection } from '../content'
 import styles from './MealLoggingSection.module.css'
+import SectionProblem from './SectionProblem'
 
 
 /* ============================================================
@@ -55,6 +56,9 @@ export default function MealLoggingSection({ section }: MealLoggingSectionProps)
             <h1 className={styles['meal-heading']}>{section.heading}</h1>
             <p className={styles['meal-body']}>{section.body}</p>
           </div>
+
+          {/* Problem block — frames the section's tension */}
+          <SectionProblem text={section.problem} />
 
 
           {/* ── 2. Feature items — divider + title ─────────── */}

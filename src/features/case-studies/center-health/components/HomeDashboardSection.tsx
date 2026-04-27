@@ -44,6 +44,7 @@
 import Image from 'next/image'
 import type { CenterHealthHomeDashboardSection } from '../content'
 import styles from './HomeDashboardSection.module.css'
+import SectionProblem from './SectionProblem'
 
 
 /* ============================================================
@@ -75,6 +76,8 @@ export default function HomeDashboardSection({ section }: HomeDashboardSectionPr
           {/* ── 1. Heading ─────────────────────────────────── */}
           <h1 className={styles['home-heading']}>{section.heading}</h1>
 
+          {/* Problem block — frames the section's tension */}
+          <SectionProblem text={section.problem} />
 
           {/* ── 2. Body paragraph — right-aligned ──────────── */}
           {/*

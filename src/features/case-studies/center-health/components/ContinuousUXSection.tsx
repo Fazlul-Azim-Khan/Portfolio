@@ -10,6 +10,7 @@
 
 import type { CenterHealthContinuousUXSection } from '../content'
 import styles from './ContinuousUXSection.module.css'
+import SectionProblem from './SectionProblem'
 
 interface ContinuousUXSectionProps {
   section: CenterHealthContinuousUXSection
@@ -26,6 +27,9 @@ export default function ContinuousUXSection({ section }: ContinuousUXSectionProp
         <div className={styles['cux-content-col']}>
 
           <h1 className={styles['cux-heading']}>{section.heading}</h1>
+
+          {/* Problem block — frames the section's tension */}
+          <SectionProblem text={section.problem} />
 
           <div className={styles['cux-feature-row']}>
             {section.features.map((feat, i) => (

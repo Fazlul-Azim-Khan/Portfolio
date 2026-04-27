@@ -63,6 +63,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'why-it-mattered',
       index:   '(001)',
       heading: 'Warum dieses Produkt wichtig war',
+      problem: 'Das Produkt war ursprünglich als Strip-basierte Begleit-App konzipiert, entwickelte sich aber rasch zu einer Multi-Signal-Plattform für metabolische Gesundheit. Die bestehende UX war nicht darauf ausgelegt, mehrere Datenquellen, KI-gestützte Erkenntnisse oder unterschiedliche Nutzertypen zu unterstützen — was bei wachsender Skalierung das Risiko der Fragmentierung mit sich brachte.',
       people: [
         { name: 'Julian (CTO)', detail: 'Langjähriger Typ-1-Diabetiker' },
         { name: 'Ali (CEO)',    detail: 'Vater hatte Typ 1' },
@@ -96,6 +97,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:     'design-system',
       index:    '(003)',
       heading:  'Designsystem: Die unsichtbare Infrastruktur',
+      problem:  'Mehrere Teams lieferten plattformübergreifend ohne ein einheitliches System. Das führte zu inkonsistenten UI-Mustern, doppelten Komponenten und längeren Entwicklungszyklen — und erschwerte es, das Produkt zu skalieren, ohne den Aufwand für Design und Engineering zu erhöhen.',
       sideText: 'Drei Plattformen.\nMehrere Feature-Teams.\nWir brauchten Kohärenz.',
       features: [
         'Tokenisiertes Fundament: Farbe, Abstände, Typografie, Schatten.',
@@ -134,6 +136,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'onboarding',
       index:   '(004)',
       heading: 'Onboarding: Adaptive UX auf Basis personalisierter Vorerfahrung',
+      problem: 'Ein einziger linearer Onboarding-Flow wurde für grundlegend verschiedene Nutzertypen verwendet — von Typ-1-Diabetiker:innen bis zu Pflegenden. Das führte zu irrelevanten Eingaben, niedrigeren Abschlussraten und schwacher initialer Datenqualität für Arias Personalisierung.',
       body:    'Center Health erweiterte sich von einem Nutzertyp auf fünf: Typ 1, Typ 2, Prä-Diabetes, Gewichtsverlust-Nutzer, Pflegende und Kliniker. Ein einziger Onboarding-Trichter würde nicht ausreichen.',
       whatIDesigned: [
         'Persona-basierte Verzweigung im ersten Schritt',
@@ -156,6 +159,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'devices',
       index:   '(005)',
       heading: 'Gerätintegration, Interaktion & Ergebnisse',
+      problem: 'Jedes verbundene Gerät hatte seine eigene Pairing-Logik, Sonderfälle und Datenstrukturen. Die Erfahrung war inkonsistent und oft fragil, sodass Nutzer:innen manuelles Logging gegenüber Echtzeit-Integrationen bevorzugten.',
       body:    'Die Plattform unterstützte eine wachsende Palette vernetzter Gesundheitsgeräte. Jedes hatte seine eigene Kopplungslogik, sein eigenes Datenformat und eigene Sonderfälle — und jedes musste sich nahtlos anfühlen.',
       whatIDesigned: [
         'Blutzuckermessgeräte-Flow',
@@ -179,6 +183,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'home-dashboard',
       index:   '(006)',
       heading: 'Startseite: Messwerte in echtes Verständnis umwandeln',
+      problem: 'Das Dashboard zeigte Gesundheitsmetriken isoliert, ohne den Nutzer:innen zu helfen, Zusammenhänge zwischen ihnen zu erkennen. Mit jeder zusätzlichen Datenquelle drohte die Oberfläche komplexer zu werden, ohne nützlicher zu werden.',
       body:    'Das v1-Dashboard war perfekt für frühe Strip-Nutzer.…aber das Produkt war zu etwas viel Größerem gewachsen: CGM-Daten, Ernährung, Medikamente, Schlaf, Aktivität, Stimmung, Gewicht, Pflegezugang. Wir brauchten ein Dashboard, das wie eine Gesundheits-Intelligenzschicht agiert, nicht nur wie ein Diagramm.',
       whatIDesigned: [
         '"Überblickbarer" Sicherheitsstreifen: aktueller BZ + Zeit im Bereich',
@@ -202,6 +207,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'aria',
       index:   '(007)',
       heading: 'ARIA: Der Plattform\nein Gehirn & eine Seele geben',
+      problem: 'Aria existierte als Backend-Intelligenzschicht, hatte aber keine klare Präsenz in der Nutzererfahrung. Erkenntnisse wirkten passiv und losgelöst und ließen die KI eher unsichtbar als zentral fürs Produkt erscheinen.',
       body:    'Aria wurde mit Insights, Trends und Vorschlägen zum Geist und zur Seele. Aria speiste bereits im Backend Insights ein. Aber für Nutzer fühlte es sich wie ein unsichtbarer Geist an. Wir mussten Aria ein Gesicht, eine Stimme, eine Persönlichkeit und sichere Grenzen geben.',
       subSections: [
         {
@@ -242,6 +248,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'logging',
       index:   '(008)',
       heading: 'Logging, Erinnerungen & Gewohnheitssysteme',
+      problem: 'Logging erforderte Aufwand und Konsequenz, doch das System reduzierte kaum Reibung und verstärkte keine Gewohnheiten. Die Datenqualität litt — was sich direkt auf die Wirksamkeit der KI-gestützten Erkenntnisse auswirkte.',
       body:    'Besseres Logging = klügeres Aria.\nAber Logging ist… Logging.\nMenschen vergessen.',
       features: [
         'One-Tap-Logging-Hub',
@@ -264,6 +271,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'meal-logging',
       index:   '(009)',
       heading: 'Mahlzeiten-Logging, Ernährung & Restaurantmenü-Empfehlungen',
+      problem: 'Blutzuckerwerte zeigten Ergebnisse, doch Nutzer:innen hatten kaum Einsicht in die Ursachen dahinter. Ernährungstracking war entweder zu generisch oder zu komplex — und damit nur eingeschränkt nützlich, um metabolische Muster zu verstehen.',
       body:    'Wenn BZ das „Was" ist, dann ist Essen das „Warum".\nDas Produkt brauchte einen diabetikerfreundlichen Umgang mit Mahlzeiten.',
       features: [
         'Kuratierte durchsuchbare Lebensmitteldatenbank',
@@ -286,6 +294,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'website',
       index:   '(010)',
       heading: 'Website: Die Geschichte für eine KI-first Zukunft neu schreiben',
+      problem: 'Das Produkt hatte sich zu einer KI-first-Gesundheitsplattform entwickelt, doch die Website kommunizierte weiterhin eine hardware-zentrierte Erzählung. Das schuf eine Lücke zwischen Nutzererwartungen und tatsächlichem Produkterlebnis.',
       features: [
         'Aria-getriebene Held-Erzählung, als das Produkt seinen Pitch von Strips zu ARIA verlagerte.',
         'Klare Erklärung, wie KI Daten in Coaching umwandelt',
@@ -327,6 +336,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'provider-portal',
       index:   '(011)',
       heading: 'Anbieterportal: Klinikern Superkräfte geben',
+      problem: 'Klinikerinnen und Kliniker arbeiteten mit fragmentierten Daten und von Patient:innen geteilten Screenshots — was es schwer machte, Gesundheitsverläufe einzuschätzen oder fundierte Empfehlungen zu geben. Es gab keine strukturierte Oberfläche für klinische Entscheidungen.',
       body:    'Ärzte arbeiteten mit Screenshots, die Patienten schickten. Nicht skalierbar. Nicht sicher. Nicht hilfreich.',
       features: [
         'Triagefreundliche Patientenliste mit auf einen Blick erfassbaren Risikoindikatoren',
@@ -361,6 +371,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:     'continuous-ux',
       index:    '(013)',
       heading:  'Die kontinuierliche UX-Engine',
+      problem:  'Nutzer-Feedback existierte in mehreren Kanälen, doch es gab kein strukturiertes System, um es kontinuierlich zu erfassen, zu analysieren und darauf zu reagieren. Das verlangsamte Iteration und ließ Verbesserungen reaktiv statt systematisch werden.',
       features: [
         'Hotjar-Session-Reviews',
         'Nutzer-Feedback aus App- & Play Store, Kundensupport analysieren & in Schleife einbringen',
@@ -374,7 +385,8 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'reflections',
       index:   '(014)',
-      heading: 'Rückblick auf zweieinhalb Jahre. Die Scale-Up-Phase.',
+      heading:         'Rückblick auf zweieinhalb Jahre. Die Scale-Up-Phase.',
+      systemChallenge: 'Die Kernherausforderung lag nicht im Gestalten einzelner Funktionen, sondern im Aufbau eines Systems, in dem Datenerfassung, KI-Erkenntnisse und Nutzerverhalten sich gegenseitig kontinuierlich verstärken — und das Produkt so in eine echte Gesundheitsintelligenz-Schleife verwandeln.',
       reflections: [
         { number: '01', text: 'Domänentiefe verbessert Designentscheidungen.' },
         { number: '02', text: 'Adaptive KI-UX' },

@@ -59,6 +59,7 @@ export interface CenterHealthWhyItMatteredSection {
   type:    'why-it-mattered'
   index:   string        // '(001)'
   heading: string        // 'Why this product mattered'
+  problem: string        // narrative tension framing — rendered via SectionProblem
   people:  PersonCard[]  // left-column person cards (2 stacked)
   quote:   string        // right-column large quote (H4 32px uppercase)
 }
@@ -117,10 +118,11 @@ export interface ReflectionItem {
 }
 
 export interface CenterHealthReflectionsSection {
-  type:        'reflections'
-  index:       string            // '(014)'
-  heading:     string            // H3 heading (pre-wrap)
-  reflections: ReflectionItem[]  // 6 items in 3×2 grid
+  type:             'reflections'
+  index:            string            // '(014)'
+  heading:          string            // H3 heading (pre-wrap)
+  systemChallenge:  string            // meta layer — rendered via SectionProblem with label "System Challenge"
+  reflections:      ReflectionItem[]  // 6 items in 3×2 grid
 }
 
 
@@ -129,6 +131,7 @@ export interface CenterHealthContinuousUXSection {
   type:     'continuous-ux'
   index:    string    // '(013)'
   heading:  string    // H3 heading
+  problem:  string    // narrative tension framing — rendered via SectionProblem
   features: string[]  // 4 feature items — divider + H5 title (flex row, gap-40)
 }
 
@@ -147,6 +150,7 @@ export interface CenterHealthProviderPortalSection {
   type:        'provider-portal'
   index:       string    // '(011)'
   heading:     string    // H3 heading (pre-wrap)
+  problem:     string    // narrative tension framing — rendered via SectionProblem
   body:        string    // body paragraph (369px, right-aligned)
   features:    string[]  // 4 feature items — divider + H5 title (flex row, gap-40)
   image:       { src: string; alt: string; aspect: string }
@@ -159,6 +163,7 @@ export interface CenterHealthWebsiteSection {
   type:        'website'
   index:       string           // '(010)'
   heading:     string           // H3 heading (pre-wrap for line break)
+  problem:     string           // narrative tension framing — rendered via SectionProblem
   features:    string[]         // 4 feature items — divider + H5 title (flex row, gap-40)
   images:      SectionImage[]   // 4 stacked images with aspect ratios + optional rounded flag
   resultsText: string           // H4 32px results statement
@@ -170,6 +175,7 @@ export interface CenterHealthMealLoggingSection {
   type:        'meal-logging'
   index:       string    // '(009)'
   heading:     string    // H3 heading (flex-1, left side of heading row)
+  problem:     string    // narrative tension framing — rendered via SectionProblem
   body:        string    // body paragraph (310px, right side of heading row)
   features:    string[]  // 5 feature items — divider + H5 title (flex row, gap-40)
   image:       { src: string; alt: string; aspect: string }
@@ -182,6 +188,7 @@ export interface CenterHealthLoggingSection {
   type:        'logging'
   index:       string    // '(008)'
   heading:     string    // H3 heading (flex-1, left side of heading row)
+  problem:     string    // narrative tension framing — rendered via SectionProblem
   body:        string    // body paragraph (310px, right side of heading row)
   features:    string[]  // 5 feature items — divider + H5 title (flex row, gap-24)
   image:       { src: string; alt: string; aspect: string }
@@ -203,6 +210,7 @@ export interface CenterHealthAriaSection {
   type:          'aria'
   index:         string           // '(007)'
   heading:       string           // H3 heading
+  problem:       string           // narrative tension framing — rendered via SectionProblem
   body:          string           // body paragraph, right-aligned 392px
   subSections:   AriaSubSection[]
   resultsText:   string           // H4 32px results statement
@@ -214,6 +222,7 @@ export interface CenterHealthHomeDashboardSection {
   type:          'home-dashboard'
   index:         string    // '(006)'
   heading:       string    // H3 heading
+  problem:       string    // narrative tension framing — rendered via SectionProblem
   body:          string    // body paragraph — right-aligned via align-items: flex-end
   whatIDesigned: string[]  // 6 items for 3-col × 2-row CSS grid
   image:         { src: string; alt: string; aspect: string }
@@ -226,6 +235,7 @@ export interface CenterHealthDevicesSection {
   type:          'devices'
   index:         string        // '(005)'
   heading:       string        // H3 heading text
+  problem:       string        // narrative tension framing — rendered via SectionProblem
   body:          string        // body paragraph (may contain \n\n for paragraph breaks)
   whatIDesigned: string[]      // 5 feature items
   images:        SectionImage[] // 4 stacked images with aspect ratios
@@ -238,6 +248,7 @@ export interface CenterHealthOnboardingSection {
   type:          'onboarding'
   index:         string    // '(004)'
   heading:       string    // multiline H3
+  problem:       string    // narrative tension framing — rendered via SectionProblem
   body:          string    // right-aligned body paragraph
   whatIDesigned: string[]  // 6 feature items in wrapping flex row
   image:         { src: string; alt: string }
@@ -250,6 +261,7 @@ export interface CenterHealthDesignSystemSection {
   type:        'design-system'
   index:       string       // '(003)'
   heading:     string       // 'Design system: the invisible infrastructure'
+  problem:     string       // narrative tension framing — rendered via SectionProblem
   sideText:    string       // sidebar paragraph — 3 short lines
   features:    string[]     // 6 feature items for the 3-col grid
   demoImages:  DemoImage[]  // 4 stacked images in the demo card
@@ -335,6 +347,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'why-it-mattered',
       index:   '(001)',
       heading: 'Why This Product Mattered',
+      problem: 'The product was originally designed as a strip-first companion app, but was rapidly evolving into a multi-signal metabolic health platform. The existing UX wasn’t built to support multiple data sources, AI-driven insights, or diverse user types — creating a risk of fragmentation as the product scaled.',
       people: [
         { name: 'Julian (CTO)', detail: 'Longtime Type 1 diabetic' },
         { name: 'Ali (CEO)',    detail: 'Father had Type 1' },
@@ -373,6 +386,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:     'design-system',
       index:    '(003)',
       heading:  'Design System: The Invisible Infrastructure',
+      problem:  'Multiple teams were shipping across platforms without a unified system. This led to inconsistent UI patterns, duplicated components, and slower development cycles — making it difficult to scale the product without increasing design and engineering overhead.',
       sideText: 'Three platforms.\nMultiple feature teams.\nWe needed coherence.',
       features: [
         'Tokenized foundation: color, spacing, typography, Shadow.',
@@ -415,6 +429,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'onboarding',
       index:   '(004)',
       heading: 'Onboarding: Adaptive UX Based on Pre-Personalised Experience',
+      problem: 'A single linear onboarding flow was being used for fundamentally different user types — from Type 1 diabetics to caregivers. This resulted in irrelevant inputs, lower completion rates, and weak initial data quality for Aria’s personalization.',
       body:    'Center Health expanded from one user type to five: Type 1, Type 2, prediabetes, weight-loss users, caregivers, and clinicians. One single onboarding funnel wasn\'t going to cut it.',
       whatIDesigned: [
         'Persona-based branching on step one',
@@ -441,6 +456,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'devices',
       index:   '(005)',
       heading: 'Devices Integration, Interaction & Results',
+      problem: 'Each connected device came with its own pairing logic, edge cases, and data structures. The experience was inconsistent and often fragile, leading users to rely on manual logging instead of real-time integrations.',
       body:    'The platform supported a growing range of connected health devices. Each had its own pairing logic, data format, and edge cases — and each needed to feel seamless.',
       whatIDesigned: [
         'Blood Glucose Meter Flow',
@@ -470,6 +486,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'home-dashboard',
       index:   '(006)',
       heading: 'Home: Turning Readings into Real Understanding',
+      problem: 'The dashboard displayed health metrics in isolation, without helping users understand relationships between them. As more data sources were added, the interface risked becoming more complex without becoming more useful.',
       body:    'The v1 dashboard was perfect for early strip users.…but the product had grown into something much bigger: CGM data, nutrition, meds, sleep, activity, mood, weight, caregiver access. We needed a dashboard that behaved like a health intelligence layer, not just a chart.',
       whatIDesigned: [
         '"glanceable" safety strip: current BG + time-in-range',
@@ -503,6 +520,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'aria',
       index:   '(007)',
       heading: 'ARIA: Giving the Platform\na Brain & Soul',
+      problem: 'Aria existed as a backend intelligence layer but lacked a clear presence in the user experience. Insights were passive and disconnected, making the AI feel invisible rather than central to the product.',
       body:    'Aria become the mind and soul with insights, trends and suggestions. Aria already powered insights in the backend. But to users, it felt like an invisible ghost. We needed to give Aria a face, voice, personality, and safe boundaries.',
       subSections: [
         {
@@ -552,6 +570,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'logging',
       index:   '(008)',
       heading: 'Logging, Reminders & Habit Systems',
+      problem: 'Logging required effort and consistency, but the system did little to reduce friction or reinforce habits. As a result, data quality suffered — directly impacting the effectiveness of AI-driven insights.',
       body:    'Better logging = smarter Aria.\nBut logging is… logging.\nPeople forget.',
       features: [
         'One-tap logging hub',
@@ -582,6 +601,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'meal-logging',
       index:   '(009)',
       heading: 'Meal Logging, Nutrition & Restaurant Menu Suggestions',
+      problem: 'Blood glucose readings showed outcomes, but users lacked clear visibility into the causes behind them. Food tracking was either too generic or too complex, limiting its usefulness in understanding metabolic patterns.',
       body:    'If BG is the "what," then food is the "why."\nThe product needed a diabetic-friendly approach to meals.',
       features: [
         'Curated searchable food database',
@@ -609,6 +629,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'website',
       index:   '(010)',
       heading: 'Website: Rewriting the Story for an AI-First Future',
+      problem: 'The product had evolved into an AI-first health platform, but the website still communicated a hardware-centric narrative. This created a disconnect between user expectations and the actual product experience.',
       features: [
         'Aria-driven hero narrative, as the product shifted its pitch from strips to ARIA.',
         'Clear explanation of how AI turns data into coaching',
@@ -656,6 +677,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:    'provider-portal',
       index:   '(011)',
       heading: 'Provider Portal: Giving Clinicians Superpowers',
+      problem: 'Clinicians relied on fragmented data and patient-shared screenshots, making it difficult to assess health trends or provide informed guidance. There was no structured interface for clinical decision-making.',
       body:    'Doctors were working off screenshots sent by patients. Not scalable. Not safe. Not helpful.',
       features: [
         'A triage-friendly patient list with at-a-glance risk indicators',
@@ -699,6 +721,7 @@ export const centerHealth: CenterHealthCaseStudy = {
       type:     'continuous-ux',
       index:    '(013)',
       heading:  'The Continuous UX Engine',
+      problem:  'User feedback existed across multiple channels, but there was no structured system to continuously capture, analyze, and act on it. This slowed down iteration and made improvements reactive instead of systematic.',
       features: [
         'Hotjar session reviews',
         'Research User feedback from app+play store, customer Support, Analyze &  loop',
@@ -718,7 +741,8 @@ export const centerHealth: CenterHealthCaseStudy = {
     {
       type:    'reflections',
       index:   '(014)',
-      heading: 'Reflections of Two & Half Years. The Scale-Up Stage.',
+      heading:         'Reflections of Two & Half Years. The Scale-Up Stage.',
+      systemChallenge: 'The core challenge wasn’t designing individual features, but building a system where data collection, AI insights, and user behavior continuously reinforce each other — turning the product into a true health intelligence loop.',
       reflections: [
         { number: '01', text: 'Domain depth improves design decisions.' },
         { number: '02', text: 'Adaptive AI UX' },

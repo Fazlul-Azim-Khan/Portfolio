@@ -42,6 +42,7 @@
 import Image from 'next/image'
 import type { CenterHealthDesignSystemSection } from '../content'
 import styles from './DesignSystemSection.module.css'
+import SectionProblem from './SectionProblem'
 
 
 /* ============================================================
@@ -78,6 +79,9 @@ export default function DesignSystemSection({ section }: DesignSystemSectionProp
               <h1 className={styles['ds-heading']}>{section.heading}</h1>
               <p className={styles['ds-side-text']}>{section.sideText}</p>
             </div>
+
+            {/* Problem block — frames the section's tension */}
+            <SectionProblem text={section.problem} />
 
             {/* ── 2. Features — 3-col × 2-row grid ──────────── */}
             <div className={styles['ds-feature-grid']}>

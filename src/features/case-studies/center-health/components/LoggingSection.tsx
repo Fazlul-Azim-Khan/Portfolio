@@ -36,6 +36,7 @@
 import Image from 'next/image'
 import type { CenterHealthLoggingSection } from '../content'
 import styles from './LoggingSection.module.css'
+import SectionProblem from './SectionProblem'
 
 
 /* ============================================================
@@ -75,6 +76,9 @@ export default function LoggingSection({ section }: LoggingSectionProps) {
             <h1 className={styles['log-heading']}>{section.heading}</h1>
             <p className={styles['log-body']}>{section.body}</p>
           </div>
+
+          {/* Problem block — frames the section's tension */}
+          <SectionProblem text={section.problem} />
 
 
           {/* ── 2. Feature items — divider + title ─────────── */}
