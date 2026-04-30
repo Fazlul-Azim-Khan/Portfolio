@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: 'Fazlul Azim Khan — Product Designer & UX Strategist',
   description:
     'I design AI-powered enterprise products for expert-user domains — manufacturing reliability, clinical decision support, metabolic health intelligence.',
+  metadataBase: new URL('https://fazux.design'),
   openGraph: {
     title: 'Fazlul Azim Khan — Product Designer & UX Strategist',
     description:
@@ -26,16 +27,28 @@ export const metadata: Metadata = {
     siteName: 'Fazlul Azim Khan Portfolio',
     locale: 'en_US',
     type: 'website',
-    // images: [{ url: '/images/shared/og-image.png' }],  ← Uncomment when OG image is ready
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'faz — Fazlul Azim Khan, Product Designer & UX Strategist',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fazlul Azim Khan — Product Designer & UX Strategist',
     description:
       'I design AI-powered enterprise products for expert-user domains.',
+    images: ['/og-image.png'],
   },
   icons: {
-    // icon: '/images/shared/favicon.svg',  ← Uncomment when favicon is ready
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: '/apple-touch-icon.png',
   },
 }
 
