@@ -81,7 +81,7 @@ export const selectedWorks = {
   meta: {
     index:   '(002)',
     heading: 'Ausgewählte Projekte',
-    count:   '3 Fallstudien',
+    count:   '2 Fallstudien',  /* ← bei Veröffentlichung von ERP/ADM auf 3 erhöhen */
   },
   items: [
     {
@@ -100,14 +100,15 @@ export const selectedWorks = {
       slug:   'center-health',
       mockup: '/images/works/center-health/mockup.jpg',
     },
-    {
-      id:     'erp-admin',
-      index:  '03',
-      client: 'Nipro–GMI',
-      title:  'ERP-Systemadministration für ein 32-SBU-Unternehmen',
-      slug:   'erp-admin',
-      mockup: '/images/works/adm/mockup.jpg',
-    },
+    // ── (03) ERP / ADM — visuelle Assets in Arbeit; auskommentieren wenn fertig ──
+    // {
+    //   id:     'erp-admin',
+    //   index:  '03',
+    //   client: 'Nipro–GMI',
+    //   title:  'ERP-Systemadministration für ein 32-SBU-Unternehmen',
+    //   slug:   'erp-admin',
+    //   mockup: '/images/works/adm/mockup.jpg',
+    // },
   ],
 } as const
 

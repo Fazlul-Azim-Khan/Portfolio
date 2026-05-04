@@ -91,7 +91,7 @@ export const selectedWorks = {
   meta: {
     index:   '(002)',
     heading: 'Selected works',
-    count:   '3 case studies',
+    count:   '2 case studies',  /* ← bump back to 3 when ERP/ADM is published */
   },
   items: [
     {
@@ -110,14 +110,15 @@ export const selectedWorks = {
       slug:   'center-health',
       mockup: '/images/works/center-health/mockup.jpg',
     },
-    {
-      id:     'erp-admin',
-      index:  '03',
-      client: 'Nipro–GMI',
-      title:  'ERP system administration for a 32-SBU enterprise',
-      slug:   'erp-admin',
-      mockup: '/images/works/adm/mockup.jpg',
-    },
+    // ── (03) ERP / ADM — visual assets in progress; uncomment when ready ──
+    // {
+    //   id:     'erp-admin',
+    //   index:  '03',
+    //   client: 'Nipro–GMI',
+    //   title:  'ERP system administration for a 32-SBU enterprise',
+    //   slug:   'erp-admin',
+    //   mockup: '/images/works/adm/mockup.jpg',
+    // },
     // {
     //   id:     'arrival-os',
     //   index:  '03',
