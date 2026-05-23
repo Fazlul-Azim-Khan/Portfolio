@@ -60,7 +60,7 @@ export const hero = {
     },
   },
 
-  subline: 'Enterprise KI · Klinisch & industriell · 2 KI-Produkte ausgeliefert',
+  subline: 'Founding designer on two shipped AI products. 8 years. CS degree. Idea to deployment — no handoff required.',
 
   bio: 'Ich gestalte KI-gestützte Produkte für Fachnutzer-Domänen — klinische Entscheidungsunterstützung, metabolische Gesundheit und industrielle Zuverlässigkeit. Zwei ausgelieferte KI-Produkte. Zuletzt bei Center Health. Davor bei Axion Ray, gefördert von Boeing, Raytheon, Denso und Baxter.',
 
@@ -83,11 +83,24 @@ export const bioBanner = {
 } as const
 
 
+// ─── STATS ───────────────────────────────────────────────────────────────────
+
+export const stats = {
+  meta: { index: '(003)' },
+  items: [
+    { value: '8+',     label: 'Jahre End-to-End Produktdesign'                  },
+    { value: '~$25M',  label: 'Finanzierung als Gründungsdesigner unterstützt'  },
+    { value: 'NPS 84', label: 'durch nutzerzentriertes klinisches UX erreicht'  },
+    { value: '10+',    label: 'Kundenprodukte als Staff Designer geliefert'      },
+  ],
+} as const
+
+
 // ─── SELECTED WORKS ──────────────────────────────────────────────────────────
 
 export const selectedWorks = {
   meta: {
-    index:   '(003)',
+    index:   '(004)',
     heading: 'Ausgewählte Projekte',
     count:   '2 Fallstudien',  /* ← bei Veröffentlichung von ERP/ADM auf 3 erhöhen */
   },
@@ -127,7 +140,7 @@ export type GalleryRadiusVariant = 'default' | 'large'
 
 export const gallery = {
   meta: {
-    index:      '(004)',
+    index:      '(005)',
     heading:    'Weitere Projekte',
     subheading: 'Ein breiteres Spektrum aus Fintech, Gesundheit, Produktivität und Consumer-Apps — aus früherer Kunden- und Studioarbeit.',
   },
@@ -211,7 +224,7 @@ export const gallery = {
 // ─── EXPERIENCE ──────────────────────────────────────────────────────────────
 
 export const experience = {
-  meta: { index: '(005)', heading: 'Meine Designreise' },
+  meta: { index: '(006)', heading: 'Meine Designreise' },
   entries: [
     {
       id:       'gb3-services',
@@ -284,9 +297,22 @@ export const languages = {
 } as const
 
 
+// ─── HOW I WORK ──────────────────────────────────────────────────────────────
+
+export const howIWork = {
+  meta: { index: '(007)', heading: 'Meine Arbeitsweise' },
+  steps: [
+    { index: '01', label: 'Verstehen' },
+    { index: '02', label: 'Gestalten' },
+    { index: '03', label: 'Liefern'   },
+    { index: '04', label: 'Entwickeln'},
+  ],
+} as const
+
+
 // ─── CONTACT ─────────────────────────────────────────────────────────────────
 
 export const contact = {
-  meta: { index: '(006)', heading: 'Kontakt aufnehmen' },
+  meta: { index: '(008)', heading: 'Kontakt aufnehmen' },
   email: 'fazlul.azim.khan@gmail.com',
 } as const

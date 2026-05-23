@@ -4,7 +4,7 @@
  * features/landing/LandingPage.tsx
  *
  * Composes all landing sections in order:
- *   Hero → BioBanner → SelectedWorks → MoreWork → Experience → Contact
+ *   Hero → BioBanner → Stats → SelectedWorks → MoreWork → Experience → HowIWork → Contact
  *
  * Scroll system:
  *   useSectionScroll handles step-based snapping.
@@ -29,9 +29,11 @@ import NoticeStrip from '@/components/layout/NoticeStrip'
 // Landing sections
 import Hero          from './components/Hero'
 import BioBanner     from './components/BioBanner'
+import Stats         from './components/Stats'
 import SelectedWorks from './components/SelectedWorks'
 import MoreWork      from './components/MoreWork'
 import Experience    from './components/Experience'
+import HowIWork      from './components/HowIWork'
 import Contact       from './components/Contact'
 
 // ── Locale-aware content ────────────────────────────────────────────────────
@@ -61,13 +63,15 @@ export default function LandingPage() {
   // Add each ref to `sections` as the section is implemented.
   const heroRef          = useRef<HTMLElement>(null)
   const bioBannerRef     = useRef<HTMLElement>(null)
+  const statsRef         = useRef<HTMLElement>(null)
   const selectedWorksRef = useRef<HTMLElement>(null)
   const moreWorkRef      = useRef<HTMLElement>(null)
   const experienceRef    = useRef<HTMLElement>(null)
+  const howIWorkRef      = useRef<HTMLElement>(null)
   const contactRef       = useRef<HTMLElement>(null)
 
   // Memoised so the hook's effect doesn't re-register on every render
-  const sections = useMemo(() => [heroRef, bioBannerRef, selectedWorksRef, moreWorkRef, experienceRef, contactRef], [])
+  const sections = useMemo(() => [heroRef, bioBannerRef, statsRef, selectedWorksRef, moreWorkRef, experienceRef, howIWorkRef, contactRef], [])
 
   useSectionScroll({ sections })
 
@@ -93,22 +97,32 @@ export default function LandingPage() {
           <BioBanner content={c.bioBanner} />
         </section>
 
-        {/* (003) Selected Works */}
+        {/* (003) Stats */}
+        <section ref={statsRef} className={styles['lp-section']}>
+          <Stats content={c.stats} />
+        </section>
+
+        {/* (004) Selected Works */}
         <section ref={selectedWorksRef} className={styles['lp-section']}>
           <SelectedWorks content={c.selectedWorks} workBasePath={workBasePath} />
         </section>
 
-        {/* (004) More Work */}
+        {/* (005) More Work */}
         <section ref={moreWorkRef} className={styles['lp-section']}>
           <MoreWork content={c.gallery} />
         </section>
 
-        {/* (005) Experience */}
+        {/* (006) Experience */}
         <section ref={experienceRef} className={styles['lp-section']}>
           <Experience content={c.experience} />
         </section>
 
-        {/* (006) Contact + Footer */}
+        {/* (007) How I Work */}
+        <section ref={howIWorkRef} className={styles['lp-section']}>
+          <HowIWork content={c.howIWork} />
+        </section>
+
+        {/* (008) Contact + Footer */}
         <section ref={contactRef} className={styles['lp-section']}>
           <Contact content={c.contact} brandLabel={c.nav.brand.label} />
         </section>

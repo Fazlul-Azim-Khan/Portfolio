@@ -1,0 +1,110 @@
+/*
+ * Stats.module.css
+ *
+ * Social proof numbers section — section (003).
+ * 4 metrics in a horizontal grid: value at H2 scale, label at body.
+ *
+ * Prefix: lp-stats-
+ *
+ * Layout: meta row + 4-column grid.
+ * Values use --text-h2 (clamp 36px → 64px) — large enough to land,
+ * safe in 4 columns without overflow.
+ *
+ * Tokens: --text-h2 · --text-body · --lh-h2 · --lh-body
+ *         --tracking-h2 · --font-display · --font-body
+ *         --color-primary · --color-text-muted · --color-tertiary
+ *         --gap-40 · --gap-16 · --gap-12 · --padding-64 · --text-lead
+ */
+
+
+/* ============================================================
+   SECTION WRAPPER
+   ============================================================ */
+
+.lp-stats {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-40);
+
+  width:          100%;
+  padding-top:    var(--padding-64);
+  padding-bottom: var(--padding-64);
+}
+
+
+/* ============================================================
+   META ROW  — section index label
+   ============================================================ */
+
+.lp-stats-meta {
+  display:     flex;
+  align-items: center;
+  gap:         var(--gap-16);
+}
+
+.lp-stats-index {
+  font-family:    var(--font-body);
+  font-size:      var(--text-lead);   /* 12px fixed */
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);
+  letter-spacing: var(--tracking-lead);
+  color:          var(--color-tertiary);
+  margin:         0;
+}
+
+
+/* ============================================================
+   GRID  — 4 columns at desktop
+   ============================================================ */
+
+.lp-stats-grid {
+  display:               grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap:                   var(--gap-40);
+  width:                 100%;
+}
+
+
+/* ============================================================
+   STAT ITEM
+   ============================================================ */
+
+.lp-stats-item {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--gap-12);
+}
+
+/* Metric value — H2 scale (clamp 36px → 64px) */
+.lp-stats-value {
+  font-family:    var(--font-display);
+  font-size:      var(--text-h2);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-heading);   /* 1 */
+  letter-spacing: var(--tracking-h2);  /* -0.4px */
+  color:          var(--color-primary);
+  margin:         0;
+}
+
+/* Descriptor label — body size, muted */
+.lp-stats-label {
+  font-family:    var(--font-body);
+  font-size:      var(--text-body);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--lh-body);      /* 20px */
+  letter-spacing: var(--tracking-lead);
+  color:          var(--color-text-muted);
+  margin:         0;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .lp-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap:                   var(--gap-40) var(--gap-24);
+  }
+}

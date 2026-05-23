@@ -66,7 +66,7 @@ export const hero = {
   },
 
   /** Renders in H5 below the headline — Lead uppercase via CSS */
-  subline: 'Enterprise AI · Clinical & industrial · 2 AI products shipped',
+  subline: 'Founding designer on two shipped AI products. 8 years. CS degree. Idea to deployment — no handoff required.',
 
   /** Renders in Lead (12px Inter, uppercase) in top-right grid cell */
   bio: 'I design AI-powered products for expert-user domains — clinical decision support, metabolic health, and industrial reliability. Two shipped AI products. Most recently at Center Health. Earlier at Axion Ray, backed by Boeing, Raytheon, Denso, and Baxter.',
@@ -93,13 +93,27 @@ export const bioBanner = {
 } as const
 
 
+// ─── STATS ───────────────────────────────────────────────────────────────────
+// Confirmed from pitch deck slide 4 — "THE NUMBERS"
+
+export const stats = {
+  meta: { index: '(003)' },
+  items: [
+    { value: '8+',     label: 'years shipping end-to-end product design'        },
+    { value: '~$25M',  label: 'in funding supported as founding designer'        },
+    { value: 'NPS 84', label: 'achieved through research-led clinical UX'        },
+    { value: '10+',    label: 'client products shipped at GB3 as Staff Designer' },
+  ],
+} as const
+
+
 // ─── SELECTED WORKS ──────────────────────────────────────────────────────────
 // Confirmed from Figma nodes 966:7565, 942:5673, 942:5756, 942:5763
 // Client #1 is under NDA — exposed as generic safe label
 
 export const selectedWorks = {
   meta: {
-    index:   '(003)',
+    index:   '(004)',
     heading: 'Selected works',
     count:   '2 case studies',  /* ← bump back to 3 when ERP/ADM is published */
   },
@@ -168,7 +182,7 @@ export interface GalleryItem {
 
 export const gallery = {
   meta: {
-    index:      '(004)',
+    index:      '(005)',
     heading:    'More works',
     subheading: 'A broader range across fintech, health, productivity, and consumer apps — from earlier client and studio work.',
   },
@@ -267,7 +281,7 @@ export interface ExperienceEntry {
 }
 
 export const experience = {
-  meta: { index: '(005)', heading: 'Explore my design journey' },
+  meta: { index: '(006)', heading: 'Explore my design journey' },
   entries: [
     // ── Work Experience ────────────────────────────────────────────────────────
     {
@@ -343,11 +357,25 @@ export const languages = {
 } as const
 
 
+// ─── HOW I WORK ──────────────────────────────────────────────────────────────
+// Confirmed from pitch deck slide 6 — "HOW I WORK"
+
+export const howIWork = {
+  meta: { index: '(007)', heading: 'How I work' },
+  steps: [
+    { index: '01', label: 'Discover' },
+    { index: '02', label: 'Shape'    },
+    { index: '03', label: 'Ship'     },
+    { index: '04', label: 'Evolve'   },
+  ],
+} as const
+
+
 // ─── CONTACT ─────────────────────────────────────────────────────────────────
 // ⚠️  Contact section not yet designed in Figma — content is a stub.
 //     Populate when Figma design is provided.
 
 export const contact = {
-  meta: { index: '(006)', heading: 'Get in touch' },
+  meta: { index: '(008)', heading: 'Get in touch' },
   email: 'fazlul.azim.khan@gmail.com',
 } as const
