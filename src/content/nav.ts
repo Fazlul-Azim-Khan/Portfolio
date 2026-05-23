@@ -50,7 +50,7 @@ export const navCTAs: NavCTA[] = [
   },
   {
     label:   'Contact me →',
-    href:    '#contact',
+    href:    'mailto:fazlul.azim.khan@gmail.com',
     variant: 'primary-brand',
   },
 ]

@@ -4,7 +4,7 @@
  * features/landing/LandingPage.tsx
  *
  * Composes all landing sections in order:
- *   Hero → SelectedWorks → MoreWork → Experience → Languages → Contact
+ *   Hero → BioBanner → SelectedWorks → MoreWork → Experience → Contact
  *
  * Scroll system:
  *   useSectionScroll handles step-based snapping.
@@ -28,10 +28,10 @@ import NoticeStrip from '@/components/layout/NoticeStrip'
 
 // Landing sections
 import Hero          from './components/Hero'
+import BioBanner     from './components/BioBanner'
 import SelectedWorks from './components/SelectedWorks'
 import MoreWork      from './components/MoreWork'
 import Experience    from './components/Experience'
-import Languages     from './components/Languages'
 import Contact       from './components/Contact'
 
 // ── Locale-aware content ────────────────────────────────────────────────────
@@ -60,14 +60,14 @@ export default function LandingPage() {
   // One ref per scroll-snappable section.
   // Add each ref to `sections` as the section is implemented.
   const heroRef          = useRef<HTMLElement>(null)
+  const bioBannerRef     = useRef<HTMLElement>(null)
   const selectedWorksRef = useRef<HTMLElement>(null)
   const moreWorkRef      = useRef<HTMLElement>(null)
   const experienceRef    = useRef<HTMLElement>(null)
-  const languagesRef     = useRef<HTMLElement>(null)
   const contactRef       = useRef<HTMLElement>(null)
 
   // Memoised so the hook's effect doesn't re-register on every render
-  const sections = useMemo(() => [heroRef, selectedWorksRef, moreWorkRef, experienceRef, languagesRef, contactRef], [])
+  const sections = useMemo(() => [heroRef, bioBannerRef, selectedWorksRef, moreWorkRef, experienceRef, contactRef], [])
 
   useSectionScroll({ sections })
 
@@ -88,24 +88,24 @@ export default function LandingPage() {
           <Hero content={c.hero} />
         </section>
 
-        {/* (002) Selected Works */}
+        {/* (002) Bio Banner */}
+        <section ref={bioBannerRef} className={styles['lp-section']}>
+          <BioBanner content={c.bioBanner} />
+        </section>
+
+        {/* (003) Selected Works */}
         <section ref={selectedWorksRef} className={styles['lp-section']}>
           <SelectedWorks content={c.selectedWorks} workBasePath={workBasePath} />
         </section>
 
-        {/* (003) More Work */}
+        {/* (004) More Work */}
         <section ref={moreWorkRef} className={styles['lp-section']}>
           <MoreWork content={c.gallery} />
         </section>
 
-        {/* (004) Experience */}
+        {/* (005) Experience */}
         <section ref={experienceRef} className={styles['lp-section']}>
           <Experience content={c.experience} />
-        </section>
-
-        {/* (005) Languages */}
-        <section ref={languagesRef} className={styles['lp-section']}>
-          <Languages content={c.languages} />
         </section>
 
         {/* (006) Contact + Footer */}

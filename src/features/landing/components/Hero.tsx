@@ -24,8 +24,7 @@
  * The scroll ref is owned by LandingPage, not this component.
  */
 
-import Chip    from '@/shared/ui/Chip/Chip'
-import styles  from './Hero.module.css'
+import styles from './Hero.module.css'
 
 type HeroContent = {
   decorativeArrow: string
@@ -51,23 +50,6 @@ export default function Hero({ content }: Props) {
     <div className={styles['lp-hero']} aria-label="Hero">
 
       <div className={styles['lp-hero-grid']}>
-
-        {/* ── TOP RIGHT: Bio + Specialty chips ────────────── */}
-        <div className={styles['lp-hero-bio-cell']}>
-
-          <p className={styles['lp-hero-bio']}>
-            {hero.bio}
-          </p>
-
-          <div className={styles['lp-hero-chips']} role="list" aria-label="Specialties">
-            {hero.chips.map((chip) => (
-              <div key={chip} role="listitem">
-                <Chip label={chip} />
-              </div>
-            ))}
-          </div>
-
-        </div>
 
         {/* ── BOTTOM FULL-WIDTH: Name + Headline + Subline ── */}
         <div className={styles['lp-hero-headline-cell']}>

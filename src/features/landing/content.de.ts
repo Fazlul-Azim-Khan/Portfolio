@@ -40,7 +40,7 @@ export const nav = {
   ctas: [
     { label: 'Lebenslauf ↓', href: '/cv.pdf',                                        variant: 'outlined' as const },
     { label: 'LinkedIn ↗',   href: 'https://www.linkedin.com/in/fazlul-azim-khan/', variant: 'outlined' as const },
-    { label: 'Kontakt →',    href: '#contact',                                       variant: 'primary-brand' as const },
+    { label: 'Kontakt →',    href: 'mailto:fazlul.azim.khan@gmail.com',              variant: 'primary-brand' as const },
   ],
 } as const
 
@@ -75,11 +75,19 @@ export const hero = {
 } as const
 
 
+// ─── BIO BANNER ──────────────────────────────────────────────────────────────
+
+export const bioBanner = {
+  text:  hero.bio,
+  chips: hero.chips,
+} as const
+
+
 // ─── SELECTED WORKS ──────────────────────────────────────────────────────────
 
 export const selectedWorks = {
   meta: {
-    index:   '(002)',
+    index:   '(003)',
     heading: 'Ausgewählte Projekte',
     count:   '2 Fallstudien',  /* ← bei Veröffentlichung von ERP/ADM auf 3 erhöhen */
   },
@@ -119,7 +127,7 @@ export type GalleryRadiusVariant = 'default' | 'large'
 
 export const gallery = {
   meta: {
-    index:      '(003)',
+    index:      '(004)',
     heading:    'Weitere Projekte',
     subheading: 'Ein breiteres Spektrum aus Fintech, Gesundheit, Produktivität und Consumer-Apps — aus früherer Kunden- und Studioarbeit.',
   },
@@ -203,7 +211,7 @@ export const gallery = {
 // ─── EXPERIENCE ──────────────────────────────────────────────────────────────
 
 export const experience = {
-  meta: { index: '(004)', heading: 'Meine Designreise' },
+  meta: { index: '(005)', heading: 'Meine Designreise' },
   entries: [
     {
       id:       'gb3-services',
@@ -268,7 +276,7 @@ export const experience = {
 // ─── LANGUAGES ───────────────────────────────────────────────────────────────
 
 export const languages = {
-  meta: { index: '(005)', heading: 'Sprachen' },
+  meta: { index: '(006)', heading: 'Sprachen' },
   items: [
     { language: 'Englisch', proficiency: 'Muttersprache'        },
     { language: 'Deutsch',  proficiency: 'Grundkenntnisse (A2)' },

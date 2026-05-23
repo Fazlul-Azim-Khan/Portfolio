@@ -41,7 +41,7 @@ export const nav = {
   ctas: [
     { label: 'Download CV ↓', href: '/cv.pdf',                                          variant: 'outlined' as const },
     { label: 'LinkedIn ↗',    href: 'https://www.linkedin.com/in/fazlul-azim-khan/',   variant: 'outlined' as const },
-    { label: 'Contact me →',  href: '#contact',                                         variant: 'primary-brand' as const },
+    { label: 'Contact me →',  href: 'mailto:fazlul.azim.khan@gmail.com',                variant: 'primary-brand' as const },
   ],
 } as const
 
@@ -83,13 +83,23 @@ export const hero = {
 } as const
 
 
+// ─── BIO BANNER ──────────────────────────────────────────────────────────────
+// Standalone section (002) — full-viewport bio statement at H1 scale.
+// Re-references hero.bio and hero.chips — single source of truth.
+
+export const bioBanner = {
+  text:  hero.bio,
+  chips: hero.chips,
+} as const
+
+
 // ─── SELECTED WORKS ──────────────────────────────────────────────────────────
 // Confirmed from Figma nodes 966:7565, 942:5673, 942:5756, 942:5763
 // Client #1 is under NDA — exposed as generic safe label
 
 export const selectedWorks = {
   meta: {
-    index:   '(002)',
+    index:   '(003)',
     heading: 'Selected works',
     count:   '2 case studies',  /* ← bump back to 3 when ERP/ADM is published */
   },
@@ -158,7 +168,7 @@ export interface GalleryItem {
 
 export const gallery = {
   meta: {
-    index:      '(003)',
+    index:      '(004)',
     heading:    'More works',
     subheading: 'A broader range across fintech, health, productivity, and consumer apps — from earlier client and studio work.',
   },
@@ -257,7 +267,7 @@ export interface ExperienceEntry {
 }
 
 export const experience = {
-  meta: { index: '(004)', heading: 'Explore my design journey' },
+  meta: { index: '(005)', heading: 'Explore my design journey' },
   entries: [
     // ── Work Experience ────────────────────────────────────────────────────────
     {
@@ -325,7 +335,7 @@ export const experience = {
 // Confirmed from Figma node 1036:7190 / 1036:7193
 
 export const languages = {
-  meta: { index: '(005)', heading: 'Languages' },
+  meta: { index: '(006)', heading: 'Languages' },
   items: [
     { language: 'English', proficiency: 'Native'          },
     { language: 'German',  proficiency: 'Elementary (A2)' },
