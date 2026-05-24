@@ -46,14 +46,14 @@ export default function Stats({ content }: Props) {
       </div>
 
       {/* 4-column metric grid */}
-      <dl className={styles['lp-stats-grid']}>
+      <div className={styles['lp-stats-grid']}>
         {content.items.map((item) => (
           <div key={item.value} className={styles['lp-stats-item']}>
-            <dt className={styles['lp-stats-value']}>{item.value}</dt>
-            <dd className={styles['lp-stats-label']}>{item.label}</dd>
+            <p  className={styles['lp-stats-label']}>{item.label}</p>
+            <h1 className={styles['lp-stats-value']}>{item.value}</h1>
           </div>
         ))}
-      </dl>
+      </div>
 
     </div>
   )
