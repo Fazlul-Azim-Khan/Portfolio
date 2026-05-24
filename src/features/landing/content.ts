@@ -69,7 +69,7 @@ export const hero = {
   subline: 'Founding designer on two shipped AI products. 8 years. CS degree. Idea to deployment — no handoff required.',
 
   /** Renders in Lead (12px Inter, uppercase) in top-right grid cell */
-  bio: 'I design AI products for domains where getting it wrong isn\'t an option. Clinical decisions, metabolic health, industrial reliability. I use Google Stitch and Claude Code for AI workflows and vibe coding. CS background. Most recently at Musemind GmbH. Previously Staff Designer at GB3 Services LLC and Center Health. Earlier at Axion Ray, backed by Boeing, Raytheon, Denso, and Baxter.',
+  bio: 'I design AI products for domains where getting it wrong isn\'t an option. Clinical decisions, metabolic health, industrial reliability. I also use Google Stitch and Claude Code for AI workflow and vibe coding. CS background. Most recently at Musemind GmbH. Previously Staff Designer at GB3 Services LLC and Center Health. Earlier at Axion Ray, backed by Boeing, Raytheon, Denso, and Baxter.',
 
   /** Specialty chip tags — order matches Figma layout (left→right, wrapping) */
   chips: [
