@@ -81,7 +81,7 @@ export default function WorkCard({ work, priority = false, workBasePath = '/work
 
         <div className={styles['wc-title-block']}>
           <p className={styles['wc-client']}>{work.client}</p>
-          <h3 className={styles['wc-title']}>{work.title}</h3>
+          <h2 className={styles['wc-title']}>{work.title}</h2>
         </div>
 
       </div>
