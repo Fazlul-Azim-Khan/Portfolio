@@ -22,13 +22,15 @@
    ============================================================ */
 
 .lp-stats {
-  display:        flex;
-  flex-direction: column;
-  gap:            var(--gap-40);
+  display:         flex;
+  flex-direction:  column;
+  justify-content: center;
+  gap:             var(--gap-40);
 
-  width:          100%;
-  padding-top:    var(--padding-64);
-  padding-bottom: var(--padding-64);
+  width:           100%;
+  min-height:      100vh;
+  padding-top:     var(--padding-64);
+  padding-bottom:  var(--padding-64);
 }
 
 
