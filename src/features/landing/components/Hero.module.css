@@ -156,19 +156,6 @@
   justify-self:    stretch;
 }
 
-/* Name label — "FAZLUL AZIM KHAN"
-   Confirmed: node 966:7543 — Integral CF 20px, --color-primary */
-.lp-hero-name {
-  font-family:    var(--font-display);
-  font-size:      var(--text-h5);        /* 20px */
-  font-weight:    var(--weight-regular);
-  line-height:    var(--lh-heading);     /* 1 / 100% */
-  letter-spacing: var(--tracking-h5);
-  color:          var(--color-primary);
-  width:          100%;
-  margin:         0;
-}
-
 /* Headline block — wraps both headline lines
    Confirmed: node 966:7544 — tracking-[-1.5px] */
 .lp-hero-headline-block {
@@ -176,14 +163,14 @@
 }
 
 /* Each headline line — "Product DESIGNER" / "& UX STRATEGIST"
-   Confirmed: Integral CF 120px, line-height 120px, uppercase */
+   vw-based fluid sizing — fills the grid at all viewport widths */
 .lp-hero-headline-line {
   display:        block;
   font-family:    var(--font-display);
-  font-size:      var(--text-h1);        /* 120px */
+  font-size:      clamp(80px, 13vw, 280px);
   font-weight:    var(--weight-regular);
-  line-height:    var(--lh-h1);          /* 120px */
-  letter-spacing: var(--tracking-case-hero);  /* -1.8px — Figma node 966:7544 */
+  line-height:    1;
+  letter-spacing: var(--tracking-case-hero);  /* -1.8px */
   color:          var(--color-primary);
   width:          100%;
 }
@@ -247,15 +234,13 @@
     grid-row:    2;
   }
 
-  /* Scale down the 120px headline — too large for mobile viewports.
-     Fluid: 40px at 390px viewport, grows to 120px at wider breakpoints. */
+  /* Headline — clamp keeps vw logic intact at mobile widths */
   .lp-hero-headline-line {
-    font-size:   clamp(40px, 10.26vw, var(--text-h1));
+    font-size:   clamp(40px, 13vw, 280px);
     line-height: 1;
   }
 
-  /* Name + subline scale down slightly */
-  .lp-hero-name,
+  /* Subline scale down slightly */
   .lp-hero-subline {
     font-size: var(--text-lead);  /* 12px — keep label style on mobile */
   }

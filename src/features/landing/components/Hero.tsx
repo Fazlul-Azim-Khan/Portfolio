@@ -54,11 +54,6 @@ export default function Hero({ content }: Props) {
         {/* ── BOTTOM FULL-WIDTH: Name + Headline + Subline ── */}
         <div className={styles['lp-hero-headline-cell']}>
 
-          {/* Name label — "FAZLUL AZIM KHAN" */}
-          <p className={styles['lp-hero-name']}>
-            {hero.name}
-          </p>
-
           {/* Headline — split across two lines for per-word colour control */}
           <div
             className={styles['lp-hero-headline-block']}
