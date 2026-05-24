@@ -44,7 +44,7 @@ export default function HowIWork({ content }: Props) {
       {/* Section index + heading */}
       <div className={styles['lp-how-meta']}>
         <p className={styles['lp-how-index']}>{content.meta.index}</p>
-        <h2 className={styles['lp-how-heading']}>{content.meta.heading}</h2>
+        <h1 className={styles['lp-how-heading']}>{content.meta.heading}</h1>
       </div>
 
       {/* 4-step process grid */}
@@ -52,7 +52,7 @@ export default function HowIWork({ content }: Props) {
         {content.steps.map((step) => (
           <li key={step.index} className={styles['lp-how-step']}>
             <span className={styles['lp-how-step-index']}>{step.index}</span>
-            <p className={styles['lp-how-step-label']}>{step.label}</p>
+            <h2 className={styles['lp-how-step-label']}>{step.label}</h2>
           </li>
         ))}
       </ol>
