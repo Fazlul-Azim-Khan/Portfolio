@@ -285,11 +285,18 @@ export const experience = {
   entries: [
     // ── Work Experience ────────────────────────────────────────────────────────
     {
+      id:       'musemind',
+      company:  'Musemind GmbH',
+      location: 'Berlin, Germany · Part-time, Remote',
+      role:     'Product Designer & UX Consultant',
+      period:   'May 2026 – Present',
+    },
+    {
       id:       'gb3-services',
       company:  'GB3 Services LLC',
       location: 'Sheridan, Wyoming',
-      role:     'Product Designer & UX Strategist',
-      period:   'Jan 2025 – Nov 2025',
+      role:     'Staff Product Designer & UX Strategist',
+      period:   'Dec 2023 – Nov 2025',
     },
     {
       id:       'center-health',
