@@ -20,11 +20,18 @@ import type { ExperienceEntry } from '@/types'
 
 export const experienceEntries: ExperienceEntry[] = [
   {
+    id:       'musemind',
+    company:  'Musemind GmbH',
+    location: 'Berlin, Germany · Part-time, Remote',
+    role:     'Product Designer & UX Consultant',
+    period:   'May 2026 – Present',          // confirmed
+  },
+  {
     id:       'gb3-services',
     company:  'GB3 Services LLC',
     location: 'Sheridan, Wyoming',
-    role:     'Product Designer & UX Strategist',
-    period:   'February 2022 – Present',     // confirmed
+    role:     'Staff Product Designer & UX Strategist',
+    period:   'Dec 2023 – Nov 2025',         // confirmed
   },
   {
     id:       'faz-studio',
