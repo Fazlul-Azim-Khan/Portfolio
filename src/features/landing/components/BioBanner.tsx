@@ -40,9 +40,9 @@ export default function BioBanner({ content }: Props) {
     <div className={styles['lp-bio-banner']} aria-label="About">
 
       {/* Bio statement — H1 scale */}
-      <p className={styles['lp-bio-banner-text']}>
+      <h2 className={styles['lp-bio-banner-text']}>
         {content.text}
-      </p>
+      </h2>
 
       {/* Specialty chip tags */}
       <div className={styles['lp-bio-banner-chips']} role="list" aria-label="Specialties">
