@@ -39,7 +39,7 @@ export const nav = {
     { label: 'Profile',   href: '#contact' },
   ],
   ctas: [
-    { label: 'Download CV ↓', href: '/cv.pdf',                                          variant: 'outlined' as const },
+    { label: 'Download CV ↓', href: '/Fazlul_Azim_Khan_CV.pdf',                                          variant: 'outlined' as const },
     { label: 'LinkedIn ↗',    href: 'https://www.linkedin.com/in/fazlul-azim-khan/',   variant: 'outlined' as const },
     { label: 'Contact me →',  href: 'mailto:fazlul.azim.khan@gmail.com',                variant: 'primary-brand' as const },
   ],

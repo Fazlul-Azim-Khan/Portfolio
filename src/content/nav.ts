@@ -39,7 +39,7 @@ export const navLanguages = [
 export const navCTAs: NavCTA[] = [
   {
     label:    'Download CV ↓',
-    href:     '/cv.pdf',
+    href:     '/Fazlul_Azim_Khan_CV.pdf',
     variant:  'outlined',
     download: true,            // HTML download attribute — triggers save dialog instead of navigation
   },
